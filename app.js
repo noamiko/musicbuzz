@@ -10,4 +10,4 @@ app.configure(function () {
 app.use('/public', express.static(__dirname + '/public'));
 app.get('/', express.static(__dirname + '/public'));
 
-app.listen(3000);
+app.listen(process.env.Port || 3000);
