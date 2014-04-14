@@ -4,8 +4,6 @@ function init(){
     get_next_to_play_list();
 }
 
-init();
-
 function sign_in_btn(){
     var name = document.forms["signInForm"]["username"].value;
     var nameBool = validate_name(name);
@@ -76,18 +74,17 @@ function display_list(songList,divId){
                 + "</button>");        
     }
     $("#"+newDivId).append("</div>");
-    $("#"+newDivId).show();
 }
 
 function display_song(song,divId){
-    var newDivId = "new-list-"+divId;
-    $("#"+divId).append("<div id="+newDivId+">");
-        $("#"+newDivId).append("<button class='current-song-button' type='button' data-role='button' data-icon='carat-r'>"+
-                "<h3>"+ song.title +"</h3>"
-                + song.artist
-                + "</button>");        
-    $("#"+newDivId).append("</div>");
-    $("#"+newDivId).show();
+    container = document.getElementById(divId);
+    song.dome = document.createElement("button");
+    song.dome.setAttribute("class", "current-song-button");
+    song.dome.setAttribute("type", "button");
+    song.dome.setAttribute("data-roll", "button");
+    song.dome.setAttribute("data-icon", "carat-r");
+    song.dome.innerHTML = "<h3>"+ song.title +"</h3>" + song.artist;
+    container.appendChild(song.dome);
 }
 
 
@@ -96,19 +93,15 @@ function display_host_song_list(songList,divId){
     var newDivId = "new-list-"+divId;
     $("#"+divId).append("<div id="+newDivId+">");
     for (index = 0; index < songList.length; index++){
-        $("#"+newDivId).append("<div>"+
-                
-                "<button class='vote-button' type='button' data-role='button' data-icon='check'><h3><br></h3><br></button>"
+        $("#"+newDivId).append("<button class='vote-button' type='button' data-role='button' data-icon='check'><h3><br></h3><br></button>"
                 +"<button class='song-button' type='button' data-role='button' disabled=''>"
                 +"<h3>"+ songList[index].title +"</h3>"
                 + songList[index].artist
                 + "</button>"
-                +"<button class='vote-button' type='button' data-role='button' data-icon='delete'><h3><br></h3><br></button>"
-                +"</div>");        
+                +"<button class='vote-button' type='button' data-role='button' data-icon='delete'><h3><br></h3><br></button>");        
     }
 
     $("#"+newDivId).append("</div>");
-    $("#"+newDivId).show();
 }
 
 
