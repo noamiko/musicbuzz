@@ -11,4 +11,3 @@ app.use('/public', express.static(__dirname + '/public'));
 app.get('/', express.static(__dirname + '/public'));
 
 app.listen(3000);
-app.listen(80);
