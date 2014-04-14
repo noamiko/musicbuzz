@@ -1,0 +1,41 @@
+div{
+    alignment-adjust: central;
+    text-align: center;
+}
+
+
+.vote-button
+{
+    alignment-adjust: central;
+    margin: 1%;
+    width: 10%;
+    color: black;
+}
+
+.song-button
+{
+    alignment-adjust: central;    
+    margin: 1%;
+    color: black;
+    height: 10%;
+    width: 70%;
+    text-emphasis-color: black;
+    
+}
+.current-song-button
+{
+    alignment-adjust: middle;
+    height: 10%;
+    width: 90%;
+}
+
+.history-song-button{
+    alignment-adjust: middle;
+    margin: 0.5%;
+    height: 10%;
+    width: 90%;
+    
+}
+
+
+
