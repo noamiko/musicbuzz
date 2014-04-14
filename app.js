@@ -13,9 +13,9 @@ var users = require('./routes/users');
 
 var app = express();
 
-//app.get('/', taskList.showTasks.bind(taskList));
-//pp.post('/addtask', taskList.addTask.bind(taskList));
-//app.post('/completetask', taskList.completeTask.bind(taskList));
+app.get('/', taskList.showTasks.bind(taskList));
+app.post('/addtask', taskList.addTask.bind(taskList));
+app.post('/completetask', taskList.completeTask.bind(taskList));
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
