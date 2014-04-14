@@ -13,9 +13,7 @@ var users = require('./routes/users');
 
 var app = express();
 
-app.get('/', taskList.showTasks.bind(taskList));
-app.post('/addtask', taskList.addTask.bind(taskList));
-app.post('/completetask', taskList.completeTask.bind(taskList));
+
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
@@ -30,6 +28,11 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', routes);
 app.use('/users', users);
+
+app.get('/', taskList.showTasks.bind(taskList));
+app.post('/addtask', taskList.addTask.bind(taskList));
+app.post('/completetask', taskList.completeTask.bind(taskList));
+
 
 // catch 404 and forwarding to error handler
 app.use(function(req, res, next) {
