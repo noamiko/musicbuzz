@@ -10,4 +10,4 @@ app.configure(function () {
 app.use('/public', express.static(__dirname + '/public'));
 app.get('/', express.static(__dirname + '/public'));
 
-//module.exports = app;
+module.exports = app;
