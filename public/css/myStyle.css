@@ -1,40 +1,61 @@
+/*# for id
+. for class*/
+
 div{
     alignment-adjust: central;
     text-align: center;
 }
 
-.vote-button
-{
-    alignment-adjust: central;
-    margin: 1%;
-    width: 10%;
-    color: black;
+
+#host-song-list{
+    margin-left:auto;
+    margin-right:auto;
 }
 
-.song-button
+#host-song-list .vote-good-button
 {
-    alignment-adjust: central;    
+    display: inline;
+    margin-left: 1%;
+    width: 10%;    
+}
+
+#host-song-list .vote-bad-button
+{
+    display: inline;
+    margin-right: 1%;
+    width: 10%;    
+}
+
+
+#host-song-list .song-button
+{ 
+    display: inline;
     margin: 1%;
-    color: black;
     height: 10%;
     width: 70%;
-    text-emphasis-color: black;
     
 }
-.current-song-button
+
+#current-song .current-song-button
 {
-    alignment-adjust: middle;
+    margin-left:auto;
+    margin-right:auto;
     height: 10%;
     width: 90%;
 }
 
-.history-song-button{
-    alignment-adjust: middle;
-    margin: 0.5%;
+
+#songs .song-button
+{
+    margin-left:auto;
+    margin-right:auto;
     height: 10%;
-    width: 90%;
+    width: 70%;
     
 }
 
-
+#current-song{
+    alignment-adjust: central;    
+    text-align: center;
+}
 

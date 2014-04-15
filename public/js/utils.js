@@ -64,22 +64,28 @@ function validate_gender(gender){
 }
 
 function display_list(songList,divId){
-    var index;
-    var newDivId = "new-list-"+divId;
-    $("#"+divId).append("<div id="+newDivId+">");
-    for (index = 0; index < songList.length; index++){
-        $("#"+newDivId).append("<button class='history-song-button' type='button' data-role='button' data-icon='carat-r'>"+
-                "<h3>"+ songList[index].title +"</h3>"
-                + songList[index].artist
-                + "</button>");        
+    container = document.getElementById(divId);
+    for (var i = 0; i < songList.length; i++) {
+        //The button representing the song
+        songList[i].dome = document.createElement("button");
+        songList[i].dome.setAttribute("class", "song-button ui-btn ui-shadow ui-corner-all");
+        
+        songList[i].dome.setAttribute("type", "button");
+        songList[i].dome.setAttribute("data-role", "button");
+        //todo !!!!
+        //
+        //!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+        //!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+        songList[i].dome.setAttribute("onclick", "voteGood("+songList[i].songId+")");
+        songList[i].dome.innerHTML = "<h3>"+ songList[i].title +"</h3>" + songList[i].artist;
+        container.appendChild(songList[i].dome);
     }
-    $("#"+newDivId).append("</div>");
 }
 
 function display_song(song,divId){
     container = document.getElementById(divId);
     song.dome = document.createElement("button");
-    song.dome.setAttribute("class", "current-song-button");
+    song.dome.setAttribute("class", "current-song-button ui-btn ui-shadow ui-corner-all");
     song.dome.setAttribute("type", "button");
     song.dome.setAttribute("data-roll", "button");
     song.dome.setAttribute("data-icon", "carat-r");
@@ -89,19 +95,38 @@ function display_song(song,divId){
 
 
 function display_host_song_list(songList,divId){
-    var index;
-    var newDivId = "new-list-"+divId;
-    $("#"+divId).append("<div id="+newDivId+">");
-    for (index = 0; index < songList.length; index++){
-        $("#"+newDivId).append("<button class='vote-button' type='button' data-role='button' data-icon='check'><h3><br></h3><br></button>"
-                +"<button class='song-button' type='button' data-role='button' disabled=''>"
-                +"<h3>"+ songList[index].title +"</h3>"
-                + songList[index].artist
-                + "</button>"
-                +"<button class='vote-button' type='button' data-role='button' data-icon='delete'><h3><br></h3><br></button>");        
-    }
 
-    $("#"+newDivId).append("</div>");
+    for (var i = 0; i < songList.length; i++) {
+
+        $("#"+divId).append("<div id="+divId+"-row-"+i+" class='song-row'></div>");    
+        container = document.getElementById(divId+"-row-"+i);
+        //the vote Good button
+        songList[i].dome = document.createElement("button");
+        songList[i].dome.setAttribute("class", "vote-good-button ui-btn ui-shadow ui-corner-all");
+        songList[i].dome.setAttribute("type", "button");
+        songList[i].dome.setAttribute("data-role", "button");
+        songList[i].dome.setAttribute("data-icon", "check");
+        songList[i].dome.innerHTML = "<h3><br></h3><br>";
+        container.appendChild(songList[i].dome);
+
+        //The button representing the song
+        songList[i].dome = document.createElement("button");
+        songList[i].dome.setAttribute("class", "song-button ui-btn ui-shadow ui-corner-all");
+        songList[i].dome.setAttribute("type", "button");
+        songList[i].dome.setAttribute("data-role", "button");
+        songList[i].dome.setAttribute("disabled", "");
+        songList[i].dome.innerHTML = "<h3>"+ songList[i].title +"</h3>" + songList[i].artist;
+        container.appendChild(songList[i].dome);
+        
+        //the vote BAD button
+        songList[i].dome = document.createElement("button");
+        songList[i].dome.setAttribute("class", "vote-bad-button ui-btn ui-shadow ui-corner-all");
+        songList[i].dome.setAttribute("type", "button");
+        songList[i].dome.setAttribute("data-role", "button");
+        songList[i].dome.setAttribute("data-icon", "delete");
+        songList[i].dome.innerHTML = "<h3><br></h3><br>";   
+        container.appendChild(songList[i].dome);
+    }
 }
 
 
