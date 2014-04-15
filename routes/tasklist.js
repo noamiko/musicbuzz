@@ -19,7 +19,7 @@ TaskList.prototype = {
     newTask = new task();
     newTask.itemName = item.name;
     newTask.itemCategory = item.category;
-//    newTask.itemId = new ObjectID();
+    newTask.itemId = mongoose.Types.ObjectId();
     newTask.save(function savedTask(err){
       if(err) {
         throw err;
