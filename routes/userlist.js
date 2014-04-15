@@ -1,5 +1,5 @@
 var mongoose = require('mongoose')
-  , task = require('../models/user.js');
+  , user = require('../models/user.js');
 
 module.exports = UserList;
 
@@ -8,7 +8,7 @@ function UserList(connection) {
 }
 
 UserList.prototype = {
-  showTasks: function(req, res) {
+  showUsers: function(req, res) {
     user.find(function foundTasks(err, items) {
       res.render('index',{title: 'My user List ', user: items})
     });
@@ -16,7 +16,7 @@ UserList.prototype = {
 
   addUser: function(req,res) {
     var item = req.body.item;
-    newUser = new task();
+    newUser = new user();
     newUser.Id = new ObjectID();
     newUser.Name = item.name;
     newUser.Password = item.password;
