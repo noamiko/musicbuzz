@@ -11,7 +11,7 @@ UserList.prototype = {
   addUser: function(req,res) {
     var item = req.body.item;
     newUser = new user();
-    newUser.Id = new ObjectID();
+    newUser.Id = 12341234123412;
     newUser.Name = item.name;
     newUser.Password = item.password;
     newUser.save(function savedUser(err){
