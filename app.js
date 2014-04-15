@@ -1,5 +1,5 @@
-var TaskList = require('./routes/tasklist');
-var taskList = new TaskList(process.env.CUSTOMCONNSTR_MONGOLAB_URI);
+//var TaskList = require('./routes/tasklist');
+//var taskList = new TaskList(process.env.CUSTOMCONNSTR_MONGOLAB_URI);
 
 var UserList = require('./routes/userlist');
 var userList = new UserList(process.env.CUSTOMCONNSTR_MONGOLAB_URI);
@@ -27,9 +27,9 @@ app.use(bodyParser.urlencoded());
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
-app.get('/', taskList.showTasks.bind(taskList));
-app.post('/addtask', taskList.addTask.bind(taskList));
-app.post('/completetask', taskList.completeTask.bind(taskList));
+//app.get('/', taskList.showTasks.bind(taskList));
+//app.post('/addtask', taskList.addTask.bind(taskList));
+//app.post('/completetask', taskList.completeTask.bind(taskList));
 app.post('/adduser', userList.addUser.bind(userList));
 
 /// catch 404 and forwarding to error handler
