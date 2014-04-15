@@ -3,10 +3,10 @@ var mongoose = require('mongoose')
 
 var TaskSchema = new Schema({
     itemName      : String
-  , itemId		  : long
+  , itemId		  : ObjectId
   , itemCategory  : String
   , itemCompleted : { type: Boolean, default: false }
   , itemDate      : { type: Date, default: Date.now }
 });
 
-module.exports = mongoose.model('TaskModel123', TaskSchema);
+module.exports = mongoose.model('TaskModel', TaskSchema);
