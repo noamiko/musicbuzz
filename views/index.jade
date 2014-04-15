@@ -3,14 +3,12 @@ form(action="/completetask", method="post")
   table(border="1")
     tr
       td Name
-	  td Id
       td Category
       td Date
       td Complete
     each task in tasks
       tr
         td #{task.itemName}
-        td #{task.itemId}
         td #{task.itemCategory}
         - var day   = task.itemDate.getDate();
         - var month = task.itemDate.getMonth() + 1;

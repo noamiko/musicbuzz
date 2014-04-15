@@ -3,7 +3,6 @@ var mongoose = require('mongoose')
 
 var TaskSchema = new Schema({
     itemName      : String
-  , itemId		  : ObjectId
   , itemCategory  : String
   , itemCompleted : { type: Boolean, default: false }
   , itemDate      : { type: Date, default: Date.now }
