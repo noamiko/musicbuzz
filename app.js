@@ -1,8 +1,8 @@
-//var TaskList = require('./routes/tasklist');
-//var taskList = new TaskList(process.env.CUSTOMCONNSTR_MONGOLAB_URI);
+var TaskList = require('./routes/tasklist');
+var taskList = new TaskList(process.env.CUSTOMCONNSTR_MONGOLAB_URI);
 
-var UserList = require('./routes/userlist');
-var userList = new UserList(process.env.CUSTOMCONNSTR_MONGOLAB_URI);
+//var UserList = require('./routes/userlist');
+//var userList = new UserList(process.env.CUSTOMCONNSTR_MONGOLAB_URI);
 
 var express = require('express');
 var path = require('path');
@@ -10,10 +10,6 @@ var favicon = require('static-favicon');
 var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
-
-//var routes = require('./routes/index');
-//var users = require('./routes/users');
-
 var app = express();
 
 // view engine setup
@@ -27,9 +23,9 @@ app.use(bodyParser.urlencoded());
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
-//app.get('/', taskList.showTasks.bind(taskList));
-//app.post('/addtask', taskList.addTask.bind(taskList));
-//app.post('/completetask', taskList.completeTask.bind(taskList));
+app.get('/', taskList.showTasks.bind(taskList));
+app.post('/addtask', taskList.addTask.bind(taskList));
+app.post('/completetask', taskList.completeTask.bind(taskList));
 app.post('/adduser', userList.addUser.bind(userList));
 
 /// catch 404 and forwarding to error handler
