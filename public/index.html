@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+    <head>
+        <title>My App</title>
+        
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.2/jquery.mobile-1.4.2.min.css" />
+        <script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
+        <script src="http://code.jquery.com/mobile/1.4.2/jquery.mobile-1.4.2.min.js"></script>
+        <link href="css/myStyle.css" rel="stylesheet" type="text/css">
+        <script src="js/utils.js"></script>
+        <script src="js/serverUtils.js"></script>
+
+    </head> 
+        <body onload="init();">
+
+        
+        <!-- begin log-in page -->
+        <section id="log-in" data-role="page">
+            <header data-role="header">
+                <h1>Login</h1>
+            </header> 
+            <div data-role="content"> 
+                <form name="logInForm" action="demo_form.asp" onsubmit="log_in_btn()" method="post">
+                    <div data-role="fieldcontain" class="ui-hide-label">
+                        <label for="username">Username:</label>
+                        <input type="text" name="username" id="username" value="" placeholder="Username"/>         
+
+                        <label for="password">Password:</label>
+                        <input type="password" name="password" id="password" placeholder="Password">
+                        
+                        <br/>
+                        <button type="button" name="submit" onclick="log_in_btn()">Login</button>
+                        
+                        <button type="button" onclick="change_page('sign-in')">Sign-In</button>
+                    </div>
+                </form>
+            </div>
+            
+            <section id="footer" data-id="PersistentFooter" data-role="footer" data-position="fixed">
+                <div data-role="navbar">
+                    <ul>
+                        <li><button data-role="button" data-icon="arrow-r" class="ui-btn-active ui-state-persist">Login</button></li>
+                        <li><button data-role="button" data-icon="arrow-r" disabled="">Feed</button></li>
+                    </ul>
+                </div>
+            </section>
+        </section>
+        
+        
+               <!-- begin sign-in page -->
+        <section id="sign-in" data-role="page">
+            <header data-role="header">
+                <h1>Sign-in</h1>
+            </header>
+            <div data-role="fieldcontain">
+                <form name="signInForm" action="demo_form.asp" onsubmit="sign_in_btn()" class="ui-hide-label" method="post">
+
+                        <label for="username">Username:</label>
+                        <input type="text" name="username" id="username" value="" placeholder="Username"/>
+
+                        <label for="email">Email:</label>
+                        <input type="email" name="email" id="email" value="" placeholder="Email"/>            
+
+                        <label for="password">Password:</label>
+                        <input type="password" name="password" id="password" placeholder="Password"> 
+                        
+                        <label for="date" >Date:</label>
+                        <input type="date" name="date" id="date" value="">
+                        
+                        <label for="radio-female">Female</label>
+                        <input type="radio" name="gender" id="radio-female" value="f"  />
+                        
+                        <label for="radio-male">Male</label>
+                        <input type="radio" name="gender" id="radio-male" value="m"   />
+
+                        <button data-role="button" type="button" name="submit" onclick="sign_in_btn()">Sign-in</button>
+
+                    </form>
+                </div>
+            <div data-id="PersistentFooter" data-role="footer" data-position="fixed">
+                <div data-role="navbar">
+                    <ul>
+                        <li><button data-role="button" data-icon="arrow-r" class="ui-btn-active ui-state-persist">Sign-in</button></li>
+                        <li><button data-role="button" data-icon="arrow-r" disabled="">Feed</button></li>
+                    </ul>
+                </div>
+            </div>
+            
+        </section>
+        
+        
+        <!-- begin feed page -->
+
+        <section id="feed" data-role="page">
+            <header data-role="header">
+                <h1>Live feed</h1>
+            </header> 
+            <div data-role="content"> 
+            <p>The Current Song is:</p> 
+            
+            <div id="current-song">
+            </div> 
+
+             
+            <div id="host-song-list">
+                
+            </div>
+            
+            
+            <div data-id="PersistentFooter" data-role="footer" data-position="fixed">
+                <div data-role="navbar">
+                    <ul>
+                        <li><button data-role="button" data-icon="arrow-r" class="ui-btn-active ui-state-persist">Feed</button></li>
+                        <li><button data-role="button" data-icon="arrow-r" onclick="change_page('search-page');">Song Search</button></li>
+                    </ul>
+                </div>
+            </div>
+            
+        </section>
+        
+         <!-- begin search-page page -->
+         <section id="search-page" data-role="page">
+            <header data-role="header">
+                <h1>Search song</h1>
+            </header> 
+            <div data-role="content">
+                <label for="search-basic">Search Input:</label>
+                <input type="search" name="search" id="search-basic" value="" />
+                
+                <div id="songs">
+
+                </div>        
+           
+                <div data-id="PersistentFooter" data-role="footer" data-position="fixed">
+                    <div data-role="navbar">
+                        <ul>
+                            <li><button data-role="button" data-icon="arrow-r" onclick="change_page('feed')">Feed</button></li>
+                            <li><button data-role="button" data-icon="arrow-r" class="ui-btn-active ui-state-persist">Song search</button></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+     
+    </body>
+

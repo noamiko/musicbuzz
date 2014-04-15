@@ -1,0 +1,61 @@
+/*# for id
+. for class*/
+
+div{
+    alignment-adjust: central;
+    text-align: center;
+}
+
+
+#host-song-list{
+    margin-left:auto;
+    margin-right:auto;
+}
+
+#host-song-list .vote-good-button
+{
+    display: inline;
+    margin-left: 1%;
+    width: 10%;    
+}
+
+#host-song-list .vote-bad-button
+{
+    display: inline;
+    margin-right: 1%;
+    width: 10%;    
+}
+
+
+#host-song-list .song-button
+{ 
+    display: inline;
+    margin: 1%;
+    height: 10%;
+    width: 70%;
+    
+}
+
+#current-song .current-song-button
+{
+    margin-left:auto;
+    margin-right:auto;
+    height: 10%;
+    width: 90%;
+}
+
+
+#songs .song-button
+{
+    margin-left:auto;
+    margin-right:auto;
+    height: 10%;
+    width: 70%;
+    
+}
+
+#current-song{
+    alignment-adjust: central;    
+    text-align: center;
+}
+
