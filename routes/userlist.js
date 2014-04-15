@@ -8,12 +8,6 @@ function UserList(connection) {
 }
 
 UserList.prototype = {
-  showUsers: function(req, res) {
-    user.find({Host: false},function foundUsers(err, items) {
-      res.render('index',{title: 'My user List ', users: items})
-    });
-  },
-
   addUser: function(req,res) {
     var item = req.body.item;
     newUser = new user();
