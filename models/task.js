@@ -10,10 +10,3 @@ var TaskSchema = new Schema({
 });
 
 module.exports = mongoose.model('TaskModel', TaskSchema);
-
-var UserSchema = new Schema({
-	Name		: String
-  , Password	: String
-});
-
-module.exports = mongoose.model('UserModel', UserSchema);
