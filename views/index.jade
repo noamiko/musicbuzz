@@ -29,3 +29,35 @@ form(action="/addtask", method="post")
       td 
         input(name="item[category]", type="textbox")
   input(type="submit", value="Add item")
+  
+hr
+form(action="/completetask", method="post")
+  table(border="1")
+    tr
+      td ID
+      td Name
+      td Password
+      td Host
+
+	  each user in users
+      tr
+        td #{user.Id}
+        td #{user.Name}
+        td #{user.Password}
+        td #{task.Host}
+
+        td
+          input(type="checkbox", name="#{user._id}", value="#{!user.Host}", checked=user.itemCompleted)
+  input(type="submit", value="Update users")
+hr
+form(action="/adduser", method="post")
+  table(border="1") 
+    tr
+      td Name: 
+      td 
+        input(name="user[name]", type="textbox")
+    tr
+      td Item Password: 
+      td 
+        input(name="user[password]", type="textbox")
+  input(type="submit", value="Add user")
