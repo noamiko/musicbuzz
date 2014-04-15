@@ -33,7 +33,6 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.get('/', taskList.showTasks.bind(taskList));
 app.post('/addtask', taskList.addTask.bind(taskList));
 app.post('/completetask', taskList.completeTask.bind(taskList));
-app.post('/adduser', userList.addUser.bind(userList));
 
 /// catch 404 and forwarding to error handler
 app.use(function(req, res, next) {
