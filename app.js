@@ -1,6 +1,9 @@
 var TaskList = require('./routes/tasklist');
 var taskList = new TaskList(process.env.CUSTOMCONNSTR_MONGOLAB_URI);
 
+var UserList = require('./routes/userlist');
+var userList = new UserList(process.env.CUSTOMCONNSTR_MONGOLAB_URI);
+
 var express = require('express');
 var path = require('path');
 var favicon = require('static-favicon');
@@ -27,6 +30,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.get('/', taskList.showTasks.bind(taskList));
 app.post('/addtask', taskList.addTask.bind(taskList));
 app.post('/completetask', taskList.completeTask.bind(taskList));
+app.post('/adduser', userList.addUser.bind(userList));
 
 /// catch 404 and forwarding to error handler
 app.use(function(req, res, next) {
