@@ -9,7 +9,7 @@ function UserList(connection) {
 
 UserList.prototype = {
   showUsers: function(req, res) {
-    user.find(function foundTasks(err, items) {
+    user.find({Host: false},function foundUsers(err, items) {
       res.render('index',{title: 'My user List ', user: items})
     });
   },
