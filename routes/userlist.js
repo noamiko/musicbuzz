@@ -20,5 +20,5 @@ UserList.prototype = {
       }
     });
     res.redirect('/');
-  },
+  }
 }
