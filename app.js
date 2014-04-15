@@ -53,4 +53,5 @@ app.use(function(err, req, res, next) {
 });
 
 
+module.exports = app;
 app.listen(process.env.port || 3000);
