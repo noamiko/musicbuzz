@@ -4,7 +4,10 @@ var mongoose = require('mongoose')
 module.exports = HostList;
 
 function HostList(connection) {
-  mongoose.connect(connection);
+  mongoose.connect(connection, function(err){
+  // already connected... do nothing...
+  
+  });
 }
 
 HostList.prototype = {
