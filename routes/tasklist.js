@@ -8,6 +8,10 @@ function TaskList(connection) {
 }
 
 TaskList.prototype = {
+  showTasks: function(req, res) {
+      res.render('index',{title: 'My ToDo List ', tasks: items})
+    );
+  },
 
   addTask: function(req,res) {
     var item = req.body.item;
