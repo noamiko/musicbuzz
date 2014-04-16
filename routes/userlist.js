@@ -13,7 +13,6 @@ UserList.prototype = {
     var password = req.body.password;
 	
     newUser = new user();
-    newUser.Id = new mongoose.Types.ObjectId();
     newUser.Name = username;
     newUser.Password = password;
     newUser.save(function savedUser(err){
