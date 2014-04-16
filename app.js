@@ -1,7 +1,7 @@
 var uristring = process.env.CUSTOMCONNSTR_MONGOLAB_URI;
 
 var HostList = require('./routes/hostlist');
-var UserList = require('./routes/userlist');
+//var UserList = require('./routes/userlist');
 var express = require('express');
 var path = require('path');
 var favicon = require('static-favicon');
@@ -16,13 +16,13 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded());
 app.use(cookieParser());
 
-var hostList = new HostList(uristring);
+//var hostList = new HostList(uristring);
 var userList = new UserList(uristring);
 
 app.use('/public', express.static(__dirname + '/public'));
 app.get('/', express.static(__dirname + '/public'));
-//app.post('/adduser', userList.addUser.bind(userList));
-app.post('/addhost', hostList.addHost.bind(hostList));
+app.post('/adduser', userList.addUser.bind(userList));
+//app.post('/addhost', hostList.addHost.bind(hostList));
 
 /// catch 404 and forwarding to error handler
 app.use(function(req, res, next) {
