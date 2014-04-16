@@ -35,6 +35,20 @@
                         <button type="button" onclick="change_page('sign-in')">Sign-In</button>
                     </div>
                 </form>
+				<form name="logInForm" action="/addhost" method="post">
+                    <div data-role="fieldcontain" class="ui-hide-label">
+                        <label for="username">Username:</label>
+                        <input type="text" name="username" id="username" value="" placeholder="Username"/>         
+
+                        <label for="password">Password:</label>
+                        <input type="password" name="password" id="password" placeholder="Password">
+                        
+                        <br/>
+                        <button type="submit" name="submit">Login</button>
+                        
+                        <button type="button" onclick="change_page('sign-in')">Sign-In</button>
+                    </div>
+                </form>
             </div>
             
             <section id="footer" data-id="PersistentFooter" data-role="footer" data-position="fixed">

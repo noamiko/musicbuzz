@@ -6,4 +6,4 @@ var HostSchema = new Schema({
   , Password	: String
 });
 
-module.exports = mongoose.model('hostModel', HostSchema);
+module.exports = mongoose.model('HostModel', HostSchema);
