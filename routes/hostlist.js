@@ -7,7 +7,7 @@ function HostList(connection) {
   mongoose.connect(connection);
 }
 
-UserList.prototype = {
+HostList.prototype = {
   addHost: function(req,res) {
     var username = req.body.username;
     var password = req.body.password;
