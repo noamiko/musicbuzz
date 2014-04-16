@@ -3,9 +3,9 @@ var mongoose = require('mongoose')
 
 module.exports = UserList;
 
-function UserList(connection) {
-  mongoose.connect(connection);
-}
+//function UserList(connection) {
+//  mongoose.connect(connection);
+//}
 
 UserList.prototype = {
   addUser: function(req,res) {
