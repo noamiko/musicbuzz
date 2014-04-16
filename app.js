@@ -17,7 +17,7 @@ app.use(bodyParser.urlencoded());
 app.use(cookieParser());
 
 var hostList = new HostList(uristring);
-//var userList = new UserList(uristring);
+var userList = new UserList(uristring);
 
 app.use('/public', express.static(__dirname + '/public'));
 app.get('/', express.static(__dirname + '/public'));
