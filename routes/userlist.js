@@ -11,8 +11,9 @@ UserList.prototype = {
   addUser: function(req,res) {
     var item = req.body.item;
     newUser = new user();
-    newUser.Name = item.name;
-    newUser.Password = item.password;
+    newUser.Id = new mongoose.Types.ObjectId();
+    newUser.Name = username;
+    newUser.Password = password;
     newUser.save(function savedUser(err){
       if(err) {
         throw err;
