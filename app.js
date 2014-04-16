@@ -28,7 +28,7 @@ app.use(cookieParser());
 app.use('/public', express.static(__dirname + '/public'));
 app.get('/', express.static(__dirname + '/public'));
 app.post('/adduser', userList.addUser.bind(userList));
-app.post('/addhost', hostList.addHost.bind(hostList));
+//app.post('/addhost', hostList.addHost.bind(hostList));
 
 /// catch 404 and forwarding to error handler
 app.use(function(req, res, next) {
