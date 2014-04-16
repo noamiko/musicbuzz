@@ -1,10 +1,14 @@
 //var TaskList = require('./routes/tasklist');
 //var taskList = new TaskList(process.env.CUSTOMCONNSTR_MONGOLAB_URI);
+var uristring = process.env.CUSTOMCONNSTR_MONGOLAB_URI;
 
-var HostList = require('./routes/hostlist');
-var UserList = require('./routes/userlist');
-var hostList = new HostList(process.env.CUSTOMCONNSTR_MONGOLAB_URI);
-var userList = new UserList(process.env.CUSTOMCONNSTR_MONGOLAB_URI);
+var HostList = require('./routes/hostlist')
+	, UserList = require('./routes/userlist');
+	
+var hostList = new HostList(uristring);
+
+//var UserList = require('./routes/userlist');
+var userList = new UserList(uristring);
 
 var express = require('express');
 var path = require('path');
