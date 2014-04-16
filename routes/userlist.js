@@ -9,7 +9,9 @@ function UserList(connection) {
 
 UserList.prototype = {
   addUser: function(req,res) {
-    var item = req.body.item;
+    var username = req.body.username;
+    var password = req.body.password;
+	
     newUser = new user();
     newUser.Id = new mongoose.Types.ObjectId();
     newUser.Name = username;
