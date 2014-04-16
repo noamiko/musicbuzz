@@ -3,11 +3,10 @@
 var uristring = process.env.CUSTOMCONNSTR_MONGOLAB_URI;
 
 var HostList = require('./routes/hostlist')
-	, UserList = require('./routes/userlist');
+	, UserList = require('./routes/userlist')
+	, routes = require('./routes');
 	
 var hostList = new HostList(uristring);
-
-//var UserList = require('./routes/userlist');
 var userList = new UserList(uristring);
 
 var express = require('express');
