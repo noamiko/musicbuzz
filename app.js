@@ -1,7 +1,7 @@
 var uristring = process.env.CUSTOMCONNSTR_MONGOLAB_URI;
 
 var HostList = require('./routes/hostlist');
-var UserList = require('./routes/userlist');
+//var UserList = require('./routes/userlist');
 var express = require('express');
 var path = require('path');
 var favicon = require('static-favicon');
@@ -21,7 +21,7 @@ app.use(bodyParser.urlencoded());
 app.use(cookieParser());
 
 var hostList = new HostList(uristring);
-var userList = new UserList(uristring);
+//var userList = new UserList(uristring);
 
 app.use('/public', express.static(__dirname + '/public'));
 app.get('/', express.static(__dirname + '/public'));
