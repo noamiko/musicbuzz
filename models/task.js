@@ -9,4 +9,4 @@ var TaskSchema = new Schema({
   , itemDate      : { type: Date, default: Date.now }
 });
 
-module.exports = mongoose.model('TaskModel123', TaskSchema);
+module.exports = mongoose.model('TaskModel', TaskSchema);

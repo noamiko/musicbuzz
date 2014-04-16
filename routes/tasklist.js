@@ -8,11 +8,6 @@ function TaskList(connection) {
 }
 
 TaskList.prototype = {
-  showTasks: function(req, res) {
-    task.find({itemCompleted: false}, function foundTasks(err, items) {
-      res.render('index',{title: 'My ToDo List ', tasks: items})
-    });
-  },
 
   addTask: function(req,res) {
     var item = req.body.item;
