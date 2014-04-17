@@ -6,7 +6,7 @@ var songSchemma = new Schema({
     title: String,
     artist: String,
     length: Number,
-    songFileUrl: String
+    url: String
 });
 
 module.exports = mongoose.model('Song', songSchemma);

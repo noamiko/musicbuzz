@@ -18,7 +18,7 @@ SongList.prototype = {
         newUser.title = req.body.title;
         newUser.artist = req.body.artist;
         newUser.length = req.body.length;
-        newUser.songFileURL = req.body.songfileurl;
+        newUser.url = req.body.url;
 
         newUser.save(function savedUser(err) {
             if (err) {
