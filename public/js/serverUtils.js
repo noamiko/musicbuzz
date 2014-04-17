@@ -5,7 +5,7 @@ function login() {
 function login() {
     $.ajax({
         url: 'http://musicbuzz.azurewebsites.net/login_user',
-        type: 'POST',
+        type: 'GET',
         success: function(data) {
             alert(data);
         }
@@ -15,7 +15,7 @@ function login() {
 function sign_up_user() {
     $.ajax({
         url: 'http://musicbuzz.azurewebsites.net/signup_user',
-        type: 'POST',
+        type: 'GET',
         success: function(data) {
             alert(data);
         }
@@ -25,7 +25,7 @@ function sign_up_user() {
 function sign_up_host() {
     $.ajax({
         url: 'http://musicbuzz.azurewebsites.net/signup_host',
-        type: 'POST',
+        type: 'GET',
         success: function(data) {
             alert(data);
         }
