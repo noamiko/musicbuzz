@@ -28,12 +28,12 @@ var songList = new songlist(uristring);
 
 app.use('/public', express.static(__dirname + '/public'));
 app.get('/', express.static(__dirname + '/public'));
-//app.post('/signup_user', userList.prototype.signup_user.bind(userList));
-//app.post('/login_user', userList.prototype.login_user.bind(userList));
-//app.post('/get_user', userList.prototype.getUser().bind(userList));
-//app.post('/addhost', hostList.prototype.signup_host.bind(hostList));
-//app.post('/addsongvote', songVoteList.prototype.addSongVote.bind(songVoteList));
-//app.post('/addsong', songList.prototype.addSong.bind(songList));
+app.post('/signup_user', userList.signup_user.bind(userList));
+app.get('/login_user', userList.login_user.bind(userList));
+//app.get('/get_user', userList.getUser().bind(userList));
+//app.get('/addhost', hostList.signup_host.bind(hostList));
+//app.get('/addsongvote', songVoteList.addSongVote.bind(songVoteList));
+//app.get('/addsong', songList.addSong.bind(songList));
 
 /// catch 404 and forwarding to error handler
 app.use(function(req, res, next) {
