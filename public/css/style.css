@@ -18,6 +18,12 @@
     left: 2em;
 }
 
+#deploy_btn{
+    position: fixed;
+    bottom: 2em;
+    left: 2em;
+}
+
 
 body
 {

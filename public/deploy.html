@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script src="js/utils.js"></script>
+        <script src="js/serverUtils.js"></script>
+        <link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.2/jquery.mobile-1.4.2.min.css" />
+        <script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
+        <script src="http://code.jquery.com/mobile/1.4.2/jquery.mobile-1.4.2.min.js"></script>
+    </head>
+    <body style="text-align: center">
+        <br/>
+        <form method="post" name="deploy_form">
+            title:
+            <input type="text" name="title">
+            <br/>
+
+            artist:
+            <input type="text" name="artist">
+            <br/>
+
+            length:
+            <input type="number" name="length">
+            <br/>
+
+            URL:
+            <input type="url" name="url">
+            <br/>
+
+            <button onclick="add_song()"> ADD SONG</button>            
+
+
+        </form>
+    </body>
+</html>

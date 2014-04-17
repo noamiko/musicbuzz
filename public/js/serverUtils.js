@@ -225,3 +225,20 @@ function showPosition(position) {
     lat = position.coords.latitude;
     lng = position.coords.longitude;
 }
+
+function add_song() {
+    $.post("/add_song",
+            {
+                "title": $("#deploy_form input[name=title]").val(),
+                "artist": $("#deploy_form input[name=artist]").val(),
+                "length": $("#deploy_form input[name=length]").val(),
+                "url": $("#deploy_form input[name=url]").val()
+            },
+    function(data, status) {
+        if (data !== false) {
+
+        } else {
+
+        }
+    });
+}
