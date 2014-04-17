@@ -131,7 +131,7 @@ function get_song(song_id) {
 }
 
 function get_song_history() {
-    $.post("/get_song_histoey",
+    $.post("/get_song_history",
             {"user_id": current_user._id},
     function(data, status) {
         if (data !== false) {
