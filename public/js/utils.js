@@ -4,8 +4,8 @@ function init() {
     $('#login_to_host').hide();
     $('#feed').hide();
     $('#search').hide();
-    $('#login').show();
-    
+    $('#login_host').hide();
+    $('#login_user').show();
 }
 
 
@@ -124,4 +124,12 @@ function getGeoLocation() {
 function changePage(from, to) {
     $("#" + from).hide();
     $("#" + to).show();
+}
+
+function set_host_login_attr(){
+    $('#host_btn').hide();
+    $('#main_title').text("Host Login Page")
+    $('#login_btn').attr('onclick', "login_host()");
+    $('#signup_btn').attr('onclick', "changePage('login_user', 'sign_up_host')");
+    
 }

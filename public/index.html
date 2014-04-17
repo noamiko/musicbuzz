@@ -17,14 +17,14 @@
     </head>
     <body onload="init();">
 
-        <!-- LOGIN  -->
-        <section id="login" data-role="page">
+        <!-- LOGIN for user -->
+        <section id="login_user" data-role="page">
 
             <!-- Header -->
             <section id="header">
                 <header>
-                    <h1>MusicBuzz</h1>
-                    <p>By IDC hack</p>
+                    <h1 id="main_title">MusicBuzz</h1>
+                    <p>By IDC Hack</p>
                     <br/>
                     <div data-role="fieldcontain">
                         <div class="row half">
@@ -35,31 +35,27 @@
                                 <input type="password" name="pwd" id="pwd" placeholder="Password">
                             </div>
                         </div>
-                        <div class="row half">
 
-                            <div class="6u">
-                                <label for="radio-female">user</label>
-                                <input type="radio" name="login_to" id="radio-user" value="user"/>
-                            </div>
-                            <div class="6u">
-                                <label for="radio-male">host</label>
-                                <input type="radio" name="login_to" id="radio-host" value="host"   />                        
-                            </div>
+                        <div id="host_btn">
+                            <a class="button style2 scrolly scrolly-centered" onclick="set_host_login_attr()">are you a host?</a>
+                        </div>
 
+
+                        <div>
+                            <a id="login_btn" class="button style1 scrolly scrolly-centered" onclick="login_user()">Login</a>
                         </div>
                     </div>
 
 
                 </header>
                 <footer>
-                    <a href="#" class="button style1 scrolly scrolly-centered" onclick="login()">Login</a>
-                    <a href="#sign_up_user" class="button style2 scrolly scrolly-centered" onclick="changePage('login', 'sign_up_user')">Sign up</a>
-                    <a href="#sign_up_host" class="button style2 scrolly scrolly-centered" onclick="changePage('login', 'sign_up_host')">Sign up as a host</a>
+
+                    <div>
+                        <a id="signup_btn" href="#sign_up_user" class="button style2 scrolly scrolly-centered" onclick="changePage('login_user', 'sign_up_user')">Sign up</a>
+                    </div>
                 </footer>
             </section>
         </section>
-
-
 
         <!-- sign up user page -->
         <section id="sign_up_user" data-role="page">
@@ -103,7 +99,7 @@
                         <input type="radio" name="gender" id="radio-male" value="m"   />
                     </div>
                     <div class="6u">                      
-                        <label for="date" >Birth Date:&emsp;</label>
+                        <label for="date" >Birth Date:</label>
                         <input type="date" name="birthdate" id="birthDate" value="">
                     </div>
                 </div>
@@ -123,7 +119,7 @@
             <!-- Banner -->
             <section id="banner">
                 <header>
-                    <h2>Sign Up form</h2>
+                    <h2>Host Sign Up form</h2>
                 </header>
                 <div class="row half">
                     <div class="6u">
