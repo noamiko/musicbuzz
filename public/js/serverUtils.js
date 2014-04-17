@@ -10,14 +10,24 @@ function login() {
 }
 
 function sign_up_user() {
-    $.ajax({
-        url: 'http://musicbuzz.azurewebsites.net/signup_user',
-        type: 'POST',
-        data: {'firstName': $("#firstName").val()},
-        success: function(data) {
-            alert(data);
-        }
-    });
+    $.post("/signup_user",
+  {
+    firstName:"Donald Duck",
+  },
+  function(data,status){
+    alert("Data: " + data + "\nStatus: " + status);
+  });
+    
+    
+    
+//    $.ajax({
+//        url: 'http://musicbuzz.azurewebsites.net/signup_user',
+//        type: 'POST',
+//        data: {'firstName': $("#firstName").val()},
+//        success: function(data) {
+//            alert(data);
+//        }
+//    });
 }
 
 function sign_up_host() {
