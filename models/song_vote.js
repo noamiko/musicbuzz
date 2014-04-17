@@ -3,8 +3,8 @@ var Schema = mongoose.Schema;
 
 // Song schemma 
 var songVoteSchemma = new Schema({
-    host_id: ObjectIdUser,
-    songId: ObjectIdSong,
+    host_id: {type: Schema.Types.ObjectId, ref: 'host'},
+    songId: {type: Schema.Types.ObjectId, ref: 'song'},
     like: Number,
     disLike: Number,
     lastVotedDate: {type: Date, default: Date.now},
