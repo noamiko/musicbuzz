@@ -1,15 +1,55 @@
+var current_host;
+var user_id;
+
+
 function login() {
-    $.ajax({
-        url: 'http://musicbuzz.azurewebsites.net/login_user',
-        type: 'POST',
-        data: {'firstName': $("#firstName").val()},
-        success: function(data) {
-            alert(data);
+    var decider = $("#login_to").val();
+    if (decider === "user") {
+        login_user();
+    } else {
+        login_host();
+    }
+}
+
+function login_user() {
+    $.post('/login_user',
+            {
+                "email": login(),
+                "password": $("#password").val(),
+                "geoLocation": getGeoLocation()
+            },
+    function(data, status) {
+        if (data !== false) {
+            user_id = data;
+            changePage("login_user", "login_to_host");
+        } else {
+            alert("Wrong email or password");
         }
+        clear_inputs();
     });
 }
 
-function sign_up_user() {
+function login_host() {
+    $.post('/login_host',
+            {
+                "email": $("#email").val(),
+                "password": $("#password").val(),
+                "geoLocation": getGeoLocation()
+
+            },
+    function(data, status) {
+        if (data !== false) {
+            current_host = data;
+            changePage("login", "feed");
+        } else {
+            alert("Wrong email or password");
+        }
+        clear_inputs();
+    });
+}
+
+
+function signup_user() {
     $.post("/signup_user",
             {
                 "firstName": $("#firstName").val(),
@@ -17,15 +57,16 @@ function sign_up_user() {
                 "userName": $("#userName").val(),
                 "email": $("#email").val(),
                 "password": $("#password").val(),
-                "geolocation": $("#geolocation").val(),
+                "geolocation": getGeoLocation(),
                 "gender": $("#gender").val(),
                 "birthDate": $("#birthDate").val(),
                 "country": $("#country").val()
             },
     function(data, status) {
-        if (data === true){
-            changePage("sign_up_user","login_to_host");
-        }else{
+        if (data !== false) {
+            user_id = data;
+            changePage("sign_up_user", "login_to_host");
+        } else {
             alert("A user with the same email is already registerd");
         }
         clear_inputs();
@@ -33,12 +74,25 @@ function sign_up_user() {
 }
 
 function sign_up_host() {
-    $.ajax({
-        url: 'http://musicbuzz.azurewebsites.net/signup_host',
-        type: 'POST',
-        success: function(data) {
-            alert(data);
+    $.post("/signup_host",
+            {
+                "bizName": $("#bizName").val(),
+                "userName": $("#userName").val(),
+                "email": $("#email").val(),
+                "password": $("#password").val(),
+                "address": $("#address").val(),
+                "country": $("#country").val(),
+                "url": $("#url").val(),
+                "geolocation": getGeoLocation()
+            },
+    function(data, status) {
+        if (data !== false) {
+            current_host = data;
+            changePage("sign_up_host", "feed");
+        } else {
+            alert("A user with the same email is already registerd");
         }
+        clear_inputs();
     });
 }
 

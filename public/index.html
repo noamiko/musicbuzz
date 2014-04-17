@@ -12,11 +12,8 @@
         <script src="js/utils.js"></script>
         <script src="js/serverUtils.js"></script>
         <script src="js/objects.js"></script>
-
-        <noscript>
         <link rel="stylesheet" href="css/skel-noscript.css" />
         <link rel="stylesheet" href="css/style.css" />
-        </noscript>
     </head>
     <body onload="init();">
 
@@ -28,14 +25,28 @@
                 <header>
                     <h1>MusicBuzz</h1>
                     <p>By IDC hack</p>
-
+                    <br/>
                     <div data-role="fieldcontain">
-                        <label for="username">Username:</label>
-                        <input type="text" name="username" id="username" value="" placeholder="Username"/>         
-                        <br/>
-                        <label for="password">Password:</label>
-                        <input type="password" name="password" id="password" placeholder="Password">
-                        <br/><br/><br/>
+                        <div class="row half">
+                            <div class="6u">
+                                <input type="email" name="email" id="username" value="" placeholder="email"/>    
+                            </div>
+                            <div class="6u">
+                                <input type="password" name="password" id="password" placeholder="Password">
+                            </div>
+                        </div>
+                        <div class="row half">
+
+                            <div class="6u">
+                                <label for="radio-female">user</label>
+                                <input type="radio" name="login_to" id="radio-user" value="user" checked/>
+                            </div>
+                            <div class="6u">
+                                <label for="radio-male">host</label>
+                                <input type="radio" name="login_to" id="radio-host" value="host"   />                        
+                            </div>
+
+                        </div>
                     </div>
 
 
@@ -57,32 +68,45 @@
                 <header>
                     <h2>Sign Up form</h2>
                 </header>
-                <label for="username">First Name:&emsp;</label>
-                <input type="text" name="firstName" id="firstName" value="" placeholder="First Name"/>
-                <br/>
-                <label for="username">Last Name:&emsp;</label>
-                <input type="text" name="lastName" id="lastName" value="" placeholder="Last Name"/>
-                <br/>
-                <label for="username">Username:&emsp;</label>
-                <input type="text" name="username" id="username" value="" placeholder="Username"/>
-                <br/>
-                <label for="email">Email:&emsp;&emsp;&emsp;</label>
-                <input type="email" name="email" id="email" value="" placeholder="Email"/>            
-                <br/>
-                <label for="password">Password:&emsp;</label>
-                <input type="password" name="password" id="password" placeholder="Password">
-                <br/>
-                <label for="username">Country:&emsp;&emsp;</label>
-                <input type="text" name="country" id="country" value="" placeholder="Country"/>
-                <br/>
-                <label for="radio-female">Female&emsp;</label>
-                <input type="radio" name="gender" id="radio-female" value="f"  />
-                <br/>
-                <label for="radio-male">Male&emsp;</label>
-                <input type="radio" name="gender" id="radio-male" value="m"   />
-                <br/>
-                <label for="date" >Birth Date:&emsp;</label>
-                <input type="date" name="birthDate" id="birthDate" value="">
+
+                <div class="row half">
+                    <div class="6u">
+
+                        <label for="username">First Name:&emsp;</label>
+                        <input type="text" name="firstName" id="firstName" value="" placeholder="First Name"/>
+                    </div>
+                    <div class="6u">                
+                        <label for="username">Last Name:&emsp;</label>
+                        <input type="text" name="lastName" id="lastName" value="" placeholder="Last Name"/>
+                    </div>
+                    <div class="6u">                      
+                        <label for="username">Username:&emsp;</label>
+                        <input type="text" name="username" id="username" value="" placeholder="Username"/>
+                    </div>
+                    <div class="6u">                      
+                        <label for="email">Email:&emsp;&emsp;&emsp;</label>
+                        <input type="email" name="email" id="email" value="" placeholder="Email"/>            
+                    </div>
+                    <div class="6u">                      
+                        <label for="password">Password:&emsp;</label>
+                        <input type="password" name="password" id="password" placeholder="Password">
+                    </div>
+                    <div class="6u">                      
+                        <label for="username">Country:&emsp;&emsp;</label>
+                        <input type="text" name="country" id="country" value="" placeholder="Country"/>
+                    </div>
+                    <div class="6u">                      
+                        <label for="radio-female">Female</label>
+                        <input type="radio" name="gender" id="radio-female" value="f"  />
+
+                        <label for="radio-male">Male</label>
+                        <input type="radio" name="gender" id="radio-male" value="m"   />
+                    </div>
+                    <div class="6u">                      
+                        <label for="date" >Birth Date:&emsp;</label>
+                        <input type="date" name="birthDate" id="birthDate" value="">
+                    </div>
+                </div>
 
                 <footer>
                     <a data-role="button" class="button style2 scrolly" name="submit" onclick="sign_up_user()">Sign up</a>
@@ -101,27 +125,37 @@
                 <header>
                     <h2>Sign Up form</h2>
                 </header>
-                <label for="username">Biz Name:&emsp;</label>
-                <input type="text" name="bizname" id="bizname" value="" placeholder="Biz Name"/>
-                <br>
-                <label for="username">Username:&emsp;</label>
-                <input type="text" name="username" id="username" value="" placeholder="Username"/>
-                <br>
-                <label for="email">Email:&emsp;&emsp;&emsp;</label>
-                <input type="email" name="email" id="email" value="" placeholder="Email"/>            
-                <br>
-                <label for="password">Password:&emsp;</label>
-                <input type="password" name="password" id="password" placeholder="Password"> 
-                <br>
-                <label for="username">Address&emsp;&emsp;</label>
-                <input type="text" name="address" id="address" value="" placeholder="Address"/>
-                <br>
-                <label for="username">Country:&emsp;&emsp;</label>
-                <input type="text" name="country" id="country" value="" placeholder="Country"/>
-                <br>
-                <label for="username">URL:&emsp;&emsp;&emsp;</label>
-                <input type="url" name="url" id="url" value="" placeholder="http://www."/>
+                <div class="row half">
+                    <div class="6u">
 
+                        <label for="username">Biz Name:&emsp;</label>
+                        <input type="text" name="bizName" id="bizname" value="" placeholder="Biz Name"/>
+                    </div>
+                    <div class="6u">
+                        <label for="username">Username:&emsp;</label>
+                        <input type="text" name="userName" id="username" value="" placeholder="Username"/>
+                    </div>
+                    <div class="6u">                     
+                        <label for="email">Email:&emsp;&emsp;&emsp;</label>
+                        <input type="email" name="email" id="email" value="" placeholder="Email"/>            
+                    </div>
+                    <div class="6u">                       
+                        <label for="password">Password:&emsp;</label>
+                        <input type="password" name="password" id="password" placeholder="Password"> 
+                    </div>
+                    <div class="6u">                     
+                        <label for="username">Address&emsp;&emsp;</label>
+                        <input type="text" name="address" id="address" value="" placeholder="Address"/>
+                    </div>
+                    <div class="6u">                      
+                        <label for="username">Country:&emsp;&emsp;</label>
+                        <input type="text" name="country" id="country" value="" placeholder="Country"/>
+                    </div>
+                    <div class="6u">
+                        <label for="username">URL:&emsp;&emsp;&emsp;</label>
+                        <input type="url" name="url" id="url" value="" placeholder="http://www."/>
+                    </div>
+                </div>
 
                 <footer>
                     <a data-role="button" class="button style2" name="submit" onclick="sign_up_host()">Sign Up</a>
