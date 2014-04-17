@@ -141,7 +141,7 @@ function get_song_history() {
         }
     });
 }
-
+    
 function like(songId) {
     $.post("/like",
             {
