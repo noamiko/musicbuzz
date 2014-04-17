@@ -51,6 +51,7 @@ function login_host() {
 
 
 function signup_user() {
+    alert($("#gender").val());
     $.post("/signup_user",
             {
                 "firstName": $("#firstName").val(),
@@ -64,7 +65,6 @@ function signup_user() {
                 "country": $("#country").val()
             },
     function(data, status) {
-        alert($("#gender").val());
         if (data !== false) {
             current_user = data;
             alert(current_user._id);
