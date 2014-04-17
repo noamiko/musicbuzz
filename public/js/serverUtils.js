@@ -7,8 +7,6 @@ var best_songs;
 var is_a_host = false;
 var lat;
 var lng;
-
-
 function login_user() {
     $.post('/login_user',
             {
@@ -103,7 +101,7 @@ function signup_host() {
 
 function login_to_host() {
     $.post("/login_to_host",
-            {"bizname": $("#login_to_host_form input[name=hostname]").val()},
+            {"bizname": document.forms["login_to_host_form"] ["bizname"].value},
     function(data, status) {
         if (data !== false) {
             current_host = data;
@@ -229,17 +227,16 @@ function showPosition(position) {
 function add_song() {
     $.post("/add_song",
             {
-                "title": $("#deploy_form input[name=title]").val(),
-                "artist": $("#deploy_form input[name=artist]").val(),
-                "length": $("#deploy_form input[name=length]").val(),
-                "url": $("#deploy_form input[name=url]").val()
+                "title": document.forms["deploy_form"] ["title"].value,
+                "artist": document.forms["deploy_form"] ["artist"].value,
+                "length": document.forms["deploy_form"] ["length"].value,
+                "url": document.forms["deploy_form"] ["url"].value
             },
     function(data, status) {
+        
         if (data !== false) {
-            alert("Song added");
         } else {
-            alert("Song wasn't added, error deploying :(");
-
+            
         }
     });
 }
