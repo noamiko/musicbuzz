@@ -25,7 +25,7 @@ SongList.prototype = {
                 throw err;
             }
         });
-        res.send(true);
+        res.redirect('/');
     },
     search_song: function(req, res) {
         song.find({$or: [{title: req.body.key, artist: req.body.key}]},
