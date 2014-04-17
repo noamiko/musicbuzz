@@ -176,7 +176,7 @@ function dislike(songId) {
 function search_song() {
     $.post("/search_song",
             {
-                "key": document.forms["sear,ch_form"] ["search_text"].value
+                "key": document.forms["search_form"] ["search_text"].value
             },
     function(data, status) {
         if (data !== false) {
