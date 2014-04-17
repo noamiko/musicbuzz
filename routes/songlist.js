@@ -11,7 +11,7 @@ function SongList(connection) {
 }
 
 SongList.prototype = {
-    addSong: function(req, res) {
+    add_song: function(req, res) {
 
         // Set up new SongVote data
         newUser = new song();
