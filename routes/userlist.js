@@ -42,7 +42,7 @@ UserList.prototype = {
                 }
             });
 //            res.render('index', {user: newUser});
-              res.send("fdas");
+              res.send();
         } else {
             res.render('index', {user: false});
         }
