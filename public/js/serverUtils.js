@@ -236,7 +236,7 @@ function add_song() {
             },
     function(data, status) {
         if (data !== false) {
-
+            alert("Song added");
         } else {
 
         }
