@@ -30,12 +30,30 @@ SongList.prototype = {
             }
         });
     },
-    getSong: function(req, res) {
-        newUser.find({$or: [{title: req.body.title, artist: req.body.artist},
-                {songId: req.body.songid}]}); //Uncheked 
-        newUser.save(function savedUser(err) {
-            if (err) {
-                throw err;
+    get_song: function(req, res)
+    {
+        song.findOne({songFileId: req.body.song_id},
+        function songFound(err, item)
+        {
+            if (item === null)
+            {
+                res.send(false);
+            } else
+            {
+                res.send(item);
+            }
+        });
+    },
+    search_song: function(req, res) {
+        song.findOne({$or: [{title: req.body.key, artist: req.body.key}]},
+        function songFound(err, item)
+        {
+            if (item === null)
+            {
+                res.send(false);
+            } else
+            {
+                res.send(item);
             }
         });
     }

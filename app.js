@@ -33,15 +33,18 @@ app.get('/', express.static(__dirname + '/public'));
 
 // UserList posts
 app.post('/signup_user', userList.signup_user.bind(userList));
-//app.post('/login_to_host', userList.login_to_host.bind(userList));
+app.post('/login_to_host', userList.login_to_host.bind(userList));
 app.post('/login_user', userList.login_user.bind(userList));
-//app.post('/get_user', userList.get_user.bind(userList));
-//app.post('/get_song_history', userList.get_song_history.bind(userList));
+app.post('/get_user', userList.get_user.bind(userList));
+app.post('/get_song_history', userList.get_song_history.bind(userList));
+app.post('/like', userList.like.bind(userList));
+app.post('/dislike', userList.disLike.bind(userList));
+
 
 // HostList posts
 app.post('/signup_host', hostList.signup_host.bind(hostList));
 //app.post('/get_host', hostList.get_host.bind(hostList));
-//app.post('/login_host', hostList.login_host.bind(hostList));
+app.post('/login_host', hostList.login_host.bind(hostList));
 //app.post('/get_host_users', hostList.get_host_users.bind(hostList));
 
 //Song history posts
@@ -50,9 +53,12 @@ app.post('/signup_host', hostList.signup_host.bind(hostList));
 //Song vote posts
 //app.post('/addsongvote', songVoteList.addSongVote.bind(songVoteList));
 //app.post('/addsong', songList.addSong.bind(songList));
+app.post('/get_song', songList.get_song.bind(songList));
+app.post('/search_song', songList.search_song.bind(songList));
 
-//Song file posts
-//app.post('/addsongvote', songVoteList.addSongVote.bind(songVoteList));
+
+
+
 
 /// catch 404 and forwarding to error handler
 app.use(function(req, res, next) {

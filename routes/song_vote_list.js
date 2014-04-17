@@ -34,19 +34,28 @@ SongVoteList.prototype = {
             }
         });
     },
-    getSongVote: function(req, res) {
-        user.find({host_id: req.body.hostid, songId: req.body.songid});
-        newUser.save(function savedUser(err) {
-            if (err) {
-                throw err;
-            }
-        });
-    },
-    setSongVote: function(req, res) {
-        // TODO
-        newUser.save(function savedUser(err) {
-            if (err) {
-                throw err;
+    get_best_songs: function(req, res) {
+        user.find({host_id: req.body.host_id},
+        function bestSongs(err, items)
+        {
+            if (items.length === 0)
+            {
+                res.send(false);
+            } else
+            {
+                res.send(items.sort
+                        (function compare(a, b)
+                        {
+                            if (a.like < b.like)
+                            {
+                                return -1;
+                            }
+                            if (a.like > b.like)
+                                return 1;
+                            return 0;
+
+                        }
+                        ));
             }
         });
     }
