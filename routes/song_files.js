@@ -15,7 +15,7 @@ SongFiles.prototype = {
         song_file.findOne({},
                 function songFile(err, item)
                 {
-                    if (item === null)
+                    if (item === {})
                     {
                         res.send(false);
                     } else
