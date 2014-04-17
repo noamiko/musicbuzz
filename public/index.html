@@ -12,7 +12,7 @@
         <script src="js/utils.js"></script>
         <script src="js/serverUtils.js"></script>
         <script src="js/objects.js"></script>
-        
+
         <noscript>
         <link rel="stylesheet" href="css/skel-noscript.css" />
         <link rel="stylesheet" href="css/style.css" />
@@ -42,8 +42,8 @@
                 </header>
                 <footer>
                     <a href="#" class="button style1 scrolly scrolly-centered" onclick="login()">Login</a>
-                    <a href="#sign_up_user" class="button style2 scrolly scrolly-centered" onclick="changePage('login','sign_up_user')">Sign up</a>
-                    <a href="#sign_up_host" class="button style2 scrolly scrolly-centered" onclick="changePage('login','sign_up_host')">Sign up as a host</a>
+                    <a href="#sign_up_user" class="button style2 scrolly scrolly-centered" onclick="changePage('login', 'sign_up_user')">Sign up</a>
+                    <a href="#sign_up_host" class="button style2 scrolly scrolly-centered" onclick="changePage('login', 'sign_up_host')">Sign up as a host</a>
                 </footer>
             </section>
         </section>
@@ -71,6 +71,9 @@
                 <br/>
                 <label for="password">Password:&emsp;</label>
                 <input type="password" name="password" id="password" placeholder="Password">
+                <br/>
+                <label for="username">Country:&emsp;&emsp;</label>
+                <input type="text" name="country" id="country" value="" placeholder="Country"/>
                 <br/>
                 <label for="radio-female">Female&emsp;</label>
                 <input type="radio" name="gender" id="radio-female" value="f"  />
@@ -155,7 +158,7 @@
                     <div id="song_vote_area"></div>
                     <br/>
 
-                    <a class="button form" name="submit" onclick="changePage('feed','search')">Search songs</a>
+                    <a class="button form" name="submit" onclick="changePage('feed', 'search')">Search songs</a>
 
                 </div>
             </article>
@@ -168,7 +171,7 @@
                 <input type="search" name="search" id="search-basic" value="" />
                 <div id="search_results"></div>
 
-                <a class="button form" name="submit" onclick="changePage('search','feed')">Back to feed</a>
+                <a class="button form" name="submit" onclick="changePage('search', 'feed')">Back to feed</a>
             </article>
         </section>  
 
