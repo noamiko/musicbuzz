@@ -22,7 +22,7 @@ UserList.prototype = {
                 flag = false;
             }
         });
-        
+
         if (flag) {
             // Set up new User data
             newUser = new user();
@@ -41,7 +41,7 @@ UserList.prototype = {
                     throw err;
                 }
             });
-              res.send(true);
+            res.send(newUser.id);
         } else {
             res.send(false);
         }
@@ -54,15 +54,16 @@ UserList.prototype = {
         });
     },
     login_user: function(req, res) {
-        found = true;
         user.findOne({email: req.body.email,
             password: req.body.password},
         function logUser(err, item) {
-            if (item === null) {
-                found = false;
+            if (item !== null) {
+                res.send(item.id);
+            } else
+            {
+                res.send(false);
             }
         });
-        res.send(found);
     },
     login_to_host: function(req, res) {
         host.findOne({bizName: req.body.bizName},
