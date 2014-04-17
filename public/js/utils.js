@@ -137,7 +137,7 @@ function getGeoLocation() {
 //    {
 //        var lat = position.coords.latitude;
 //        var lng = position.coords.longitude;
-    return {"lat": 00, "lng": 00};
+    return {"lat": 11, "lng": 22};
 //    }
 }
 
