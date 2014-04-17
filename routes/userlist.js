@@ -27,7 +27,7 @@ UserList.prototype = {
 
             // Set up new User data
             newUser = new user();
-            newUser._id = mongoose.Types.ObjectId();
+//          newUser._id = mongoose.Types.ObjectId();
             newUser.firstName = req.body.firstName;
             newUser.lastName = req.body.lastName;
             newUser.userName = req.body.username;
@@ -44,7 +44,7 @@ UserList.prototype = {
                     throw err;
                 }
             });
-            res.send(true);
+            res.send(newUser);
         } else {
             res.send(false);
         }
