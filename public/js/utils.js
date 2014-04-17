@@ -13,7 +13,15 @@ function init() {
 
 
 
+function clear_inputs() {
+    inputs = document.getElementsByTagName('input');
+    for (i = 0; i < e.length; i++) {
+        if (inputs[i].type != 'text')
+            continue;
 
+        inputs[i].value = '';
+    }
+}
 
 
 
@@ -146,13 +154,13 @@ function display_host_song_list(songList, divId) {
 
 function get_geo() {
     if (navigator.geolocation)
-        {
-                var lat = position.coords.latitude;
-                var lng = position.coords.longitude;
-        }
+    {
+        var lat = position.coords.latitude;
+        var lng = position.coords.longitude;
+    }
 }
 
-function changePage(from,to){
-    $("#"+from).hide();
-    $("#"+to).show();
+function changePage(from, to) {
+    $("#" + from).hide();
+    $("#" + to).show();
 }
