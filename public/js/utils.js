@@ -109,12 +109,12 @@ function display_host_song_list(songList, divId) {
 
 
 function getGeoLocation() {
-    if (navigator.geolocation)
-    {
-        var lat = position.coords.latitude;
-        var lng = position.coords.longitude;
-        return {"lat": lat, "lng": lng};
-    }
+//    if (navigator.geolocation)
+//    {
+//        var lat = position.coords.latitude;
+//        var lng = position.coords.longitude;
+        return {"lat": 00, "lng": 00};
+//    }
 }
 
 function changePage(from, to) {
