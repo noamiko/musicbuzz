@@ -72,11 +72,6 @@ function display_song(song, divId) {
     container.appendChild(song.dome);
 }
 
-function display_vite_song(song, divId) {
-
-
-}
-
 
 function display_vote_song_list(songList, divId) {
 
@@ -84,12 +79,13 @@ function display_vote_song_list(songList, divId) {
 
         $("#" + divId).append("<div id=" + divId + "-row-" + i + " class='song-row'></div>");
         container = document.getElementById(divId + "-row-" + i);
-        //the vote Good button
+        //the vote like button
         songList[i].dome = document.createElement("button");
         songList[i].dome.setAttribute("class", "vote-good-button ui-btn ui-shadow ui-corner-all");
         songList[i].dome.setAttribute("type", "button");
         songList[i].dome.setAttribute("data-role", "button");
         songList[i].dome.setAttribute("data-icon", "check");
+        songList[i].dome.setAttribute("onclick", "like("+songList[i]._id+")");
         songList[i].dome.innerHTML = "<h3><br></h3><br>";
         container.appendChild(songList[i].dome);
 
@@ -103,11 +99,12 @@ function display_vote_song_list(songList, divId) {
         songList[i].dome.innerHTML = "<h3>" + songList[i].title + "</h3>" + songList[i].artist;
         container.appendChild(songList[i].dome);
 
-        //the vote BAD button
+        //the vote dislike button
         songList[i].dome = document.createElement("button");
         songList[i].dome.setAttribute("class", "vote-bad-button ui-btn ui-shadow ui-corner-all");
         songList[i].dome.setAttribute("type", "button");
         songList[i].dome.setAttribute("data-role", "button");
+        songList[i].dome.setAttribute("onclick", "dislike("+songList[i]._id+")");
         songList[i].dome.setAttribute("data-icon", "delete");
         songList[i].dome.innerHTML = "<h3><br></h3><br>";
         container.appendChild(songList[i].dome);

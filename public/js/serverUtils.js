@@ -137,7 +137,9 @@ function get_song_history() {
 
 function like(songId) {
     $.post("/like",
-            {"_id": current_host._id,
+            {
+                "host_id": current_host._id,
+                "user_id": current_user._id,
                 "sondId": songId
             },
     function(data, status) {
@@ -151,7 +153,9 @@ function like(songId) {
 
 function dislike(hostid, song) {
     $.post("/dislike",
-            {"_id": current_host._id,
+            {
+                "host_id": current_host._id,
+                "user_id": current_user._id,
                 "sondId": songId
             },
     function(data, status) {
