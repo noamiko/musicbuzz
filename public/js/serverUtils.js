@@ -47,7 +47,7 @@ function login_host() {
 
 
 function signup_user() {
-    alert($("#signup_user_form input[name=firstname]").val());
+    alert($("#signup_user_form input[name=username]").val());
     $.post("/signup_user",
             {
                 "firstname": $("#signup_user_form input[name=firstname]").val(),
