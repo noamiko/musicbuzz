@@ -1,43 +1,42 @@
 function login() {
-$.ajax({
-url: 'http://musicbuzz.azurewebsites.net/login_user',
+    $.ajax({
+        url: 'http://musicbuzz.azurewebsites.net/login_user',
         type: 'POST',
         data: {'firstName': $("#firstName").val()},
         success: function(data) {
-        alert(data);
+            alert(data);
         }
-});
-        }
+    });
+}
 
 function sign_up_user() {
-$.post("/signup_user",
-{
-        "firstName" : $("#firstName").val()
-//        ,
-//        "lastName" : lastName,
-//        "userName" : userName,
-//        "email" : email,
-//        "password" : password,
-//        "geolocation" : geolocation,
-//        "gender" : gender,
-//        "birthDate" : birthDate,
-//        "country" : country
-},
-        function(data, status) {
+    $.post("/signup_user",
+            {
+                "firstName": $("#firstName").val(),
+                "lastName": $("#lastName").val(),
+                "userName": $("#userName").val(),
+                "email": $("#email").val(),
+                "password": $("#password").val(),
+                "geolocation": $("#geolocation").val(),
+                "gender": $("#gender").val(),
+                "birthDate": $("#birthDate").val(),
+                "country": $("#country").val()
+            },
+    function(data, status) {
         alert("Data: " + data + "\nStatus: " + status);
-        });
         clear_inputs();
-        }
+    });
+}
 
 function sign_up_host() {
-$.ajax({
-url: 'http://musicbuzz.azurewebsites.net/signup_host',
+    $.ajax({
+        url: 'http://musicbuzz.azurewebsites.net/signup_host',
         type: 'POST',
         success: function(data) {
-        alert(data);
+            alert(data);
         }
-});
-        }
+    });
+}
 
 //
 ////function verify_password(name, password) {
@@ -58,13 +57,13 @@ url: 'http://musicbuzz.azurewebsites.net/signup_host',
 //}
 
 function sign_in_server(username, email, password, gender, date) {
-var geolocation = getGeoLocation();
-        var userId = new object();
-        var host = null;
-        var user = new user(userId, username, email, password, geolocation, host, gender, date);
-        return true;
-        }
+    var geolocation = getGeoLocation();
+    var userId = new object();
+    var host = null;
+    var user = new user(userId, username, email, password, geolocation, host, gender, date);
+    return true;
+}
 
 function vote_song(adminUserId, song) {
-return true;
-        }
+    return true;
+}
