@@ -74,7 +74,13 @@ UserList.prototype = {
     {
         host.findOne({bizName: req.body.bizname},
         function logUserToHost(err, item) {
-            res.send(item);
+            if (item === null)
+            {
+                res.send(false);
+            } else
+            {
+                res.send(item);
+            }
         });
     },
     get_song_history: function(req, res)
