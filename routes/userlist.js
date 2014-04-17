@@ -27,6 +27,7 @@ UserList.prototype = {
             
             // Set up new User data
             newUser = new user();
+            newUser._id = new ObjectID();
             newUser.firstName = req.body.firstName;
             newUser.lastName = req.body.lastName;
             newUser.userName = req.body.username;
