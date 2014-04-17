@@ -37,9 +37,9 @@ UserList.prototype = {
             newUser.gender = req.body.gender;
             newUser.country = req.body.country;
             newUser.geoLocation = {
-				lng: req.body.geolocation.lng,
+                lng: req.body.geolocation.lng,
                 lat: req.body.geolocation.lat
-				};
+            };
 
             newUser.save(function savedUser(err) {
                 if (err) {
@@ -76,7 +76,7 @@ UserList.prototype = {
     {
         host.findOne({bizName: req.body.bizname},
         function logUserToHost(err, item) {
-            if (item === null)
+            if (item === {})
             {
                 res.send(false);
             } else
