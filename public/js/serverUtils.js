@@ -1,5 +1,5 @@
 var current_host;
-var user_id;
+var current_user;
 
 
 function login() {
@@ -20,7 +20,8 @@ function login_user() {
             },
     function(data, status) {
         if (data !== false) {
-            user_id = data;
+            current_user = data;
+            alert(current_user._id)
             changePage("login_user", "login_to_host");
         } else {
             alert("Wrong email or password");
@@ -64,7 +65,8 @@ function signup_user() {
             },
     function(data, status) {
         if (data !== false) {
-            user_id = data;
+            current_user = data;
+            alert(current_user._id);
             changePage("sign_up_user", "login_to_host");
         } else {
             alert("A user with the same email is already registerd");
