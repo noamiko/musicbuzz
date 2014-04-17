@@ -8,19 +8,20 @@ function init() {
     $('#login_user').show();
 }
 
-function refresh_data(){
+function refresh_data_and_display() {
     current_host = login_to_host(current_host.bizname);
     current_song = get_song(current_host.currentSongId);
     next_song = get_song(current_host.nextSongId);
     get_best_songs();
     get_song_history();
+    refresh_displays();
 }
 
 function refresh_displays() {
-    display_best_songs(best_songs,"best_songs")
-    display_song(current_song,"current_song")
-    display_song(next_song,"next_song")
-    display_list(history_list,"history_list")
+    display_best_songs(best_songs, "best_songs")
+    display_song(current_song, "current_song")
+    display_song(next_song, "next_song")
+    display_list(history_list, "history_list")
     display_title(current_host.bizname)
 }
 
@@ -62,7 +63,7 @@ function validate_gender(gender) {
     return true;
 }
 
-function display_title(title){
+function display_title(title) {
     $('#host_title').text(title)
 }
 
@@ -131,14 +132,17 @@ function display_best_songs(songList, divId) {
     }
 }
 
-
 function getGeoLocation() {
-//    if (navigator.geolocation)
-//    {
-//        var lat = position.coords.latitude;
-//        var lng = position.coords.longitude;
-    return {"lat": 11, "lng": 22};
-//    }
+    if (navigator.geolocation) {
+        navigator.geolocation.getCurrentPosition(showPosition);
+    }
+    else {
+        x.innerHTML = "Geolocation is not supported by this browser.";
+    }
+}
+
+function showPosition(position) {
+    return {"lat": position.coords.latitude, "lng": position.coords.longitude};
 }
 
 function changePage(from, to) {
@@ -152,4 +156,15 @@ function set_host_login_attr() {
     $('#login_btn').attr('onclick', "login_host()");
     $('#signup_btn').attr('onclick', "changePage('login_user', 'sign_up_host')");
 
+}
+
+function timer() {
+    var time_to_refresh = current_song.length;
+    setTimeout(function() {
+        choose_next_song();
+        refresh_data();
+        refresh_data_and_display();
+        //startimg a new timer for the current song
+        timer();
+    }, time_to_refresh);
 }

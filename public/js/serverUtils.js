@@ -4,13 +4,13 @@ var current_song;
 var next_song;
 var history_list;
 var best_songs;
-
+var is_a_host = false;
 
 function login_user() {
     $.post('/login_user',
             {
-                "email": $("#email").val(),
-                "pwd": $("#pwd").val(),
+                "email": $("#login_user_form input[name=email]").val(),
+                "pwd": $("#login_user_form input[name=pwd]").val(),
                 "geolocation": getGeoLocation()
             },
     function(data, status) {
@@ -27,8 +27,8 @@ function login_user() {
 function login_host() {
     $.post('/login_host',
             {
-                "email": $("#email").val(),
-                "pwd": $("#pwd").val(),
+                "email": $("#login_host_form input[name=email]").val(),
+                "pwd": $("#login_host_form input[name=pwd]").val(),
                 "geolocation": getGeoLocation()
 
             },
@@ -36,6 +36,8 @@ function login_host() {
         if (data !== false) {
             current_host = data;
             changePage("login", "feed");
+            is_a_host = true;
+            timer();
         } else {
             alert("Wrong email or password");
         }
@@ -45,18 +47,17 @@ function login_host() {
 
 
 function signup_user() {
-    alert($("#pwd").val()+"  "+$("#username").val()) + $("#birthdate").val() + $("#gender").val() + getGeoLocation().lat;
     $.post("/signup_user",
             {
-                "firstname": $("#firstname").val(),
-                "lastname": $("#lastname").val(),
-                "username": $("#username").val(),
-                "email": $("#email").val(),
-                "pwd": $("#pwd").val(),
+                "firstname": $("#signup_user_form input[name=firstname]").val(),
+                "lastname": $("#signup_user_form input[name=lastname]").val(),
+                "username": $("#signup_user_form input[name=username]").val(),
+                "email": $("#signup_user_form input[name=email]").val(),
+                "pwd": $("#signup_user_form input[name=pwd]").val(),
                 "geolocation": getGeoLocation(),
-                "gender": $("#gender").val(),
-                "birthdate": $("#birthdate").val(),
-                "country": $("#country").val()
+                "gender": $("#signup_user_form input[name=gender]").val(),
+                "birthdate": $("#signup_user_form input[name=birthdate]").val(),
+                "country": $("#signup_user_form input[name=country]").val()
             },
     function(data, status) {
         if (data !== false) {
@@ -72,19 +73,21 @@ function signup_user() {
 function signup_host() {
     $.post("/signup_host",
             {
-                "bizname": $("#bizname").val(),
-                "username": $("#username").val(),
-                "email": $("#email").val(),
-                "pwd": $("#pwd").val(),
-                "address": $("#address").val(),
-                "country": $("#country").val(),
-                "url": $("#url").val(),
+                "bizname": $("#signup_host_form input[name=bizname]").val(),
+                "username": $("#signup_host_form input[name=username]").val(),
+                "email": $("#signup_host_form input[name=email]").val(),
+                "pwd": $("#signup_host_form input[name=pwd]").val(),
+                "address": $("#signup_host_form input[name=address]").val(),
+                "country": $("#signup_host_form input[name=country]").val(),
+                "url": $("#signup_host_form input[name=url]").val(),
                 "geolocation": getGeoLocation()
             },
     function(data, status) {
         if (data !== false) {
             current_host = data;
             changePage("sign_up_host", "feed");
+            is_a_host = true;
+            timer();
         } else {
             alert("A user with the same email is already registerd");
         }
@@ -94,45 +97,45 @@ function signup_host() {
 
 function login_to_host() {
     $.post("/login_to_host",
-            $("#bizname").val(),
-            function(data, status) {
-                if (data !== false) {
-                    current_host = data;
-                    changePage("login_to_host", "feed");
-                    current_song = get_song(current_host.currentSongId);
-                    next_song = get_song(current_host.nextSongId);
-                    get_best_songs();
-                    get_song_history();
-                    refresh_displays()
-                } else {
-                    alert("no such host exist");
-                }
-                clear_inputs();
-            });
+            {"bizname": $("#login_to_host_form input[name=hostname]").val()},
+    function(data, status) {
+        if (data !== false) {
+            current_host = data;
+            changePage("login_to_host", "feed");
+            current_song = get_song(current_host.currentSongId);
+            next_song = get_song(current_host.nextSongId);
+            get_best_songs();
+            get_song_history();
+            refresh_displays()
+        } else {
+            alert("no such host exist");
+        }
+        clear_inputs();
+    });
 }
 
-function get_song(songId) {
+function get_song(song_id) {
     $.post("/get_song",
-            song_id,
-            function(data, status) {
-                if (data !== false) {
-                    return data;
-                } else {
+            {"song_id": song_id},
+    function(data, status) {
+        if (data !== false) {
+            return data;
+        } else {
 
-                }
-            });
+        }
+    });
 }
 
 function get_song_history() {
     $.post("/get_song_histoey",
-            current_user._id,
-            function(data, status) {
-                if (data !== false) {
-                    history_list = data;
-                } else {
+            {"user_id": current_user._id},
+    function(data, status) {
+        if (data !== false) {
+            history_list = data;
+        } else {
 
-                }
-            });
+        }
+    });
 }
 
 function like(songId) {
@@ -166,9 +169,9 @@ function dislike(songId) {
     });
 }
 
-function search_song(songstring) {
+function search_song() {
     $.post("/search_song",
-            {"host_id": ongstring},
+            {"host_id": $("#search_text").val()},
     function(data, status) {
         if (data !== false) {
             display_list("search_results")
@@ -181,6 +184,18 @@ function search_song(songstring) {
 
 function get_best_songs() {
     $.post("/get_best_songs",
+            {"host_id": current_host._id},
+    function(data, status) {
+        if (data !== false) {
+            best_songs = data;
+        } else {
+
+        }
+    });
+}
+
+function choose_next_song() {
+    $.post("/choose_next_song",
             {"host_id": current_host._id},
     function(data, status) {
         if (data !== false) {
