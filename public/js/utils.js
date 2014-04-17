@@ -5,6 +5,7 @@ function init() {
     $('#feed').hide();
     $('#search').hide();
     $('#login').show();
+    
 }
 
 

@@ -1,5 +1,6 @@
 var current_host;
 var current_user;
+var current_song;
 
 
 function login() {
@@ -12,13 +13,6 @@ function login() {
 }
 
 function login_user() {
-    var x = {
-        "email": $("#email").val(),
-        "pwd": $("#pwd").val(),
-        "geolocation": getGeoLocation()
-    };
-    alert(x);
-
     $.post('/login_user',
             {
                 "email": $("#email").val(),
@@ -28,7 +22,6 @@ function login_user() {
     function(data, status) {
         if (data !== false) {
             current_user = data;
-            alert(current_user._id)
             changePage("login_user", "login_to_host");
         } else {
             alert("Wrong email or password");
@@ -38,13 +31,6 @@ function login_user() {
 }
 
 function login_host() {
-    var x = {
-        "email": $("#email").val(),
-        "pwd": $("#pwd").val(),
-        "geolocation": getGeoLocation()
-
-    };
-    alert(x);
     $.post('/login_host',
             {
                 "email": $("#email").val(),
@@ -65,28 +51,16 @@ function login_host() {
 
 
 function signup_user() {
-    var x = {
-        "firstname": $("#firstName").val(),
-        "lastname": $("#lastName").val(),
-        "username": $("#userName").val(),
-        "email": $("#email").val(),
-        "pwd": $("#pwd").val(),
-        "geolocation": getGeoLocation(),
-        "gender": $("#gender").val(),
-        "birthdate": $("#birthDate").val(),
-        "country": $("#country").val()
-    };
-    alert(x);
     $.post("/signup_user",
             {
-                "firstname": $("#firstName").val(),
-                "lastname": $("#lastName").val(),
-                "username": $("#userName").val(),
+                "firstname": $("#firstname").val(),
+                "lastname": $("#lastname").val(),
+                "username": $("#username").val(),
                 "email": $("#email").val(),
                 "pwd": $("#pwd").val(),
                 "geolocation": getGeoLocation(),
                 "gender": $("#gender").val(),
-                "birthdate": $("#birthDate").val(),
+                "birthdate": $("#birthdate").val(),
                 "country": $("#country").val()
             },
     function(data, status) {
@@ -102,23 +76,10 @@ function signup_user() {
 }
 
 function signup_host() {
-    var x = {
-        "bizname": $("#bizName").val(),
-        "username": $("#userName").val(),
-        "email": $("#email").val(),
-        "pwd": $("#pwd").val(),
-        "address": $("#address").val(),
-        "country": $("#country").val(),
-        "url": $("#url").val(),
-        "geolocation": getGeoLocation()
-    };
-    alert(x);
-
-
     $.post("/signup_host",
             {
-                "bizname": $("#bizName").val(),
-                "username": $("#userName").val(),
+                "bizname": $("#bizname").val(),
+                "username": $("#username").val(),
                 "email": $("#email").val(),
                 "pwd": $("#pwd").val(),
                 "address": $("#address").val(),
@@ -138,15 +99,69 @@ function signup_host() {
     });
 }
 
-
-function sign_in_server(username, email, password, gender, date) {
-    var geolocation = getGeoLocation();
-    var userId = new object();
-    var host = null;
-    var user = new user(userId, username, email, password, geolocation, host, gender, date);
-    return true;
+function login_to_host() {
+    $.post("/login_to_host",
+            $("#bizname").val(),
+            function(data, status) {
+                if (data !== false) {
+                    current_host = data;
+                    alert(current_host._id);
+                    changePage("login_to_host", "feed");
+                } else {
+                    alert("no such host exist");
+                }
+                clear_inputs();
+            });
 }
 
-function vote_song(adminUserId, song) {
-    return true;
+function get_current_song(songId) {
+    $.post("/get_song",
+            songId,
+            function(data, status) {
+                if (data !== false) {
+                    current_song = data;
+                } else {
+
+                }
+            });
+}
+
+function get_song_history() {
+    $.post("/get_song_histoey",
+            current_user._id,
+            function(data, status) {
+                if (data !== false) {
+                    history_song_list = data;
+                } else {
+
+                }
+            });
+}
+
+function like(songId) {
+    $.post("/like",
+            {"_id": current_host._id,
+                "sondId": songId
+            },
+    function(data, status) {
+        if (data !== false) {
+
+        } else {
+
+        }
+    });
+}
+
+function dislike(hostid, song) {
+    $.post("/dislike",
+            {"_id": current_host._id,
+                "sondId": songId
+            },
+    function(data, status) {
+        if (data !== false) {
+
+        } else {
+
+        }
+    });
 }
