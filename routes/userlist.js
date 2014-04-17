@@ -41,8 +41,7 @@ UserList.prototype = {
                     throw err;
                 }
             });
-            res.render('index', {user: newUser});
-            res.send("fads");
+//            res.render('index', {user: newUser});
         } else {
             res.render('index', {user: false});
         }
