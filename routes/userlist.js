@@ -63,7 +63,7 @@ UserList.prototype = {
             if (item !== null) {
                 // Update geoLocation 
 
-                res.send(item._id);
+                res.send(item);
             } else
             {
                 res.send(false);
