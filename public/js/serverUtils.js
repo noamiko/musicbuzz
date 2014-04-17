@@ -12,9 +12,16 @@ function login() {
 }
 
 function login_user() {
+    var x = {
+        "email": $("#email").val(),
+        "password": $("#password").val(),
+        "geolocation": getGeoLocation()
+    };
+    alert(x);
+
     $.post('/login_user',
             {
-                "email": login(),
+                "email": $("#email").val(),
                 "password": $("#password").val(),
                 "geolocation": getGeoLocation()
             },
@@ -31,6 +38,13 @@ function login_user() {
 }
 
 function login_host() {
+    var x = {
+        "email": $("#email").val(),
+        "password": $("#password").val(),
+        "geolocation": getGeoLocation()
+
+    };
+    alert(x);
     $.post('/login_host',
             {
                 "email": $("#email").val(),
@@ -52,17 +66,17 @@ function login_host() {
 
 function signup_user() {
     var x = {
-                "firstname": $("#firstName").val(),
-                "lastname": $("#lastName").val(),
-                "username": $("#userName").val(),
-                "email": $("#email").val(),
-                "password": $("#password").val(),
-                "geolocation": getGeoLocation(),
-                "gender": $("#gender").val(),
-                "birthdate": $("#birthDate").val(),
-                "country": $("#country").val()
-            };
-            alert(x);
+        "firstname": $("#firstName").val(),
+        "lastname": $("#lastName").val(),
+        "username": $("#userName").val(),
+        "email": $("#email").val(),
+        "password": $("#password").val(),
+        "geolocation": getGeoLocation(),
+        "gender": $("#gender").val(),
+        "birthdate": $("#birthDate").val(),
+        "country": $("#country").val()
+    };
+    alert(x);
     $.post("/signup_user",
             {
                 "firstname": $("#firstName").val(),
@@ -89,18 +103,18 @@ function signup_user() {
 
 function signup_host() {
     var x = {
-                "bizname": $("#bizName").val(),
-                "username": $("#userName").val(),
-                "email": $("#email").val(),
-                "password": $("#password").val(),
-                "address": $("#address").val(),
-                "country": $("#country").val(),
-                "url": $("#url").val(),
-                "geolocation": getGeoLocation()
-            };
+        "bizname": $("#bizName").val(),
+        "username": $("#userName").val(),
+        "email": $("#email").val(),
+        "password": $("#password").val(),
+        "address": $("#address").val(),
+        "country": $("#country").val(),
+        "url": $("#url").val(),
+        "geolocation": getGeoLocation()
+    };
     alert(x);
-    
-    
+
+
     $.post("/signup_host",
             {
                 "bizname": $("#bizName").val(),
