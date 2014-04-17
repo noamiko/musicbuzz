@@ -3,14 +3,14 @@ var mongoose = require('mongoose')
 
 module.exports = SongList;
 
-function songlist(connection) {
+function SongList(connection) {
     mongoose.connect(connection, function(err) {
         // already connected... do nothing...
 
     });
 }
 
-songlist.prototype = {
+SongList.prototype = {
     addSong: function(req, res) {
         var title = req.body.title;
         var artist = req.body.artist;
