@@ -175,7 +175,9 @@ function dislike(songId) {
 
 function search_song() {
     $.post("/search_song",
-            {"host_id": $("#search_text").val()},
+            {
+                "key": document.forms["search_form"] ["search_text"].value
+            },
     function(data, status) {
         if (data !== false) {
             display_list("search_results");
@@ -233,10 +235,10 @@ function add_song() {
                 "url": document.forms["deploy_form"] ["url"].value
             },
     function(data, status) {
-        
+
         if (data !== false) {
         } else {
-            
+
         }
     });
 }
