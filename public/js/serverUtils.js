@@ -76,7 +76,6 @@ function signup_user() {
 }
 
 function signup_host() {
-    alert(lng);
     $.post("/signup_host",
             {
                 "bizname": document.forms["signup_host_form"] ["bizname"].value,
