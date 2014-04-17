@@ -9,12 +9,16 @@
         <script src="js/jquery.poptrox.min.js"></script>
         <script src="js/skel.min.js"></script>
         <script src="js/init.js"></script>
+        <script src="js/utils.js"></script>
+        <script src="js/serverUtils.js"></script>
+        <script src="js/objects.js"></script>
+        
         <noscript>
         <link rel="stylesheet" href="css/skel-noscript.css" />
         <link rel="stylesheet" href="css/style.css" />
         </noscript>
     </head>
-    <body>
+    <body onload="init();">
 
         <!-- LOGIN  -->
         <section id="login" data-role="page">
@@ -38,8 +42,8 @@
                 </header>
                 <footer>
                     <a href="#" class="button style1 scrolly scrolly-centered" onclick="login()">Login</a>
-                    <a href="#sign_up_user" class="button style2 scrolly scrolly-centered">Sign up</a>
-                    <a href="#sign_up_host" class="button style2 scrolly scrolly-centered">Sign up as a host</a>
+                    <a href="#sign_up_user" class="button style2 scrolly scrolly-centered" onclick="changePage('login','sign_up_user')">Sign up</a>
+                    <a href="#sign_up_host" class="button style2 scrolly scrolly-centered" onclick="changePage('login','sign_up_host')">Sign up as a host</a>
                 </footer>
             </section>
         </section>
@@ -151,7 +155,7 @@
                     <div id="song_vote_area"></div>
                     <br/>
 
-                    <a class="button form" name="submit" onclick="change_page('search')">Search songs</a>
+                    <a class="button form" name="submit" onclick="changePage('feed','search')">Search songs</a>
 
                 </div>
             </article>
@@ -164,7 +168,7 @@
                 <input type="search" name="search" id="search-basic" value="" />
                 <div id="search_results"></div>
 
-                <a class="button form" name="submit" onclick="change_page('feed')">Back to feed</a>
+                <a class="button form" name="submit" onclick="changePage('search','feed')">Back to feed</a>
             </article>
         </section>  
 

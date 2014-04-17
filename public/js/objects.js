@@ -12,8 +12,9 @@ function host(id, bizName, userName, email, password, address, country, url, cur
     this.geoLocation = geoLocation;
 }
 
-function user(id, firstName, lastName, userName, email, password, geolocation, host, gender, birthDate, country) {
+function user(id, firstName, lastName, userName, email, password, geolocation, hostid, gender, birthDate, country) {
     this.id = id;
+    this.hostid = hostid;
     this.firstName = firstName;
     this.lastName = lastName;
     this.userName = userName;

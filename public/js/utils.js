@@ -1,8 +1,25 @@
 function init() {
-    get_history();
-    get_currentSong();
-    get_next_to_play_list();
+//    get_history();
+//    get_currentSong();
+//    get_next_to_play_list();
+    $('#sign_up_user').hide();
+    $('#sign_up_host').hide();
+    $('#login_to_host').hide();
+    $('#feed').hide();
+    $('#search').hide();
+    $('#login').show();
 }
+
+
+
+
+
+
+
+
+
+
+
 
 function sign_in_btn() {
     var name = document.forms["signInForm"]["username"].value;
@@ -72,10 +89,6 @@ function display_list(songList, divId) {
 
         songList[i].dome.setAttribute("type", "button");
         songList[i].dome.setAttribute("data-role", "button");
-        //todo !!!!
-        //
-        //!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-        //!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
         songList[i].dome.setAttribute("onclick", "voteGood(" + songList[i].songId + ")");
         songList[i].dome.innerHTML = "<h3>" + songList[i].title + "</h3>" + songList[i].artist;
         container.appendChild(songList[i].dome);
@@ -139,6 +152,7 @@ function get_geo() {
         }
 }
 
-function change_page(toPage) {
-    location.hash = "#" + toPage;
+function changePage(from,to){
+    $("#"+from).hide();
+    $("#"+to).show();
 }
