@@ -1,161 +1,178 @@
-<!DOCTYPE html>
+<!DOCTYPE HTML>
+<html>
     <head>
-        <title>My App</title>
-        
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.2/jquery.mobile-1.4.2.min.css" />
-        <script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
-        <script src="http://code.jquery.com/mobile/1.4.2/jquery.mobile-1.4.2.min.js"></script>
-        <link href="css/myStyle.css" rel="stylesheet" type="text/css">
-        <script src="js/utils.js"></script>
-        <script src="js/serverUtils.js"></script>
+        <title>Overflow by HTML5 UP</title>
+        <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+        <meta name="description" content="" />
 
-    </head> 
-        <body onload="init();">
+        <script src="js/jquery.min.js"></script>
+        <script src="js/jquery.poptrox.min.js"></script>
+        <script src="js/skel.min.js"></script>
+        <script src="js/init.js"></script>
+        <noscript>
+        <link rel="stylesheet" href="css/skel-noscript.css" />
+        <link rel="stylesheet" href="css/style.css" />
+        </noscript>
+    </head>
+    <body>
 
-        
-        <!-- begin log-in page -->
-        <section id="log-in" data-role="page">
-            <header data-role="header">
-                <h1>Login</h1>
-            </header> 
-            <div data-role="content"> 
-                <form name="logInForm" action="/adduser" method="post">
-                    <div data-role="fieldcontain" class="ui-hide-label">
+        <!-- LOGIN  -->
+        <section id="login" data-role="page">
+
+            <!-- Header -->
+            <section id="header">
+                <header>
+                    <h1>MusicBuzz</h1>
+                    <p>By IDC hack</p>
+
+                    <div data-role="fieldcontain">
                         <label for="username">Username:</label>
                         <input type="text" name="username" id="username" value="" placeholder="Username"/>         
-
+                        <br/>
                         <label for="password">Password:</label>
                         <input type="password" name="password" id="password" placeholder="Password">
-                        
-                        <br/>
-                        <button type="submit" name="submit">Login</button>
-                        
-                        <button type="button" onclick="change_page('sign-in')">Sign-In</button>
+                        <br/><br/><br/>
                     </div>
-                </form>
-				<form name="logInForm" action="/addhost" method="post">
-                    <div data-role="fieldcontain" class="ui-hide-label">
-                        <label for="username">Username:</label>
-                        <input type="text" name="username" id="username" value="" placeholder="Username"/>         
 
-                        <label for="password">Password:</label>
-                        <input type="password" name="password" id="password" placeholder="Password">
-                        
-                        <br/>
-                        <button type="submit" name="submit">Login</button>
-                        
-                        <button type="button" onclick="change_page('sign-in')">Sign-In</button>
-                    </div>
-                </form>
-            </div>
-            
-            <section id="footer" data-id="PersistentFooter" data-role="footer" data-position="fixed">
-                <div data-role="navbar">
-                    <ul>
-                        <li><button data-role="button" data-icon="arrow-r" class="ui-btn-active ui-state-persist">Login</button></li>
-                        <li><button data-role="button" data-icon="arrow-r" disabled="">Feed</button></li>
-                    </ul>
-                </div>
+
+                </header>
+                <footer>
+                    <a href="#" class="button style1 scrolly scrolly-centered" onclick="login()">Login</a>
+                    <a href="#sign_up_user" class="button style2 scrolly scrolly-centered">Sign up</a>
+                    <a href="#sign_up_host" class="button style2 scrolly scrolly-centered">Sign up as a host</a>
+                </footer>
             </section>
         </section>
-        
-        
-               <!-- begin sign-in page -->
-        <section id="sign-in" data-role="page">
-            <header data-role="header">
-                <h1>Sign-in</h1>
-            </header>
-            <div data-role="fieldcontain">
-                <form name="signInForm" action="demo_form.asp" onsubmit="sign_in_btn()" class="ui-hide-label" method="post">
 
-                        <label for="username">Username:</label>
-                        <input type="text" name="username" id="username" value="" placeholder="Username"/>
 
-                        <label for="email">Email:</label>
-                        <input type="email" name="email" id="email" value="" placeholder="Email"/>            
 
-                        <label for="password">Password:</label>
-                        <input type="password" name="password" id="password" placeholder="Password"> 
-                        
-                        <label for="date" >Date:</label>
-                        <input type="date" name="date" id="date" value="">
-                        
-                        <label for="radio-female">Female</label>
-                        <input type="radio" name="gender" id="radio-female" value="f"  />
-                        
-                        <label for="radio-male">Male</label>
-                        <input type="radio" name="gender" id="radio-male" value="m"   />
+        <!-- sign up user page -->
+        <section id="sign_up_user" data-role="page">
+            <!-- Banner -->
+            <section id="banner">
+                <header>
+                    <h2>Sign Up form</h2>
+                </header>
+                <label for="username">First Name:&emsp;</label>
+                <input type="text" name="firstname" id="firstname" value="" placeholder="First Name"/>
+                <br/>
+                <label for="username">Last Name:&emsp;</label>
+                <input type="text" name="lastname" id="lastname" value="" placeholder="Last Name"/>
+                <br/>
+                <label for="username">Username:&emsp;</label>
+                <input type="text" name="username" id="username" value="" placeholder="Username"/>
+                <br/>
+                <label for="email">Email:&emsp;&emsp;&emsp;</label>
+                <input type="email" name="email" id="email" value="" placeholder="Email"/>            
+                <br/>
+                <label for="password">Password:&emsp;</label>
+                <input type="password" name="password" id="password" placeholder="Password">
+                <br/>
+                <label for="radio-female">Female&emsp;</label>
+                <input type="radio" name="gender" id="radio-female" value="f"  />
+                <br/>
+                <label for="radio-male">Male&emsp;</label>
+                <input type="radio" name="gender" id="radio-male" value="m"   />
+                <br/>
+                <label for="date" >Birth Date:&emsp;</label>
+                <input type="date" name="birthdate" id="birthdate" value="">
 
-                        <button data-role="button" type="button" name="submit" onclick="sign_in_btn()">Sign-in</button>
-
-                    </form>
-                </div>
-            <div data-id="PersistentFooter" data-role="footer" data-position="fixed">
-                <div data-role="navbar">
-                    <ul>
-                        <li><button data-role="button" data-icon="arrow-r" class="ui-btn-active ui-state-persist">Sign-in</button></li>
-                        <li><button data-role="button" data-icon="arrow-r" disabled="">Feed</button></li>
-                    </ul>
-                </div>
-            </div>
-            
+                <footer>
+                    <a data-role="button" class="button style2 scrolly" name="submit" onclick="sign_up_user()">Sign up</a>
+                </footer>
+            </section>
         </section>
-        
-        
-        <!-- begin feed page -->
 
-        <section id="feed" data-role="page">
-            <header data-role="header">
-                <h1>Live feed</h1>
-            </header> 
-            <div data-role="content"> 
-            <p>Currently playing:</p> 
-            
-            <div id="current-song">
-            </div> 
 
-             
-            <div id="host-song-list">
-                
-            </div>
-            
-            
-            <div data-id="PersistentFooter" data-role="footer" data-position="fixed">
-                <div data-role="navbar">
-                    <ul>
-                        <li><button data-role="button" data-icon="arrow-r" class="ui-btn-active ui-state-persist">Feed</button></li>
-                        <li><button data-role="button" data-icon="arrow-r" onclick="change_page('search-page');">Song Search</button></li>
-                    </ul>
-                </div>
-            </div>
-            
+
+
+
+        <!-- sign up host page -->
+        <section id="sign_up_host" data-role="page">
+            <!-- Banner -->
+            <section id="banner">
+                <header>
+                    <h2>Sign Up form</h2>
+                </header>
+                <label for="username">Biz Name:&emsp;</label>
+                <input type="text" name="bizname" id="bizname" value="" placeholder="Biz Name"/>
+                <br>
+                <label for="username">Username:&emsp;</label>
+                <input type="text" name="username" id="username" value="" placeholder="Username"/>
+                <br>
+                <label for="email">Email:&emsp;&emsp;&emsp;</label>
+                <input type="email" name="email" id="email" value="" placeholder="Email"/>            
+                <br>
+                <label for="password">Password:&emsp;</label>
+                <input type="password" name="password" id="password" placeholder="Password"> 
+                <br>
+                <label for="username">Address&emsp;&emsp;</label>
+                <input type="text" name="address" id="address" value="" placeholder="Address"/>
+                <br>
+                <label for="username">Country:&emsp;&emsp;</label>
+                <input type="text" name="country" id="country" value="" placeholder="Country"/>
+                <br>
+                <label for="username">URL:&emsp;&emsp;&emsp;</label>
+                <input type="url" name="url" id="url" value="" placeholder="http://www."/>
+
+
+                <footer>
+                    <a data-role="button" class="button style2" name="submit" onclick="sign_up_host()">Sign Up</a>
+                </footer>
+            </section>
         </section>
-        
-         <!-- begin search-page page -->
-         <section id="search-page" data-role="page">
-            <header data-role="header">
-                <h1>Search song</h1>
-            </header> 
-            <div data-role="content">
-                <label for="search-basic">Search Input:</label>
+
+        <!-- login to host page -->
+        <section id="login_to_host" data-role="page">
+            <!-- Feature 1 -->
+            <article id="first" class="container box style1" style="text-align: center">
+                <div class="inner">
+                    <header>
+                        <h2>Login to HOST</h2>
+                    </header>
+                    <label for="username">Host Name:</label>
+                    <input type="text" name="hostname" id="hostname" value="" placeholder="Host Name"/>   
+                    <br/>
+                    <br/>
+                    <a class="button form" name="submit" onclick="login_to_host()">Enter</a>
+
+                </div>
+            </article>
+        </section>
+
+        <!-- feed page -->
+        <section id="feed" data-role="page" class="container">
+            <article id="first" class="container box style1" style="text-align: center">
+                <div class="inner">
+                    <header>
+                        <div id="hostname_area"></div>
+                    </header>
+                    <div id="current-song_area"></div>
+                    <div id="song_vote_area"></div>
+                    <br/>
+
+                    <a class="button form" name="submit" onclick="change_page('search')">Search songs</a>
+
+                </div>
+            </article>
+        </section>
+
+
+        <section id="search" data-role="page" class="container">
+            <article id="first" class="container box style1" style="text-align: center">
+
                 <input type="search" name="search" id="search-basic" value="" />
-                
-                <div id="songs">
+                <div id="search_results"></div>
 
-                </div>        
-           
-                <div data-id="PersistentFooter" data-role="footer" data-position="fixed">
-                    <div data-role="navbar">
-                        <ul>
-                            <li><button data-role="button" data-icon="arrow-r" onclick="change_page('feed')">Feed</button></li>
-                            <li><button data-role="button" data-icon="arrow-r" class="ui-btn-active ui-state-persist">Song search</button></li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </section>
-     
+                <a class="button form" name="submit" onclick="change_page('feed')">Back to feed</a>
+            </article>
+        </section>  
+
+
+
+
+
+
+
     </body>
-
+</html>
