@@ -12,12 +12,12 @@ function SongVoteList(connection) {
 
 SongVoteList.prototype = {
     addSongVote: function(req, res) {
-        var host_id = req.body.host_id;
-        var songId = req.body.songId;
+        var host_id = req.body.hostid;
+        var songId = req.body.songid;
         var like = req.body.like;
-        var disLike = req.body.disLike;
-        var lastVotedDate = req.body.lastVotedDate;
-        var nextAvailibleVoteDate = req.body.nextAvailibleVoteDate;
+        var disLike = req.body.dislike;
+        var lastVotedDate = req.body.lastvoteddate;
+        var nextAvailibleVoteDate = req.body.nextavailiblevotedate;
 
         // Set up new SongVote data
         newUser = new song_vote();
@@ -35,7 +35,7 @@ SongVoteList.prototype = {
         });
     },
     getSongVote: function(req, res) {
-        user.find({host_id: req.body.host_id, songId: req.body.songId});
+        user.find({host_id: req.body.hostid, songId: req.body.songid});
         newUser.save(function savedUser(err) {
             if (err) {
                 throw err;

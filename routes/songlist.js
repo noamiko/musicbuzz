@@ -15,7 +15,7 @@ SongList.prototype = {
         var title = req.body.title;
         var artist = req.body.artist;
         var length = req.body.length;
-        var songFileId = req.body.songFileId;
+        var songFileId = req.body.songfileid;
 
         // Set up new SongVote data
         newUser = new song();
@@ -32,7 +32,7 @@ SongList.prototype = {
     },
     getSong: function(req, res) {
         newUser.find({$or: [{title: req.body.title, artist: req.body.artist},
-                {songId: req.body.songId}]}); //Uncheked 
+                {songId: req.body.songid}]}); //Uncheked 
         newUser.save(function savedUser(err) {
             if (err) {
                 throw err;
