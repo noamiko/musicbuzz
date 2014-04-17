@@ -92,12 +92,14 @@ HostList.prototype = {
 
         for (var song in songVotes)
         {
-            
+            song.totalScore = 0.6 * song.like;
         }
 
+        // Give each three passive votes with diffrent weights
         for (var user in users)
         {
             var songHistory = getSongHistory(user._id); //TODO
+            var topThreeSongs = getTopTjreeSongs(songHistory);
 
         }
     }
