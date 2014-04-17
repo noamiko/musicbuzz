@@ -41,7 +41,8 @@ UserList.prototype = {
                     throw err;
                 }
             });
-            res.render('index', {user: newUser});
+            res.writeHead(200);
+            res.writeHead("fdsa")
         } else {
             res.render('index', {user: false});
         }
