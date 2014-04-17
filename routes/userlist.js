@@ -44,7 +44,7 @@ UserList.prototype = {
                     throw err;
                 }
             });
-            res.send(newUser._id);
+            res.send(100);
         } else {
             res.send(false);
         }
