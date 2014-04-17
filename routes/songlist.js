@@ -25,7 +25,6 @@ SongList.prototype = {
                 throw err;
             }
         });
-        res.redirect('/');
     },
     search_song: function(req, res) {
         song.find({$or: [{title: req.body.key, artist: req.body.key}]},
@@ -39,5 +38,12 @@ SongList.prototype = {
                 res.send(items);
             }
         });
+    }, 
+    get_song: function(req, res)
+    {
+        song.find({_id: req.body.song_id}, function foundSong(err, item)
+        {
+            res.send(item);
+        })
     }
 };

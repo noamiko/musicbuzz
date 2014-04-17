@@ -108,8 +108,8 @@ HostList.prototype = {
                 if (a.lastVotedDate < b.lastVotedDate)
                     return 1;
                 return 0;
-            })
-        })
+            });
+        });
     },
     getTopThreeSongs: function(songHistory)
     {
