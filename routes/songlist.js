@@ -27,7 +27,8 @@ SongList.prototype = {
         });
     },
     search_song: function(req, res) {
-        song.find({$or: [{title: req.body.key, artist: req.body.key}]},
+//        song.find({$or: [{title: req.body.key, artist: req.body.key
+        song.find({artist: req.body.key},
         function songFound(err, items)
         {
             if (item === {})
@@ -38,12 +39,12 @@ SongList.prototype = {
                 res.send(items);
             }
         });
-    }, 
+    },
     get_song: function(req, res)
     {
-        song.find({_id: req.body.song_id}, function foundSong(err, item)
+        song.find({_id: req.body.song_id}, function foundSong(err, items)
         {
-            res.send(item);
+            res.send(items);
         })
     }
 };
