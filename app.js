@@ -36,9 +36,11 @@ app.post('/signup_user', userList.signup_user.bind(userList));
 app.post('/login_to_host', userList.login_to_host.bind(userList));
 app.post('/login_user', userList.login_user.bind(userList));
 app.post('/get_user', userList.get_user.bind(userList));
-app.post('/get_song_history', userList.get_user_song_history.bind(userList));
 app.post('/like', userList.like.bind(userList));
 app.post('/dislike', userList.disLike.bind(userList));
+
+// SongHistory list
+app.post('/get_song_history', userList.get_user_song_history.bind(songHistoryList));
 
 
 // HostList posts
