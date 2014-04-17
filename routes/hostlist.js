@@ -55,7 +55,7 @@ HostList.prototype = {
             res.send(false);
         }
     },
-    getHost: function(req, res) {
+    get_host: function(req, res) {
         host.findOne({bizName: req.body.bizName}, function foundHost(err, item) {
             res.send(item);
         });
@@ -80,5 +80,9 @@ HostList.prototype = {
                 res.send(item);
             }
         });
+    },
+    get_users: function(req, res)
+    {
+
     }
 };

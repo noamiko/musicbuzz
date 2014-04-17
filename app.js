@@ -33,6 +33,8 @@ app.post('/signup_user', userList.signup_user.bind(userList));
 app.post('/login_user', userList.login_user.bind(userList));
 //app.post('/get_user', userList.getUser().bind(userList));
 app.post('/signup_host', hostList.signup_host.bind(hostList));
+//app.post('/get_host', hostList.get_host.bind(hostList));
+//app.post('/login_host', hostList.login_host.bind(hostList));
 //app.post('/addsongvote', songVoteList.addSongVote.bind(songVoteList));
 //app.post('/addsong', songList.addSong.bind(songList));
 
