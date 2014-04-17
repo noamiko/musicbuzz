@@ -41,7 +41,6 @@ UserList.prototype = {
                     throw err;
                 }
             });
-//            res.render('index', {user: newUser});
               res.send(true);
         } else {
             res.render(false);
