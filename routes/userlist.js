@@ -22,7 +22,7 @@ UserList.prototype = {
                 flag = false;
             }
         });
-
+        
         if (flag) {
             // Set up new User data
             newUser = new user();
@@ -42,7 +42,7 @@ UserList.prototype = {
                 }
             });
             res.render('index', {user: newUser});
-            res.send(404);
+            return res.send(true);
         } else {
             res.render('index', {user: false});
         }
