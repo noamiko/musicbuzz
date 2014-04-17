@@ -31,7 +31,7 @@ UserList.prototype = {
             newUser.lastName = req.body.lastname;
             newUser.userName = req.body.username;
             newUser.email = email;
-            newUser.password = req.body.password;
+            newUser.password = req.body.pwd;
             newUser.birthDate = req.body.birthdate;
             newUser.gender = req.body.gender;
             newUser.country = req.body.country;
@@ -57,7 +57,7 @@ UserList.prototype = {
     },
     login_user: function(req, res) {
         user.findOne({email: req.body.email,
-            password: req.body.password},
+            password: req.body.pwd},
         function logUser(err, item) {
             if (item !== null) {
                 // Update geoLocation 

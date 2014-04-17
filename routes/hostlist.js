@@ -37,7 +37,7 @@ HostList.prototype = {
             newHost.bizName = bizName;
             newHost.userName = req.body.username;
             newHost.email = email;
-            newHost.password = req.body.password;
+            newHost.password = req.body.pwd;
             newHost.address = req.body.address;
             newHost.country = req.body.country;
             newHost.url = req.body.url;
@@ -69,7 +69,7 @@ HostList.prototype = {
     login_host: function(req, res)
     {
         var email = req.body.email;
-        var password = req.body.password;
+        var password = req.body.pwd;
 
         //Verify email and password are valid
         host.findOne({email: email, password: password}, function foundHost(err, item) {
