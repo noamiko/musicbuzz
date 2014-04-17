@@ -35,7 +35,7 @@ SongList.prototype = {
         song.findOne({songFileId: req.body.song_id},
         function songFound(err, item)
         {
-            if (item === null)
+            if (item === {})
             {
                 res.send(false);
             } else
@@ -48,7 +48,7 @@ SongList.prototype = {
         song.findOne({$or: [{title: req.body.key, artist: req.body.key}]},
         function songFound(err, item)
         {
-            if (item === null)
+            if (item === {})
             {
                 res.send(false);
             } else

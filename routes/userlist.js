@@ -18,7 +18,7 @@ UserList.prototype = {
         flag = true;
         user.findOne({email: email}, function foundUser(err, item)
         {
-            if (item === null) {
+            if (item === {}) {
                 flag = false;
             }
         });
@@ -99,7 +99,7 @@ UserList.prototype = {
         function likeSong(err, item)
         {
             //If song_vote doesn't exist create a new song_vote
-            if (item === null)
+            if (item === {})
             {
                 newSongVote = new song_vote();
                 newSongVote.host_id = req.body.host_id;
@@ -125,7 +125,7 @@ UserList.prototype = {
                 song_vote.findOne({user_id: req.body.user_id, songId: req.body.song_id},
                 function likeSongHistory(err, item)
                 {
-                    if (item === null)
+                    if (item === {})
                     {
                         newSongHistory = new song_history();
                         newSongHistory.user_id = req.body.user_id;
@@ -150,7 +150,7 @@ UserList.prototype = {
         function dislikeSong(err, item)
         {
             //If song_vote doesn't exist create a new song_vote
-            if (item === null)
+            if (item === {})
             {
                 newSongVote = new song_vote();
                 newSongVote.host_id = req.body.host_id;

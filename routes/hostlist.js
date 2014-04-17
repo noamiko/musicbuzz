@@ -18,14 +18,14 @@ HostList.prototype = {
         var flag = true;
         //Verify bizName and email are unique
         host.findOne({bizName: bizName}, function foundHost(err, item) {
-            if (item === null) {
+            if (item === {}) {
                 flag = false;
             }
         });
 
         if (flag) {
             host.findOne({email: email}, function foundHost(err, item) {
-                if (item === null) {
+                if (item ==={}) {
                     flag = false;
                 }
             });
@@ -73,7 +73,7 @@ HostList.prototype = {
 
         //Verify email and password are valid
         host.findOne({email: email, password: password}, function foundHost(err, item) {
-            if (item === null) {
+            if (item === {}) {
                 res.send(false);
             } else
             {
