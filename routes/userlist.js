@@ -24,10 +24,10 @@ UserList.prototype = {
         });
 
         if (flag) {
-            
+
             // Set up new User data
             newUser = new user();
-            newUser._id = new ObjectID();
+            newUser._id = mongoose.Types.ObjectId();
             newUser.firstName = req.body.firstName;
             newUser.lastName = req.body.lastName;
             newUser.userName = req.body.username;
@@ -63,7 +63,7 @@ UserList.prototype = {
             if (item !== null) {
                 // Update geoLocation 
 
-                res.send(item.id);
+                res.send(item._id);
             } else
             {
                 res.send(false);
@@ -84,8 +84,8 @@ UserList.prototype = {
             res.send(items);
         });
     },
-    like: function(req,res)
+    like: function(req, res)
     {
-        
+
     }
 };
