@@ -26,7 +26,6 @@ function login_user() {
         } else {
             alert("Wrong email or password");
         }
-        clear_inputs();
     });
 }
 
@@ -45,7 +44,6 @@ function login_host() {
         } else {
             alert("Wrong email or password");
         }
-        clear_inputs();
     });
 }
 
@@ -72,7 +70,6 @@ function signup_user() {
         } else {
             alert("A user with the same email is already registerd");
         }
-        clear_inputs();
     });
 }
 
@@ -97,7 +94,6 @@ function signup_host() {
         } else {
             alert("A user with the same email is already registerd");
         }
-        clear_inputs();
     });
 }
 
