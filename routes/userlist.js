@@ -1,7 +1,7 @@
 var mongoose = require('mongoose')
         , user = require('../models/user.js')
-        , host = require('../models/host.js');
-
+        , host = require('../models/host.js')
+        , song_history = require('../models/song_history.js');
 module.exports = UserList;
 
 function UserList(connection) {
@@ -77,6 +77,9 @@ UserList.prototype = {
     },
     get_song_history: function(req, res)
     {
-        
+        song_history.find({user_id: req.body.user_id},
+        function logUserToHost(err, items) {
+            res.send(items);
+        });
     }
 };
