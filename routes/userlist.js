@@ -36,8 +36,8 @@ UserList.prototype = {
             newUser.birthDate = req.body.birthdate;
             newUser.gender = req.body.gender;
             newUser.country = req.body.country;
-//            newUser.geoLocation = {lng: req.body.geoLocation.lng,
-//                lat: req.body.geoLocation.lat};
+            newUser.geoLocation = {lng: req.body.geolocation.lng,
+                lat: req.body.geolocation.lat};
 
             newUser.save(function savedUser(err) {
                 if (err) {

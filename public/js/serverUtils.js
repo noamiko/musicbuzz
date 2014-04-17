@@ -45,7 +45,7 @@ function login_host() {
 
 
 function signup_user() {
-    alert($("#pwd").val()+"  "+$("#username").val());
+    alert($("#pwd").val()+"  "+$("#username").val()) + $("#birthdate").val() + $("#gender").val() + getGeoLocation().lat;
     $.post("/signup_user",
             {
                 "firstname": $("#firstname").val(),
