@@ -42,7 +42,7 @@ UserList.prototype = {
                 }
             });
 //            res.render('index', {user: newUser});
-              res.send();
+              res.send({user: "noam", fucker:"tal"});
         } else {
             res.render('index', {user: false});
         }
