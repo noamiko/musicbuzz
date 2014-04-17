@@ -73,7 +73,7 @@ function signup_user() {
     });
 }
 
-function sign_up_host() {
+function signup_host() {
     $.post("/signup_host",
             {
                 "bizName": $("#bizName").val(),
