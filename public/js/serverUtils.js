@@ -1,8 +1,4 @@
 function login() {
-
-}
-
-function login() {
     $.ajax({
         url: 'http://musicbuzz.azurewebsites.net/login_user',
         type: 'POST',
@@ -17,6 +13,7 @@ function sign_up_user() {
     $.ajax({
         url: 'http://musicbuzz.azurewebsites.net/signup_user',
         type: 'POST',
+        data: {'firstName': $("#firstName").val()},
         success: function(data) {
             alert(data);
         }
