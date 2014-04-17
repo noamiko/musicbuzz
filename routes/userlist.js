@@ -24,6 +24,7 @@ UserList.prototype = {
         });
 
         if (flag) {
+            
             // Set up new User data
             newUser = new user();
             newUser.firstName = req.body.firstName;
@@ -42,7 +43,7 @@ UserList.prototype = {
                     throw err;
                 }
             });
-            res.send(newUser.id);
+            res.send(newUser._id);
         } else {
             res.send(false);
         }
@@ -81,5 +82,9 @@ UserList.prototype = {
         function logUserToHost(err, items) {
             res.send(items);
         });
+    },
+    like: function(req,res)
+    {
+        
     }
 };
