@@ -8,6 +8,19 @@
 /* Basic                                                                         */
 /*********************************************************************************/
 
+/*#host_btn{
+    size: 5pt;
+    padding: 0em;
+    margin: 0em;
+    border: 0em;
+    position: initial;
+    bottom: 1em;
+    left: 1em;
+}*/
+
+
+
+
 	*
 	{
 		text-shadow: none !important;
@@ -15,6 +28,7 @@
 
 	body,input,textarea,select
 	{
+            alignment-adjust: central;
 		line-height: 1.5em;
 		font-size: 12pt;
 		letter-spacing: 0;
