@@ -76,6 +76,7 @@ function signup_user() {
 }
 
 function signup_host() {
+    alert($("#bizName").val());
     $.post("/signup_host",
             {
                 "bizName": $("#bizName").val(),
@@ -99,23 +100,6 @@ function signup_host() {
     });
 }
 
-//
-////function verify_password(name, password) {
-//    return true;
-//}
-//
-//function get_currentSong(adminId) {
-//    display_song(song1, "current-song");
-//}
-//
-//function get_next_to_play_list() {
-//    display_host_song_list(hostSongList, "host-song-list")
-//}
-//
-////function get_history(userId){
-//function get_history() {
-//    display_list(songList, "songs");
-//}
 
 function sign_in_server(username, email, password, gender, date) {
     var geolocation = getGeoLocation();
