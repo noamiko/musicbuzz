@@ -3,7 +3,6 @@ var Schema = mongoose.Schema;
 
 // Host schemma 
 var hostSchemma = new Schema({
-    _id: ObjectIdHost,
     bizName: String,
     userName: String,
     email: String,
@@ -11,8 +10,8 @@ var hostSchemma = new Schema({
     address: String,
     country: String,
     url: String,
-    currentSongId: ObjectIdCurrentSong,
-    nextSongId: ObjectIdNextSong,
+    currentSongId: {type: Schema.Types.ObjectId, ref: 'song'},
+    nextSongId: {type: Schema.Types.ObjectId, ref: 'song'},
     geoLocation: {lng: Number, lat: Number}
 });
 

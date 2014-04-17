@@ -3,7 +3,6 @@ var Schema = mongoose.Schema;
 
 // Song schemma 
 var songSchemma = new Schema({
-    _id: ObjectIdSong,
     title: String,
     artist: String,
     length: Number,

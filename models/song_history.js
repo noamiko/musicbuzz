@@ -3,8 +3,8 @@ var Schema = mongoose.Schema;
 
 // Song schemma 
 var songHistorySchema = new Schema({
-    user_id: ObjectIdHost,
-    song_id: ObjectIdSong,
+    user_id: {type: Schema.Types.ObjectId, ref: 'host'},
+    song_id: {type: Schema.Types.ObjectId, ref: 'song'},
     like: Number,
     lastVotedDate: {type: Date, default: Date.now}
 });

@@ -31,9 +31,9 @@ app.get('/', express.static(__dirname + '/public'));
 app.post('/signup_user', userList.prototype.signup_user.bind(userList));
 app.post('/login_user', userList.prototype.login_user.bind(userList));
 app.post('/get_user', userList.prototype.getUser().bind(userList));
-app.post('/addhost', hostList.addHost.bind(hostList));
-app.post('/addsongvote', songVoteList.addSongVote.bind(songVoteList));
-app.post('/addsong', songList.addSong.bind(songList));
+app.post('/addhost', hostList.prototype.signup_host.bind(hostList));
+app.post('/addsongvote', songVoteList.prototype.addSongVote.bind(songVoteList));
+app.post('/addsong', songList.prototype.addSong.bind(songList));
 
 /// catch 404 and forwarding to error handler
 app.use(function(req, res, next) {
