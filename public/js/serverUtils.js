@@ -16,7 +16,7 @@ function login_user() {
             {
                 "email": login(),
                 "password": $("#password").val(),
-                "geoLocation": getGeoLocation()
+                "geolocation": getGeoLocation()
             },
     function(data, status) {
         if (data !== false) {
@@ -26,6 +26,7 @@ function login_user() {
         } else {
             alert("Wrong email or password");
         }
+        clear_inputs();
     });
 }
 
@@ -34,7 +35,7 @@ function login_host() {
             {
                 "email": $("#email").val(),
                 "password": $("#password").val(),
-                "geoLocation": getGeoLocation()
+                "geolocation": getGeoLocation()
 
             },
     function(data, status) {
@@ -44,22 +45,34 @@ function login_host() {
         } else {
             alert("Wrong email or password");
         }
+        clear_inputs();
     });
 }
 
 
 function signup_user() {
-    alert($("#gender").val());
-    $.post("/signup_user",
-            {
-                "firstName": $("#firstName").val(),
-                "lastName": $("#lastName").val(),
+    var x = {
+                "firstname": $("#firstName").val(),
+                "lastname": $("#lastName").val(),
                 "username": $("#userName").val(),
                 "email": $("#email").val(),
                 "password": $("#password").val(),
                 "geolocation": getGeoLocation(),
                 "gender": $("#gender").val(),
-                "birthDate": $("#birthDate").val(),
+                "birthdate": $("#birthDate").val(),
+                "country": $("#country").val()
+            };
+            alert(x);
+    $.post("/signup_user",
+            {
+                "firstname": $("#firstName").val(),
+                "lastname": $("#lastName").val(),
+                "username": $("#userName").val(),
+                "email": $("#email").val(),
+                "password": $("#password").val(),
+                "geolocation": getGeoLocation(),
+                "gender": $("#gender").val(),
+                "birthdate": $("#birthDate").val(),
                 "country": $("#country").val()
             },
     function(data, status) {
@@ -70,14 +83,27 @@ function signup_user() {
         } else {
             alert("A user with the same email is already registerd");
         }
+        clear_inputs();
     });
 }
 
 function signup_host() {
-    alert($("#bizName").val());
+    var x = {
+                "bizname": $("#bizName").val(),
+                "username": $("#userName").val(),
+                "email": $("#email").val(),
+                "password": $("#password").val(),
+                "address": $("#address").val(),
+                "country": $("#country").val(),
+                "url": $("#url").val(),
+                "geolocation": getGeoLocation()
+            };
+    alert(x);
+    
+    
     $.post("/signup_host",
             {
-                "bizName": $("#bizName").val(),
+                "bizname": $("#bizName").val(),
                 "username": $("#userName").val(),
                 "email": $("#email").val(),
                 "password": $("#password").val(),
@@ -94,6 +120,7 @@ function signup_host() {
         } else {
             alert("A user with the same email is already registerd");
         }
+        clear_inputs();
     });
 }
 
