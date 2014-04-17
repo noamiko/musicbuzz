@@ -11,23 +11,21 @@ function login() {
 
 function sign_up_user() {
     $.post("/signup_user",
-  {
-    firstName:"Donald Duck",
-  },
-  function(data,status){
-    alert("Data: " + data + "\nStatus: " + status);
-  });
-    
-    
-    
-//    $.ajax({
-//        url: 'http://musicbuzz.azurewebsites.net/signup_user',
-//        type: 'POST',
-//        data: {'firstName': $("#firstName").val()},
-//        success: function(data) {
-//            alert(data);
-//        }
-//    });
+            {
+                "firstName": $("#firstName").val(),
+                "lastName": $("#lastName").val(),
+                "userName": $("#userName").val(),
+                "email": $("#email").val(),
+                "password": $("#password").val(),
+                "geolocation": $("#geolocation").val(),
+                "gender": $("#gender").val(),
+                "birthDate": $("#birthDate").val(),
+                "country": $("#country").val()
+            },
+    function(data, status) {
+        alert("Data: " + data + "\nStatus: " + status);
+        clear_inputs();
+    });
 }
 
 function sign_up_host() {
