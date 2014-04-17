@@ -10,7 +10,6 @@ var lng;
 
 
 function login_user() {
-    getGeoLocation()
     $.post('/login_user',
             {
                 "email": document.forms["login_user_form"] ["email"].value,
@@ -30,7 +29,6 @@ function login_user() {
 }
 
 function login_host() {
-    getGeoLocation()
     $.post('/login_host',
             {
                 "email": document.forms["login_host_form"] ["email"].value,
@@ -53,7 +51,6 @@ function login_host() {
 
 
 function signup_user() {
-    geolocation();
     $.post("/signup_user",
             {
                 "firstname": document.forms["signup_user_form"] ["firstname"].value,
@@ -79,8 +76,6 @@ function signup_user() {
 }
 
 function signup_host() {
-    getGeoLocation();
-    alert(lng);
     $.post("/signup_host",
             {
                 "bizname": document.forms["signup_host_form"] ["bizname"].value,
@@ -117,7 +112,7 @@ function login_to_host() {
             next_song = get_song(current_host.nextSongId);
             get_best_songs();
             get_song_history();
-            refresh_displays()
+            refresh_displays();
         } else {
             alert("no such host exist");
         }
@@ -185,7 +180,7 @@ function search_song() {
             {"host_id": $("#search_text").val()},
     function(data, status) {
         if (data !== false) {
-            display_list("search_results")
+            display_list("search_results");
         } else {
 
         }
@@ -215,4 +210,18 @@ function choose_next_song() {
 
         }
     });
+}
+
+function getGeoLocation() {
+    if (navigator.geolocation) {
+        navigator.geolocation.getCurrentPosition(showPosition);
+    }
+    else {
+        x.innerHTML = "Geolocation is not supported by this browser.";
+    }
+}
+
+function showPosition(position) {
+    lat = position.coords.latitude;
+    lng = position.coords.longitude;
 }

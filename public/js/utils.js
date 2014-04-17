@@ -6,6 +6,7 @@ function init() {
     $('#search').hide();
     $('#login_host').hide();
     $('#login_user').show();
+    getGeoLocation();
 }
 
 function refresh_data_and_display() {
@@ -130,20 +131,6 @@ function display_best_songs(songList, divId) {
         songList[i].dome.innerHTML = "<h3><br></h3><br>";
         container.appendChild(songList[i].dome);
     }
-}
-
-function getGeoLocation() {
-    if (navigator.geolocation) {
-        navigator.geolocation.getCurrentPosition(showPosition);
-    }
-    else {
-        x.innerHTML = "Geolocation is not supported by this browser.";
-    }
-}
-
-function showPosition(position) {
-    lat = position.coords.latitude;
-    lng = position.coords.longitude;
 }
 
 function changePage(from, to) {

@@ -207,9 +207,10 @@
         <!-- search page -->
         <section id="search" data-role="page" class="container">
             <article id="first" class="container box style1" style="text-align: center">
-                <input type="search" name="search_text" id="search-basic" value="" />
-                <button type="submit" id="search_btn" onclick="search_song()"></button>
-
+                <div style="display: inline-block">
+                    <input type="search" name="search_text" id="search-basic" value="" style="border-radius: 8em;" />
+                    <a class="button" id="search_btn" onclick="search_song()" style="border-radius: 8em; padding: 0.2em 1em;">Search</a>
+                </div>
 
 
                 <div id="history_list"></div>
