@@ -1,5 +1,6 @@
 var mongoose = require('mongoose')
-        , user = require('../models/user.js');
+        , user = require('../models/user.js')
+        , host = require('../models/host.js');
 
 module.exports = UserList;
 
@@ -9,9 +10,6 @@ function UserList(connection) {
 
     });
 }
-
-
-
 
 UserList.prototype = {
     signup_user: function(req, res) {
@@ -65,5 +63,11 @@ UserList.prototype = {
             }
         });
         res.render('index', {user: found});
+    },
+    login_to_host: function(req, res) {
+        host.findOne({bizName: req.body.bizName},
+        function logUserToHost(err, item) {
+            res.render('index', {host: item});
+        });
     }
 };

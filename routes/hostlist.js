@@ -80,6 +80,11 @@ HostList.prototype = {
                 res.render('index', {host: items});
             }
         });
-
+    },
+    login_to_host: function(req, res) {
+        user.findOne({bizName: req.body.bizName},
+        function logUserToHost(err, item) {
+            res.render('index', {user: item});
+        });
     }
 };

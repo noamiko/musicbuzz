@@ -11,6 +11,7 @@ var userSchema = new Schema({
     birthDate: String,
     gender: String,
     country: String,
+    hostId: {type: Schema.Types.ObjectId, ref: 'host'},
     geoLocation: {lng: Number, lat: Number}
 });
 
