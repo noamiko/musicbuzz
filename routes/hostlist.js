@@ -123,16 +123,54 @@ HostList.prototype = {
             return 0;
         }).slice(0, 3);
     },
+    getHost: function(host_id)
+    {
+        host.findOne({_id: host_id},
+        function foundHost(err, item)
+        {
+            return item;
+        });
+    },
     choose_next_song: function(req, res)
     {
         var host_id = res.body.host_id;
+        var bestSongVote = this.chooseNextSong(host_id);
+
+        // Reset likes and set dates for bestSongVote
+        bestSongVote.like = 0;
+        bestSongVote.lastVotedDate = Date.now();
+        bestSongVote.nextAvailibleVoteDate = new Date(
+                (new Date()).getTime() + (20 * 60 * 1000));
+        var current_host = getHost(host_id); //TODO
+        currentSong = current_host.nextSongId;
+        current_host.currentSongId = bestSongVote.songId;
+        current_host.nextSongId = currentSong;
+        current_host.save(function savedHost(err) {
+            if (err) {
+                throw err;
+            }
+        });
+        bestSong.save(function savedHost(err) {
+            if (err) {
+                throw err;
+            }
+        });
+        req.send(current_host);
+    },
+    chooseNextSong: function(host_id)
+    {
+        var host_id = res.body.host_id;
         var totolScore = 0;
-        var songVotes = getSongVotes(host_id);
-        var users = getHostUsers(host_id);
+        var songVotes = this.getSongVotes(host_id);
+        var users = this.getHostUsers(host_id);
 
         for (var song in songVotes)
         {
-            song.totalScore = 0.6 * song.like;
+            // A song cannot be played more then once every 20 minutes
+            if (song.nextAvailibleVoteDate <= Date.now())
+            {
+                song.totalScore = 0.6 * song.like;
+            }
         }
 
         // Give each three passive votes with diffrent weights
@@ -145,7 +183,8 @@ HostList.prototype = {
             songVotes[topThreeSongs[2]] += 0.1;
         }
 
-        var bestSong = songVotes.sort(function compare(a, b)
+        // Find best next song
+        var bestSongVote = songVotes.sort(function compare(a, b)
         {
             if (a.like > b.like)
             {
@@ -155,7 +194,6 @@ HostList.prototype = {
                 return -1;
             return 0;
         })[0];
-        bestSong.like = 0;
-        return bestSong;
+        return bestSongVote;
     }
 };

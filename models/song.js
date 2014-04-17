@@ -6,7 +6,7 @@ var songSchemma = new Schema({
     title: String,
     artist: String,
     length: Number,
-    songFileId: {type: Schema.Types.ObjectId, ref: 'song_file'}
+    songFileUrl: String
 });
 
 module.exports = mongoose.model('Song', songSchemma);
