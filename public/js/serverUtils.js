@@ -227,6 +227,7 @@ function showPosition(position) {
 }
 
 function add_song() {
+    alert($("#deploy_form input[name=title]").val());
     $.post("/add_song",
             {
                 "title": $("#deploy_form input[name=title]").val(),
