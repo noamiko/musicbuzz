@@ -86,6 +86,19 @@ HostList.prototype = {
     },
     choose_next_song: function(req, res)
     {
-        
+        var totolScore = 0;
+        var songVotes = getSongVotes(host_id); //TODO
+        var users = getUsers(host_id); //TODO
+
+        for (var song in songVotes)
+        {
+            
+        }
+
+        for (var user in users)
+        {
+            var songHistory = getSongHistory(user._id); //TODO
+
+        }
     }
 };

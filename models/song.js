@@ -6,6 +6,7 @@ var songSchemma = new Schema({
     title: String,
     artist: String,
     length: Number,
+    totalScore: Number,
     songFileId: {type: Schema.Types.ObjectId, ref: 'song_file'}
 });
 

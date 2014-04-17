@@ -35,7 +35,7 @@ SongVoteList.prototype = {
 //        });
 //    },
     get_best_songs: function(req, res) {
-        user.find({host_id: req.body.host_id},
+        song_vote.find({host_id: req.body.host_id},
         function bestSongs(err, items)
         {
             if (items.length === 0)
