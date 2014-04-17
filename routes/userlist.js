@@ -35,7 +35,8 @@ UserList.prototype = {
             newUser.birthDate = req.body.birthdate;
             newUser.gender = req.body.gender;
             newUser.country = req.body.country;
-//            newUser.geoLocation = {
+            newUser.geoLocation = req.body.geolocation;
+//                    {
 //                lng: req.body.geolocation.lng,
 //                lat: req.body.geolocation.lat
 //            };
