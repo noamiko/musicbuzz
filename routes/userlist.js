@@ -27,7 +27,6 @@ UserList.prototype = {
 
             // Set up new User data
             newUser = new user();
-//          newUser._id = mongoose.Types.ObjectId();
             newUser.firstName = req.body.firstname;
             newUser.lastName = req.body.lastname;
             newUser.userName = req.body.username;
@@ -36,10 +35,10 @@ UserList.prototype = {
             newUser.birthDate = req.body.birthdate;
             newUser.gender = req.body.gender;
             newUser.country = req.body.country;
-            newUser.geoLocation = {
-                lng: req.body.geolocation.lng,
-                lat: req.body.geolocation.lat
-            };
+//            newUser.geoLocation = {
+//                lng: req.body.geolocation.lng,
+//                lat: req.body.geolocation.lat
+//            };
 
             newUser.save(function savedUser(err) {
                 if (err) {
