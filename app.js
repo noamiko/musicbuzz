@@ -47,9 +47,12 @@ app.post('/signup_host', hostList.signup_host.bind(hostList));
 //Song history posts
 //app.post('/add_song_history', songHistoryList.add_song_history.bind(songHistoryList));
 
-
+//Song vote posts
 //app.post('/addsongvote', songVoteList.addSongVote.bind(songVoteList));
 //app.post('/addsong', songList.addSong.bind(songList));
+
+//Song file posts
+//app.post('/addsongvote', songVoteList.addSongVote.bind(songVoteList));
 
 /// catch 404 and forwarding to error handler
 app.use(function(req, res, next) {

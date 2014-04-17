@@ -15,8 +15,7 @@ UserList.prototype = {
     signup_user: function(req, res) {
         var email = req.body.email;
         flag = true;
-        user.findOne({email: email},
-        function foundUser(err, item)
+        user.findOne({email: email}, function foundUser(err, item)
         {
             if (item === null) {
                 flag = false;
@@ -28,16 +27,16 @@ UserList.prototype = {
             // Set up new User data
             newUser = new user();
 //          newUser._id = mongoose.Types.ObjectId();
-            newUser.firstName = req.body.firstName;
-            newUser.lastName = req.body.lastName;
+            newUser.firstName = req.body.firstname;
+            newUser.lastName = req.body.lastname;
             newUser.userName = req.body.username;
             newUser.email = email;
             newUser.password = req.body.password;
-            newUser.birthDate = req.body.birthDate;
+            newUser.birthDate = req.body.birthdate;
             newUser.gender = req.body.gender;
             newUser.country = req.body.country;
-            newUser.geoLocation = {lng: req.body.geoLocation.lng,
-                lat: req.body.geoLocation.lat};
+//            newUser.geoLocation = {lng: req.body.geoLocation.lng,
+//                lat: req.body.geoLocation.lat};
 
             newUser.save(function savedUser(err) {
                 if (err) {
@@ -72,14 +71,14 @@ UserList.prototype = {
     },
     login_to_host: function(req, res)
     {
-        host.findOne({bizName: req.body.bizName},
+        host.findOne({bizName: req.body.bizname},
         function logUserToHost(err, item) {
             res.send(item);
         });
     },
     get_song_history: function(req, res)
     {
-        song_history.find({user_id: req.body.user_id},
+        song_history.find({user_id: req.body.userid},
         function logUserToHost(err, items) {
             res.send(items);
         });

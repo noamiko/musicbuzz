@@ -12,7 +12,7 @@ function HostList(connection) {
 HostList.prototype = {
     signup_host: function(req, res) {
 
-        var bizName = req.body.bizName;
+        var bizName = req.body.bizname;
         var email = req.body.email;
 
         var flag = true;
@@ -41,9 +41,9 @@ HostList.prototype = {
             newHost.address = req.body.address;
             newHost.country = req.body.country;
             newHost.url = req.body.url;
-            newHost.currentSongId = req.body.currentSongId;
-            newHost.nextSongId = req.body.nextSongId;
-            newHost.geoLocation = {lng: req.body.lng, lat: req.body.lat};
+            newHost.currentSongId = req.body.currentsongid;
+            newHost.nextSongId = req.body.nextsongid;
+//            newHost.geoLocation = {lng: req.body.lng, lat: req.body.lat};
 
             newHost.save(function savedHost(err) {
                 if (err) {
@@ -56,7 +56,7 @@ HostList.prototype = {
         }
     },
     get_host: function(req, res) {
-        host.findOne({bizName: req.body.bizName}, function foundHost(err, item) {
+        host.findOne({bizName: req.body.bizname}, function foundHost(err, item) {
             res.send(item);
         });
 
@@ -83,7 +83,7 @@ HostList.prototype = {
     },
     get_host_users: function(req, res)
     {
-        user.find({hostId: req.body.id},
+        user.find({hostId: req.body._id},
         function foundUsers(err, items)
         {
             res.send(items);

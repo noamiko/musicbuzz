@@ -14,13 +14,13 @@ song_history_list.prototype = {
     add_song_history: function(req, res) {
 
         // Set up new Song history data
-        newUser = new song_history();
-        newUser.user_id = req.body.user_id;
-        newUser.song_id = req.body.song_id;
-        newUser.like = 1; // Only added when first choosen
-        newUser.lastVotedDate = req.body.lastVotedDate;
+        newSongHistory = new song_history();
+        newSongHistory.user_id = req.body.userid;
+        newSongHistory.song_id = req.body.songid;
+        newSongHistory.like = 1; // Only added when first choosen
+        newSongHistory.lastVotedDate = req.body.lastvoteddate;
 
-        newUser.save(function savedUser(err) {
+        newSongHistory.save(function savedUser(err) {
             if (err) {
                 throw err;
             }
@@ -28,9 +28,9 @@ song_history_list.prototype = {
         res.send(true);
     },
     get_song_history: function(req, res) {
-        newUser.find({$or: [{title: req.body.title, artist: req.body.artist},
-                {songId: req.body.songId}]}); //Uncheked 
-        newUser.save(function savedUser(err) {
+        newSongHistory.find({$or: [{title: req.body.title, artist: req.body.artist},
+                {songId: req.body.songid}]}); //Uncheked 
+        newSongHistory.save(function savedUser(err) {
             if (err) {
                 throw err;
             }
