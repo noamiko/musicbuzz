@@ -72,7 +72,13 @@ function display_song(song, divId) {
     container.appendChild(song.dome);
 }
 
-function display_host_song_list(songList, divId) {
+function display_vite_song(song, divId) {
+
+
+}
+
+
+function display_vote_song_list(songList, divId) {
 
     for (var i = 0; i < songList.length; i++) {
 
