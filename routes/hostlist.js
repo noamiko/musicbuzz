@@ -2,7 +2,6 @@ var mongoose = require('mongoose')
         , host = require('../models/host.js')
         , user = require('../models/user.js');
 module.exports = HostList;
-
 function HostList(connection) {
     mongoose.connect(connection, function(err) {
         // already connected... do nothing...
@@ -14,25 +13,23 @@ HostList.prototype = {
 
         var bizName = req.body.bizname;
         var email = req.body.email;
-
         var flag = true;
         //Verify bizName and email are unique
         host.findOne({bizName: bizName}, function foundHost(err, item) {
-            if (item === null) {
+            if (item === {}) {
                 flag = false;
             }
         });
-
         if (flag) {
             host.findOne({email: email}, function foundHost(err, item) {
-                if (item === null) {
+                if (item === {}) {
                     flag = false;
                 }
             });
         }
         if (flag) {
 
-            // Set up new Host data
+// Set up new Host data
             newHost = new host();
             newHost.bizName = bizName;
             newHost.userName = req.body.username;
@@ -59,7 +56,6 @@ HostList.prototype = {
         host.findOne({bizName: req.body.bizname}, function foundHost(err, item) {
             res.send(item);
         });
-
         newHost.save(function savedHost(err) {
             if (err) {
                 throw err;
@@ -70,10 +66,9 @@ HostList.prototype = {
     {
         var email = req.body.email;
         var password = req.body.pwd;
-
         //Verify email and password are valid
         host.findOne({email: email, password: password}, function foundHost(err, item) {
-            if (item === null) {
+            if (item === {}) {
                 res.send(false);
             } else
             {
@@ -88,5 +83,9 @@ HostList.prototype = {
         {
             res.send(items);
         });
+    },
+    choose_next_song: function(req, res)
+    {
+        
     }
 };

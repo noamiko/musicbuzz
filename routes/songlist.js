@@ -12,17 +12,13 @@ function SongList(connection) {
 
 SongList.prototype = {
     addSong: function(req, res) {
-        var title = req.body.title;
-        var artist = req.body.artist;
-        var length = req.body.length;
-        var songFileId = req.body.songfileid;
 
         // Set up new SongVote data
         newUser = new song();
-        newUser.title = title;
-        newUser.artist = artist;
-        newUser.length = length;
-        newUser.songFileId = songFileId;
+        newUser.title = req.body.title;
+        newUser.artist = req.body.artist;
+        newUser.length = req.body.length;
+        newUser.songFileURL = req.body.songfileurl;
 
         newUser.save(function savedUser(err) {
             if (err) {
@@ -30,30 +26,16 @@ SongList.prototype = {
             }
         });
     },
-    get_song: function(req, res)
-    {
-        song.findOne({songFileId: req.body.song_id},
-        function songFound(err, item)
-        {
-            if (item === null)
-            {
-                res.send(false);
-            } else
-            {
-                res.send(item);
-            }
-        });
-    },
     search_song: function(req, res) {
-        song.findOne({$or: [{title: req.body.key, artist: req.body.key}]},
-        function songFound(err, item)
+        song.find({$or: [{title: req.body.key, artist: req.body.key}]},
+        function songFound(err, items)
         {
-            if (item === null)
+            if (item === {})
             {
                 res.send(false);
             } else
             {
-                res.send(item);
+                res.send(items);
             }
         });
     }
