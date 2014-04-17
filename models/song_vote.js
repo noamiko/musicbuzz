@@ -7,6 +7,7 @@ var songVoteSchemma = new Schema({
     songId: {type: Schema.Types.ObjectId, ref: 'song'},
     like: Number,
     disLike: Number,
+    totalScore: Number,
     lastVotedDate: {type: Date, default: Date.now},
     nextAvailibleVoteDate: {type: Date, default: Date.now}
 });
