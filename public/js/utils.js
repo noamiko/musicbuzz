@@ -142,7 +142,8 @@ function getGeoLocation() {
 }
 
 function showPosition(position) {
-    return {"lat": position.coords.latitude, "lng": position.coords.longitude};
+    lat = position.coords.latitude;
+    lng = position.coords.longitude;
 }
 
 function changePage(from, to) {
