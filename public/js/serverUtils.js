@@ -238,6 +238,7 @@ function add_song() {
         if (data !== false) {
             alert("Song added");
         } else {
+            alert("Song wasn't added, error deploying :(");
 
         }
     });
