@@ -227,13 +227,13 @@ function showPosition(position) {
 }
 
 function add_song() {
-    alert($("#deploy_form input[name=title]").val());
+    alert(document.forms["deploy_form"] ["title"].value);
     $.post("/add_song",
             {
-                "title": $("#deploy_form input[name=title]").val(),
-                "artist": $("#deploy_form input[name=artist]").val(),
-                "length": $("#deploy_form input[name=length]").val(),
-                "url": $("#deploy_form input[name=url]").val()
+                "title": document.forms["deploy_form"] ["title"].value,
+                "artist": document.forms["deploy_form"] ["artist"].value,
+                "length": document.forms["deploy_form"] ["length"].value,
+                "url": document.forms["deploy_form"] ["url"].value
             },
     function(data, status) {
         if (data !== false) {
