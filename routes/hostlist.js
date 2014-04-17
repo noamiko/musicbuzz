@@ -50,14 +50,14 @@ HostList.prototype = {
                     throw err;
                 }
             });
-            res.render('index', {host: newHost});
+            res.send(newHost);
         } else {
-            res.render('index', {host: false});
+            res.send(false);
         }
     },
     getHost: function(req, res) {
         host.findOne({bizName: req.body.bizName}, function foundHost(err, item) {
-            res.render('index', {host: item});
+            res.send(item);
         });
 
         newHost.save(function savedHost(err) {
@@ -72,19 +72,13 @@ HostList.prototype = {
         var password = req.body.password;
 
         //Verify email and password are valid
-        host.find({email: email, password: password}, function foundHost(err, items) {
-            if (items.length === 0) {
-                res.render('index', {host: false});
+        host.findOne({email: email, password: password}, function foundHost(err, item) {
+            if (item === null) {
+                res.send(false);
             } else
             {
-                res.render('index', {host: items});
+                res.send(item);
             }
-        });
-    },
-    login_to_host: function(req, res) {
-        user.findOne({bizName: req.body.bizName},
-        function logUserToHost(err, item) {
-            res.render('index', {user: item});
         });
     }
 };
