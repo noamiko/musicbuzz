@@ -1,5 +1,5 @@
 var current_host;
-var user_id;
+var current_user;
 
 
 function login() {
@@ -16,11 +16,12 @@ function login_user() {
             {
                 "email": login(),
                 "password": $("#password").val(),
-                "geoLocation": getGeoLocation()
+                "geolocation": getGeoLocation()
             },
     function(data, status) {
         if (data !== false) {
-            user_id = data;
+            current_user = data;
+            alert(current_user._id)
             changePage("login_user", "login_to_host");
         } else {
             alert("Wrong email or password");
@@ -34,7 +35,7 @@ function login_host() {
             {
                 "email": $("#email").val(),
                 "password": $("#password").val(),
-                "geoLocation": getGeoLocation()
+                "geolocation": getGeoLocation()
 
             },
     function(data, status) {
@@ -50,21 +51,34 @@ function login_host() {
 
 
 function signup_user() {
-    $.post("/signup_user",
-            {
-                "firstName": $("#firstName").val(),
-                "lastName": $("#lastName").val(),
-                "userName": $("#userName").val(),
+    var x = {
+                "firstname": $("#firstName").val(),
+                "lastname": $("#lastName").val(),
+                "username": $("#userName").val(),
                 "email": $("#email").val(),
                 "password": $("#password").val(),
                 "geolocation": getGeoLocation(),
                 "gender": $("#gender").val(),
-                "birthDate": $("#birthDate").val(),
+                "birthdate": $("#birthDate").val(),
+                "country": $("#country").val()
+            };
+            alert(x);
+    $.post("/signup_user",
+            {
+                "firstname": $("#firstName").val(),
+                "lastname": $("#lastName").val(),
+                "username": $("#userName").val(),
+                "email": $("#email").val(),
+                "password": $("#password").val(),
+                "geolocation": getGeoLocation(),
+                "gender": $("#gender").val(),
+                "birthdate": $("#birthDate").val(),
                 "country": $("#country").val()
             },
     function(data, status) {
         if (data !== false) {
-            user_id = data;
+            current_user = data;
+            alert(current_user._id);
             changePage("sign_up_user", "login_to_host");
         } else {
             alert("A user with the same email is already registerd");
@@ -74,10 +88,23 @@ function signup_user() {
 }
 
 function signup_host() {
+    var x = {
+                "bizname": $("#bizName").val(),
+                "username": $("#userName").val(),
+                "email": $("#email").val(),
+                "password": $("#password").val(),
+                "address": $("#address").val(),
+                "country": $("#country").val(),
+                "url": $("#url").val(),
+                "geolocation": getGeoLocation()
+            };
+    alert(x);
+    
+    
     $.post("/signup_host",
             {
-                "bizName": $("#bizName").val(),
-                "userName": $("#userName").val(),
+                "bizname": $("#bizName").val(),
+                "username": $("#userName").val(),
                 "email": $("#email").val(),
                 "password": $("#password").val(),
                 "address": $("#address").val(),
@@ -88,6 +115,7 @@ function signup_host() {
     function(data, status) {
         if (data !== false) {
             current_host = data;
+            alert(current_host._id);
             changePage("sign_up_host", "feed");
         } else {
             alert("A user with the same email is already registerd");
@@ -96,23 +124,6 @@ function signup_host() {
     });
 }
 
-//
-////function verify_password(name, password) {
-//    return true;
-//}
-//
-//function get_currentSong(adminId) {
-//    display_song(song1, "current-song");
-//}
-//
-//function get_next_to_play_list() {
-//    display_host_song_list(hostSongList, "host-song-list")
-//}
-//
-////function get_history(userId){
-//function get_history() {
-//    display_list(songList, "songs");
-//}
 
 function sign_in_server(username, email, password, gender, date) {
     var geolocation = getGeoLocation();
