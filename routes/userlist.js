@@ -10,72 +10,60 @@ function UserList(connection) {
     });
 }
 
+
+
+
 UserList.prototype = {
-    addUser: function(req, res) {
-        var firstName = req.body.firstName;
-        var lastName = req.body.lastName;
-        var username = req.body.username;
+    signup_user: function(req, res) {
         var email = req.body.email;
-        var password = req.body.password;
-        var birthDate = req.body.birthDate;
-        var gender = req.body.gender;
-        var country = req.body.country;
-        var geoLocation = {lng: req.body.lng, lat: req.body.lat};
-
-        // Set up new User data
-        newUser = new user();
-        newUser.firstName = firstName;
-        newUser.lastName = lastName;
-        newUser.userName = username;
-        newUser.email = email;
-        newUser.password = password;
-        newUser.birthDate = birthDate;
-        newUser.gender = gender;
-        newUser.country = country;
-        newUser.geoLocation = geoLocation;
-
-        newUser.save(function savedUser(err) {
-            if (err) {
-                throw err;
+        flag = true;
+        user.findOne({email: email},
+        function foundUser(err, item)
+        {
+            if (item === null) {
+                flag = false;
             }
         });
-        res.redirect('/');
+
+        if (flag) {
+            // Set up new User data
+            newUser = new user();
+            newUser.firstName = req.body.firstName;
+            newUser.lastName = req.body.lastName;
+            newUser.userName = req.body.username;
+            newUser.email = email;
+            newUser.password = req.body.password;
+            newUser.birthDate = req.body.birthDate;
+            newUser.gender = req.body.gender;
+            newUser.country = req.body.country;
+            newUser.geoLocation = {lng: req.body.lng, lat: req.body.lat};
+
+            newUser.save(function savedUser(err) {
+                if (err) {
+                    throw err;
+                }
+            });
+            res.render('index', {user: item});
+        } else {
+            res.render('index', {user: false});
+        }
     },
     getUser: function(req, res) {
-        user.find({userName: req.body.username});
-        newUser.save(function savedUser(err) {
-            if (err) {
-                throw err;
-            }
+        user.findOne({userName: req.body.username},
+        function foundUser(err, item)
+        {
+            res.render('index', {user: item});
         });
-        res.redirect('/');
-    },
-    setUser: function(req, res) {
-        // TODO
-        newUser.save(function savedUser(err) {
-            if (err) {
-                throw err;
-            }
-        });
-        res.redirect('/');
     },
     login_user: function(req, res) {
-        // TODO
-        var found = user.find({email: req.body.email,
-            password: req.body.password});
-
-        // Return true if email and password are valid
-        if (found !== null)
-        {
-            res.redirect('/'); // Feed page
-        }
-
-        newUser.save(function savedUser(err) {
-            if (err) {
-                throw err;
+        found = true;
+        user.findOne({email: req.body.email,
+            password: req.body.password},
+        function logUser(err, item) {
+            if (item === null) {
+                found = false;
             }
         });
-        res.redirect('/'); // Login page
-        return false;
+        res.render('index', {user: found});
     }
-}
+};

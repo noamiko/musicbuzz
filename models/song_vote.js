@@ -8,7 +8,7 @@ var songVoteSchemma = new Schema({
     like: Number,
     disLike: Number,
     lastVotedDate: {type: Date, default: Date.now},
-    nextAvailibleVoteTime: {type: Date, default: Date.now}
+    nextAvailibleVoteDate: {type: Date, default: Date.now}
 });
 
 module.exports = mongoose.model('SongVotes', songVoteSchemma);
