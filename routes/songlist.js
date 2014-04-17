@@ -13,7 +13,7 @@ function SongList(connection) {
 SongList.prototype = {
     add_song: function(req, res) {
 
-        // Set up new SongVote data
+        // Set up new Song data
         newUser = new song();
         newUser.title = req.body.title;
         newUser.artist = req.body.artist;
@@ -25,7 +25,7 @@ SongList.prototype = {
                 throw err;
             }
         });
-        req.send(true);
+        res.send(true);
     },
     search_song: function(req, res) {
         song.find({$or: [{title: req.body.key, artist: req.body.key}]},
