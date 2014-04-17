@@ -6,6 +6,7 @@ function init() {
     $('#search').hide();
     $('#login_host').hide();
     $('#login_user').show();
+    getGeoLocation();
 }
 
 function refresh_data_and_display() {

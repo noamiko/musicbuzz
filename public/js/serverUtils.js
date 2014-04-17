@@ -10,7 +10,6 @@ var lng;
 
 
 function login_user() {
-    getGeoLocation();
     $.post('/login_user',
             {
                 "email": document.forms["login_user_form"] ["email"].value,
@@ -30,7 +29,6 @@ function login_user() {
 }
 
 function login_host() {
-    getGeoLocation();
     $.post('/login_host',
             {
                 "email": document.forms["login_host_form"] ["email"].value,
@@ -53,7 +51,6 @@ function login_host() {
 
 
 function signup_user() {
-    geolocation();
     $.post("/signup_user",
             {
                 "firstname": document.forms["signup_user_form"] ["firstname"].value,
@@ -79,7 +76,6 @@ function signup_user() {
 }
 
 function signup_host() {
-    getGeoLocation();
     alert(lng);
     $.post("/signup_host",
             {
