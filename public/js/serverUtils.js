@@ -6,7 +6,7 @@ function login() {
     $.ajax({
         url: 'http://musicbuzz.azurewebsites.net/login_user',
         type: 'POST',
-        data: JSON.stringify({'firstName':firstName}),
+        data: {'firstName': $("#firtName").val()},
         success: function(data) {
             alert(data);
         }
