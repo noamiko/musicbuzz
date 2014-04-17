@@ -66,7 +66,6 @@ function signup_user() {
     function(data, status) {
         if (data !== false) {
             current_user = data;
-            alert(current_user._id);
             changePage("sign_up_user", "login_to_host");
         } else {
             alert("A user with the same email is already registerd");
@@ -90,7 +89,6 @@ function signup_host() {
     function(data, status) {
         if (data !== false) {
             current_host = data;
-            alert(current_host._id);
             changePage("sign_up_host", "feed");
         } else {
             alert("A user with the same email is already registerd");
@@ -105,7 +103,6 @@ function login_to_host() {
             function(data, status) {
                 if (data !== false) {
                     current_host = data;
-                    alert(current_host._id);
                     changePage("login_to_host", "feed");
                 } else {
                     alert("no such host exist");
