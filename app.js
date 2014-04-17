@@ -43,17 +43,15 @@ app.post('/dislike', userList.disLike.bind(userList));
 
 // HostList posts
 app.post('/signup_host', hostList.signup_host.bind(hostList));
-//app.post('/get_host', hostList.get_host.bind(hostList));
 app.post('/login_host', hostList.login_host.bind(hostList));
-//app.post('/get_host_users', hostList.get_host_users.bind(hostList));
 
 //Song history posts
-//app.post('/add_song_history', songHistoryList.add_song_history.bind(songHistoryList));
 
 //Song vote posts
-//app.post('/addsongvote', songVoteList.addSongVote.bind(songVoteList));
-//app.post('/addsong', songList.addSong.bind(songList));
-app.post('/get_song', songList.get_song.bind(songList));
+app.post('/get_best_songs', songVoteList.get_best_songs.bind(songVoteList));
+
+//Song list posts
+app.post('/addsong', songList.addSong.bind(songList));
 app.post('/search_song', songList.search_song.bind(songList));
 
 
