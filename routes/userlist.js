@@ -43,14 +43,14 @@ UserList.prototype = {
             });
               res.send(true);
         } else {
-            res.render(false);
+            res.send(false);
         }
     },
     getUser: function(req, res) {
         user.findOne({userName: req.body.username},
         function foundUser(err, item)
         {
-            res.render('index', {user: item});
+            res.send(item);
         });
     },
     login_user: function(req, res) {
@@ -62,12 +62,12 @@ UserList.prototype = {
                 found = false;
             }
         });
-        res.render('index', {user: found});
+        res.send(found);
     },
     login_to_host: function(req, res) {
         host.findOne({bizName: req.body.bizName},
         function logUserToHost(err, item) {
-            res.render('index', {host: item});
+            res.send(item);
         });
     }
 };
