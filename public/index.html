@@ -2,6 +2,10 @@
 <html>
     <head>
         <title>MusicBuzz</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <!--        <link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.2/jquery.mobile-1.4.2.min.css" />
+                <script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>-->
+        <!--        <script src="http://code.jquery.com/mobile/1.4.2/jquery.mobile-1.4.2.min.js"></script>-->
         <meta http-equiv="content-type" content="text/html; charset=utf-8" />
         <meta name="description" content="" />
 
@@ -36,8 +40,8 @@
                             </div>
                         </div>
 
-                        <div id="host_btn">
-                            <a class="button style2 scrolly scrolly-centered" onclick="set_host_login_attr()">are you a host?</a>
+                        <div>
+                            <a class="button style2 scrolly scrolly-centered" id="host_btn" onclick="set_host_login_attr()">are you a host?</a>
                         </div>
 
 
@@ -45,8 +49,6 @@
                             <a id="login_btn" class="button style1 scrolly scrolly-centered" onclick="login_user()">Login</a>
                         </div>
                     </div>
-
-
                 </header>
                 <footer>
 
@@ -182,10 +184,14 @@
             <article id="first" class="container box style1" style="text-align: center">
                 <div class="inner">
                     <header>
-                        <div id="hostname_area"></div>
+                        <h1 id="host_title"></h1>
                     </header>
-                    <div id="current-song_area"></div>
-                    <div id="song_vote_area"></div>
+                    <h1>Current song is:</h1>
+                    <div id="current_song"></div>
+                    <h1>Next song is:</h1>
+                    <div id="next_song"></div>
+                    <h1>Best voted so far:</h1>
+                    <div id="best_songs"></div>
                     <br/>
 
                     <a class="button form" name="submit" onclick="changePage('feed', 'search')">Search songs</a>
@@ -199,7 +205,7 @@
             <article id="first" class="container box style1" style="text-align: center">
 
                 <input type="search" name="search" id="search-basic" value="" />
-                <div id="search_results"></div>
+                <div id="history_list"></div>
 
                 <a class="button form" name="submit" onclick="changePage('search', 'feed')">Back to feed</a>
             </article>

@@ -1,6 +1,10 @@
 var current_host;
 var current_user;
 var current_song;
+var next_song;
+var history_list;
+var best_songs;
+
 
 function login_user() {
     $.post('/login_user',
@@ -41,6 +45,7 @@ function login_host() {
 
 
 function signup_user() {
+    alert($("#pwd").val()+"  "+$("#username").val()) + $("#birthdate").val() + $("#gender").val() + getGeoLocation().lat;
     $.post("/signup_user",
             {
                 "firstname": $("#firstname").val(),
@@ -94,6 +99,11 @@ function login_to_host() {
                 if (data !== false) {
                     current_host = data;
                     changePage("login_to_host", "feed");
+                    current_song = get_song(current_host.currentSongId);
+                    next_song = get_song(current_host.nextSongId);
+                    get_best_songs();
+                    get_song_history();
+                    refresh_displays()
                 } else {
                     alert("no such host exist");
                 }
@@ -101,12 +111,12 @@ function login_to_host() {
             });
 }
 
-function get_current_song(songId) {
+function get_song(songId) {
     $.post("/get_song",
-            songId,
+            song_id,
             function(data, status) {
                 if (data !== false) {
-                    current_song = data;
+                    return data;
                 } else {
 
                 }
@@ -118,7 +128,7 @@ function get_song_history() {
             current_user._id,
             function(data, status) {
                 if (data !== false) {
-                    history_song_list = data;
+                    history_list = data;
                 } else {
 
                 }
@@ -150,6 +160,31 @@ function dislike(songId) {
     function(data, status) {
         if (data !== false) {
 
+        } else {
+
+        }
+    });
+}
+
+function search_song(songstring) {
+    $.post("/search_song",
+            {"host_id": ongstring},
+    function(data, status) {
+        if (data !== false) {
+            display_list("search_results")
+        } else {
+
+        }
+    });
+}
+
+
+function get_best_songs() {
+    $.post("/get_best_songs",
+            {"host_id": current_host._id},
+    function(data, status) {
+        if (data !== false) {
+            best_songs = data;
         } else {
 
         }

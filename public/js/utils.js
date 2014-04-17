@@ -8,12 +8,28 @@ function init() {
     $('#login_user').show();
 }
 
+function refresh_data(){
+    current_host = login_to_host(current_host.bizname);
+    current_song = get_song(current_host.currentSongId);
+    next_song = get_song(current_host.nextSongId);
+    get_best_songs();
+    get_song_history();
+}
+
+function refresh_displays() {
+    display_best_songs(best_songs,"best_songs")
+    display_song(current_song,"current_song")
+    display_song(next_song,"next_song")
+    display_list(history_list,"history_list")
+    display_title(current_host.bizname)
+}
+
 
 function clear_inputs() {
     inputs = document.getElementsByTagName('input');
     for (i = 0; i < inputs.length; i++) {
         var typo = inputs[i].type;
-        if (typo === 'text' || typo === 'email' || typo === 'password' || typo === 'date'){
+        if (typo === 'text' || typo === 'email' || typo === 'password' || typo === 'date') {
             inputs[i].value = '';
         }
     }
@@ -46,6 +62,10 @@ function validate_gender(gender) {
     return true;
 }
 
+function display_title(title){
+    $('#host_title').text(title)
+}
+
 function display_list(songList, divId) {
     container = document.getElementById(divId);
     for (var i = 0; i < songList.length; i++) {
@@ -73,7 +93,7 @@ function display_song(song, divId) {
 }
 
 
-function display_vote_song_list(songList, divId) {
+function display_best_songs(songList, divId) {
 
     for (var i = 0; i < songList.length; i++) {
 
@@ -85,7 +105,7 @@ function display_vote_song_list(songList, divId) {
         songList[i].dome.setAttribute("type", "button");
         songList[i].dome.setAttribute("data-role", "button");
         songList[i].dome.setAttribute("data-icon", "check");
-        songList[i].dome.setAttribute("onclick", "like("+songList[i]._id+")");
+        songList[i].dome.setAttribute("onclick", "like(" + songList[i]._id + ")");
         songList[i].dome.innerHTML = "<h3><br></h3><br>";
         container.appendChild(songList[i].dome);
 
@@ -104,7 +124,7 @@ function display_vote_song_list(songList, divId) {
         songList[i].dome.setAttribute("class", "vote-bad-button ui-btn ui-shadow ui-corner-all");
         songList[i].dome.setAttribute("type", "button");
         songList[i].dome.setAttribute("data-role", "button");
-        songList[i].dome.setAttribute("onclick", "dislike("+songList[i]._id+")");
+        songList[i].dome.setAttribute("onclick", "dislike(" + songList[i]._id + ")");
         songList[i].dome.setAttribute("data-icon", "delete");
         songList[i].dome.innerHTML = "<h3><br></h3><br>";
         container.appendChild(songList[i].dome);
@@ -117,7 +137,7 @@ function getGeoLocation() {
 //    {
 //        var lat = position.coords.latitude;
 //        var lng = position.coords.longitude;
-        return {"lat": 00, "lng": 00};
+    return {"lat": 11, "lng": 22};
 //    }
 }
 
@@ -126,10 +146,10 @@ function changePage(from, to) {
     $("#" + to).show();
 }
 
-function set_host_login_attr(){
+function set_host_login_attr() {
     $('#host_btn').hide();
     $('#main_title').text("Host Login Page")
     $('#login_btn').attr('onclick', "login_host()");
     $('#signup_btn').attr('onclick', "changePage('login_user', 'sign_up_host')");
-    
+
 }
