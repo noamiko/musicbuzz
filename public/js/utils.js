@@ -108,7 +108,7 @@ function display_host_song_list(songList, divId) {
 }
 
 
-function get_geo() {
+function getGeoLocation() {
     if (navigator.geolocation)
     {
         var lat = position.coords.latitude;
