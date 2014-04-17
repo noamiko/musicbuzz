@@ -132,20 +132,6 @@ function display_best_songs(songList, divId) {
     }
 }
 
-function getGeoLocation() {
-    if (navigator.geolocation) {
-        navigator.geolocation.getCurrentPosition(showPosition);
-    }
-    else {
-        x.innerHTML = "Geolocation is not supported by this browser.";
-    }
-}
-
-function showPosition(position) {
-    lat = position.coords.latitude;
-    lng = position.coords.longitude;
-}
-
 function changePage(from, to) {
     $("#" + from).hide();
     $("#" + to).show();
