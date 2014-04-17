@@ -9,8 +9,8 @@ var is_a_host = false;
 function login_user() {
     $.post('/login_user',
             {
-                "email": $("#login_user_form input[name=email]").val(),
-                "pwd": $("#login_user_form input[name=pwd]").val(),
+                "email": document.forms["login_user_form"] ["email"].value,
+                "pwd": document.forms["login_user_form"] ["pwd"].value,
                 "geolocation": getGeoLocation()
             },
     function(data, status) {
@@ -27,8 +27,8 @@ function login_user() {
 function login_host() {
     $.post('/login_host',
             {
-                "email": $("#login_host_form input[name=email]").val(),
-                "pwd": $("#login_host_form input[name=pwd]").val(),
+                "email": document.forms["login_host_form"] ["email"].value,
+                "pwd": document.forms["login_host_form"] ["pwd"].value,
                 "geolocation": getGeoLocation()
 
             },
@@ -47,18 +47,17 @@ function login_host() {
 
 
 function signup_user() {
-    alert(document.forms["signup_user_form"] ["firstname"].value);
     $.post("/signup_user",
             {
                 "firstname": document.forms["signup_user_form"] ["firstname"].value,
-                "lastname": $("#signup_user_form input[name=lastname]").val(),
-                "username": $("#signup_user_form input[name=username]").val(),
-                "email": $("#signup_user_form input[name=email]").val(),
-                "pwd": $("#signup_user_form input[name=pwd]").val(),
+                "lastname": document.forms["signup_user_form"] ["lastname"].value,
+                "username": document.forms["signup_user_form"] ["username"].value,
+                "email": document.forms["signup_user_form"] ["email"].value,
+                "pwd": document.forms["signup_user_form"] ["pwd"].value,
                 "geolocation": getGeoLocation(),
-                "gender": $("#signup_user_form input[name=gender]").val(),
-                "birthdate": $("#signup_user_form input[name=birthdate]").val(),
-                "country": $("#signup_user_form input[name=country]").val()
+                "gender": document.forms["signup_user_form"] ["gender"].value,
+                "birthdate": document.forms["signup_user_form"] ["birthdate"].value,
+                "country": document.forms["signup_user_form"] ["country"].value
             },
     function(data, status) {
         if (data !== false) {
@@ -74,13 +73,13 @@ function signup_user() {
 function signup_host() {
     $.post("/signup_host",
             {
-                "bizname": $("#signup_host_form input[name=bizname]").val(),
-                "username": $("#signup_host_form input[name=username]").val(),
-                "email": $("#signup_host_form input[name=email]").val(),
-                "pwd": $("#signup_host_form input[name=pwd]").val(),
-                "address": $("#signup_host_form input[name=address]").val(),
-                "country": $("#signup_host_form input[name=country]").val(),
-                "url": $("#signup_host_form input[name=url]").val(),
+                "bizname": document.forms["signup_host_form"] ["bizname"].value,
+                "username": document.forms["signup_host_form"] ["username"].value,
+                "email": document.forms["signup_host_form"] ["email"].value,
+                "pwd": document.forms["signup_host_form"] ["pwd"].value,
+                "address": document.forms["signup_host_form"] ["address"].value,
+                "country": document.forms["signup_host_form"] ["country"].value,
+                "url": document.forms["signup_host_form"] ["url"].value,
                 "geolocation": getGeoLocation()
             },
     function(data, status) {
