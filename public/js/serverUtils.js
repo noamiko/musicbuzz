@@ -10,7 +10,7 @@ var lng;
 
 
 function login_user() {
-    getGeoLocation()
+    getGeoLocation();
     $.post('/login_user',
             {
                 "email": document.forms["login_user_form"] ["email"].value,
@@ -30,7 +30,7 @@ function login_user() {
 }
 
 function login_host() {
-    getGeoLocation()
+    getGeoLocation();
     $.post('/login_host',
             {
                 "email": document.forms["login_host_form"] ["email"].value,
@@ -117,7 +117,7 @@ function login_to_host() {
             next_song = get_song(current_host.nextSongId);
             get_best_songs();
             get_song_history();
-            refresh_displays()
+            refresh_displays();
         } else {
             alert("no such host exist");
         }
@@ -185,7 +185,7 @@ function search_song() {
             {"host_id": $("#search_text").val()},
     function(data, status) {
         if (data !== false) {
-            display_list("search_results")
+            display_list("search_results");
         } else {
 
         }
