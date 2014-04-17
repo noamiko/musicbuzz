@@ -42,7 +42,7 @@ UserList.prototype = {
                 }
             });
             res.render('index', {user: newUser});
-            return res.send(true);
+            res.send("fads");
         } else {
             res.render('index', {user: false});
         }
