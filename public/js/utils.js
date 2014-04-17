@@ -1,7 +1,4 @@
 function init() {
-//    get_history();
-//    get_currentSong();
-//    get_next_to_play_list();
     $('#sign_up_user').hide();
     $('#sign_up_host').hide();
     $('#login_to_host').hide();
@@ -11,56 +8,16 @@ function init() {
 }
 
 
-
-
 function clear_inputs() {
     inputs = document.getElementsByTagName('input');
     for (i = 0; i < inputs.length; i++) {
-        if (inputs[i].type != 'text')
-            continue;
-
-        inputs[i].value = '';
-    }
-}
-
-
-
-
-
-
-
-function sign_in_btn() {
-    var name = document.forms["signInForm"]["username"].value;
-    var nameBool = validate_name(name);
-
-    var email = document.forms["signInForm"]["email"].value;
-    var emailBool = validate_email(email);
-
-    var password = document.forms["signInForm"]["password"].value;
-    var passwordBool = password.length > 7;
-
-    var gender = $('input[name="gender"]:checked').val();
-    var genderBool = validate_gender(gender);
-
-    var date = document.forms["signInForm"]["date"].value;
-
-    var valid = nameBool && emailBool && passwordBool && genderBool;
-    if (valid) {
-        var result = sign_in_server(name, email, password, gender, date);
-        if (result === true) {
-            change_page("feed");
+        var typo = inputs[i].type;
+        if (typo === 'text' || typo === 'email' || typo === 'password' || typo === 'date'){
+            inputs[i].value = '';
         }
     }
 }
 
-function log_in_btn() {
-    var name = document.forms["logInForm"]["username"].value;
-    var password = document.forms["logInForm"]["password"].value;
-    var result = verify_password(name, password);
-    if (result === true) {
-        change_page("feed");
-    }
-}
 
 function validate_name(name) {
     if (name === null || name === "") {
@@ -114,7 +71,6 @@ function display_song(song, divId) {
     container.appendChild(song.dome);
 }
 
-
 function display_host_song_list(songList, divId) {
 
     for (var i = 0; i < songList.length; i++) {
@@ -157,6 +113,7 @@ function get_geo() {
     {
         var lat = position.coords.latitude;
         var lng = position.coords.longitude;
+        return {"lat": lat, "lng": lng};
     }
 }
 
