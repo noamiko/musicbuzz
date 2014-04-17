@@ -23,7 +23,11 @@ function sign_up_user() {
                 "country": $("#country").val()
             },
     function(data, status) {
-        alert("user: " + data.user +"  fucker: " + data.fucker + "\nStatus: " + status);
+        if (data === true){
+            changePage("sign_up_user","login_to_host");
+        }else{
+            alert("A user with the same email is already registerd");
+        }
         clear_inputs();
     });
 }
