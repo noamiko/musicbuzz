@@ -1,6 +1,6 @@
 var mongoose = require('mongoose')
-        , host = require('../models/host.js');
-
+        , host = require('../models/host.js')
+        , user = require('../models/user.js');
 module.exports = HostList;
 
 function HostList(connection) {
@@ -81,8 +81,12 @@ HostList.prototype = {
             }
         });
     },
-    get_users: function(req, res)
+    get_host_users: function(req, res)
     {
-
+        user.find({hostId: req.body.id},
+        function foundUsers(err, items)
+        {
+            res.send(items);
+        });
     }
 };
