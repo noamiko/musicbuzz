@@ -47,10 +47,10 @@ function login_host() {
 
 
 function signup_user() {
-    alert(document.forms["signup_user_form"] ["firstname]"].value);
+    alert(document.forms["signup_user_form"] ["firstname"].value);
     $.post("/signup_user",
             {
-                "firstname": document.forms["signup_user_form"] ["firstname]"].value,
+                "firstname": document.forms["signup_user_form"] ["firstname"].value,
                 "lastname": $("#signup_user_form input[name=lastname]").val(),
                 "username": $("#signup_user_form input[name=username]").val(),
                 "email": $("#signup_user_form input[name=email]").val(),
