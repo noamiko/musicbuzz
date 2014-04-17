@@ -27,27 +27,31 @@ song_history_list.prototype = {
         });
         res.send(true);
     },
-    get_user_song_history: function(req, res) {
-        newSongHistory.find({user_id: req.body.user_id},
+    getUserSongHistory: function(user_id)
+    {
+        newSongHistory.find({user_id: user_id},
         function songHistory(err, items)
         {
-            if (items.length !== 0)
+            return items.sort(function compare(a, b)
             {
-                res.sent(items.sort(function compare(a, b)
+                if (a.lastVotedDate > b.lastVotedDate)
                 {
-                    if (a.lastVotedDate > b.lastVotedDate)
-                    {
-                        return -1;
-                    }
-                    if (a.lastVotedDate < b.lastVotedDate)
-                        return 1;
-                    return 0;
-
-                }).slice(0, 5));
-            } else
-            {
-                res.sent();
-            }
-        });
+                    return -1;
+                }
+                if (a.lastVotedDate < b.lastVotedDate)
+                    return 1;
+                return 0;
+            })
+        })
+    },
+    get_user_song_history: function(req, res) {
+        var history = this.getUserSongHistory(res.body.user_id);
+        if (history.length !== 0)
+        {
+            res.send(history.slice(0, 5));
+        } else
+        {
+            res.send();
+        }
     }
 };

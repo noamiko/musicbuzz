@@ -1,6 +1,7 @@
 var mongoose = require('mongoose')
         , host = require('../models/host.js')
-        , user = require('../models/user.js');
+        , user = require('../models/user.js')
+        , song_vote = require('../models/song_vote.js');
 module.exports = HostList;
 function HostList(connection) {
     mongoose.connect(connection, function(err) {
@@ -76,19 +77,58 @@ HostList.prototype = {
             }
         });
     },
-    get_host_users: function(req, res)
+    getHostUsers: function(host_id)
     {
-        user.find({hostId: req.body._id},
-        function foundUsers(err, items)
+        user.find({hostId: host_id},
+        function foundHosts(err, items)
         {
-            res.send(items);
+            return items;
         });
+    },
+    getSongVotes: function(host_id)
+    {
+        song_vote.find({hostId: host_id},
+        function foundVotes(err, items)
+        {
+            return items;
+        });
+    },
+    getUserSongHistory: function(user_id)
+    {
+        newSongHistory.find({user_id: user_id},
+        function songHistory(err, items)
+        {
+            return items.sort(function compare(a, b)
+            {
+                if (a.lastVotedDate > b.lastVotedDate)
+                {
+                    return -1;
+                }
+                if (a.lastVotedDate < b.lastVotedDate)
+                    return 1;
+                return 0;
+            })
+        })
+    },
+    getTopThreeSongs: function(songHistory)
+    {
+        songHistory.sort(function compare(a, b)
+        {
+            if (a.like > b.like)
+            {
+                return 1;
+            }
+            if (a.like < b.like)
+                return -1;
+            return 0;
+        }).slice(0, 3);
     },
     choose_next_song: function(req, res)
     {
+        var host_id = res.body.host_id;
         var totolScore = 0;
-        var songVotes = getSongVotes(host_id); //TODO
-        var users = getUsers(host_id); //TODO
+        var songVotes = getSongVotes(host_id);
+        var users = getHostUsers(host_id);
 
         for (var song in songVotes)
         {
@@ -98,9 +138,24 @@ HostList.prototype = {
         // Give each three passive votes with diffrent weights
         for (var user in users)
         {
-            var songHistory = getSongHistory(user._id); //TODO
-            var topThreeSongs = getTopTjreeSongs(songHistory);
-
+            var songHistory = this.getUserSongHistory(user._id);
+            var topThreeSongs = this.getTopThreeSongs(songHistory);
+            songVotes[topThreeSongs[0]] += 0.4;
+            songVotes[topThreeSongs[1]] += 0.2;
+            songVotes[topThreeSongs[2]] += 0.1;
         }
+
+        var bestSong = songVotes.sort(function compare(a, b)
+        {
+            if (a.like > b.like)
+            {
+                return 1;
+            }
+            if (a.like < b.like)
+                return -1;
+            return 0;
+        })[0];
+        bestSong.like = 0;
+        return bestSong;
     }
 };
