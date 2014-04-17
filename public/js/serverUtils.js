@@ -55,7 +55,7 @@ function signup_user() {
             {
                 "firstName": $("#firstName").val(),
                 "lastName": $("#lastName").val(),
-                "userName": $("#userName").val(),
+                "username": $("#userName").val(),
                 "email": $("#email").val(),
                 "password": $("#password").val(),
                 "geolocation": getGeoLocation(),
