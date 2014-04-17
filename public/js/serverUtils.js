@@ -5,13 +5,18 @@ var next_song;
 var history_list;
 var best_songs;
 var is_a_host = false;
+var lat;
+var lng;
+
 
 function login_user() {
+    getGeoLocation()
     $.post('/login_user',
             {
                 "email": document.forms["login_user_form"] ["email"].value,
                 "pwd": document.forms["login_user_form"] ["pwd"].value,
-                "geolocation": getGeoLocation()
+                "lat": lat,
+                "lng": lng
             },
     function(data, status) {
         if (data !== false) {
@@ -25,12 +30,13 @@ function login_user() {
 }
 
 function login_host() {
+    getGeoLocation()
     $.post('/login_host',
             {
                 "email": document.forms["login_host_form"] ["email"].value,
                 "pwd": document.forms["login_host_form"] ["pwd"].value,
-                "geolocation": getGeoLocation()
-
+                "lat": lat,
+                "lng": lng
             },
     function(data, status) {
         if (data !== false) {
@@ -47,6 +53,7 @@ function login_host() {
 
 
 function signup_user() {
+    geolocation();
     $.post("/signup_user",
             {
                 "firstname": document.forms["signup_user_form"] ["firstname"].value,
@@ -54,7 +61,8 @@ function signup_user() {
                 "username": document.forms["signup_user_form"] ["username"].value,
                 "email": document.forms["signup_user_form"] ["email"].value,
                 "pwd": document.forms["signup_user_form"] ["pwd"].value,
-                "geolocation": getGeoLocation(),
+                "lat": lat,
+                "lng": lng,
                 "gender": document.forms["signup_user_form"] ["gender"].value,
                 "birthdate": document.forms["signup_user_form"] ["birthdate"].value,
                 "country": document.forms["signup_user_form"] ["country"].value
@@ -71,6 +79,7 @@ function signup_user() {
 }
 
 function signup_host() {
+    getGeoLocation();
     $.post("/signup_host",
             {
                 "bizname": document.forms["signup_host_form"] ["bizname"].value,
@@ -80,7 +89,8 @@ function signup_host() {
                 "address": document.forms["signup_host_form"] ["address"].value,
                 "country": document.forms["signup_host_form"] ["country"].value,
                 "url": document.forms["signup_host_form"] ["url"].value,
-                "geolocation": getGeoLocation()
+                "lat": lat,
+                "lng": lng
             },
     function(data, status) {
         if (data !== false) {
