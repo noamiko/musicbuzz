@@ -40,7 +40,8 @@ app.post('/like', userList.like.bind(userList));
 app.post('/dislike', userList.disLike.bind(userList));
 
 // SongHistory list
-app.post('/get_song_history', userList.get_user_song_history.bind(songHistoryList));
+app.post('/get_song_history', songHistoryList.get_user_song_history.
+        bind(songHistoryList));
 
 
 // HostList posts
