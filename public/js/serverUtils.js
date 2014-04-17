@@ -14,7 +14,7 @@ function login() {
 function login_user() {
     var x = {
         "email": $("#email").val(),
-        "password": $("#password").val(),
+        "pwd": $("#pwd").val(),
         "geolocation": getGeoLocation()
     };
     alert(x);
@@ -22,7 +22,7 @@ function login_user() {
     $.post('/login_user',
             {
                 "email": $("#email").val(),
-                "password": $("#password").val(),
+                "pwd": $("#pwd").val(),
                 "geolocation": getGeoLocation()
             },
     function(data, status) {
@@ -40,7 +40,7 @@ function login_user() {
 function login_host() {
     var x = {
         "email": $("#email").val(),
-        "password": $("#password").val(),
+        "pwd": $("#pwd").val(),
         "geolocation": getGeoLocation()
 
     };
@@ -48,7 +48,7 @@ function login_host() {
     $.post('/login_host',
             {
                 "email": $("#email").val(),
-                "password": $("#password").val(),
+                "pwd": $("#pwd").val(),
                 "geolocation": getGeoLocation()
 
             },
@@ -70,7 +70,7 @@ function signup_user() {
         "lastname": $("#lastName").val(),
         "username": $("#userName").val(),
         "email": $("#email").val(),
-        "password": $("#password").val(),
+        "pwd": $("#pwd").val(),
         "geolocation": getGeoLocation(),
         "gender": $("#gender").val(),
         "birthdate": $("#birthDate").val(),
@@ -83,7 +83,7 @@ function signup_user() {
                 "lastname": $("#lastName").val(),
                 "username": $("#userName").val(),
                 "email": $("#email").val(),
-                "password": $("#password").val(),
+                "pwd": $("#pwd").val(),
                 "geolocation": getGeoLocation(),
                 "gender": $("#gender").val(),
                 "birthdate": $("#birthDate").val(),
@@ -106,7 +106,7 @@ function signup_host() {
         "bizname": $("#bizName").val(),
         "username": $("#userName").val(),
         "email": $("#email").val(),
-        "password": $("#password").val(),
+        "pwd": $("#pwd").val(),
         "address": $("#address").val(),
         "country": $("#country").val(),
         "url": $("#url").val(),
@@ -120,7 +120,7 @@ function signup_host() {
                 "bizname": $("#bizName").val(),
                 "username": $("#userName").val(),
                 "email": $("#email").val(),
-                "password": $("#password").val(),
+                "pwd": $("#pwd").val(),
                 "address": $("#address").val(),
                 "country": $("#country").val(),
                 "url": $("#url").val(),
