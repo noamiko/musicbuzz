@@ -32,7 +32,7 @@ app.post('/signup_user', userList.signup_user.bind(userList));
 app.post('/login_user', userList.login_user.bind(userList));
 //app.post('/get_user', userList.getUser().bind(userList));
 //app.post('/addhost', hostList.signup_host.bind(hostList));
-////app.post('/addsongvote', songVoteList.addSongVote.bind(songVoteList));
+//app.post('/addsongvote', songVoteList.addSongVote.bind(songVoteList));
 //app.post('/addsong', songList.addSong.bind(songList));
 
 /// catch 404 and forwarding to error handler
