@@ -131,7 +131,7 @@ function get_song(song_id) {
 }
 
 function get_song_history() {
-    $.post("/get_song_histoey",
+    $.post("/get_song_history",
             {"user_id": current_user._id},
     function(data, status) {
         if (data !== false) {
@@ -141,7 +141,7 @@ function get_song_history() {
         }
     });
 }
-
+    
 function like(songId) {
     $.post("/like",
             {
@@ -174,6 +174,7 @@ function dislike(songId) {
 }
 
 function search_song() {
+    alert(document.forms["search_form"] ["search_text"].value);
     $.post("/search_song",
             {
                 "key": document.forms["search_form"] ["search_text"].value
