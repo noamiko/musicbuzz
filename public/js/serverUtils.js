@@ -80,7 +80,7 @@ function signup_host() {
     $.post("/signup_host",
             {
                 "bizName": $("#bizName").val(),
-                "userName": $("#userName").val(),
+                "username": $("#userName").val(),
                 "email": $("#email").val(),
                 "password": $("#password").val(),
                 "address": $("#address").val(),
