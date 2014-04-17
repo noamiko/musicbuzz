@@ -5,7 +5,7 @@ var HostList = require('./routes/hostlist');
 var UserList = require('./routes/userlist');
 var SongVoteList = require('./routes/song_vote_list');
 var songlist = require('./routes/songlist');
-var SongHistoryList = require('./routes/song_history_list');
+var song_history_list = require('./routes/song_history_list');
 
 // Add require
 var express = require('express');
