@@ -174,7 +174,6 @@ function dislike(songId) {
 }
 
 function search_song() {
-    alert(document.forms["search_form"] ["search_text"].value);
     $.post("/search_song",
             {
                 "key": document.forms["search_form"] ["search_text"].value
