@@ -210,11 +210,12 @@
         <!-- search page -->
         <section id="search" data-role="page" class="container">
             <article id="first" class="container box style1" style="text-align: center">
-                <div style="display: inline-block">
-                    <input type="search" name="search_text" id="search_text" value="" style="border-radius: 8em;" />
-                    <a class="button" id="search_btn" onclick="search_song()" style="border-radius: 8em; padding: 0.2em 1em;">Search</a>
-                </div>
-
+                <form method="post" name="search_form">
+                    <div style="display: inline-block">
+                        <input type="search" name="search_text" id="search_text" value="" style="border-radius: 8em;" />
+                        <a class="button" id="search_btn" onclick="search_song()" style="border-radius: 8em; padding: 0.2em 1em;">Search</a>
+                    </div>
+                </form>
 
                 <div id="history_list"></div>
 
