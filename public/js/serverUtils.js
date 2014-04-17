@@ -233,10 +233,10 @@ function add_song() {
                 "url": document.forms["deploy_form"] ["url"].value
             },
     function(data, status) {
-        
+
         if (data !== false) {
         } else {
-            
+
         }
     });
 }
