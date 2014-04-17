@@ -23,7 +23,7 @@ function sign_up_user() {
                 "country": $("#country").val()
             },
     function(data, status) {
-        alert("Data: " + data + "\nStatus: " + status);
+        alert("user: " + data.user +"  fucker: " + data.fucker + "\nStatus: " + status);
         clear_inputs();
     });
 }
