@@ -21,7 +21,7 @@
     </head>
     <body onload="init();">
 
-        <!-- LOGIN for user -->
+        <!-- LOGIN for user page-->
         <section id="login_user" data-role="page">
 
             <!-- Header -->
@@ -31,13 +31,13 @@
                     <p>By IDC Hack</p>
                     <br/>
                     <div data-role="fieldcontain">
-                        <form method="post">
+                        <form method="post" name="login_user_form">
                             <div class="row half">
                                 <div class="6u">
-                                    <input type="email" name="email" id="username" value="" placeholder="email"/>    
+                                    <input type="email" name="email" value="" placeholder="email"/>    
                                 </div>
                                 <div class="6u">
-                                    <input type="password" name="pwd" id="pwd" placeholder="Password">
+                                    <input type="password" name="pwd" placeholder="Password">
                                 </div>
                             </div>
                         </form>
@@ -67,43 +67,43 @@
                 <header>
                     <h2>Sign Up form</h2>
                 </header>
-                <form method="post" >
+                <form method="post" name="signup_user_form">
                     <div class="row half">
                         <div class="6u">
 
                             <label for="username">First Name:&emsp;</label>
-                            <input type="text" name="firstname" id="firstname" value="" placeholder="First Name"/>
+                            <input type="text" name="firstname" value="" placeholder="First Name"/>
                         </div>
                         <div class="6u">                
                             <label for="username">Last Name:&emsp;</label>
-                            <input type="text" name="lastname" id="lastname" value="" placeholder="Last Name"/>
+                            <input type="text" name="lastname" value="" placeholder="Last Name"/>
                         </div>
                         <div class="6u">                      
                             <label for="username">Username:&emsp;</label>
-                            <input type="text" name="username" id="username" value="" placeholder="Username"/>
+                            <input type="text" name="username" value="" placeholder="Username"/>
                         </div>
                         <div class="6u">                      
                             <label for="email">Email:&emsp;&emsp;&emsp;</label>
-                            <input type="email" name="email" id="email" value="" placeholder="Email"/>            
+                            <input type="email" name="email" value="" placeholder="Email"/>            
                         </div>
                         <div class="6u">                      
                             <label for="password">Password:&emsp;</label>
-                            <input type="password" name="pwd" id="pwd" placeholder="Password">
+                            <input type="password" name="pwd" placeholder="Password">
                         </div>
                         <div class="6u">                      
                             <label for="username">Country:&emsp;&emsp;</label>
-                            <input type="text" name="country" id="country" value="" placeholder="Country"/>
+                            <input type="text" name="country" value="" placeholder="Country"/>
                         </div>
                         <div class="6u">                      
                             <label for="radio-female">Female</label>
-                            <input type="radio" name="gender" id="radio-female" value="f"  />
+                            <input type="radio" name="gender" value="f"  />
 
                             <label for="radio-male">Male</label>
-                            <input type="radio" name="gender" id="radio-male" value="m"   />
+                            <input type="radio" name="gender" value="m"   />
                         </div>
                         <div class="6u">                      
                             <label for="date" >Birth Date:</label>
-                            <input type="date" name="birthdate" id="birthDate" value="">
+                            <input type="date" name="birthdate" value="">
                         </div>
                     </div>
                 </form>
@@ -124,36 +124,36 @@
                 <header>
                     <h2>Host Sign Up form</h2>
                 </header>
-                <form method="post">
+                <form method="post" name="signup_host_form">
                     <div class="row half">
                         <div class="6u">
 
                             <label for="username">Biz Name:&emsp;</label>
-                            <input type="text" name="bizname" id="bizname" value="" placeholder="Biz Name"/>
+                            <input type="text" name="bizname" value="" placeholder="Biz Name"/>
                         </div>
                         <div class="6u">
                             <label for="username">Username:&emsp;</label>
-                            <input type="text" name="username" id="username" value="" placeholder="Username"/>
+                            <input type="text" name="username" value="" placeholder="Username"/>
                         </div>
                         <div class="6u">                     
                             <label for="email">Email:&emsp;&emsp;&emsp;</label>
-                            <input type="email" name="email" id="email" value="" placeholder="Email"/>            
+                            <input type="email" name="email" value="" placeholder="Email"/>            
                         </div>
                         <div class="6u">                       
                             <label for="password">Password:&emsp;</label>
-                            <input type="password" name="pwd" id="pwd" placeholder="Password"> 
+                            <input type="password" name="pwd" placeholder="Password"> 
                         </div>
                         <div class="6u">                     
                             <label for="username">Address&emsp;&emsp;</label>
-                            <input type="text" name="address" id="address" value="" placeholder="Address"/>
+                            <input type="text" name="address" value="" placeholder="Address"/>
                         </div>
                         <div class="6u">                      
                             <label for="username">Country:&emsp;&emsp;</label>
-                            <input type="text" name="country" id="country" value="" placeholder="Country"/>
+                            <input type="text" name="country" value="" placeholder="Country"/>
                         </div>
                         <div class="6u">
                             <label for="username">URL:&emsp;&emsp;&emsp;</label>
-                            <input type="url" name="url" id="url" value="" placeholder="http://www."/>
+                            <input type="url" name="url" value="" placeholder="http://www."/>
                         </div>
                     </div>
                 </form>
@@ -167,13 +167,13 @@
         <section id="login_to_host" data-role="page">
             <!-- Feature 1 -->
             <article id="first" class="container box style1" style="text-align: center">
-                <form method="post">
+                <form method="post" name="login_to_host_form">
                     <div class="inner">
                         <header>
                             <h2>Login to HOST</h2>
                         </header>
                         <label for="username">Host Name:</label>
-                        <input type="text" name="hostname" id="hostname" value="" placeholder="Host Name"/>   
+                        <input type="text" name="hostname"  value="" placeholder="Host Name"/>   
                         <br/>
                         <br/>
                         <a class="button form" name="submit" onclick="login_to_host()">Enter</a>
@@ -207,8 +207,11 @@
         <!-- search page -->
         <section id="search" data-role="page" class="container">
             <article id="first" class="container box style1" style="text-align: center">
+                <input type="search" name="search_text" id="search-basic" value="" />
+                <button type="submit" id="search_btn" onclick="search_song()"></button>
 
-                <input type="search" name="search" id="search-basic" value="" />
+
+
                 <div id="history_list"></div>
 
                 <a class="button form" name="submit" onclick="changePage('search', 'feed')">Back to feed</a>
