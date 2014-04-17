@@ -42,7 +42,7 @@ UserList.prototype = {
                 }
             });
             res.render('index', {user: newUser});
-            res.valueOf();
+            res.send(404);
         } else {
             res.render('index', {user: false});
         }
