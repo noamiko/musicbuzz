@@ -11,6 +11,14 @@
 /* Basic                                                                         */
 /*********************************************************************************/
 
+
+/*#host_btn{
+    position: fixed;
+    top: 1em;
+    left: 2em;
+}*/
+
+
 body
 {
     background: #183026 url('../images/bg.jpg') no-repeat;

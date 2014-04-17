@@ -2,16 +2,6 @@ var current_host;
 var current_user;
 var current_song;
 
-
-function login() {
-    var decider = $("#login_to").val();
-    if (decider === "user") {
-        login_user();
-    } else {
-        login_host();
-    }
-}
-
 function login_user() {
     $.post('/login_user',
             {
@@ -137,8 +127,10 @@ function get_song_history() {
 
 function like(songId) {
     $.post("/like",
-            {"_id": current_host._id,
-                "sondId": songId
+            {
+                "host_id": current_host._id,
+                "user_id": current_user._id,
+                "song_id": songId
             },
     function(data, status) {
         if (data !== false) {
@@ -149,10 +141,11 @@ function like(songId) {
     });
 }
 
-function dislike(hostid, song) {
+function dislike(songId) {
     $.post("/dislike",
-            {"_id": current_host._id,
-                "sondId": songId
+            {
+                "host_id": current_host._id,
+                "song_id": songId
             },
     function(data, status) {
         if (data !== false) {
