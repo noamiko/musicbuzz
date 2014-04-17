@@ -90,6 +90,7 @@ function signup_host() {
     function(data, status) {
         if (data !== false) {
             current_host = data;
+            alert(current_host._id);
             changePage("sign_up_host", "feed");
         } else {
             alert("A user with the same email is already registerd");
