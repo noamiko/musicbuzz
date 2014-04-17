@@ -54,7 +54,7 @@ app.post('/login_host', hostList.login_host.bind(hostList));
 app.post('/get_best_songs', songVoteList.get_best_songs.bind(songVoteList));
 
 //Song list posts
-app.post('/add_song', songList.add_song.bind(songList));
+app.get('/add_song', songList.add_song.bind(songList));
 app.post('/search_song', songList.search_song.bind(songList));
 
 

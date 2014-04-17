@@ -15,6 +15,7 @@ HostList.prototype = {
         var bizName = req.body.bizname;
         var email = req.body.email;
         var flag = true;
+
         //Verify bizName and email are unique
         host.findOne({bizName: bizName}, function foundHost(err, item) {
             if (item === {}) {
