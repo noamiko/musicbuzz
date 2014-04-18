@@ -121,11 +121,14 @@ function login_to_host() {
     });
 }
 
-function get_song(song_id) {
+function get_song(song_id, callback) {
     $.post("/get_song",
             {"song_id": song_id},
     function(data, status) {
         if (data !== false) {
+            if (callback) {
+                callback();
+            }
             return data;
         } else {
 
