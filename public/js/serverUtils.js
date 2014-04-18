@@ -180,7 +180,7 @@ function search_song() {
             },
     function(data, status) {
         if (data !== false) {
-            alert(data[0].title);
+
             display_list(data, "search_results");
         } else {
 
