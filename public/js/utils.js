@@ -7,6 +7,7 @@ function init() {
     $('#login_host').hide();
     $('#login_user').show();
     getGeoLocation();
+    show_player();
 }
 
 function refresh_data_and_display() {
@@ -80,19 +81,19 @@ function display_list(songList, divId) {
 }
 
 function display_song(song, divId) {
-//    container = document.getElementById(divId);
-//    song.dome = document.createElement("button");
-//    song.dome.setAttribute("class", "button form");
-//    song.dome.setAttribute("type", "button");
-//    song.dome.setAttribute("data-roll", "button");
-//    song.dome.setAttribute("data-icon", "carat-r");
-//    song.dome.innerHTML = "<h3>" + song.title + "</h3>" + song.artist;
-//    container.appendChild(song.dome);
+    container = document.getElementById(divId);
+    song.dome = document.createElement("button");
+    song.dome.setAttribute("class", "button form");
+    song.dome.setAttribute("type", "button");
+    song.dome.setAttribute("data-roll", "button");
+    song.dome.setAttribute("data-icon", "carat-r");
+    song.dome.innerHTML = "<h3>" + song.title + "</h3>" + song.artist;
+    container.appendChild(song.dome);
 }
 
 
 function display_best_songs(songList, divId) {
-    if (songList != null) {
+    if (songList !== null) {
         for (var i = 0; i < songList.length; i++) {
 
             $("#" + divId).append("<div id=" + divId + "-row-" + i + " class='song-row'></div>");
