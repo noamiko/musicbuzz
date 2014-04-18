@@ -70,6 +70,7 @@ function display_title(title) {
 
 function display_list(songList, divId) {
     container = document.getElementById(divId);
+    container.removeChild();
     for (var i = 0; i < songList.length; i++) {
         //The button representing the song
         songList[i].dome = document.createElement("button");
@@ -79,7 +80,7 @@ function display_list(songList, divId) {
         songList[i].dome.setAttribute("data-role", "button");
         songList[i].dome.setAttribute("onclick", "like('" + songList[i]._id + "')");
         songList[i].dome.innerHTML = "<h3>" + songList[i].title + "</h3>" + songList[i].artist;
-        container.replaceChild(songList[i].dome);
+        container.appendChild(songList[i].dome);
     }
 }
 
