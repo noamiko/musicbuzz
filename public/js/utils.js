@@ -79,7 +79,7 @@ function display_list(songList, divId) {
         songList[i].dome.setAttribute("data-role", "button");
         songList[i].dome.setAttribute("onclick", "like('" + songList[i]._id + "')");
         songList[i].dome.innerHTML = "<h3>" + songList[i].title + "</h3>" + songList[i].artist;
-        container.appendChild(songList[i].dome);
+        container.replaceChild(songList[i].dome);
     }
 }
 
