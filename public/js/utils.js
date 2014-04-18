@@ -73,11 +73,11 @@ function display_list(songList, divId) {
     for (var i = 0; i < songList.length; i++) {
         //The button representing the song
         songList[i].dome = document.createElement("button");
-        songList[i].dome.setAttribute("class", "song-button ui-btn ui-shadow ui-corner-all");
+        songList[i].dome.setAttribute("class", "button form");
 
         songList[i].dome.setAttribute("type", "button");
         songList[i].dome.setAttribute("data-role", "button");
-        songList[i].dome.setAttribute("onclick", "like(" + songList[i]._id + ")");
+        songList[i].dome.setAttribute("onclick", "like('" + songList[i]._id + "')");
         songList[i].dome.innerHTML = "<h3>" + songList[i].title + "</h3>" + songList[i].artist;
         container.appendChild(songList[i].dome);
     }
@@ -86,7 +86,7 @@ function display_list(songList, divId) {
 function display_song(song, divId) {
     container = document.getElementById(divId);
     song.dome = document.createElement("button");
-    song.dome.setAttribute("class", "current-song-button ui-btn ui-shadow ui-corner-all");
+    song.dome.setAttribute("class", "button form");
     song.dome.setAttribute("type", "button");
     song.dome.setAttribute("data-roll", "button");
     song.dome.setAttribute("data-icon", "carat-r");
