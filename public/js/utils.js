@@ -80,14 +80,14 @@ function display_list(songList, divId) {
 }
 
 function display_song(song, divId) {
-    container = document.getElementById(divId);
-    song.dome = document.createElement("button");
-    song.dome.setAttribute("class", "button form");
-    song.dome.setAttribute("type", "button");
-    song.dome.setAttribute("data-roll", "button");
-    song.dome.setAttribute("data-icon", "carat-r");
-    song.dome.innerHTML = "<h3>" + song.title + "</h3>" + song.artist;
-    container.appendChild(song.dome);
+//    container = document.getElementById(divId);
+//    song.dome = document.createElement("button");
+//    song.dome.setAttribute("class", "button form");
+//    song.dome.setAttribute("type", "button");
+//    song.dome.setAttribute("data-roll", "button");
+//    song.dome.setAttribute("data-icon", "carat-r");
+//    song.dome.innerHTML = "<h3>" + song.title + "</h3>" + song.artist;
+//    container.appendChild(song.dome);
 }
 
 
