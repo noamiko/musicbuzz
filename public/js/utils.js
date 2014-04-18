@@ -156,6 +156,7 @@ function timer() {
 }
 
 function show_player() {
+    alert("showing song :)");
     content = "<audio controls><source src=" + current_song.url + " type='audio/mpeg'></audio>";
     $('#' + 'player').html(content);
 
