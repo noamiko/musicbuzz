@@ -122,7 +122,7 @@ UserList.prototype = {
                 song_vote.findOne({user_id: req.body.user_id, songId: req.body.song_id},
                 function likeSongHistory(err, item)
                 {
-                    if (item === null)
+                    if (item === {})
                     {
                         newSongHistory = new song_history();
                         newSongHistory.user_id = req.body.user_id;
