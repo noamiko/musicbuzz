@@ -134,8 +134,8 @@ function changePage(from, to) {
     $("#" + from).hide();
     $("#" + to).show();
     if (to === 'feed' && is_a_host === true) {
-        current_song = get_song(current_host.currentSongId,show_player());
-//        show_player();
+        current_song = get_song(current_host.currentSongId);
+        show_player();
 //        refresh_data_and_display();
 //        show_player();
 //        timer();

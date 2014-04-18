@@ -121,15 +121,12 @@ function login_to_host() {
     });
 }
 
-function get_song(song_id, callback) {
+function get_song(song_id) {
     $.post("/get_song",
             {"song_id": song_id},
     function(data, status) {
         if (data !== false) {
-            if (callback) {
-                current_song = data;
-                callback();
-            }
+            alert(data.url);
             return data;
         } else {
 
