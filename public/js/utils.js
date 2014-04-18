@@ -69,7 +69,6 @@ function display_title(title) {
 }
 
 function display_list(songList, divId) {
-    container = document.getElementById(divId);
     var content = "";
     for (var i = 0; i < songList.length; i++) {
         //The button representing the song
@@ -149,7 +148,15 @@ function timer() {
         choose_next_song();
         refresh_data();
         refresh_data_and_display();
+        show_player();
         //startimg a new timer for the current song
         timer();
     }, time_to_refresh);
+}
+
+function show_player() {
+    content = "<audio controls><source src=" + current_song.url + " type='audio/mpeg'></audio>";
+    $('#' + 'player').html(content);
+
+
 }
