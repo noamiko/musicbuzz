@@ -1,6 +1,6 @@
 var current_host;
 var current_user;
-var current_song;
+var current_song = {artist: "adele", title: "take it all", length: 4, url: "https://copy.com/urRULrHGjG03"};
 var next_song;
 var history_list;
 var best_songs;

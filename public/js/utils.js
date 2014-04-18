@@ -19,11 +19,11 @@ function refresh_data_and_display() {
 }
 
 function refresh_displays() {
-    display_best_songs(best_songs, "best_songs")
-    display_song(current_song, "current_song")
-    display_song(next_song, "next_song")
-    display_list(history_list, "history_list")
-    display_title(current_host.bizname)
+    display_best_songs(best_songs, "best_songs");
+    display_song(current_song, "current_song");
+    display_song(next_song, "next_song");
+    display_list(history_list, "history_list");
+    display_title(current_host.bizname);
 }
 
 
@@ -65,7 +65,7 @@ function validate_gender(gender) {
 }
 
 function display_title(title) {
-    $('#host_title').text(title)
+    $('#host_title').text(title);
 }
 
 function display_list(songList, divId) {
@@ -136,13 +136,14 @@ function changePage(from, to) {
 
 function set_host_login_attr() {
     $('#host_btn').hide();
-    $('#main_title').text("Host Login Page")
+    $('#main_title').text("Host Login Page");
     $('#login_btn').attr('onclick', "login_host()");
     $('#signup_btn').attr('onclick', "changePage('login_user', 'sign_up_host')");
 
 }
 
 function timer() {
+    
     var time_to_refresh = current_song.length * 1000;
     setTimeout(function() {
         choose_next_song();
