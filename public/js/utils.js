@@ -11,7 +11,7 @@ function init() {
 
 function refresh_data_and_display() {
     current_host = login_to_host(current_host.bizname);
-    current_song = get_song(current_host.currentSongId.$oid);
+    current_song = get_song(current_host.currentSongId);
     next_song = get_song(current_host.nextSongId);
     get_best_songs();
     get_song_history();
@@ -135,6 +135,7 @@ function changePage(from, to) {
     $("#" + to).show();
     if (to === 'feed' && is_a_host === true) {
         show_player();
+        timer();
     }
 }
 

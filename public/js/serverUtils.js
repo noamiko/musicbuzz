@@ -38,11 +38,13 @@ function login_host() {
     function(data, status) {
         if (data !== false) {
             current_host = data;
+            console.log(current_host.currentSongId);
+            console.log(current_host._id);
+            console.log(current_host.nextSongId);
             current_user = data;
-            changePage("login_user", "feed");
             is_a_host = true;
-            refresh_data_and_display();
-            timer();
+            changePage("login_user", "feed");
+
         } else {
             alert("Wrong email or password");
         }
@@ -93,10 +95,9 @@ function signup_host() {
         if (data !== false) {
             current_host = data;
             current_user = data;
-            changePage("sign_up_host", "feed");
             is_a_host = true;
             refresh_data_and_display();
-            timer();
+            changePage("sign_up_host", "feed");
         } else {
             alert("A user with the same email is already registerd");
         }
