@@ -94,6 +94,7 @@ function signup_host() {
             current_user = data;
             changePage("sign_up_host", "feed");
             is_a_host = true;
+            refresh_data_and_display();
             timer();
         } else {
             alert("A user with the same email is already registerd");
