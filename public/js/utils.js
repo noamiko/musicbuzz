@@ -75,7 +75,7 @@ function display_list(songList, divId) {
         //The button representing the song
         content += "<button class='button form' type='button' onclick=like('"
                 + songList[i]._id + "')><h3>" + songList[i].title
-                + "</h3>" + songList[i].artist + "<br/>";
+                + "</h3>" + songList[i].artist + "</button>";
     }
     $('#' + divId).html(content);
 }
