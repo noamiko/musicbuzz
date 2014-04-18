@@ -141,7 +141,7 @@ function get_song_history() {
         }
     });
 }
-    
+
 function like(songId) {
     $.post("/like",
             {
@@ -174,14 +174,14 @@ function dislike(songId) {
 }
 
 function search_song() {
-    alert(document.forms["search_form"] ["search_text"].value);
     $.post("/search_song",
             {
                 "key": document.forms["search_form"] ["search_text"].value
             },
     function(data, status) {
         if (data !== false) {
-            display_list("search_results");
+            alert(data[0].title);
+            display_list(data, "search_results");
         } else {
 
         }
