@@ -73,7 +73,7 @@ function display_list(songList, divId) {
     var content = "";
     for (var i = 0; i < songList.length; i++) {
         //The button representing the song
-        content += "<button class='button form' type='button' onclick=like('"
+        content += "<button class='button form' style='margin: 1em;' type='button' onclick=like('"
                 + songList[i]._id + "')><h3>" + songList[i].title
                 + "</h3>" + songList[i].artist + "</button>";
     }
