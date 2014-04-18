@@ -126,7 +126,7 @@ function get_song(song_id) {
             {"song_id": song_id},
     function(data, status) {
         if (data !== false) {
-            alert(data.url);
+            alert(song_id);
             return data;
         } else {
 
