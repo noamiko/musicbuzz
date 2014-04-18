@@ -31,7 +31,7 @@ SongList.prototype = {
         song.find({artist: req.body.key},
         function songFound(err, items)
         {
-            if (items === {})
+            if (items.length === 0)
             {
                 res.send(false);
             } else
