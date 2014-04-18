@@ -147,7 +147,6 @@ function timer() {
     var time_to_refresh = current_song.length * 1000;
     setTimeout(function() {
         choose_next_song();
-        refresh_data();
         refresh_data_and_display();
         show_player();
         //startimg a new timer for the current song
