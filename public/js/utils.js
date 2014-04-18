@@ -133,8 +133,8 @@ function display_best_songs(songList, divId) {
 function changePage(from, to) {
     $("#" + from).hide();
     $("#" + to).show();
-    if (to ==='feed' && is_a_host===true){
-            show_player();
+    if (to === 'feed' && is_a_host === true) {
+        show_player();
     }
 }
 
@@ -159,7 +159,6 @@ function timer() {
 }
 
 function show_player() {
-    alert("showing song :)");
     content = "<audio autoplay='autoplay' controls><source src=" + current_song.url + " type='audio/mpeg'></audio>";
     $('#' + 'player').html(content);
 
