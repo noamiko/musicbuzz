@@ -126,13 +126,28 @@ function get_song(song_id) {
             {"song_id": song_id},
     function(data, status) {
         if (data !== false) {
-            alert(data);
             return data;
         } else {
 
         }
     });
 }
+
+function get_song_and_play(song_id) {
+    $.post("/get_song",
+            {"song_id": song_id},
+    function(data, status) {
+        if (data !== false) {
+            current_song = data;
+            show_player();
+            return data;
+        } else {
+
+        }
+    });
+}
+
+
 
 function get_song_history() {
     $.post("/get_song_history",

@@ -136,10 +136,10 @@ function changePage(from, to) {
     if (to === 'feed' && is_a_host === true) {
           
 
-        show_player(current_song = get_song(current_host.currentSongId));
-        refresh_data_and_display();
-        show_player();
-        timer();
+        get_song_and_play(current_host.currentSongId);
+//        refresh_data_and_display();
+//        show_player();
+//        timer();
     }
 }
 
