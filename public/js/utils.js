@@ -11,6 +11,9 @@ function init() {
 
 function refresh_data_and_display() {
     current_host = login_to_host(current_host.bizname);
+    console.log(current_song.url);
+    console.log("sdfsd:" +current_host.currentSongId);
+
     current_song = get_song(current_host.currentSongId);
     console.log(current_song.url);
     next_song = get_song(current_host.nextSongId);
