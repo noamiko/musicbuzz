@@ -147,7 +147,7 @@ function set_host_login_attr() {
 }
 
 function timer() {
-
+    alert(current_song.title);
     var time_to_refresh = current_song.length * 1000;
     setTimeout(function() {
         choose_next_song();
