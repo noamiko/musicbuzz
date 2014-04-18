@@ -39,6 +39,7 @@ function login_host() {
         if (data !== false) {
             current_host = data;
             current_user = data;
+            refresh_data_and_display();
             changePage("login_user", "feed");
             is_a_host = true;
             timer();
