@@ -141,7 +141,6 @@ function get_song_and_play(song_id) {
             current_song = data;
             next_song = get_song(current_host.nextSongId);
             show_player();
-            refresh_data_and_display();
             
             return data;
         } else {

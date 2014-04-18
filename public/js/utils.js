@@ -21,8 +21,6 @@ function refresh_data(){
 
 function refresh_data_and_display(refresh_data) {
     current_host = login_to_host(current_host.bizname);
-    current_song = get_song(current_host.currentSongId);
-    next_song = get_song(current_host.nextSongId);
     get_best_songs();
     get_song_history();
 }
