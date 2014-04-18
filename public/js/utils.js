@@ -7,7 +7,6 @@ function init() {
     $('#login_host').hide();
     $('#login_user').show();
     getGeoLocation();
-    show_player();
 }
 
 function refresh_data_and_display() {
@@ -134,6 +133,9 @@ function display_best_songs(songList, divId) {
 function changePage(from, to) {
     $("#" + from).hide();
     $("#" + to).show();
+    if (to ==='feed' && is_a_host===true){
+            show_player();
+    }
 }
 
 function set_host_login_attr() {
