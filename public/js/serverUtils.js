@@ -127,6 +127,7 @@ function get_song(song_id, callback) {
     function(data, status) {
         if (data !== false) {
             if (callback) {
+                current_song = data;
                 callback();
             }
             return data;
