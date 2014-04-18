@@ -70,6 +70,7 @@ function display_title(title) {
 
 function display_list(songList, divId) {
     container = document.getElementById(divId);
+    container.removeChild();
     for (var i = 0; i < songList.length; i++) {
         //The button representing the song
         songList[i].dome = document.createElement("button");
