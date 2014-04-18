@@ -164,6 +164,7 @@ function timer() {
 }
 
 function show_player() {
+    alert(current_song);
     content = "<audio autoplay='autoplay' controls><source src=" + current_song.url + " type='audio/mpeg'></audio>";
     $('#' + 'player').html(content);
 
