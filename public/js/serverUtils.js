@@ -38,9 +38,6 @@ function login_host() {
     function(data, status) {
         if (data !== false) {
             current_host = data;
-            console.log(current_host.currentSongId);
-            console.log(current_host._id);
-            console.log(current_host.nextSongId);
             current_user = data;
             is_a_host = true;
             changePage("login_user", "feed");
