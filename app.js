@@ -56,6 +56,7 @@ app.post('/get_best_songs', songVoteList.get_best_songs.bind(songVoteList));
 //Song list posts
 app.post('/add_song', songList.add_song.bind(songList));
 app.post('/search_song', songList.search_song.bind(songList));
+app.post('/get_song', songList.get_song.bind(songList));
 
 
 
