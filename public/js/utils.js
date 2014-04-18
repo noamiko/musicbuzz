@@ -137,9 +137,9 @@ function changePage(from, to) {
         current_song = get_song(current_host.currentSongId);
 
         show_player();
-//        refresh_data_and_display();
-//        show_player();
-//        timer();
+        refresh_data_and_display();
+        show_player();
+        timer();
     }
 }
 
@@ -164,12 +164,8 @@ function timer() {
 }
 
 function show_player() {
-    setTimeout(function() {
-        content = "<audio autoplay='autoplay' controls><source src=" + current_song.url + " type='audio/mpeg'></audio>";
-        $('#' + 'player').html(content);
-    }, 1000);
-
-
+    content = "<audio autoplay='autoplay' controls><source src=" + current_song.url + " type='audio/mpeg'></audio>";
+    $('#' + 'player').html(content);
 
 
 }
