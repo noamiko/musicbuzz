@@ -29,8 +29,8 @@ function login_user() {
 function login_host() {
     $.post('/login_host',
             {
-                "email": document.forms["login_host_form"] ["email"].value,
-                "pwd": document.forms["login_host_form"] ["pwd"].value,
+                "email": document.forms["login_user_form"] ["email"].value,
+                "pwd": document.forms["login_user_form"] ["pwd"].value,
                 "lat": lat,
                 "lng": lng
             },
