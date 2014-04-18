@@ -135,6 +135,7 @@ function changePage(from, to) {
     $("#" + to).show();
     if (to === 'feed' && is_a_host === true) {
         current_song = get_song(current_host.currentSongId);
+
         show_player();
 //        refresh_data_and_display();
 //        show_player();
@@ -163,8 +164,12 @@ function timer() {
 }
 
 function show_player() {
-    content = "<audio autoplay='autoplay' controls><source src=" + current_song.url + " type='audio/mpeg'></audio>";
-    $('#' + 'player').html(content);
+    setTimeout(function() {
+        content = "<audio autoplay='autoplay' controls><source src=" + current_song.url + " type='audio/mpeg'></audio>";
+        $('#' + 'player').html(content);
+    }, 300);
+
+
 
 
 }
