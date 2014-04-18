@@ -167,7 +167,7 @@ function show_player() {
     setTimeout(function() {
         content = "<audio autoplay='autoplay' controls><source src=" + current_song.url + " type='audio/mpeg'></audio>";
         $('#' + 'player').html(content);
-    }, 300);
+    }, 1000);
 
 
 
