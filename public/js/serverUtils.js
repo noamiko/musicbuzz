@@ -38,6 +38,7 @@ function login_host() {
     function(data, status) {
         if (data !== false) {
             current_host = data;
+            current_user = data;
             changePage("login_user", "feed");
             is_a_host = true;
             timer();
@@ -90,6 +91,7 @@ function signup_host() {
     function(data, status) {
         if (data !== false) {
             current_host = data;
+            current_user = data;
             changePage("sign_up_host", "feed");
             is_a_host = true;
             timer();
