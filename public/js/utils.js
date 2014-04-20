@@ -11,7 +11,7 @@ function init() {
 
 
 
-function refresh_data(){
+refresh = function refresh_data(){
     current_host = login_to_host(current_host.bizname);
     current_song = get_song(current_host.currentSongId);
     next_song = get_song(current_host.nextSongId);
@@ -19,13 +19,25 @@ function refresh_data(){
     get_song_history();
 }
 
+
+
+// function data_and_display ( function(){};
+//         ){
+//     
+//     
+//     
+//     
+// }
+
 function refresh_data_and_display(refresh_data) {
     current_host = login_to_host(current_host.bizname);
+    current_song = get_song(current_host.currentSongId);
+    next_song = get_song(current_host.nextSongId);
     get_best_songs();
     get_song_history();
 }
 
-function refresh_displays() {
+display = function refresh_displays() {
     display_best_songs(best_songs, "best_songs");
     display_song(current_song, "current_song");
     display_song(next_song, "next_song");
