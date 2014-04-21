@@ -9,7 +9,10 @@
 /*********************************************************************************/
 #back_to_feed_btn{
     margin: 2em;
-    bottom: 1em;
+    bottom: 0.5em;
+    width: 8em;
+    alignment-adjust: central;
+    alignment-baseline: middle;
 
 }
 
