@@ -11,7 +11,12 @@
     display: inline;
 }
 
+#search_btn{
+    display: inline-block;
+}
+
 #search_text{
+    display: inline-block;
     border-radius: 8em;
 }
 
