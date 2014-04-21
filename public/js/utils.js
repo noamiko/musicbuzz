@@ -112,7 +112,10 @@ function display_best_songs(songList, divId) {
 
 function changePage(from, to) {
     $("#" + to).show();
-    $('html,body').animate({scrollTop: $("#" + to).offset().top, callback: $("#" + from).hide()}, 'slow');
+    $('html,body').animate({scrollTop: $("#" + to).offset().top
+        , callback: $("#" + from).hide()}, 'slow');
+    $("html, body").animate({scrollTop: 0}, "slow");
+
 }
 
 function set_host_login_attr() {
