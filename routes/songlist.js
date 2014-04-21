@@ -42,9 +42,9 @@ SongList.prototype = {
     },
     get_song: function(req, res)
     {
-        song.find({_id: req.body.song_id}, function foundSong(err, items)
+        song.findOne({_id: req.body.song_id}, function foundSong(err, item)
         {
-            res.send(items);
+            res.send(item);
         })
     }
 };
