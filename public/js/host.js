@@ -17,8 +17,8 @@ function timer() {
     }, time_to_refresh);
 }
 
-function show_player() {
-    content = "<audio autoplay='autoplay' controls><source src=" + current_song.url + " type='audio/mpeg'></audio>";
+function show_player(song) {
+    content = "<audio autoplay='autoplay' controls><source src=" + song.url + " type='audio/mpeg'></audio>";
     $('#' + 'player').html(content);
 }
 

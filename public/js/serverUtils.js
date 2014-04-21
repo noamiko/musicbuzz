@@ -140,7 +140,7 @@ function get_display_and_play_song(song_id,divId) {
     function(data, status) {
         if (data !== false) {
             display_song(data,divId);
-            show_player();
+            show_player(data);
             return data;
         } else {
 
