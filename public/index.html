@@ -100,7 +100,7 @@
                     </div>
                 </form>
                 <footer>
-                    <a data-role="button" class="button style2" name="submit" onclick="signup_user()">Sign up</a>
+                    <a data-role="button" class="button style2" onclick="signup_user()">Sign up</a>
                 </footer>
             </section>
         </section>
@@ -112,45 +112,45 @@
         <!-- sign up host page -->
         <section id="sign_up_host" data-role="page">
             <!-- Banner -->
-            <section id="banner">
+            <section id="banner1">
                 <header>
                     <h2>Host Sign Up form</h2>
                 </header>
                 <form method="post" name="signup_host_form">
                     <div class="row half">
-                        <div class="6u">
+                        <div>
 
-                            <label for="username">Biz Name:&emsp;</label>
-                            <input type="text" name="bizname" value="" placeholder="Biz Name"/>
+                            <label for="bizname">Biz Name:&emsp;</label>
+                            <input id="bizname" type="text" name="bizname" value="" placeholder="Biz Name"/>
                         </div>
-                        <div class="6u">
-                            <label for="username">Username:&emsp;</label>
-                            <input type="text" name="username" value="" placeholder="Username"/>
+                        <div>
+                            <label for="username1">Username:&emsp;</label>
+                            <input id="username1" type="text" name="username" value="" placeholder="Username"/>
                         </div>
-                        <div class="6u">                     
-                            <label for="email">Email:&emsp;&emsp;&emsp;</label>
-                            <input type="email" name="email" value="" placeholder="Email"/>            
+                        <div>
+                            <label for="email1">Email:&emsp;&emsp;&emsp;</label>
+                            <input id="email1" type="email" name="email" value="" placeholder="Email"/>            
                         </div>
-                        <div class="6u">                       
-                            <label for="password">Password:&emsp;</label>
-                            <input type="password" name="pwd" placeholder="Password"> 
+                        <div>
+                            <label for="password1">Password:&emsp;</label>
+                            <input id="password1" type="password" name="pwd" placeholder="Password"> 
                         </div>
-                        <div class="6u">                     
-                            <label for="username">Address&emsp;&emsp;</label>
-                            <input type="text" name="address" value="" placeholder="Address"/>
+                        <div>
+                            <label for="address">Address&emsp;&emsp;</label>
+                            <input id="address" type="text" name="address" value="" placeholder="Address"/>
                         </div>
-                        <div class="6u">                      
-                            <label for="username">Country:&emsp;&emsp;</label>
-                            <input type="text" name="country" value="" placeholder="Country"/>
+                        <div>
+                            <label for="country1">Country:&emsp;&emsp;</label>
+                            <input id="country1" type="text" name="country" value="" placeholder="Country"/>
                         </div>
-                        <div class="6u">
-                            <label for="username">URL:&emsp;&emsp;&emsp;</label>
-                            <input type="url" name="url" value="" placeholder="http://www."/>
+                        <div>
+                            <label for="url">URL:&emsp;&emsp;&emsp;</label>
+                            <input id="url" type="url" name="url" value="" placeholder="http://www."/>
                         </div>
                     </div>
                 </form>
                 <footer>
-                    <a data-role="button" class="button style2" name="submit" onclick="signup_host()">Sign Up</a>
+                    <a data-role="button" class="button style2" onclick="signup_host()">Sign Up</a>
                 </footer>
             </section>
         </section>
@@ -158,7 +158,7 @@
         <!-- login to host page -->
         <section id="login_to_host" data-role="page">
             <!-- Feature 1 -->
-            <article id="first" class="container box style1" style="text-align: center">
+            <article class="container box style1" style="text-align: center">
                 <form method="post" name="login_to_host_form">
                     <div class="inner">
                         <header>
