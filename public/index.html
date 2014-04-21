@@ -193,7 +193,7 @@
                     <h1>Best voted so far:</h1>
                     <div id="best_songs"></div>
                     <br/>
-                    
+
                     <button class="button" name="submit" onclick="changePage('feed', 'search')">Search songs</button>
                     <button class="button" name="submit" onclick="refresh_data_and_display()">Refresh</button>
 
@@ -207,13 +207,14 @@
                 <form method="post" name="search_form">
                     <div style="display: inline-block">
                         <input type="search" name="search_text" id="search_text" value="" style="border-radius: 8em;" />
-                        <button class="button" id="search_btn" onclick="search_song()" style="border-radius: 8em; padding: 0.2em 1em;">Search</button>
+                        <button class="button" id="search_btn" onclick="search_song()">Search</button>
                     </div>
                 </form>
 
                 <div id="search_results"></div>
-
-                <button class="button" name="submit" onclick="changePage('search', 'feed')" style="margin: 1em; bottom:2em; ">Back to feed</button>
+                <div>
+                    <button class="button" name="submit" onclick="changePage('search', 'feed')" style="margin: 1em; bottom:2em; ">Back to feed</button>                    
+                </div>
             </article>
         </section>  
 
