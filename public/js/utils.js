@@ -50,11 +50,12 @@ function display_title(title) {
     $('#host_title').text(title);
 }
 
+// the history list
 function display_list(songList, divId) {
     var content = "";
     for (var i = 0; i < songList.length; i++) {
         //The button representing the song
-        content += "<button class='button form' style='margin: 1em;' type='button' onclick=like('"
+        content += "<button class='button' type='button' onclick=like('"
                 + songList[i]._id + "')><h3>" + songList[i].title
                 + "</h3>" + songList[i].artist + "</button>";
     }
@@ -62,14 +63,11 @@ function display_list(songList, divId) {
 }
 
 function display_song(song, divId) {
-    container = document.getElementById(divId);
-    song.dome = document.createElement("button");
-    song.dome.setAttribute("class", "button form");
-    song.dome.setAttribute("type", "button");
-    song.dome.setAttribute("data-roll", "button");
-    song.dome.setAttribute("data-icon", "carat-r");
-    song.dome.innerHTML = "<h3>" + song.title + "</h3>" + song.artist;
-    container.appendChild(song.dome);
+    var content = "";
+    //The button representing the song
+    content += "<button class='button' type='button'><h3>" + song.title
+            + "</h3>" + song.artist + "</button>";
+    $('#' + divId).html(content);
 }
 
 
@@ -123,13 +121,12 @@ function set_host_login_attr() {
     $('#sub_title').text("");
     $('#login_btn').attr('onclick', "login_host()");
     $('#signup_btn').attr('onclick', "changePage('login_user', 'sign_up_host')");
-
 }
 
-function refresh_btn(){
-    if (is_a_host){
+function refresh_btn() {
+    if (is_a_host) {
         refresh_host();
-    }else{
+    } else {
         refresh_user();
     }
 }
