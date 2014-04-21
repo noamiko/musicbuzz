@@ -9,43 +9,6 @@ function init() {
     getGeoLocation();
 }
 
-
-
-refresh = function refresh_data(){
-    current_host = login_to_host(current_host.bizname);
-    current_song = get_song(current_host.currentSongId);
-    next_song = get_song(current_host.nextSongId);
-    get_best_songs();
-    get_song_history();
-}
-
-
-
-// function data_and_display ( function(){};
-//         ){
-//     
-//     
-//     
-//     
-// }
-
-function refresh_data_and_display(refresh_data) {
-    current_host = login_to_host(current_host.bizname);
-    current_song = get_song(current_host.currentSongId);
-    next_song = get_song(current_host.nextSongId);
-    get_best_songs();
-    get_song_history();
-}
-
-display = function refresh_displays() {
-    display_best_songs(best_songs, "best_songs");
-    display_song(current_song, "current_song");
-    display_song(next_song, "next_song");
-    display_list(history_list, "history_list");
-    display_title(current_host.bizname);
-}
-
-
 function clear_inputs() {
     inputs = document.getElementsByTagName('input');
     for (i = 0; i < inputs.length; i++) {
@@ -152,15 +115,6 @@ function display_best_songs(songList, divId) {
 function changePage(from, to) {
     $("#" + from).hide();
     $("#" + to).show();
-    if (to === 'feed' && is_a_host === true) {
-          
-
-        get_song_and_play(current_host.currentSongId);
-        
-//        refresh_data_and_display();
-//        show_player();
-//        timer();
-    }
 }
 
 function set_host_login_attr() {
@@ -172,21 +126,10 @@ function set_host_login_attr() {
 
 }
 
-function timer() {
-    alert(current_song.title);
-    var time_to_refresh = current_song.length * 1000;
-    setTimeout(function() {
-        choose_next_song();
-        refresh_data_and_display();
-        show_player();
-        //startimg a new timer for the current song
-        timer();
-    }, time_to_refresh);
-}
-
-function show_player() {
-    content = "<audio autoplay='autoplay' controls><source src=" + current_song.url + " type='audio/mpeg'></audio>";
-    $('#' + 'player').html(content);
-
-
+function refresh_btn(){
+    if (is_a_host){
+        refresh_host();
+    }else{
+        refresh_user();
+    }
 }

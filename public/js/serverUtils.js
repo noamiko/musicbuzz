@@ -20,6 +20,7 @@ function login_user() {
         if (data !== false) {
             current_user = data;
             changePage("login_user", "login_to_host");
+            start_user();
         } else {
             alert("Wrong email or password");
         }
@@ -41,6 +42,7 @@ function login_host() {
             current_user = data;
             is_a_host = true;
             changePage("login_user", "feed");
+            start_host();
 
         } else {
             alert("Wrong email or password");
@@ -93,8 +95,9 @@ function signup_host() {
             current_host = data;
             current_user = data;
             is_a_host = true;
-            refresh_data_and_display();
             changePage("sign_up_host", "feed");
+            start_host();
+
         } else {
             alert("A user with the same email is already registerd");
         }
@@ -102,6 +105,7 @@ function signup_host() {
     });
 }
 
+//only for users, not for hosts !!!
 function login_to_host() {
     $.post("/login_to_host",
             {"bizname": document.forms["login_to_host_form"] ["bizname"].value},
@@ -109,11 +113,7 @@ function login_to_host() {
         if (data !== false) {
             current_host = data;
             changePage("login_to_host", "feed");
-            current_song = get_song(current_host.currentSongId);
-            next_song = get_song(current_host.nextSongId);
-            get_best_songs();
-            get_song_history();
-            refresh_displays();
+            start_user();
         } else {
             alert("no such host exist");
         }
@@ -121,27 +121,26 @@ function login_to_host() {
     });
 }
 
-function get_song(song_id) {
-    $.post("/get_song",
-            {"song_id": song_id},
+function get_host() {
+    $.post("/login_to_host",
+            {"bizname": document.forms["login_to_host_form"] ["bizname"].value},
     function(data, status) {
         if (data !== false) {
-            return data;
+            current_host = data;
         } else {
-
+            alert("no such host exist");
         }
     });
 }
 
-function get_song_and_play(song_id) {
+
+function get_display_and_play_song(song_id,divId) {
     $.post("/get_song",
             {"song_id": song_id},
     function(data, status) {
         if (data !== false) {
-            current_song = data;
-            next_song = get_song(current_host.nextSongId);
+            display_song(data,divId);
             show_player();
-            
             return data;
         } else {
 
@@ -149,14 +148,26 @@ function get_song_and_play(song_id) {
     });
 }
 
+function get_and_display_song(song_id,divId) {
+    $.post("/get_song",
+            {"song_id": song_id},
+    function(data, status) {
+        if (data !== false) {
+            display_song(data,divId);
+            return data;
+        } else {
 
+        }
+    });
+}
 
-function get_song_history() {
+function get_song_history_and_display() {
     $.post("/get_song_history",
             {"user_id": current_user._id},
     function(data, status) {
         if (data !== false) {
             history_list = data;
+            display_list(history_list,"search_results");
         } else {
 
         }
@@ -210,12 +221,13 @@ function search_song() {
 }
 
 
-function get_best_songs() {
+function get_best_songs_and_display() {
     $.post("/get_best_songs",
             {"host_id": current_host._id},
     function(data, status) {
         if (data !== false) {
             best_songs = data;
+            display_best_songs(bast_songs,"best_songs");
         } else {
 
         }
@@ -227,7 +239,7 @@ function choose_next_song() {
             {"host_id": current_host._id},
     function(data, status) {
         if (data !== false) {
-            best_songs = data;
+            current_host = data;
         } else {
 
         }

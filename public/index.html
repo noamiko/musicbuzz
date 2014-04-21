@@ -2,8 +2,11 @@
 <html>
     <head>
         <title>MusicBuzz</title>
-        <script src="js/utils.js"></script>
         <script src="js/serverUtils.js"></script>
+
+        <script src="js/utils.js"></script>
+        <script src="js/host.js"></script>
+        <script src="js/user.js"></script>
         <meta http-equiv="content-type" content="text/html; charset=utf-8" />
         <meta name="description" content="" />
         <meta name="keywords" content="" />
@@ -31,7 +34,10 @@
                     <div data-role="fieldcontain">
                         <form method="post" name="login_user_form">
                             <div class="row half">
-                                <input type="email" name="email" value="" placeholder="email"/>    
+                                <div>                      
+
+                                    <input type="email" name="email" value="" placeholder="email"/>  
+                                </div>
                                 <div>                      
                                     <input type="password" name="pwd" placeholder="Password">
                                 </div>
@@ -192,7 +198,7 @@
                     <br/>
 
                     <button class="button" name="submit" onclick="changePage('feed', 'search')">Search songs</button>
-                    <button class="button" name="submit" onclick="refresh_data_and_display()">Refresh</button>
+                    <button class="button" name="submit" onclick="refresh_btn()">Refresh</button>
 
                 </div>
             </article>
