@@ -1,6 +1,6 @@
 function start_host() {
-    current_song = get_and_display_song(current_host.currentSongId,"current_song");
-    next_song = get_display_and_play_song(current_host.next_song,"next_song");
+    current_song = get_display_and_play_song(current_host.currentSongId,"current_song");
+    next_song = get_and_display_song(current_host.next_song,"next_song");
     get_best_songs_and_display();
     get_song_history_and_display();
 }
