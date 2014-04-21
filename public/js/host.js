@@ -18,6 +18,7 @@ function timer() {
 }
 
 function show_player(song) {
+    alert(song.url);
     content = "<audio autoplay='autoplay' controls><source src=" + song.url + " type='audio/mpeg'></audio>";
     $('#' + 'player').html(content);
 }
