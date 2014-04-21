@@ -12,6 +12,8 @@
 /*********************************************************************************/
 #search_btn{
     display: inline-block;
+    width: 7em;
+    height: 2.5em;
 }
 
 #search_text{
