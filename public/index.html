@@ -42,9 +42,6 @@
                         <div>
                             <a class="button style2" id="host_btn" onclick="set_host_login_attr()">are you a host?</a>
                         </div>
-                        <!--  TO REMOVE !!!!!!!                      -->
-
-                        <!--                      -->
                         <div>
                             <button id="login_btn" class="button" onclick="login_user()">Login</button>
                         </div>
@@ -196,9 +193,9 @@
                     <h1>Best voted so far:</h1>
                     <div id="best_songs"></div>
                     <br/>
-
-                    <button class="button form" name="submit" onclick="changePage('feed', 'search')">Search songs</button>
-                    <button class="button form" name="submit" onclick="refresh_data_and_display()">Refresh</button>
+                    
+                    <button class="button" name="submit" onclick="changePage('feed', 'search')">Search songs</button>
+                    <button class="button" name="submit" onclick="refresh_data_and_display()">Refresh</button>
 
                 </div>
             </article>
@@ -210,13 +207,13 @@
                 <form method="post" name="search_form">
                     <div style="display: inline-block">
                         <input type="search" name="search_text" id="search_text" value="" style="border-radius: 8em;" />
-                        <a class="button" id="search_btn" onclick="search_song()" style="border-radius: 8em; padding: 0.2em 1em;">Search</a>
+                        <button class="button" id="search_btn" onclick="search_song()" style="border-radius: 8em; padding: 0.2em 1em;">Search</button>
                     </div>
                 </form>
 
                 <div id="search_results"></div>
 
-                <a class="button form" name="submit" onclick="changePage('search', 'feed')" style="margin: 1em; bottom:2em; ">Back to feed</a>
+                <button class="button" name="submit" onclick="changePage('search', 'feed')" style="margin: 1em; bottom:2em; ">Back to feed</button>
             </article>
         </section>  
 
