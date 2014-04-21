@@ -31,10 +31,8 @@
                     <div data-role="fieldcontain">
                         <form method="post" name="login_user_form">
                             <div class="row half">
-                                <div class="6u">
-                                    <input type="email" name="email" value="" placeholder="email"/>    
-                                </div>
-                                <div class="6u">
+                                <input type="email" name="email" value="" placeholder="email"/>    
+                                <div>                      
                                     <input type="password" name="pwd" placeholder="Password">
                                 </div>
                             </div>
@@ -64,46 +62,45 @@
                 </header>
                 <form method="post" name="signup_user_form">
                     <div class="row half">
-                        <div class="6u">
-
-                            <label for="username">First Name:&emsp;</label>
-                            <input type="text" name="firstname" value="" placeholder="First Name"/>
+                        <div>                      
+                            <label for="firstname">First Name:&emsp;</label>
+                            <input id="firstname" type="text" name="firstname" value="" placeholder="First Name"/>
                         </div>
-                        <div class="6u">                
-                            <label for="username">Last Name:&emsp;</label>
-                            <input type="text" name="lastname" value="" placeholder="Last Name"/>
+                        <div>                      
+                            <label for="lastname">Last Name:&emsp;</label>
+                            <input id="lastname" type="text" name="lastname" value="" placeholder="Last Name"/>
                         </div>
-                        <div class="6u">                      
+                        <div>                      
                             <label for="username">Username:&emsp;</label>
-                            <input type="text" name="username" value="" placeholder="Username"/>
+                            <input id="username" type="text" name="username" value="" placeholder="Username"/>
                         </div>
-                        <div class="6u">                      
+                        <div>                      
                             <label for="email">Email:&emsp;&emsp;&emsp;</label>
-                            <input type="email" name="email" value="" placeholder="Email"/>            
+                            <input id="email" type="email" name="email" value="" placeholder="Email"/>            
                         </div>
-                        <div class="6u">                      
+                        <div>                      
                             <label for="password">Password:&emsp;</label>
-                            <input type="password" name="pwd" placeholder="Password">
+                            <input id="password" type="password" name="pwd" placeholder="Password">
                         </div>
-                        <div class="6u">                      
-                            <label for="username">Country:&emsp;&emsp;</label>
-                            <input type="text" name="country" value="" placeholder="Country"/>
+                        <div>                      
+                            <label for="country">Country:&emsp;&emsp;</label>
+                            <input id="country" type="text" name="country" value="" placeholder="Country"/>
                         </div>
-                        <div class="6u">                      
+                        <div>                      
                             <label for="radio-female">Female</label>
-                            <input type="radio" name="gender" value="f"  />
+                            <input id="radio-female" type="radio" name="gender" value="f"  />
 
                             <label for="radio-male">Male</label>
-                            <input type="radio" name="gender" value="m"   />
+                            <input id="radio-male" type="radio" name="gender" value="m"   />
                         </div>
-                        <div class="6u">                      
+                        <div>                      
                             <label for="date" >Birth Date:</label>
-                            <input type="date" name="birthdate" value="">
+                            <input id="date" type="date" name="birthdate" value="">
                         </div>
                     </div>
                 </form>
                 <footer>
-                    <a data-role="button" class="button style2 scrolly" name="submit" onclick="signup_user()">Sign up</a>
+                    <a data-role="button" class="button style2" name="submit" onclick="signup_user()">Sign up</a>
                 </footer>
             </section>
         </section>
