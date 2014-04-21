@@ -166,6 +166,7 @@ function changePage(from, to) {
 function set_host_login_attr() {
     $('#host_btn').hide();
     $('#main_title').text("Host Login Page");
+    $('#sub_title').text("");
     $('#login_btn').attr('onclick', "login_host()");
     $('#signup_btn').attr('onclick', "changePage('login_user', 'sign_up_host')");
 

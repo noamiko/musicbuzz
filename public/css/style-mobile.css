@@ -8,15 +8,12 @@
 /* Basic                                                                         */
 /*********************************************************************************/
 
-/*#host_btn{
-    size: 5pt;
-    padding: 0em;
-    margin: 0em;
-    border: 0em;
-    position: initial;
-    bottom: 1em;
-    left: 1em;
-}*/
+#host_btn{
+    position: fixed;
+    width: 10em;
+    top: 1em ;
+    left: 1em ;
+}
 
 
 
@@ -116,6 +113,7 @@
 		
 		.button
 		{
+                    margin: 0.5em;
 			padding: 0.75em 0 0.75em 0;
 			width: 100%;
 			max-width: 320px;

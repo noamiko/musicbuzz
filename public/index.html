@@ -4,19 +4,19 @@
         <title>MusicBuzz</title>
         <script src="js/utils.js"></script>
         <script src="js/serverUtils.js"></script>
-		<meta http-equiv="content-type" content="text/html; charset=utf-8" />
-		<meta name="description" content="" />
-		<meta name="keywords" content="" />
-		<link href="http://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,300italic" rel="stylesheet" type="text/css" />
-		<script src="js/jquery.min.js"></script>
-		<script src="js/jquery.poptrox.min.js"></script>
-		<script src="js/skel.min.js"></script>
-		<script src="js/init.js"></script>
-		<noscript>
-			<link rel="stylesheet" href="css/skel-noscript.css" />
-			<link rel="stylesheet" href="css/style.css" />
-		</noscript>
-	</head>
+        <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+        <meta name="description" content="" />
+        <meta name="keywords" content="" />
+        <link href="http://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,300italic" rel="stylesheet" type="text/css" />
+        <script src="js/jquery.min.js"></script>
+        <script src="js/jquery.poptrox.min.js"></script>
+        <script src="js/skel.min.js"></script>
+        <script src="js/init.js"></script>
+        <noscript>
+        <link rel="stylesheet" href="css/skel-noscript.css" />
+        <link rel="stylesheet" href="css/style.css" />
+        </noscript>
+    </head>
     <body onload="init();">
 
         <!-- LOGIN for user page-->
@@ -26,7 +26,7 @@
             <section id="header">
                 <header>
                     <h1 id="main_title">MusicBuzz</h1>
-                    <p>By IDC Hack</p>
+                    <p id="sub_title">choose your music</p>
                     <br/>
                     <div data-role="fieldcontain">
                         <form method="post" name="login_user_form">
@@ -40,24 +40,21 @@
                             </div>
                         </form>
                         <div>
-                            <a class="button style2 scrolly scrolly-centered" id="host_btn" onclick="set_host_login_attr()">are you a host?</a>
+                            <a class="button style2" id="host_btn" onclick="set_host_login_attr()">are you a host?</a>
                         </div>
                         <!--  TO REMOVE !!!!!!!                      -->
-                        <div>
-                            <a href="/deploy.html" class="button style2" id="deploy_btn" onclick="">upload file</a>
-                        </div>
+
                         <!--                      -->
                         <div>
-                            <a id="login_btn" class="button style1 scrolly scrolly-centered" onclick="login_user()">Login</a>
+                            <button id="login_btn" class="button" onclick="login_user()">Login</button>
+                        </div>
+                        <div>                            
+                            <button id="signup_btn" class="button style2" onclick="changePage('login_user', 'sign_up_user')">Sign up</button>
                         </div>
                     </div>
                 </header>
-                <footer>
 
-                    <div>
-                        <a id="signup_btn" href="#sign_up_user" class="button style2 scrolly scrolly-centered" onclick="changePage('login_user', 'sign_up_user')">Sign up</a>
-                    </div>
-                </footer>
+
             </section>
         </section>
 
