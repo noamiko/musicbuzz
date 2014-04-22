@@ -216,32 +216,16 @@ function search_song() {
         dataType: "jsonp",
         success: function(response) {
             if (response.data.items) {
+                (response.data.items, function(data) {
                     display_list(data, "search_results");
-            }
-            else
-            {
+                });
+            } else {
                 $("#search_results").html("<div id='no'>No Results found</div>");
             }
         }
 
     });
 }
-
-
-//    function search_song() {
-//    $.post("/search_song",
-//            {
-//                "key": document.forms["search_form"] ["search_text"].value
-//            },
-//    function(data, status) {
-//        if (data !== false) {
-//
-//            display_list(data, "search_results");
-//        } else {
-//
-//        }
-//    });
-//}
 
 
 function get_best_songs_and_display() {
