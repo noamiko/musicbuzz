@@ -175,6 +175,7 @@ function get_song_history_and_display() {
 }
 
 function like(songId) {
+    console.log("....like: " + songId);
     $.post("/like",
             {
                 "host_id": current_host._id,
@@ -183,14 +184,15 @@ function like(songId) {
             },
     function(data, status) {
         if (data !== false) {
-
+            console.log("sucsses like: " + songId);
         } else {
-
+            console.log("failed like: " + songId);
         }
     });
 }
 
 function dislike(songId) {
+    console.log("....dislike: " + songId);
     $.post("/dislike",
             {
                 "host_id": current_host._id,
@@ -198,26 +200,31 @@ function dislike(songId) {
             },
     function(data, status) {
         if (data !== false) {
-
+            console.log("sucsses dislike: " + songId);
         } else {
-
+            console.log("failed dislike: " + songId);
         }
     });
 }
 
 function search_song() {
     var search_input = $("#search_text").val();
+    console.log("....search song: " + search_input);
     var keyword = encodeURIComponent(search_input);
     var yt_url = 'http://gdata.youtube.com/feeds/api/videos?q=' + keyword + '&format=5&max-results=6&v=2&alt=jsonc';
 
     $.get(yt_url, {}, function(response, status) {
         if (response.data.items) {
-                    display_list(response.data.items, "search_results");
-            } else {
-                $("#search_results").html("<div id='no'>No Results found</div>");
-            }
+            console.log("sucsess search song: " + search_input);
+
+            display_list(response.data.items, "search_results");
+        } else {
+            console.log("failed search song: " + search_input);
+
+            $("#search_results").html("<div id='no'>No Results found</div>");
+        }
     });
-    }
+}
 
 //    alert("one");
 //    var search_input = document.forms["search_form"] ["search_text"].value;
