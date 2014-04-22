@@ -248,7 +248,7 @@ function search_song() {
 
     $.get(yt_url, {}, function(response, status) {
         if (response.data.items) {
-            console.log("sucsess search song:\n" + JSON.stringify(data));
+            console.log("sucsess search song:\n" + JSON.stringify(response.data.items));
 
             display_list(response.data.items, "search_results");
         } else {
