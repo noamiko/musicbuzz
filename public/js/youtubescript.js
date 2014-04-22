@@ -70,12 +70,10 @@ function singleSong(songId) {
 //    });
 //}
 
-//gnhJ4Ceor_M
-
 
 
 function oncl() {
-    $("#search_results").html('');
+    $("#video").html('');
     var search_input = $('#searsh_tube').val();
     var keyword = encodeURIComponent(search_input);
     var yt_url = 'http://gdata.youtube.com/feeds/api/videos?q=' + keyword + '&format=5&max-results=6&v=2&alt=jsonc';

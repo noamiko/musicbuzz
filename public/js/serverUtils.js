@@ -216,9 +216,7 @@ function search_song() {
         dataType: "jsonp",
         success: function(response) {
             if (response.data.items) {
-                $.each(response.data.items, function(i, data) {
                     display_list(data, "search_results");
-                });
             }
             else
             {
