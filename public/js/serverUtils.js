@@ -20,7 +20,6 @@ function login_user() {
         if (data !== false) {
             current_user = data;
             changePage("login_user", "login_to_host");
-            start_user();
         } else {
             alert("Wrong email or password");
         }

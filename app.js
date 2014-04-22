@@ -47,6 +47,7 @@ app.post('/get_song_history', songHistoryList.get_user_song_history.
 // HostList posts
 app.post('/signup_host', hostList.signup_host.bind(hostList));
 app.post('/login_host', hostList.login_host.bind(hostList));
+app.post('/get_host', hostList.get_host.bind(hostList));
 
 //Song history posts
 
