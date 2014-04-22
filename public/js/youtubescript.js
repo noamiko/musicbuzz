@@ -106,7 +106,7 @@ function singleSong(songId) {
 //}
 
 function on_s() {
-    var search_input = document.forms["search_form"] ["search_text"].value;
+    var search_input = $('#search_text').val();
     var keyword = encodeURIComponent(search_input);
     var yt_url = 'http://gdata.youtube.com/feeds/api/videos?q=' + keyword + '&format=5&max-results=6&v=2&alt=jsonc';
 
