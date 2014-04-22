@@ -9,167 +9,200 @@ var lat;
 var lng;
 
 function login_user() {
+    var user = {
+        "email": document.forms["login_user_form"] ["email"].value,
+        "pwd": document.forms["login_user_form"] ["pwd"].value,
+        "lat": lat,
+        "lng": lng
+    };
+    console.log("....login_user:\n" + JSON.stringify(user));
     $.post('/login_user',
-            {
-                "email": document.forms["login_user_form"] ["email"].value,
-                "pwd": document.forms["login_user_form"] ["pwd"].value,
-                "lat": lat,
-                "lng": lng
-            },
-    function(data, status) {
-        if (data !== false) {
-            current_user = data;
-            changePage("login_user", "login_to_host");
-        } else {
-            alert("Wrong email or password");
-        }
-        clear_inputs();
-    });
+            user,
+            function(data, status) {
+                if (data !== false) {
+                    current_user = data;
+                    changePage("login_user", "login_to_host");
+                    console.log("sucsses login_user:\n" + JSON.stringify(data));
+                } else {
+                    console.error("!failed login_user:\n" + JSON.stringify(user) + "\nWrong email or password");
+                    alert("Wrong email or password");
+                }
+                clear_inputs();
+            });
 }
 
 function login_host() {
+    var host = {
+        "email": document.forms["login_user_form"] ["email"].value,
+        "pwd": document.forms["login_user_form"] ["pwd"].value,
+        "lat": lat,
+        "lng": lng
+    };
+    console.log("....login_host:\n" + JSON.stringify(host));
     $.post('/login_host',
-            {
-                "email": document.forms["login_user_form"] ["email"].value,
-                "pwd": document.forms["login_user_form"] ["pwd"].value,
-                "lat": lat,
-                "lng": lng
-            },
-    function(data, status) {
-        if (data !== false) {
-            current_host = data;
-            current_user = data;
-            is_a_host = true;
-            changePage("login_user", "feed");
-            start_host();
+            host,
+            function(data, status) {
+                if (data !== false) {
+                    current_host = data;
+                    current_user = data;
+                    is_a_host = true;
+                    changePage("login_user", "feed");
+                    start_host();
+                    console.log("sucsses login_host:\n" + JSON.stringify(data));
 
-        } else {
-            alert("Wrong email or password");
-        }
-        clear_inputs();
-    });
+                } else {
+                    console.error("!failed login_host:\n" + JSON.stringify(host) + "\nWrong email or password");
+                    alert("Wrong email or password");
+                }
+                clear_inputs();
+            });
 }
 
 
 function signup_user() {
+    var user = {
+        "firstname": document.forms["signup_user_form"] ["firstname"].value,
+        "lastname": document.forms["signup_user_form"] ["lastname"].value,
+        "username": document.forms["signup_user_form"] ["username"].value,
+        "email": document.forms["signup_user_form"] ["email"].value,
+        "pwd": document.forms["signup_user_form"] ["pwd"].value,
+        "lat": lat,
+        "lng": lng,
+        "gender": document.forms["signup_user_form"] ["gender"].value,
+        "birthdate": document.forms["signup_user_form"] ["birthdate"].value,
+        "country": document.forms["signup_user_form"] ["country"].value
+    };
+    console.log("....signup_user:\n" + JSON.stringify(user));
+
     $.post("/signup_user",
-            {
-                "firstname": document.forms["signup_user_form"] ["firstname"].value,
-                "lastname": document.forms["signup_user_form"] ["lastname"].value,
-                "username": document.forms["signup_user_form"] ["username"].value,
-                "email": document.forms["signup_user_form"] ["email"].value,
-                "pwd": document.forms["signup_user_form"] ["pwd"].value,
-                "lat": lat,
-                "lng": lng,
-                "gender": document.forms["signup_user_form"] ["gender"].value,
-                "birthdate": document.forms["signup_user_form"] ["birthdate"].value,
-                "country": document.forms["signup_user_form"] ["country"].value
-            },
-    function(data, status) {
-        if (data !== false) {
-            current_user = data;
-            changePage("sign_up_user", "login_to_host");
-        } else {
-            alert("A user with the same email is already registerd");
-        }
-        clear_inputs();
-    });
+            user,
+            function(data, status) {
+                if (data !== false) {
+                    current_user = data;
+                    changePage("sign_up_user", "login_to_host");
+                    console.log("seucsses signup_user:\n" + JSON.stringify(data));
+
+                } else {
+                    console.error("!failed signup_user:\n" + JSON.stringify(user) + "\nposibly a user with the same email is already registerd");
+                    alert("A user with the same email is already registerd");
+                }
+                clear_inputs();
+            });
 }
 
 function signup_host() {
+    var host = {
+        "bizname": document.forms["signup_host_form"] ["bizname"].value,
+        "username": document.forms["signup_host_form"] ["username"].value,
+        "email": document.forms["signup_host_form"] ["email"].value,
+        "pwd": document.forms["signup_host_form"] ["pwd"].value,
+        "address": document.forms["signup_host_form"] ["address"].value,
+        "country": document.forms["signup_host_form"] ["country"].value,
+        "url": document.forms["signup_host_form"] ["url"].value,
+        "lat": lat,
+        "lng": lng
+    };
+    console.log("....signup_host: " + JSON.stringify(host));
     $.post("/signup_host",
-            {
-                "bizname": document.forms["signup_host_form"] ["bizname"].value,
-                "username": document.forms["signup_host_form"] ["username"].value,
-                "email": document.forms["signup_host_form"] ["email"].value,
-                "pwd": document.forms["signup_host_form"] ["pwd"].value,
-                "address": document.forms["signup_host_form"] ["address"].value,
-                "country": document.forms["signup_host_form"] ["country"].value,
-                "url": document.forms["signup_host_form"] ["url"].value,
-                "lat": lat,
-                "lng": lng
-            },
-    function(data, status) {
-        if (data !== false) {
-            current_host = data;
-            current_user = data;
-            is_a_host = true;
-            changePage("sign_up_host", "feed");
-            start_host();
-
-        } else {
-            alert("A user with the same email is already registerd");
-        }
-        clear_inputs();
-    });
+            host,
+            function(data, status) {
+                if (data !== false) {
+                    current_host = data;
+                    current_user = data;
+                    is_a_host = true;
+                    changePage("sign_up_host", "feed");
+                    start_host();
+                    console.log("sucsses signup_host:\n " + JSON.stringify(data));
+                } else {
+                    console.error("!failed signup_host:\n " + JSON.stringify(host) + "\npossibly a user with the same email is already registerd");
+                    alert("A user with the same email is already registerd");
+                }
+                clear_inputs();
+            });
 }
 
 //only for users, not for hosts !!!
 function login_to_host() {
+    var bizname = {"bizname": document.forms["login_to_host_form"] ["bizname"].value};
+    console.log("....login_to_host: " + bizname.bizname);
     $.post("/login_to_host",
-            {"bizname": document.forms["login_to_host_form"] ["bizname"].value},
-    function(data, status) {
-        if (data !== false) {
-            current_host = data;
-            changePage("login_to_host", "feed");
-            start_user();
-        } else {
-            alert("no such host exist");
-        }
-        clear_inputs();
-    });
+            bizname,
+            function(data, status) {
+                if (data !== false) {
+                    current_host = data;
+                    changePage("login_to_host", "feed");
+                    console.log("sucsses login_to_host:\n" + JSON.stringify(data));
+                    start_user();
+                } else {
+                    console.error("!failed login_to_host:\n" + bizname.bizname + "\n,possibly no such host exist");
+                    alert("no such host exist");
+                }
+                clear_inputs();
+            });
 }
 
-function get_host() {
+function get_host(bizName) {
+    var bizname = {"bizname": bizName};
+    console.log("....get_host: " + bizname.bizname);
+
     $.post("/login_to_host",
-            {"bizname": document.forms["login_to_host_form"] ["bizname"].value},
-    function(data, status) {
-        if (data !== false) {
-            current_host = data;
-            return data;
-        } else {
-            alert("no such host exist");
-        }
-    });
+            bizname,
+            function(data, status) {
+                if (data !== false) {
+                    current_host = data;
+                    console.log("sucsses get_host:\n" + JSON.stringify(data));
+                    return data;
+                } else {
+                    console.error("!failed get_host:\n" + bizname.bizname + "\n,possibly no such host exist");
+                    alert("no such host exist");
+                }
+            });
 }
 
 
 function get_display_and_play_song(song_id, divId) {
+    console.log("....get_display_and_play_song: " + song_id + " divId: " + divId);
     $.post("/get_song",
             {"song_id": song_id},
     function(data, status) {
         if (data !== false) {
             display_song(data, divId);
             show_player(data);
+            console.log("sucsses get_display_and_play_song:\n" + JSON.stringify(data) + "\ndivId: " + divId);
             return data;
         } else {
-
+            console.error("....get_display_and_play_song: " + song_id + " divId: " + divId);
         }
     });
 }
 
 function get_and_display_song(song_id, divId) {
+    console.log("....get_and_display_song: " + song_id + " divId: " + divId);
     $.post("/get_song",
             {"song_id": song_id},
     function(data, status) {
         if (data !== false) {
             display_song(data, divId);
+            console.log("sucsses get_and_display_song:\n" + JSON.stringify(data) + "\ndivId: " + divId);
             return data;
         } else {
-
+            console.error("!failed get_and_display_song: " + song_id + " divId: " + divId);
         }
     });
 }
 
 function get_song_history_and_display() {
+    console.log("....get_song_history_and_display: " + current_user._id);
+
     $.post("/get_song_history",
             {"user_id": current_user._id},
     function(data, status) {
         if (data !== false) {
             history_list = data;
             display_list(history_list, "search_results");
+            console.log("sucsses get_song_history_and_display:\n" + JSON.stringify(data));
         } else {
-
+            console.error("!failed get_song_history_and_display: " + current_user._id);
         }
     });
 }
@@ -184,9 +217,9 @@ function like(songId) {
             },
     function(data, status) {
         if (data !== false) {
-            console.log("sucsses like: " + songId);
+            console.log("sucsses like:\n" + JSON.stringify(data));
         } else {
-            console.log("failed like: " + songId);
+            console.error("!failed like: " + songId);
         }
     });
 }
@@ -200,9 +233,9 @@ function dislike(songId) {
             },
     function(data, status) {
         if (data !== false) {
-            console.log("sucsses dislike: " + songId);
+            console.log("sucsses dislike:\n" + JSON.stringify(data));
         } else {
-            console.log("failed dislike: " + songId);
+            console.error("!failed dislike: " + songId);
         }
     });
 }
@@ -215,62 +248,44 @@ function search_song() {
 
     $.get(yt_url, {}, function(response, status) {
         if (response.data.items) {
-            console.log("sucsess search song: " + search_input);
+            console.log("sucsess search song:\n" + JSON.stringify(data));
 
             display_list(response.data.items, "search_results");
         } else {
-            console.log("failed search song: " + search_input);
+            console.error("!failed search song: " + search_input);
 
             $("#search_results").html("<div id='no'>No Results found</div>");
         }
     });
 }
 
-//    alert("one");
-//    var search_input = document.forms["search_form"] ["search_text"].value;
-//    var keyword = encodeURIComponent(search_input);
-//    var yt_url = 'http://gdata.youtube.com/feeds/api/videos?q=' + keyword + '&format=5&max-results=6&v=2&alt=jsonc';
-//    $.ajax({
-//        type: "GET",
-//        url: yt_url,
-//        dataType: "jsonp",
-//        success: function(response) {
-//                alert("two");
-//            if (response.data.items) {
-//                (response.data.items, function(data) {
-//                        alert("tree");
-//                    display_list(data, "search_results");
-//                });
-//            } else {
-//                $("#search_results").html("<div id='no'>No Results found</div>");
-//            }
-//        }
-//
-//    });
-//}
-
-
 function get_best_songs_and_display() {
+    console.log("..... get_best_songs_and_display: " + current_host._id);
     $.post("/get_best_songs",
             {"host_id": current_host._id},
     function(data, status) {
         if (data !== false) {
             best_songs = data;
             display_best_songs(best_songs, "best_songs");
+            console.log("sucsses get_best_songs_and_display:\n" + JSON.stringify(data));
+
         } else {
+            console.error("!failed get_best_songs_and_display: " + current_host._id);
 
         }
     });
 }
 
 function choose_next_song() {
+    console.log("..... choose_next_song: " + current_host._id);
     $.post("/choose_next_song",
             {"host_id": current_host._id},
     function(data, status) {
         if (data !== false) {
             current_host = data;
+            console.log("sucsses choose_next_song:\n" + JSON.stringify(data));
         } else {
-
+            console.error("!failed choose_next_song: " + current_host._id);
         }
     });
 }
@@ -290,18 +305,18 @@ function showPosition(position) {
 }
 
 function add_song() {
+    var song = {
+        "title": document.forms["deploy_form"] ["title"].value,
+        "length": document.forms["deploy_form"] ["length"].value,
+        "url": document.forms["deploy_form"] ["url"].value
+    };
     $.post("/add_song",
-            {
-                "title": document.forms["deploy_form"] ["title"].value,
-                "artist": document.forms["deploy_form"] ["artist"].value,
-                "length": document.forms["deploy_form"] ["length"].value,
-                "url": document.forms["deploy_form"] ["url"].value
-            },
-    function(data, status) {
+            song,
+            function(data, status) {
 
-        if (data !== false) {
-        } else {
+                if (data !== false) {
+                } else {
 
-        }
-    });
+                }
+            });
 }
