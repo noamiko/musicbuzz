@@ -128,7 +128,7 @@ function login_to_host() {
     $.post("/login_to_host",
             bizname,
             function(data, status) {
-                if (data !== false && data !== {}) {
+                if (data !== false && data !== "") {
                     current_host = data;
                     changePage("login_to_host", "feed");
                     console.log("sucsses login_to_host:\n" + JSON.stringify(data));
