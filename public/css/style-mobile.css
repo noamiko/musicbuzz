@@ -23,23 +23,15 @@
 
 #search_btn{
     margin: 1em;
-
-    display: inline-block;
     width: 7em;
-    height: 2.5em;
+    height: 2em;
 }
 
 #search_text{
     margin: 1em;
-    display: inline-block;
     border-radius: 8em;
 }
 
-#search_bar{
-    margin: 1em;
-    display: inline-block;
-    border-radius: 8em;
-}
 
 #host_btn{
     position: fixed;
