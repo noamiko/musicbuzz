@@ -19,7 +19,7 @@ function login_user() {
     $.post('/login_user',
             user,
             function(data, status) {
-                if (data !== false && data !== {}) {
+                if (data !== false && data !== "") {
                     current_user = data;
                     changePage("login_user", "login_to_host");
                     console.log("sucsses login_user:\n" + JSON.stringify(data));
@@ -42,7 +42,7 @@ function login_host() {
     $.post('/login_host',
             host,
             function(data, status) {
-                if (data !== false && data !== {}) {
+                if (data !== false && data !== "") {
                     current_host = data;
                     current_user = data;
                     is_a_host = true;
@@ -77,7 +77,7 @@ function signup_user() {
     $.post("/signup_user",
             user,
             function(data, status) {
-                if (data !== false && data !== {}) {
+                if (data !== false && data !== "") {
                     current_user = data;
                     changePage("sign_up_user", "login_to_host");
                     console.log("seucsses signup_user:\n" + JSON.stringify(data));
@@ -106,7 +106,7 @@ function signup_host() {
     $.post("/signup_host",
             host,
             function(data, status) {
-                if (data !== false && data !== {}) {
+                if (data !== false && data !== "") {
                     current_host = data;
                     current_user = data;
                     is_a_host = true;
@@ -148,7 +148,7 @@ function get_host(bizName) {
     $.post("/login_to_host",
             bizname,
             function(data, status) {
-                if (data !== false && data !== {}) {
+                if (data !== false && data !== "") {
                     current_host = data;
                     console.log("sucsses get_host:\n" + JSON.stringify(data));
                     return data;
@@ -165,7 +165,7 @@ function get_display_and_play_song(song_id, divId) {
     $.post("/get_song",
             {"song_id": song_id},
     function(data, status) {
-        if (data !== false && data !== {}) {
+        if (data !== false && data !== "") {
             display_song(data, divId);
             show_player(data);
             console.log("sucsses get_display_and_play_song:\n" + JSON.stringify(data) + "\ndivId: " + divId);
@@ -181,7 +181,7 @@ function get_and_display_song(song_id, divId) {
     $.post("/get_song",
             {"song_id": song_id},
     function(data, status) {
-        if (data !== false && data !== {}) {
+        if (data !== false && data !== "") {
             display_song(data, divId);
             console.log("sucsses get_and_display_song:\n" + JSON.stringify(data) + "\ndivId: " + divId);
             return data;
@@ -197,7 +197,7 @@ function get_song_history_and_display() {
     $.post("/get_song_history",
             {"user_id": current_user._id},
     function(data, status) {
-        if (data !== false && data !== {}) {
+        if (data !== false && data !== "") {
             history_list = data;
             display_list(history_list, "search_results");
             console.log("sucsses get_song_history_and_display:\n" + JSON.stringify(data));
@@ -217,7 +217,7 @@ function like(songId) {
     $.post("/like",
             data,
             function(data, status) {
-                if (data !== false && data !== {}) {
+                if (data !== false && data !== "") {
                     console.log("sucsses like:\n" + JSON.stringify(data));
                 } else {
                     console.error("!failed like:\n" + JSON.stringify(data));
@@ -233,7 +233,7 @@ function dislike(songId) {
                 "song_id": songId
             },
     function(data, status) {
-        if (data !== false && data !== {}) {
+        if (data !== false && data !== "") {
             console.log("sucsses dislike:\n" + JSON.stringify(data));
         } else {
             console.error("!failed dislike: " + songId);
@@ -265,7 +265,7 @@ function get_best_songs_and_display() {
     $.post("/get_best_songs",
             {"host_id": current_host._id},
     function(data, status) {
-        if (data !== false && data !== {}) {
+        if (data !== false && data !== "") {
             best_songs = data;
             display_best_songs(best_songs, "best_songs");
             console.log("sucsses get_best_songs_and_display:\n" + JSON.stringify(data));
@@ -282,7 +282,7 @@ function choose_next_song() {
     $.post("/choose_next_song",
             {"host_id": current_host._id},
     function(data, status) {
-        if (data !== false && data !== {}) {
+        if (data !== false && data !== "") {
             current_host = data;
             console.log("sucsses choose_next_song:\n" + JSON.stringify(data));
         } else {
@@ -315,7 +315,7 @@ function add_song() {
             song,
             function(data, status) {
 
-                if (data !== false && data !== {}) {
+                if (data !== false && data !== "") {
                 } else {
 
                 }
