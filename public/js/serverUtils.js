@@ -206,6 +206,7 @@ function dislike(songId) {
 }
 
 function search_song() {
+    alert("one");
     $("#search_results").html('');
     var search_input = document.forms["search_form"] ["search_text"].value;
     var keyword = encodeURIComponent(search_input);
@@ -215,8 +216,10 @@ function search_song() {
         url: yt_url,
         dataType: "jsonp",
         success: function(response) {
+                alert("two");
             if (response.data.items) {
                 (response.data.items, function(data) {
+                        alert("tree");
                     display_list(data, "search_results");
                 });
             } else {
