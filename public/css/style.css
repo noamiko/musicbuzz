@@ -30,7 +30,12 @@
 
 #search_text{
     margin: 1em;
+    display: inline-block;
+    border-radius: 8em;
+}
 
+#search_bar{
+    margin: 1em;
     display: inline-block;
     border-radius: 8em;
 }

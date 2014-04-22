@@ -35,6 +35,12 @@
     border-radius: 8em;
 }
 
+#search_bar{
+    margin: 1em;
+    display: inline-block;
+    border-radius: 8em;
+}
+
 #host_btn{
     position: fixed;
     width: 10em;
