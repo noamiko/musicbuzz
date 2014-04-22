@@ -217,7 +217,7 @@ function search_song() {
                 $("#search_results").html("<div id='no'>No Results found</div>");
             }
     });
-
+    }
 
 //    alert("one");
 //    var search_input = document.forms["search_form"] ["search_text"].value;
@@ -240,7 +240,7 @@ function search_song() {
 //        }
 //
 //    });
-}
+//}
 
 
 function get_best_songs_and_display() {
@@ -249,7 +249,7 @@ function get_best_songs_and_display() {
     function(data, status) {
         if (data !== false) {
             best_songs = data;
-            display_best_songs(bast_songs, "best_songs");
+            display_best_songs(best_songs, "best_songs");
         } else {
 
         }
