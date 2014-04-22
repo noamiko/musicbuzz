@@ -208,18 +208,19 @@ function get_song_history_and_display() {
 }
 
 function like(songId) {
-    console.log("....like: " + songId);
-    $.post("/like",
-            {
+    var data = {
                 "host_id": current_host._id,
                 "user_id": current_user._id,
                 "song_id": songId
-            },
+            };
+    console.log("....like:\n" + JSON.stringify(data));
+    $.post("/like",
+            data,
     function(data, status) {
         if (data !== false) {
             console.log("sucsses like:\n" + JSON.stringify(data));
         } else {
-            console.error("!failed like: " + songId);
+            console.error("!failed like:\n" + JSON.stringify(data));
         }
     });
 }
