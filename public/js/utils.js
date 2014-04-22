@@ -52,6 +52,7 @@ function display_title(title) {
 
 // the history list
 function display_list(songList, divId) {
+    $('#' + divId).html('');
     var content = "";
     for (var i = 0; i < songList.length; i++) {
         //The button representing the song

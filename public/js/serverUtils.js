@@ -206,28 +206,40 @@ function dislike(songId) {
 }
 
 function search_song() {
-    alert("one");
-    $("#search_results").html('');
     var search_input = document.forms["search_form"] ["search_text"].value;
     var keyword = encodeURIComponent(search_input);
     var yt_url = 'http://gdata.youtube.com/feeds/api/videos?q=' + keyword + '&format=5&max-results=6&v=2&alt=jsonc';
-    $.ajax({
-        type: "GET",
-        url: yt_url,
-        dataType: "jsonp",
-        success: function(response) {
-                alert("two");
-            if (response.data.items) {
-                (response.data.items, function(data) {
-                        alert("tree");
-                    display_list(data, "search_results");
-                });
+
+    $.get(yt_url, {}, function(response, status) {
+        if (response.data.items) {
+                    display_list(response.data.items, "search_results");
             } else {
                 $("#search_results").html("<div id='no'>No Results found</div>");
             }
-        }
-
     });
+
+
+//    alert("one");
+//    var search_input = document.forms["search_form"] ["search_text"].value;
+//    var keyword = encodeURIComponent(search_input);
+//    var yt_url = 'http://gdata.youtube.com/feeds/api/videos?q=' + keyword + '&format=5&max-results=6&v=2&alt=jsonc';
+//    $.ajax({
+//        type: "GET",
+//        url: yt_url,
+//        dataType: "jsonp",
+//        success: function(response) {
+//                alert("two");
+//            if (response.data.items) {
+//                (response.data.items, function(data) {
+//                        alert("tree");
+//                    display_list(data, "search_results");
+//                });
+//            } else {
+//                $("#search_results").html("<div id='no'>No Results found</div>");
+//            }
+//        }
+//
+//    });
 }
 
 
