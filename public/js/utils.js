@@ -56,8 +56,8 @@ function display_list(songList, divId) {
     for (var i = 0; i < songList.length; i++) {
         //The button representing the song
         content += "<button class='button' type='button' onclick=like('"
-                + songList[i]._id + "')><h3>" + songList[i].title
-                + "</h3>" + songList[i].artist + "</button>";
+                + songList[i].id + "')><h3>" + songList[i].title
+                + "</h3></button>";
     }
     $('#' + divId).html(content);
 }
@@ -134,18 +134,3 @@ function refresh_btn() {
     }
 }
 
-function hideAddressBar()
-{
-  if(!window.location.hash)
-  {
-      if(document.height < window.outerHeight)
-      {
-          document.body.style.height = (window.outerHeight + 50) + 'px';
-      }
- 
-      setTimeout( function(){ window.scrollTo(0, 1); }, 50 );
-  }
-}
- 
-window.addEventListener("load", function(){ if(!window.pageYOffset){ hideAddressBar(); } } );
-window.addEventListener("orientationchange", hideAddressBar );

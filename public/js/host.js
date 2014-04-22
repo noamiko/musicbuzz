@@ -1,19 +1,17 @@
 function start_host() {
-    current_song = get_display_and_play_song(current_host.currentSongId,"current_song");
-    next_song = get_and_display_song(current_host.nextSongId,"next_song");
+    current_song = get_display_and_play_song(current_host.currentSongId, "current_song");
+    next_song = get_and_display_song(current_host.nextSongId, "next_song");
     get_best_songs_and_display();
     get_song_history_and_display();
+    timer();
 }
 
 function timer() {
-    alert(current_song.title);
     var time_to_refresh = current_song.length * 1000;
     setTimeout(function() {
         choose_next_song();
-        refresh_data_and_display();
-        show_player();
-        //startimg a new timer for the current song
-        timer();
+        current_host = get_host(current_host.bizname);
+        start_host();
     }, time_to_refresh);
 }
 
@@ -22,6 +20,15 @@ function show_player(song) {
     $('#' + 'player').html(content);
 }
 
+function show_youtube_player(song) {
+    var video_frame = "<iframe width='340' height='200' src='http://www.youtube.com/embed/" + song.id + "' frameborder='0' type='text/html'></iframe>";
+    var final = "<div id='result'><div>" + video_frame + "</div><div id='title'></div></div>";
+    $('#' + 'player').html(final);
+}
+
 function refresh_host() {
-    current_host = get_host(current_host.bizname);
+    current_song = get_display_and_play_song(get_host(current_host.bizname).currentSongId, "current_song");
+    next_song = get_and_display_song(current_host.nextSongId, "next_song");
+    get_best_songs_and_display();
+    get_song_history_and_display();
 }

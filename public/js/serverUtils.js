@@ -127,6 +127,7 @@ function get_host() {
     function(data, status) {
         if (data !== false) {
             current_host = data;
+            return data;
         } else {
             alert("no such host exist");
         }
@@ -134,12 +135,12 @@ function get_host() {
 }
 
 
-function get_display_and_play_song(song_id,divId) {
+function get_display_and_play_song(song_id, divId) {
     $.post("/get_song",
             {"song_id": song_id},
     function(data, status) {
         if (data !== false) {
-            display_song(data,divId);
+            display_song(data, divId);
             show_player(data);
             return data;
         } else {
@@ -148,12 +149,12 @@ function get_display_and_play_song(song_id,divId) {
     });
 }
 
-function get_and_display_song(song_id,divId) {
+function get_and_display_song(song_id, divId) {
     $.post("/get_song",
             {"song_id": song_id},
     function(data, status) {
         if (data !== false) {
-            display_song(data,divId);
+            display_song(data, divId);
             return data;
         } else {
 
@@ -167,7 +168,7 @@ function get_song_history_and_display() {
     function(data, status) {
         if (data !== false) {
             history_list = data;
-            display_list(history_list,"search_results");
+            display_list(history_list, "search_results");
         } else {
 
         }
@@ -206,19 +207,44 @@ function dislike(songId) {
 }
 
 function search_song() {
-    $.post("/search_song",
+    $("#search_results").html('');
+    var search_input = document.forms["search_form"] ["search_text"].value;
+    var keyword = encodeURIComponent(search_input);
+    var yt_url = 'http://gdata.youtube.com/feeds/api/videos?q=' + keyword + '&format=5&max-results=6&v=2&alt=jsonc';
+    $.ajax({
+        type: "GET",
+        url: yt_url,
+        dataType: "jsonp",
+        success: function(response) {
+            if (response.data.items) {
+                $.each(response.data.items, function(i, data) {
+                    display_list(data, "search_results");
+                });
+            }
+            else
             {
-                "key": document.forms["search_form"] ["search_text"].value
-            },
-    function(data, status) {
-        if (data !== false) {
-
-            display_list(data, "search_results");
-        } else {
-
+                $("#search_results").html("<div id='no'>No Results found</div>");
+            }
         }
+
     });
 }
+
+
+//    function search_song() {
+//    $.post("/search_song",
+//            {
+//                "key": document.forms["search_form"] ["search_text"].value
+//            },
+//    function(data, status) {
+//        if (data !== false) {
+//
+//            display_list(data, "search_results");
+//        } else {
+//
+//        }
+//    });
+//}
 
 
 function get_best_songs_and_display() {
@@ -227,7 +253,7 @@ function get_best_songs_and_display() {
     function(data, status) {
         if (data !== false) {
             best_songs = data;
-            display_best_songs(bast_songs,"best_songs");
+            display_best_songs(bast_songs, "best_songs");
         } else {
 
         }
