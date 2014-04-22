@@ -14,22 +14,19 @@
     margin: 0.5em;
 }
 
-#back_to_feed_btn{
-    margin: 2em;
-    bottom: 1em;
-
-}
 
 #search_btn{
-    width: 7em;
-    height: 2em;
     margin: 1em;
-
+    margin-left: 0.5em;
+    width: 6.5em;
+    height: 2.5em;
 }
 
 #search_text{
     margin: 1em;
+    margin-right: 0em;
     border-radius: 8em;
+    width: 11em;
 }
 
 

@@ -5,14 +5,14 @@ To change this template file, choose Tools | Templates
 and open the template in the editor.
 -->
 <html>
-<head>
+    <head>
         <title>MusicBuzz</title>
         <script src="js/serverUtils.js"></script>
 
         <script src="js/utils.js"></script>
         <script src="js/host.js"></script>
         <script src="js/user.js"></script>
-        
+
         <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
         <meta http-equiv="content-type" content="text/html; charset=utf-8" />
         <meta name="description" content="" />
@@ -28,16 +28,22 @@ and open the template in the editor.
         </noscript>
     </head>
     <body>
-        <article class="container box style1">
-                    <div class="half">
+        <section id="search" data-role="page" class="box style3">
+            <header>
+                <article class="container box style1">
+                    <div id="search_bar" class="half">
                             <input type="search" name="search_text" id="search_text" value=""/>
                             <button class="button" id="search_btn" onclick="search_song();">Search</button>
-                        </div>
+                    </div>
+
 
                     <div id="search_results"></div>
-                    <div>
-                        <button id="back_to_feed_btn" class="button" name="submit" onclick="changePage('search', 'feed')">Back to feed</button>                    
-                    </div>
+
                 </article>
+            </header>
+            <footer class="row">
+                <button id="back_to_feed_btn" class="button" name="submit" onclick="changePage('search', 'feed')">Back to feed</button>                    
+            </footer>
+        </section> 
     </body>
 </html>
