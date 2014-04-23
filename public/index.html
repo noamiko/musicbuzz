@@ -9,11 +9,18 @@
         <script src="js/user.js"></script>
         <link rel="stylesheet" href="css/style.css" />
 
-        <meta name="viewport" content="width=device-width, initialscale=1">
+        <meta name="viewport" content="width=device-width, initialscale=1.0">
 
         <link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.2/jquery.mobile-1.4.2.min.css" />
-        <script src="http://code.jquery.com/jquery-1.10.2.min.js"></script>
-        <script src="http://code.jquery.com/mobile/1.4.2/jquery.mobile-1.4.2.min.js"></script>
+       <script src="http://code.jquery.com/jquery-1.10.2.min.js"></script>
+       <script src="http://code.jquery.com/mobile/1.4.2/jquery.mobile-1.4.2.min.js"></script>
+        
+<!--       from site-->
+<!--        <link rel="stylesheet" href="http://demos.jquerymobile.com/1.1.1/css/themes/default/jquery.mobile-1.1.1.css">
+        <link rel="stylesheet" href="http://demos.jquerymobile.com/1.1.1/docs/_assets/css/jqm-docs.css">
+        <script src="//code.jquery.com/jquery-1.7.1.min.js"></script>
+        <script src="http://demos.jquerymobile.com/1.1.1/docs/_assets/js/jqm-docs.js"></script>
+        <script src="http://demos.jquerymobile.com/1.1.1/js/jquery.mobile-1.1.1.js"></script>-->
     </head>
     <body onload="init();">
 
@@ -22,9 +29,9 @@
 
             <!-- Header -->
             <section id="header" data-roll="header">
-                <header>
-                    <h1 id="main_title">MusicBuzz</h1>
-                    <h2 id="sub_title">choose your music</h2>
+                <header data-roll="header">
+                    <h2 id="main_title">MusicBuzz</h2>
+                    <h1 id="sub_title">choose your music</h1>
                     <br/>
                     <div data-role="fieldcontain">
                         <form method="post" name="login_user_form">
@@ -43,7 +50,7 @@
 
                     </div>
                 </header>
-                <footer>
+                <footer data-roll="footer">
                     <div>
                         <button id="login_btn" class="button ui-btn-active"  data-roll="button" onclick="login_user();">Login</button>
                     </div>
@@ -58,55 +65,80 @@
         <!-- sign up user page -->
         <section id="sign_up_user" data-role="page">
             <!-- Banner -->
-            <section id="banner">
-                <header>
-                    <h2>Sign Up form</h2>
-                </header>
-                <form method="post" name="signup_user_form">
-                    <div>
-                        <div>                      
-                            <label for="firstname">First Name:&emsp;</label>
-                            <input id="firstname" type="text" name="firstname" value="" placeholder="First Name"/>
-                        </div>
-                        <div>                      
-                            <label for="lastname">Last Name:&emsp;</label>
-                            <input id="lastname" type="text" name="lastname" value="" placeholder="Last Name"/>
-                        </div>
-                        <div>                      
-                            <label for="username">Username:&emsp;</label>
-                            <input id="username" type="text" name="username" value="" placeholder="Username"/>
-                        </div>
-                        <div>                      
-                            <label for="email">Email:&emsp;&emsp;&emsp;</label>
-                            <input id="email" type="email" name="email" value="" placeholder="Email"/>            
-                        </div>
-                        <div>                      
-                            <label for="password">Password:&emsp;</label>
-                            <input id="password" type="password" name="pwd" placeholder="Password">
-                        </div>
-                        <div>                      
-                            <label for="country">Country:&emsp;&emsp;</label>
-                            <input id="country" type="text" name="country" value="" placeholder="Country"/>
-                        </div>
-                        <div>                      
-                            <label for="radio-female">Female</label>
-                            <input id="radio-female" type="radio" name="gender" value="f"  />
+            <header data-roll="header">
+                <h2>Sign Up form</h2>
+            </header>
+            <form method="post" name="signup_user_form">
+                <ul data-role="listview" data-inset="true" class="ui-listview ui-listview-inset ui-corner-all ui-shadow">
+                    <li data-role="fieldcontain" class="ui-field-contain ui-body ui-br ui-li ui-li-static ui-body-c ui-corner-top">                   
+                        <label class="ui-input-text" for="firstname">First Name:&emsp;</label>
+                        <input class="ui-input-text ui-body-c ui-corner-all ui-shadow-inset" id="firstname" type="text" name="firstname" value="" placeholder="First Name"/>
+                    </li>
+                    <li data-role="fieldcontain" class="ui-field-contain ui-body ui-br ui-li ui-li-static ui-body-c ui-corner-top">                   
+                        <label class="ui-input-text" for="lastname">Last Name:&emsp;</label>
+                        <input class="ui-input-text ui-body-c ui-corner-all ui-shadow-inset"  id="lastname" type="text" name="lastname" value="" placeholder="Last Name"/>
+                    </li>
+                    <li data-role="fieldcontain" class="ui-field-contain ui-body ui-br ui-li ui-li-static ui-body-c ui-corner-top">                   
+                        <label class="ui-input-text" for="username">Username:&emsp;</label>
+                        <input class="ui-input-text ui-body-c ui-corner-all ui-shadow-inset"  id="username" type="text" name="username" value="" placeholder="Username"/>
+                    </li>
+                    <li data-role="fieldcontain" class="ui-field-contain ui-body ui-br ui-li ui-li-static ui-body-c ui-corner-top">                   
+                        <label class="ui-input-text" for="email">Email:&emsp;&emsp;&emsp;</label>
+                        <input class="ui-input-text ui-body-c ui-corner-all ui-shadow-inset"  id="email" type="email" name="email" value="" placeholder="Email"/>            
+                    </li>
+                    <li data-role="fieldcontain" class="ui-field-contain ui-body ui-br ui-li ui-li-static ui-body-c ui-corner-top">                   
+                        <label class="ui-input-text" for="password">Password:&emsp;</label>
+                        <input class="ui-input-text ui-body-c ui-corner-all ui-shadow-inset"  id="password" type="password" name="pwd" placeholder="Password">
+                    </li>
+                    <li data-role="fieldcontain" class="ui-field-contain ui-body ui-br ui-li ui-li-static ui-body-c ui-corner-top">                   
+                        <label class="ui-input-text" for="country">Country:&emsp;&emsp;</label>
+                        <input class="ui-input-text ui-body-c ui-corner-all ui-shadow-inset"  id="country" type="text" name="country" value="" placeholder="Country"/>
+                    </li>
 
-                            <label for="radio-male">Male</label>
-                            <input id="radio-male" type="radio" name="gender" value="m"   />
-                        </div>
-                        <div>                      
-                            <label for="date" >Birth Date:</label>
-                            <input id="date" type="date" name="birthdate" value="">
-                        </div>
-                    </div>
-                </form>
-                <footer>
-                    <button data-role="button" class="button ui-btn-active"  data-roll="button" onclick="signup_user();">Sign up</button>
-                </footer>
-            </section>
+                    <li data-role="fieldcontain" class="ui-field-contain ui-body ui-br ui-li ui-li-static ui-body-c ui-corner-top">
+                        <fieldset data-role="controlgroup" class="ui-corner-all ui-controlgroup ui-controlgroup-vertical">
+                            <div role="heading" class="ui-controlgroup-label">Gender:</div>
+                            <div class="ui-controlgroup-controls">
+                                <div class="ui-radio">
+                                    <input type="radio" name="gender" id="radio-male" value="m" checked="checked">
+                                    <label for="radio-male" data-corners="true" data-shadow="false" data-iconshadow="true" data-wrapperels="span" data-icon="radio-off" data-theme="c" class="ui-btn ui-btn-up-c ui-btn-icon-left ui-corner-top ui-radio-off">
+                                        <span class="ui-btn-inner ui-corner-top">
+                                            <span class="ui-btn-text">male</span>
+                                            <span class="ui-icon ui-icon-shadow ui-icon-radio-off">&nbsp;</span>
+
+                                        </span>
+                                    </label>
+                                </div>
+
+                                <div class="ui-radio">
+                                    <input type="radio" name="gender" id="radio-female" value="f">
+                                    <label for="radio-female" data-corners="true" data-shadow="false" data-iconshadow="true" data-wrapperels="span" data-icon="radio-off" data-theme="c" class="ui-btn ui-btn-icon-left ui-btn-up-c ui-radio-on">
+                                        <span class="ui-btn-inner">
+                                            <span class="ui-btn-text">Female</span>
+                                            <span class="ui-icon ui-icon-shadow ui-icon-radio-on">&nbsp;</span>
+
+                                        </span>
+                                    </label>
+                                </div>	
+                            </div>
+                        </fieldset>
+                    </li>
+
+
+
+                    <li data-role="fieldcontain" class="ui-field-contain ui-body ui-br ui-li ui-li-static ui-body-c ui-corner-top">                   
+                        <label class="ui-input-text" for="date" >Birth Date:</label>
+                        <input class="ui-input-text ui-body-c ui-corner-all ui-shadow-inset" id="date" type="date" name="birthdate" value="">
+                    </li>
+                </ul>
+            </form>
+
+
+
+            <footer data-roll="footer">
+                <button data-role="button" class="button ui-btn-active"  data-roll="button" onclick="signup_user();">Sign up</button>
+            </footer>
         </section>
-
 
 
 
@@ -114,47 +146,43 @@
         <!-- sign up host page -->
         <section id="sign_up_host" data-role="page">
             <!-- Banner -->
-            <section id="banner1">
-                <header>
-                    <h2>Host Sign Up form</h2>
-                </header>
-                <form method="post" name="signup_host_form">
-                    <div>
-                        <div>
+            <header data-roll="header">
+                <h2>Host Sign Up form</h2>
+            </header>
 
-                            <label for="bizname">Biz Name:&emsp;</label>
-                            <input id="bizname" type="text" name="bizname" value="" placeholder="Biz Name"/>
-                        </div>
-                        <div>
-                            <label for="username1">Username:&emsp;</label>
-                            <input id="username1" type="text" name="username" value="" placeholder="Username"/>
-                        </div>
-                        <div>
-                            <label for="email1">Email:&emsp;&emsp;&emsp;</label>
-                            <input id="email1" type="email" name="email" value="" placeholder="Email"/>            
-                        </div>
-                        <div>
-                            <label for="password1">Password:&emsp;</label>
-                            <input id="password1" type="password" name="pwd" placeholder="Password"> 
-                        </div>
-                        <div>
-                            <label for="address">Address&emsp;&emsp;</label>
-                            <input id="address" type="text" name="address" value="" placeholder="Address"/>
-                        </div>
-                        <div>
-                            <label for="country1">Country:&emsp;&emsp;</label>
-                            <input id="country1" type="text" name="country" value="" placeholder="Country"/>
-                        </div>
-                        <div>
-                            <label for="url">URL:&emsp;&emsp;&emsp;</label>
-                            <input id="url" type="url" name="url" value="" placeholder="http://www."/>
-                        </div>
-                    </div>
-                </form>
-                <footer>
-                    <button data-role="button" class="button ui-btn-active"  data-roll="button" onclick="signup_host()">Sign Up</button>
-                </footer>
-            </section>
+            <ul data-role="listview" data-inset="true" class="ui-listview ui-listview-inset ui-corner-all ui-shadow">
+                <li data-role="fieldcontain" class="ui-field-contain ui-body ui-br ui-li ui-li-static ui-body-c ui-corner-top">
+                    <label class="ui-input-text" for="bizname">Biz Name:&emsp;</label>
+                    <input class="ui-input-text ui-body-c ui-corner-all ui-shadow-inset" id="bizname" type="text" name="bizname" value="" placeholder="Biz Name"/>
+                </li>
+                <li data-role="fieldcontain" class="ui-field-contain ui-body ui-br ui-li ui-li-static ui-body-c ui-corner-top">
+                    <label class="ui-input-text" for="username1">Username:&emsp;</label>
+                    <input class="ui-input-text ui-body-c ui-corner-all ui-shadow-inset" id="username1" type="text" name="username" value="" placeholder="Username"/>
+                </li>
+                <li data-role="fieldcontain" class="ui-field-contain ui-body ui-br ui-li ui-li-static ui-body-c ui-corner-top">
+                    <label class="ui-input-text" for="email1">Email:&emsp;&emsp;&emsp;</label>
+                    <input class="ui-input-text ui-body-c ui-corner-all ui-shadow-inset" id="email1" type="email" name="email" value="" placeholder="Email"/>            
+                </li>
+                <li data-role="fieldcontain" class="ui-field-contain ui-body ui-br ui-li ui-li-static ui-body-c ui-corner-top">
+                    <label class="ui-input-text" for="password1">Password:&emsp;</label>
+                    <input class="ui-input-text ui-body-c ui-corner-all ui-shadow-inset" id="password1" type="password" name="pwd" placeholder="Password"> 
+                </li>
+                <li data-role="fieldcontain" class="ui-field-contain ui-body ui-br ui-li ui-li-static ui-body-c ui-corner-top">
+                    <label class="ui-input-text" for="address">Address&emsp;&emsp;</label>
+                    <input class="ui-input-text ui-body-c ui-corner-all ui-shadow-inset" id="address" type="text" name="address" value="" placeholder="Address"/>
+                </li>
+                <li data-role="fieldcontain" class="ui-field-contain ui-body ui-br ui-li ui-li-static ui-body-c ui-corner-top">
+                    <label class="ui-input-text" for="country1">Country:&emsp;&emsp;</label>
+                    <input class="ui-input-text ui-body-c ui-corner-all ui-shadow-inset" id="country1" type="text" name="country" value="" placeholder="Country"/>
+                </li>
+                <li data-role="fieldcontain" class="ui-field-contain ui-body ui-br ui-li ui-li-static ui-body-c ui-corner-top">
+                    <label class="ui-input-text" for="url">URL:&emsp;&emsp;&emsp;</label>
+                    <input class="ui-input-text ui-body-c ui-corner-all ui-shadow-inset" id="url" type="url" name="url" value="" placeholder="http://www."/>
+                </li>
+            </ul>
+            <footer data-roll="footer">
+                <button data-role="button" class="button ui-btn-active"  data-roll="button" onclick="signup_host()">Sign Up</button>
+            </footer>
         </section>
 
         <!-- login to host page -->
@@ -163,10 +191,10 @@
             <article data-roll="container box" style="text-align: center">
                 <form method="post" name="login_to_host_form">
                     <div>
-                        <header>
+                        <header data-roll="header">
                             <h2>Login to HOST</h2>
                         </header>
-                        <label for="bizname">Host Name:</label>
+                        <label class="ui-input-text" for="bizname">Host Name:</label>
                         <input type="text" name="bizname"  value="" placeholder="Host Name"/>   
                         <br/>
                         <br/>
@@ -193,7 +221,7 @@
                         <br/>
                     </header>
 
-                    <footer>
+                    <footer data-roll="footer">
                         <button class="button ui-btn-active"  data-roll="button" name="submit" onclick="changePage('feed', 'search')">Search songs</button>
                         <button class="button ui-btn-active"  data-roll="button" name="submit" onclick="refresh_btn()">Refresh</button>
                     </footer>
@@ -214,7 +242,7 @@
 
                 </article>
             </header>
-            <footer>
+            <footer data-roll="footer">
                 <button id="back_to_feed_btn" class="button ui-btn-active"  data-roll="button" name="submit" onclick="changePage('search', 'feed')">Back to feed</button>                    
             </footer>
         </section>  

@@ -103,7 +103,7 @@ function display_best_songs(songList, divId) {
             songList[i].dome.setAttribute("class", "vote-bad-button ui-btn ui-shadow ui-corner-all");
             songList[i].dome.setAttribute("type", "button");
             songList[i].dome.setAttribute("data-role", "button");
-            songList[i].dome.setAttribute("onclick", "dislike('"+ songList[i]._id + "');");
+            songList[i].dome.setAttribute("onclick", "dislike('" + songList[i]._id + "');");
             songList[i].dome.setAttribute("data-icon", "delete");
             songList[i].dome.innerHTML = "<h3><br></h3><br>";
             container.appendChild(songList[i].dome);
@@ -113,9 +113,16 @@ function display_best_songs(songList, divId) {
 
 function changePage(from, to) {
     $("#" + to).show();
-    $('html,body').animate({scrollTop: $("#" + to).offset().top
-        , callback: $("#" + from).hide()}, 'slow');
-    $("html, body").animate({scrollTop: 0}, "slow");
+    $.mobile.pageContainer.pagecontainer('change', "#" + to, {
+        transition: 'flow',
+        reload: true
+    });
+    $("#" + from).hide();
+
+//
+//    $('html,body').animate({scrollTop: $("#" + to).offset().top
+//        , callback: $("#" + from).hide()}, 'slow');
+//    $("html, body").animate({scrollTop: 0}, "slow");
 
 }
 
