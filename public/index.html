@@ -24,7 +24,7 @@
             <section id="header" data-roll="header">
                 <header>
                     <h1 id="main_title">MusicBuzz</h1>
-                    <p id="sub_title">choose your music</p>
+                    <h2 id="sub_title">choose your music</h2>
                     <br/>
                     <div data-role="fieldcontain">
                         <form method="post" name="login_user_form">
@@ -38,14 +38,14 @@
                             </div>
                         </form>
                         <div>
-                            <button class="button ui-btn-active" data-theme="e" data-roll="button" id="host_btn" onclick="set_host_login_attr()">are you a host?</button>
+                            <button id="host_btn" class="button ui-btn-active" data-roll="button" onclick="set_host_login_attr();">are you a host?</button>
                         </div>
 
                     </div>
                 </header>
                 <footer>
                     <div>
-                        <button id="login_btn" class="button ui-btn-active"  data-roll="button" onclick="login_user()">Login</button>
+                        <button id="login_btn" class="button ui-btn-active"  data-roll="button" onclick="login_user();">Login</button>
                     </div>
                     <div>                            
                         <button id="signup_btn" class="button ui-btn-active"  data-roll="button" onclick="changePage('login_user', 'sign_up_user')">Sign up</button>
@@ -102,7 +102,7 @@
                     </div>
                 </form>
                 <footer>
-                    <button data-role="button" class="button ui-btn-active "  data-roll="button" onclick="signup_user()">Sign up</button>
+                    <button data-role="button" class="button ui-btn-active"  data-roll="button" onclick="signup_user();">Sign up</button>
                 </footer>
             </section>
         </section>
@@ -152,7 +152,7 @@
                     </div>
                 </form>
                 <footer>
-                    <button data-role="button" class="button ui-btn-active "  data-roll="button" onclick="signup_host()">Sign Up</button>
+                    <button data-role="button" class="button ui-btn-active"  data-roll="button" onclick="signup_host()">Sign Up</button>
                 </footer>
             </section>
         </section>
@@ -170,7 +170,7 @@
                         <input type="text" name="bizname"  value="" placeholder="Host Name"/>   
                         <br/>
                         <br/>
-                        <button class="button ui-btn-active "  data-roll="button" onclick="login_to_host()">Enter</button>
+                        <button class="button ui-btn-active"  data-roll="button" onclick="login_to_host()">Enter</button>
 
                     </div>
                 </form>
@@ -194,8 +194,8 @@
                     </header>
 
                     <footer>
-                        <button class="button ui-btn-active "  data-roll="button" name="submit" onclick="changePage('feed', 'search')">Search songs</button>
-                        <button class="button ui-btn-active "  data-roll="button" name="submit" onclick="refresh_btn()">Refresh</button>
+                        <button class="button ui-btn-active"  data-roll="button" name="submit" onclick="changePage('feed', 'search')">Search songs</button>
+                        <button class="button ui-btn-active"  data-roll="button" name="submit" onclick="refresh_btn()">Refresh</button>
                     </footer>
                 </div>
             </article>
@@ -203,11 +203,11 @@
 
         <!-- search page -->
         <section id="search" data-role="page">
-            <header>
+            <header data-roll="header">
                 <article data-roll="container">
                     <div id="search_bar">
                         <input type="search" name="search_text" id="search_text" value=""/>
-                        <button class="button ui-btn-active "  data-roll="button" id="search_btn" onclick="search_song();">Search</button>
+                        <button class="button ui-btn-active"  data-roll="button" id="search_btn" onclick="search_song();">Search</button>
                     </div>
 
                     <div id="search_results" ></div>
@@ -215,7 +215,7 @@
                 </article>
             </header>
             <footer>
-                <button id="back_to_feed_btn" class="button ui-btn-active "  data-roll="button" name="submit" onclick="changePage('search', 'feed')">Back to feed</button>                    
+                <button id="back_to_feed_btn" class="button ui-btn-active"  data-roll="button" name="submit" onclick="changePage('search', 'feed')">Back to feed</button>                    
             </footer>
         </section>  
 

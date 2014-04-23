@@ -2,7 +2,7 @@
     margin-top: 6em !important;
 }
 
-body,div{
+body,div,h1,h2{
     alignment-adjust: middle !important;;
     text-align: center !important;
     margin: 1em !important;
