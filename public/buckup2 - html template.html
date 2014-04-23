@@ -7,13 +7,20 @@
         <script src="js/utils.js"></script>
         <script src="js/host.js"></script>
         <script src="js/user.js"></script>
+
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+        <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+        <meta name="description" content="" />
+        <meta name="keywords" content="" />
+        <link href="http://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,300italic" rel="stylesheet" type="text/css" />
+        <script type="text/javascript" src="js/jquery.min.js"></script>
+        <script type="text/javascript" src="js/jquery.poptrox.min.js"></script>
+        <script type="text/javascript" src="js/skel.min.js"></script>
+        <script type="text/javascript" src="js/init.js"></script>
+        <noscript>
+        <link rel="stylesheet" href="css/skel-noscript.css" />
         <link rel="stylesheet" href="css/style.css" />
-
-        <meta name="viewport" content="width=device-width, initialscale=1">
-
-        <link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.2/jquery.mobile-1.4.2.min.css" />
-        <script src="http://code.jquery.com/jquery-1.10.2.min.js"></script>
-        <script src="http://code.jquery.com/mobile/1.4.2/jquery.mobile-1.4.2.min.js"></script>
+        </noscript>
     </head>
     <body onload="init();">
 
@@ -21,34 +28,35 @@
         <section id="login_user" data-role="page">
 
             <!-- Header -->
-            <section id="header" data-roll="header">
+            <section id="header">
                 <header>
                     <h1 id="main_title">MusicBuzz</h1>
                     <p id="sub_title">choose your music</p>
                     <br/>
                     <div data-role="fieldcontain">
                         <form method="post" name="login_user_form">
-                            <div>
+                            <div class="row half">
                                 <div>                      
-                                    <input class="input" type="email" name="email" value="" placeholder="email"/>  
+
+                                    <input type="email" name="email" value="" placeholder="email"/>  
                                 </div>
                                 <div>                      
-                                    <input class="input" type="password" name="pwd" placeholder="Password">
+                                    <input type="password" name="pwd" placeholder="Password">
                                 </div>
                             </div>
                         </form>
                         <div>
-                            <button class="button ui-btn-active" data-theme="e" data-roll="button" id="host_btn" onclick="set_host_login_attr()">are you a host?</button>
+                            <a class="button style2" id="host_btn" onclick="set_host_login_attr()">are you a host?</a>
                         </div>
 
                     </div>
                 </header>
                 <footer>
                     <div>
-                        <button id="login_btn" class="button ui-btn-active"  data-roll="button" onclick="login_user()">Login</button>
+                        <button id="login_btn" class="button" onclick="login_user()">Login</button>
                     </div>
                     <div>                            
-                        <button id="signup_btn" class="button ui-btn-active"  data-roll="button" onclick="changePage('login_user', 'sign_up_user')">Sign up</button>
+                        <button id="signup_btn" class="button style2" onclick="changePage('login_user', 'sign_up_user')">Sign up</button>
                     </div>
                 </footer>
 
@@ -56,14 +64,14 @@
         </section>
 
         <!-- sign up user page -->
-        <section id="sign_up_user" data-role="page">
+        <section id="sign_up_user" data-role="page" class="box style1">
             <!-- Banner -->
             <section id="banner">
                 <header>
                     <h2>Sign Up form</h2>
                 </header>
                 <form method="post" name="signup_user_form">
-                    <div>
+                    <div class="row half">
                         <div>                      
                             <label for="firstname">First Name:&emsp;</label>
                             <input id="firstname" type="text" name="firstname" value="" placeholder="First Name"/>
@@ -102,7 +110,7 @@
                     </div>
                 </form>
                 <footer>
-                    <button data-role="button" class="button ui-btn-active "  data-roll="button" onclick="signup_user()">Sign up</button>
+                    <a data-role="button" class="button style2" onclick="signup_user()">Sign up</a>
                 </footer>
             </section>
         </section>
@@ -112,14 +120,14 @@
 
 
         <!-- sign up host page -->
-        <section id="sign_up_host" data-role="page">
+        <section id="sign_up_host" data-role="page" class="box style1">
             <!-- Banner -->
             <section id="banner1">
                 <header>
                     <h2>Host Sign Up form</h2>
                 </header>
                 <form method="post" name="signup_host_form">
-                    <div>
+                    <div class="row half">
                         <div>
 
                             <label for="bizname">Biz Name:&emsp;</label>
@@ -152,7 +160,7 @@
                     </div>
                 </form>
                 <footer>
-                    <button data-role="button" class="button ui-btn-active "  data-roll="button" onclick="signup_host()">Sign Up</button>
+                    <a data-role="button" class="button style2" onclick="signup_host()">Sign Up</a>
                 </footer>
             </section>
         </section>
@@ -160,9 +168,9 @@
         <!-- login to host page -->
         <section id="login_to_host" data-role="page">
             <!-- Feature 1 -->
-            <article data-roll="container box" style="text-align: center">
+            <article class="container box style1" style="text-align: center">
                 <form method="post" name="login_to_host_form">
-                    <div>
+                    <div class="inner">
                         <header>
                             <h2>Login to HOST</h2>
                         </header>
@@ -170,7 +178,7 @@
                         <input type="text" name="bizname"  value="" placeholder="Host Name"/>   
                         <br/>
                         <br/>
-                        <button class="button ui-btn-active "  data-roll="button" onclick="login_to_host()">Enter</button>
+                        <a class="button" onclick="login_to_host()">Enter</a>
 
                     </div>
                 </form>
@@ -178,10 +186,10 @@
         </section>
 
         <!-- feed page -->
-        <section id="feed" data-role="page">
-            <article data-roll="container box" style="text-align: center">
-                <div>
-                    <header >
+        <section id="feed" data-role="page" class="box style3">
+            <article class="container box style1" style="text-align: center">
+                <div class="inner">
+                    <header class="row">
                         <h1 id="host_title"></h1>
                         <h2>Current song is:</h2>
                         <div id="current_song"></div>
@@ -194,28 +202,28 @@
                     </header>
 
                     <footer>
-                        <button class="button ui-btn-active "  data-roll="button" name="submit" onclick="changePage('feed', 'search')">Search songs</button>
-                        <button class="button ui-btn-active "  data-roll="button" name="submit" onclick="refresh_btn()">Refresh</button>
+                        <button class="button" name="submit" onclick="changePage('feed', 'search')">Search songs</button>
+                        <button class="button" name="submit" onclick="refresh_btn()">Refresh</button>
                     </footer>
                 </div>
             </article>
         </section>
 
         <!-- search page -->
-        <section id="search" data-role="page">
+        <section id="search" data-role="page" class="box style3">
             <header>
-                <article data-roll="container">
+                <article class="container box style1">
                     <div id="search_bar">
                         <input type="search" name="search_text" id="search_text" value=""/>
-                        <button class="button ui-btn-active "  data-roll="button" id="search_btn" onclick="search_song();">Search</button>
+                        <button class="button" id="search_btn" onclick="search_song();">Search</button>
                     </div>
 
-                    <div id="search_results" ></div>
+                    <div id="search_results" class="row"></div>
 
                 </article>
             </header>
             <footer>
-                <button id="back_to_feed_btn" class="button ui-btn-active "  data-roll="button" name="submit" onclick="changePage('search', 'feed')">Back to feed</button>                    
+                <button id="back_to_feed_btn" class="button" name="submit" onclick="changePage('search', 'feed')">Back to feed</button>                    
             </footer>
         </section>  
 
