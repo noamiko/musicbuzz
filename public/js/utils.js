@@ -74,11 +74,11 @@ function display_song(song, divId) {
 
 
 function display_best_songs(songList, divId) {
-    if (songList !== null && songList !== {}) {
+    if (songList !== null && songList !== "") {
         var content = "";
         $('#' + divId).html(content);
         for (var i = 0; i < songList.length; i++) {
-            content = "<div data-role='controlgroup' data-type='horizontal' class='ui-corner-all ui-controlgroup ui-controlgroup-horizontal'>";
+            content += "<div data-role='controlgroup' data-type='horizontal' class='ui-corner-all ui-controlgroup ui-controlgroup-horizontal'>";
                     + "<div class='song-row ui-controlgroup-controls'>";
                     + "<a class='like_btn button ui-btn-check' data-role='button' data-icon='check' onclick='like('" + songList[i]._id + "');'>";
                     + "<span class='ui-btn-text'></span>";
