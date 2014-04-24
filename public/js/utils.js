@@ -83,9 +83,9 @@ function display_best_songs(songList, divId) {
 
         for (var i = 0; i < songList.length; i++) {
             content += "<div class='ui-grid-b ui-responsive'>"
-                    + "<div class='ui-block-a'><a href='#' class='like_btn ui-shadow ui-btn ui-corner-all ui-icon-check' onclick='like(" + songList[i]._id + ");'></a></div>"
-                    + "<div class='ui-block-b'><a href='#' class='like_btn ui-shadow ui-btn ui-corner-all' onclick='like(" + songList[i]._id + ");'>" + songList[i].title + "</a></div>"
-                    + "<div class='ui-block-c'><a href='#' class='like_btn ui-shadow ui-btn ui-corner-all ui-icon-delete' onclick='dislike(" + songList[i]._id + ");'></a></div>"
+                    + "<div class='ui-block-a'><a href='#' class='ui-shadow ui-btn ui-corner-all ui-btn-icon-left ui-icon-arrow-l like_btn' onclick='like(" + songList[i]._id + ");'>asdf</a></div>"
+                    + "<div class='ui-block-b'><a href='#' class='like_btn ui-shadow ui-btn ui-corner-all'>" + songList[i].title + "</a></div>"
+                    + "<div class='ui-block-c'><a href='#' class='like_btn ui-shadow ui-btn ui-corner-all ui-icon-delete' onclick='dislike(" + songList[i]._id + ");'>asdf</a></div>"
                     + "</div>";
 
 //                    +"<a class='like_btn ui-btn ui-btn-inline ui-icon-check' onclick='like(" + songList[i]._id + ");'>\n"
