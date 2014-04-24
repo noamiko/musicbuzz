@@ -81,13 +81,13 @@ function display_best_songs(songList, divId) {
     $('#' + divId).html(content);
     if (songList !== null && songList !== "") {
         for (var i = 0; i < songList.length; i++) {
-            content += "<div class='row'>\n"
-                    + "<div data-inline='true'>\n"
-                    + "<a href='#' class='like_btn ui-shadow ui-btn ui-corner-all ui-btn-icon-left ui-icon-check ui-btn-inline' onclick='like(" + songList[i]._id + ");" + "'></a>\n"
-                    + "<a href='#' class='song_btn ui-shadow ui-btn ui-btn-inline ui-corner-all'>" + songList[i].title + "</a>\n"
-                    + "<a href='#' class='dislike_btn ui-shadow ui-btn-inline ui-btn ui-corner-all ui-btn-icon-right ui-icon-delete' onclick='dislike(" + songList[i]._id + ");" + "'></a>\n"
-                    + "</div>\n"
-                    + "</div>\n";
+            content += "<div class='row'>"
+                    + "<div data-inline='true'>"
+                    + "<a href='#' class='like_btn ui-shadow ui-btn ui-corner-all ui-btn-icon-left ui-icon-check ui-btn-inline' onclick='like(" + songList[i]._id + ");" + "'></a>"
+                    + "<a href='#' class='song_btn ui-shadow ui-btn ui-btn-inline ui-corner-all'>" + songList[i].title + "</a>"
+                    + "<a href='#' class='dislike_btn ui-shadow ui-btn-inline ui-btn ui-corner-all ui-btn-icon-right ui-icon-delete' onclick='dislike(" + songList[i]._id + ");" + "'></a>"
+                    + "</div>"
+                    + "</div>";
         }
         $('#' + divId).html(content);
     }
