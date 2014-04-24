@@ -91,6 +91,7 @@ function display_best_songs(songList, divId) {
                     + "<a class='dislike_btn' data-role='button' data-icon='delete' onclick='dislike(" + songList[i]._id + ");'>\n"
                     + "<span class='ui-btn-text'></span>\n"
                     + "</a>\n"
+            +"<a href='index.html' data-role='button' data-icon='arrow-u' data-iconpos='notext' data-corners='true' data-shadow='true' data-iconshadow='true' data-wrapperels='span' data-theme='c' title='Up' class='ui-btn ui-btn-icon-notext ui-corner-left ui-btn-up-c'><span class='ui-btn-inner ui-corner-left'><span class='ui-btn-text'>Up</span><span class='ui-icon ui-icon-arrow-u ui-icon-shadow'>&nbsp;</span></span></a>"
                     + "</div>\n"
                     + "</div>\n";
         }
