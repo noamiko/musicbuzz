@@ -8,8 +8,8 @@ var is_a_host = false;
 var lat;
 var lng;
 
-var testSong = {"url":"https://copy.com/Kq6G9UxUFy4R","length":3.5,"artist":"TO TEST","title":"Test","_id":"535079f060a6485810fd6c0b","__v":0};
-var listOfSongs = [testSong,testSong,testSong,testSong];
+var testSong = {"url": "https://copy.com/Kq6G9UxUFy4R", "length": 3.5, "artist": "TO TEST", "title": "Test", "_id": "535079f060a6485810fd6c0b", "__v": 0};
+var listOfSongs = [testSong, testSong, testSong, testSong];
 
 function login_user() {
     var user = {
@@ -162,6 +162,26 @@ function get_host(bizName) {
             });
 }
 
+function get_song(song_id) {
+    console.log('....get_song (from youtube) id: ' + song_id);
+    $.getJSON('http://gdata.youtube.com/feeds/api/videos/' + songId + '?v=2&alt=jsonc',
+            function(data, status) {
+                if (data) {
+                    var song = {
+                        "id": data.data.id,
+                        "title": data.data.title,
+                        "length": data.data.duration};
+                    console.log("sucsses get_song (from youtube):\n"
+                            + JSON.stringify(song) + "\n"
+                            + "song_id: " + song_id);
+                    return song;
+                } else {
+                    console.log("!failed get_song (from youtube):\n"
+                            + "song_id: " + song_id);
+                }
+            });
+}
+
 
 function get_display_and_play_song(song_id, divId) {
     console.log("....get_display_and_play_song: " + song_id + " divId: " + divId);
@@ -174,7 +194,7 @@ function get_display_and_play_song(song_id, divId) {
             console.log("sucsses get_display_and_play_song:\n" + JSON.stringify(data) + "\ndivId: " + divId);
             return data;
         } else {
-            console.error("....get_display_and_play_song: " + song_id + " divId: " + divId);
+            console.error("!failed get_display_and_play_song: " + song_id + " divId: " + divId);
         }
     });
 }
@@ -316,19 +336,19 @@ function showPosition(position) {
     lng = position.coords.longitude;
 }
 
-function add_song() {
-    var song = {
-        "title": document.forms["deploy_form"] ["title"].value,
-        "length": document.forms["deploy_form"] ["length"].value,
-        "url": document.forms["deploy_form"] ["url"].value
-    };
-    $.post("/add_song",
-            song,
-            function(data, status) {
-
-                if (data !== false && data !== "") {
-                } else {
-
-                }
-            });
-}
+//function add_song() {
+//    var song = {
+//        "title": document.forms["deploy_form"] ["title"].value,
+//        "length": document.forms["deploy_form"] ["length"].value,
+//        "url": document.forms["deploy_form"] ["url"].value
+//    };
+//    $.post("/add_song",
+//            song,
+//            function(data, status) {
+//
+//                if (data !== false && data !== "") {
+//                } else {
+//
+//                }
+//            });
+//}

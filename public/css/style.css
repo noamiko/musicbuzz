@@ -56,6 +56,13 @@ body,div,h1,h2,span{
     text-emphasis-color: black;
 }
 
+.song-row{
+    margin: 0em !important;
+}
+
+.ui-controlgroup-controls{
+   margin: 0em !important;
+}
 /*.like_btn{
         display: inline !important;
 
