@@ -75,49 +75,40 @@ function display_song(song, divId) {
 function display_best_songs(songList, divId) {
     if (songList !== null) {
         for (var i = 0; i < songList.length; i++) {
-
-            $("#" + divId).append("<div id=" + divId + "-row-" + i + " class='song-row'></div>");
+            $("#" + divId).append("<div data-role='controlgroup' data-type='horizontal' class='ui-corner-all ui-controlgroup ui-controlgroup-horizontal'><div class='ui-controlgroup-controls'>"
+                    + "<div id=" + divId + "-row-" + i + " class='song-row ui-controlgroup-controls'></div></div>");
             container = document.getElementById(divId + "-row-" + i);
             //the vote like button
             songList[i].dome = document.createElement("button");
-            songList[i].dome.setAttribute("class", "like_btn button ui-btn-inline");
+            songList[i].dome.setAttribute("class", "like_btn button ui-btn");
             songList[i].dome.setAttribute("type", "button");
             songList[i].dome.setAttribute("data-role", "button");
             songList[i].dome.setAttribute("data-icon", "check");
-            songList[i].dome.setAttribute("data-inline", "true");
             songList[i].dome.setAttribute("onclick", "like('" + songList[i]._id + "');");
-            songList[i].dome.innerHTML = "<span class='ui-btn-inner ui-btn-corner-all'>"
-                    + "<span class='ui-btn-text'>Like</span>"
-                    + "</span>";
+            songList[i].dome.innerHTML = "<span class='ui-btn-text'>Like</span>";
 //            songList[i].dome.innerHTML = "<h3>Like</h3>";
             container.appendChild(songList[i].dome);
 
             //The button representing the song
             songList[i].dome = document.createElement("button");
-            songList[i].dome.setAttribute("class", "song_btn button ui-btn-inline");
+            songList[i].dome.setAttribute("class", "song_btn button ui-btn");
             songList[i].dome.setAttribute("type", "button");
             songList[i].dome.setAttribute("data-role", "button");
             songList[i].dome.setAttribute("disabled", "");
             songList[i].dome.setAttribute("color", "black");
-            songList[i].dome.setAttribute("data-inline", "true");
-            songList[i].dome.innerHTML = "<span class='ui-btn-inner ui-btn-corner-all'>"
-                    + "<span class='ui-btn-text'>" + songList[i].title + "</span>"
-                    + "</span>";
+            songList[i].dome.innerHTML = "<span class='ui-btn-text'>" + songList[i].title + "</span>";
 
 //            songList[i].dome.innerHTML = "<h3>" + songList[i].title + "</h3>";
             container.appendChild(songList[i].dome);
 
             //the vote dislike button
             songList[i].dome = document.createElement("button");
-            songList[i].dome.setAttribute("class", "dislike_btn button ui-btn-inline");
+            songList[i].dome.setAttribute("class", "dislike_btn button ui-btn");
             songList[i].dome.setAttribute("type", "button");
             songList[i].dome.setAttribute("data-role", "button");
             songList[i].dome.setAttribute("onclick", "dislike('" + songList[i]._id + "');");
             songList[i].dome.setAttribute("data-icon", "delete");
-            songList[i].dome.setAttribute("data-inline", "true");
-            songList[i].dome.innerHTML = "<span class='ui-btn-inner ui-btn-corner-all'>"
-                    + "<span class='ui-btn-text'>Dislike</span>"
-                    + "</span>";
+            songList[i].dome.innerHTML = "<span class='ui-btn-text'>Dislike</span>";
 //            songList[i].dome.innerHTML = "<h3>Dislike</h3>";
             container.appendChild(songList[i].dome);
         }
