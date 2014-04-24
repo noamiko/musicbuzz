@@ -82,13 +82,13 @@ function display_best_songs(songList, divId) {
         for (var i = 0; i < songList.length; i++) {
             content += "<div data-role='controlgroup' data-type='horizontal' class='ui-corner-all ui-controlgroup ui-controlgroup-horizontal'>\n"
                     + "<div class='song-row ui-controlgroup-controls'>\n"
-                    + "<a class='like_btn button ui-btn-check' data-role='button' data-icon='check' onclick='like('" + songList[i]._id + '");">\n'
+                    + "<a class='like_btn button ui-btn-check' data-role='button' data-icon='check' onclick='like(" + songList[i]._id + ");'>\n"
                     + "<span class='ui-btn-text'></span>\n"
                     + "</a>\n"
                     + "<a class='song_btn button ui-btn' data-role='button'>\n"
                     + "<span class='ui-btn-text'>" + songList[i].title + "</span>\n"
                     + "</a>\n"
-                    + "<a class='dislike_btn button ui-btn-delete' data-role='button' data-icon='delete' onclick='dislike('" + songList[i]._id + "');'>\n"
+                    + "<a class='dislike_btn button ui-btn-delete' data-role='button' data-icon='delete' onclick='dislike(" + songList[i]._id + ");'>\n"
                     + "<span class='ui-btn-text'></span>\n"
                     + "</a>\n"
                     + "</div>\n"
