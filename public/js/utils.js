@@ -74,29 +74,38 @@ function display_song(song, divId) {
 
 
 function display_best_songs(songList, divId) {
-    var content = "";
+
+    content = "<a href='index.html' data-role='button' data-icon='delete'>Delete</a>"
     $('#' + divId).html(content);
-    if (songList !== null && songList !== "") {
 
-        for (var i = 0; i < songList.length; i++) {
-            content += "<a href='index.html' data-role='button' data-icon='delete'>Delete</a>"
-
-
-//                    + "<button class='like_btn' data-role='button' data-icon='check' onclick='like(" + songList[i]._id + ");'>\n"
-//                    + "<span class='ui-btn-text'>&nbsp;</span>\n"
-//                    + "</button>\n"
-//                    + "<button class='song_btn' data-role='button'>\n"
-//                    + "<span class='ui-btn-text'>" + songList[i].title + "</span>\n"
-//                    + "</button>\n"
-//                    + "<button class='dislike_btn' data-role='button' data-icon='delete' onclick='dislike(" + songList[i]._id + ");'>\n"
-//                    + "<span class='ui-btn-text'>&nbsp;</span>\n"
-//                    + "</button>\n"
-//                    + "</div>\n"
-//                    + "</div>\n";
-        }
-        $('#' + divId).html(content);
-    }
 }
+
+
+
+//function display_best_songs(songList, divId) {
+//    var content = "";
+//    $('#' + divId).html(content);
+//    if (songList !== null && songList !== "") {
+//
+//        for (var i = 0; i < songList.length; i++) {
+//            content += "<a href='index.html' data-role='button' data-icon='delete'>Delete</a>"
+//
+//
+////                    + "<button class='like_btn' data-role='button' data-icon='check' onclick='like(" + songList[i]._id + ");'>\n"
+////                    + "<span class='ui-btn-text'>&nbsp;</span>\n"
+////                    + "</button>\n"
+////                    + "<button class='song_btn' data-role='button'>\n"
+////                    + "<span class='ui-btn-text'>" + songList[i].title + "</span>\n"
+////                    + "</button>\n"
+////                    + "<button class='dislike_btn' data-role='button' data-icon='delete' onclick='dislike(" + songList[i]._id + ");'>\n"
+////                    + "<span class='ui-btn-text'>&nbsp;</span>\n"
+////                    + "</button>\n"
+////                    + "</div>\n"
+////                    + "</div>\n";
+//        }
+//        $('#' + divId).html(content);
+//    }
+//}
 
 function changePage(from, to) {
     $("#" + to).show();
