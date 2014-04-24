@@ -79,14 +79,15 @@ function display_best_songs(songList, divId) {
     if (songList !== null && songList !== "") {
 
         for (var i = 0; i < songList.length; i++) {
-            content += "<div class='ui-grid-a'>\n\
-                            <div class='ui-block-a'>\n\
-                                <button type='v' data-theme='b' data-icon='delete'>More</button>\n\
-                            </div>\n\\n\
-                                <button type='v' data-theme='b' data-icon='check'>More</button>\n\
-                            <div class='ui-block-b'>\n\
-                            </div>\n\
-                            </div>";
+            content += "<div class='ui-grid-a'>"+
+                            "<div class='ui-block-a'>"+
+                                "<button data-roll='button' data-icon='delete'>More</button>"+
+                            "</div>"+
+                                
+                            "<div class='ui-block-b'>"+
+                                "<button data-roll='button' data-icon='check'>More</button>"+
+                            "</div>"+
+                            "</div>";
 
 
 //                    + "<button class='like_btn' data-role='button' data-icon='check' onclick='like(" + songList[i]._id + ");'>\n"
