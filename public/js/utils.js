@@ -95,7 +95,7 @@ function display_best_songs(songList, divId) {
             songList[i].dome.setAttribute("data-role", "button");
             songList[i].dome.setAttribute("disabled", "");
             songList[i].dome.setAttribute("color", "black");
-            songList[i].dome.innerHTML = "<h3>" + songList[i].title + "</h3>" + songList[i].artist;
+            songList[i].dome.innerHTML = "<h3>" + songList[i].title + "</h3>";
             container.appendChild(songList[i].dome);
 
             //the vote dislike button
