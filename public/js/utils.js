@@ -80,28 +80,14 @@ function display_best_songs(songList, divId) {
     var content = "";
     $('#' + divId).html(content);
     if (songList !== null && songList !== "") {
-
         for (var i = 0; i < songList.length; i++) {
-            content += +"<div class='row'>\n"
+            content += "<div class='row'>\n"
                     + "<div data-inline='true'>\n"
                     + "<a href='#' class='like_btn ui-shadow ui-btn ui-corner-all ui-btn-icon-left ui-icon-check ui-btn-inline' onclick='like(" + songList[i]._id + ");'></a>\n"
                     + "<a href='#' class='song_btn ui-shadow ui-btn ui-btn-inline ui-corner-all'>" + songList[i].title + "</a>\n"
                     + "<a href='#' class='dislike_btn ui-shadow ui-btn-inline ui-btn ui-corner-all ui-btn-icon-right ui-icon-delete' onclick='dislike(" + songList[i]._id + ");'></a>\n"
+                    + "</div>\n"
                     + "</div>\n";
-            +"</div>\n";
-
-
-//                    +"<a class='like_btn ui-btn ui-btn-inline ui-icon-check' onclick='like(" + songList[i]._id + ");'>\n"
-////                    + "<span class='ui-btn-text'>&nbsp;</span>\n"
-//                    + "</a>\n"
-//                    + "<a class='song_btn'>\n"
-//                    + "<span class='ui-btn-text'>" + songList[i].title + "</span>\n"
-//                    + "</a>\n"
-////                    + "<button class='dislike_btn' data-role='button' data-icon='delete' onclick='dislike(" + songList[i]._id + ");'>\n"
-////                    + "<span class='ui-btn-text'>&nbsp;</span>\n"
-////                    + "</button>\n"
-////                    + "</div>\n"
-////                    + "</div>\n";
         }
         $('#' + divId).html(content);
     }
