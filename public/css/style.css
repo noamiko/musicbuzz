@@ -40,3 +40,19 @@ body,div,h1,h2{
     top: 1em ;
     left: 1em ;
 }
+
+/*part of list song, history or search result*/
+.lst_btn{
+    
+}
+/*current song or next song*/
+.single_song{
+    
+}
+
+.like_btn{
+    
+}
+.dislike_btn{
+    
+}
