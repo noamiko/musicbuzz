@@ -199,12 +199,13 @@ function get_song_history_and_display() {
     function(data, status) {
         if (data !== false && data !== "") {
             history_list = data;
-            
-            //to remove
-            history_list = [current_song,current_song,current_song]
+
             display_list(history_list, "search_results");
             console.log("sucsses get_song_history_and_display:\n" + JSON.stringify(data));
         } else {
+            //to remove
+            history_list = [current_song, current_song, current_song]
+            display_list(history_list, "search_results");
             console.error("!failed get_song_history_and_display: " + current_user._id);
         }
     });
@@ -270,15 +271,15 @@ function get_best_songs_and_display() {
     function(data, status) {
         if (data !== false && data !== "") {
             best_songs = data;
-            
-            // to remove
-            best_songs = [current_song,current_song,current_song];
+
             display_best_songs(best_songs, "best_songs");
             console.log("sucsses get_best_songs_and_display:\n" + JSON.stringify(data));
 
         } else {
             console.error("!failed get_best_songs_and_display: " + current_host._id);
-
+            // to remove
+            best_songs = [current_song, current_song, current_song];
+            display_best_songs(best_songs, "best_songs");
         }
     });
 }
