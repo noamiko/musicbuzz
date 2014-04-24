@@ -55,11 +55,6 @@ body,div,h1,h2,span{
     color: black;
     text-emphasis-color: black;
 }
-#best_songs div,#best_songs button{
-    display: inline !important;
-    color: black;
-    text-emphasis-color: black;
-}
 
 /*.like_btn{
         display: inline !important;

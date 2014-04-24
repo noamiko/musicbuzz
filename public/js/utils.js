@@ -84,6 +84,7 @@ function display_best_songs(songList, divId) {
             songList[i].dome.setAttribute("type", "button");
             songList[i].dome.setAttribute("data-role", "button");
             songList[i].dome.setAttribute("data-icon", "check");
+            songList[i].dome.setAttribute("data-inline", "true");
             songList[i].dome.setAttribute("onclick", "like('" + songList[i]._id + "');");
             songList[i].dome.innerHTML = "<h3><br></h3><br>";
             container.appendChild(songList[i].dome);
@@ -95,6 +96,7 @@ function display_best_songs(songList, divId) {
             songList[i].dome.setAttribute("data-role", "button");
             songList[i].dome.setAttribute("disabled", "");
             songList[i].dome.setAttribute("color", "black");
+            songList[i].dome.setAttribute("data-inline", "true");
             songList[i].dome.innerHTML = "<h3>" + songList[i].title + "</h3>";
             container.appendChild(songList[i].dome);
 
@@ -105,6 +107,7 @@ function display_best_songs(songList, divId) {
             songList[i].dome.setAttribute("data-role", "button");
             songList[i].dome.setAttribute("onclick", "dislike('" + songList[i]._id + "');");
             songList[i].dome.setAttribute("data-icon", "delete");
+            songList[i].dome.setAttribute("data-inline", "true");
             songList[i].dome.innerHTML = "<h3><br></h3><br>";
             container.appendChild(songList[i].dome);
         }
