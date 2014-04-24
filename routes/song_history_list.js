@@ -45,7 +45,7 @@ song_history_list.prototype = {
         })
     },
     get_user_song_history: function(req, res) {
-        var history = this.getUserSongHistory(res.body.user_id);
+        var history = this.getUserSongHistory(req.body.user_id);
         if (history.length !== 0)
         {
             res.send(history.slice(0, 5));
