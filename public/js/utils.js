@@ -55,7 +55,7 @@ function display_list(songList, divId) {
     $('#' + divId).html('');
     var content = "";
     for (var i = 0; i < songList.length; i++) {
-        //The button representing the song
+//The button representing the song
         content += "<button data-roll='button' class='lst_btn' data-icon='check' onclick='like("
                 + songList[i].id + ");'>" + songList[i].title
                 + "</button>\n";
@@ -76,13 +76,17 @@ function display_song(song, divId) {
 function display_best_songs(songList, divId) {
     var content = "";
     $('#' + divId).html(content);
-
     if (songList !== null && songList !== "") {
 
         for (var i = 0; i < songList.length; i++) {
-            content += "<div data-role='controlgroup' data-type='horizontal' data-inline='true'>\n"
-                    + "<a href='#' data-role='button' data-icon='check' data-iconpos='left'onclick='like(" + songList[i]._id + ");'></a>"
-                    + "</div>\n";
+            content += "<div class='ui-grid-a'>\n\
+                            <div class='ui-block-a'>\n\
+                                <button type='v' data-theme='b'>More</button>\n\
+                            </div>\n\\n\
+                                <button type='v' data-theme='b'>More</button>\n\
+                            <div class='ui-block-b'>\n\
+                            </div>\n\
+                            </div>";
 
 
 //                    + "<button class='like_btn' data-role='button' data-icon='check' onclick='like(" + songList[i]._id + ");'>\n"
@@ -108,7 +112,6 @@ function changePage(from, to) {
         reload: true
     });
     $("#" + from).hide();
-
 //
 //    $('html,body').animate({scrollTop: $("#" + to).offset().top
 //        , callback: $("#" + from).hide()}, 'slow');
