@@ -81,11 +81,11 @@ function display_best_songs(songList, divId) {
         for (var i = 0; i < songList.length; i++) {
             content += "<div class='ui-grid-a'>"+
                             "<div class='ui-block-a'>"+
-                                "<button data-roll='button' data-icon='delete'>More</button>"+
+                                "<a data-roll='button' data-icon='delete'>More</a>"+
                             "</div>"+
                                 
                             "<div class='ui-block-b'>"+
-                                "<button data-roll='button' data-icon='check'>More</button>"+
+                                "<a data-roll='button' data-icon='check'></a>"+
                             "</div>"+
                             "</div>";
 
