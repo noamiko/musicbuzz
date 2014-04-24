@@ -75,7 +75,7 @@ function display_song(song, divId) {
 
 function display_best_songs(songList, divId) {
 
-    content = "<a href='index.html' data-role='button' data-icon='delete'>Delete</a>"
+    content = "<a href='#' class='ui-btn ui-btn-inline ui-icon-delete ui-btn-icon-left'>Left</a>"
     $('#' + divId).html(content);
 
 }
