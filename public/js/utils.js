@@ -80,19 +80,22 @@ function display_best_songs(songList, divId) {
     if (songList !== null && songList !== "") {
 
         for (var i = 0; i < songList.length; i++) {
-            content += "<div data-role='controlgroup' data-type='horizontal' class='ui-corner-all ui-controlgroup ui-controlgroup-horizontal'>\n"
-                    + "<div class='song-row ui-controlgroup-controls'>\n"
-                    + "<button class='like_btn' data-role='button' data-icon='check' onclick='like(" + songList[i]._id + ");'>\n"
-                    + "<span class='ui-btn-text'>&nbsp;</span>\n"
-                    + "</button>\n"
-                    + "<button class='song_btn' data-role='button'>\n"
-                    + "<span class='ui-btn-text'>" + songList[i].title + "</span>\n"
-                    + "</button>\n"
-                    + "<button class='dislike_btn' data-role='button' data-icon='delete' onclick='dislike(" + songList[i]._id + ");'>\n"
-                    + "<span class='ui-btn-text'>&nbsp;</span>\n"
-                    + "</button>\n"
-                    + "</div>\n"
+            content += "<div data-role='controlgroup' data-type='horizontal' data-inline='true'>\n"
+                    + "<a href='#' data-role='button' data-icon='check' data-iconpos='left'onclick='like(" + songList[i]._id + ");'></a>"
                     + "</div>\n";
+
+
+//                    + "<button class='like_btn' data-role='button' data-icon='check' onclick='like(" + songList[i]._id + ");'>\n"
+//                    + "<span class='ui-btn-text'>&nbsp;</span>\n"
+//                    + "</button>\n"
+//                    + "<button class='song_btn' data-role='button'>\n"
+//                    + "<span class='ui-btn-text'>" + songList[i].title + "</span>\n"
+//                    + "</button>\n"
+//                    + "<button class='dislike_btn' data-role='button' data-icon='delete' onclick='dislike(" + songList[i]._id + ");'>\n"
+//                    + "<span class='ui-btn-text'>&nbsp;</span>\n"
+//                    + "</button>\n"
+//                    + "</div>\n"
+//                    + "</div>\n";
         }
         $('#' + divId).html(content);
     }
