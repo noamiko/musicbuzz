@@ -61,24 +61,25 @@ body,div,h1,h2,span{
 }
 
 .ui-controlgroup-controls{
-   margin: 0em !important;
+    margin: 0em !important;
 }
 
 
 
 .like_btn{
-        display: inline !important;
-        width: 10%;
-
+    display: inline !important;
+    width: 10%;
+    left: 1em;
 }
 .dislike_btn{
-        display: inline !important;
-        width: 70%;
+    display: inline !important;
+    width: 70%;
 
 }
 
 .song_btn{
-        display: inline !important;
-        width: 10%;
+    display: inline !important;
+    width: 10%;
+    right: 1em;
 
 }
