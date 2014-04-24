@@ -204,7 +204,7 @@
 
         <!-- feed page -->
         <section id="feed" data-role="page">
-            <article data-roll="container box" style="text-align: center">
+            <article data-roll="container box">
                 <div>
                     <header >
                         <h1 id="host_title"></h1>
@@ -228,19 +228,22 @@
 
         <!-- search page -->
         <section id="search" data-role="page">
-            <header data-roll="header">
-                <article data-roll="container">
+            <article data-roll="container box">
+
+                <header data-roll="header">
                     <span id="search_bar">
                         <input type="search" name="search_text" id="search_text" value=""/>
                         <button class="button ui-btn-active"  data-roll="button" id="search_btn" onclick="search_song();">Search</button>
                     </span>
                     <div id="search_results" ></div>
+                </header>
 
-                </article>
-            </header>
-            <footer data-roll="footer">
-                <button id="back_to_feed_btn" class="button ui-btn-active" name="submit" onclick="changePage('search', 'feed')">Back to feed</button>                    
-            </footer>
+
+                <footer data-roll="footer">
+                    <button id="back_to_feed_btn" class="button ui-btn-active" name="submit" onclick="changePage('search', 'feed')">Back to feed</button>                    
+                </footer>
+            </article>
+
         </section>  
 
     </body>
