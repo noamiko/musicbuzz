@@ -48,19 +48,29 @@ body,div,h1,h2,span{
 
 /*part of list song, history or search result*/
 .lst_btn{
-    
+
 }
 /*current song or next song*/
 .single_song{
     color: black;
     text-emphasis-color: black;
 }
-#best_songs div{
+#best_songs div,#best_songs button{
     display: inline !important;
+    color: black;
+    text-emphasis-color: black;
 }
+
 /*.like_btn{
-    
+        display: inline !important;
+
 }
 .dislike_btn{
-    
+        display: inline !important;
+
+}
+
+.song_btn{
+        display: inline !important;
+
 }*/

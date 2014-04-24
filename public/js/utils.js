@@ -90,7 +90,7 @@ function display_best_songs(songList, divId) {
 
             //The button representing the song
             songList[i].dome = document.createElement("button");
-            songList[i].dome.setAttribute("class", "song-button button ui-btn");
+            songList[i].dome.setAttribute("class", "song_btn button ui-btn");
             songList[i].dome.setAttribute("type", "button");
             songList[i].dome.setAttribute("data-role", "button");
             songList[i].dome.setAttribute("disabled", "");
