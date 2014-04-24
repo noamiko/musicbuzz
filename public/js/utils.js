@@ -79,15 +79,24 @@ function display_best_songs(songList, divId) {
     if (songList !== null && songList !== "") {
 
         for (var i = 0; i < songList.length; i++) {
-            content += "<div class='ui-grid-a'>"+
-                            "<div class='ui-block-a'>"+
-                                "<a data-roll='button' data-icon='delete'>More</a>"+
-                            "</div>"+
-                                
-                            "<div class='ui-block-b'>"+
-                                "<a data-roll='button' data-icon='check'></a>"+
-                            "</div>"+
-                            "</div>";
+            content += "<div class='ui-grid-a'>" +
+                            "<div class='ui-block-a'>" +
+                                "<a class='ui-btn data-roll='button' data-icon='delete'>" +
+                                    "<span class='ui-btn-inner ui-corner-left'>"+
+                                        "<span class='ui-btn-text'>My button</span>" +
+                                        "<span class='ui-icon ui-icon-arrow-l ui-icon-shadow'>&nbsp;</span>" +
+                                    "</span>" +
+                                "</a>" +
+                            "</div>" +
+                            "<div class='ui-block-b'>" +
+                                "<a class='ui-btn data-roll='button' data-icon='delete'>" +
+                                    "<span class='ui-btn-inner ui-corner-left'>"+
+                                        "<span class='ui-btn-text'>My button</span>" +
+                                        "<span class='ui-icon ui-icon-arrow-l ui-icon-shadow'>&nbsp;</span>" +
+                                    "</span>" +
+                                "</a>" +                        
+                            "</div>" +
+                        "</div>";
 
 
 //                    + "<button class='like_btn' data-role='button' data-icon='check' onclick='like(" + songList[i]._id + ");'>\n"
