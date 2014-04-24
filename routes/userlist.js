@@ -84,7 +84,7 @@ UserList.prototype = {
     },
     get_song_history: function(req, res)
     {
-        song_history.find({user_id: req.body.userid},
+        song_history.find({user_id: req.body.user_id},
         function logUserToHost(err, items) {
             res.send(items);
         });
