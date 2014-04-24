@@ -41,6 +41,7 @@ body,div,h1,h2,span{
     top: 1em ;
     left: 1em ;
 }
+
 #back_to_feed_btn{
     margin: 1em;
 }
@@ -51,12 +52,15 @@ body,div,h1,h2,span{
 }
 /*current song or next song*/
 .single_song{
-    
+    color: black;
+    text-emphasis-color: black;
 }
-
-.like_btn{
+#best_songs div{
+    display: inline;
+}
+/*.like_btn{
     
 }
 .dislike_btn{
     
-}
+}*/

@@ -12,15 +12,15 @@
         <meta name="viewport" content="width=device-width, initialscale=1.0">
 
         <link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.2/jquery.mobile-1.4.2.min.css" />
-       <script src="http://code.jquery.com/jquery-1.10.2.min.js"></script>
-       <script src="http://code.jquery.com/mobile/1.4.2/jquery.mobile-1.4.2.min.js"></script>
-        
-<!--       from site-->
-<!--        <link rel="stylesheet" href="http://demos.jquerymobile.com/1.1.1/css/themes/default/jquery.mobile-1.1.1.css">
-        <link rel="stylesheet" href="http://demos.jquerymobile.com/1.1.1/docs/_assets/css/jqm-docs.css">
-        <script src="//code.jquery.com/jquery-1.7.1.min.js"></script>
-        <script src="http://demos.jquerymobile.com/1.1.1/docs/_assets/js/jqm-docs.js"></script>
-        <script src="http://demos.jquerymobile.com/1.1.1/js/jquery.mobile-1.1.1.js"></script>-->
+        <script src="http://code.jquery.com/jquery-1.10.2.min.js"></script>
+        <script src="http://code.jquery.com/mobile/1.4.2/jquery.mobile-1.4.2.min.js"></script>
+
+        <!--       from site-->
+        <!--        <link rel="stylesheet" href="http://demos.jquerymobile.com/1.1.1/css/themes/default/jquery.mobile-1.1.1.css">
+                <link rel="stylesheet" href="http://demos.jquerymobile.com/1.1.1/docs/_assets/css/jqm-docs.css">
+                <script src="//code.jquery.com/jquery-1.7.1.min.js"></script>
+                <script src="http://demos.jquerymobile.com/1.1.1/docs/_assets/js/jqm-docs.js"></script>
+                <script src="http://demos.jquerymobile.com/1.1.1/js/jquery.mobile-1.1.1.js"></script>-->
     </head>
     <body onload="init();">
 
@@ -94,7 +94,10 @@
                         <label class="ui-input-text" for="country">Country:&emsp;&emsp;</label>
                         <input class="ui-input-text ui-body-c ui-corner-all ui-shadow-inset"  id="country" type="text" name="country" value="" placeholder="Country"/>
                     </li>
-
+                    <li data-role="fieldcontain" class="ui-field-contain ui-body ui-br ui-li ui-li-static ui-body-c ui-corner-top">                   
+                        <label class="ui-input-text" for="date" >Birth Date:</label>
+                        <input class="ui-input-text ui-body-c ui-corner-all ui-shadow-inset" id="date" type="date" name="birthdate" value="">
+                    </li>
                     <li data-role="fieldcontain" class="ui-field-contain ui-body ui-br ui-li ui-li-static ui-body-c ui-corner-top">
                         <fieldset data-role="controlgroup" class="ui-corner-all ui-controlgroup ui-controlgroup-vertical">
                             <div role="heading" class="ui-controlgroup-label">Gender:</div>
@@ -124,12 +127,6 @@
                         </fieldset>
                     </li>
 
-
-
-                    <li data-role="fieldcontain" class="ui-field-contain ui-body ui-br ui-li ui-li-static ui-body-c ui-corner-top">                   
-                        <label class="ui-input-text" for="date" >Birth Date:</label>
-                        <input class="ui-input-text ui-body-c ui-corner-all ui-shadow-inset" id="date" type="date" name="birthdate" value="">
-                    </li>
                 </ul>
             </form>
 
