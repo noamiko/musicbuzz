@@ -2,6 +2,7 @@
     margin-top: 1em !important;
 }
 
+//the entrance page
 #login_user{
     margin-top: 5em !important;
 }
@@ -39,6 +40,9 @@ body,div,h1,h2,span{
     width: 10em;
     top: 1em ;
     left: 1em ;
+}
+#back_to_feed_btn{
+    margin: 1em;
 }
 
 /*part of list song, history or search result*/

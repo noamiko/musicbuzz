@@ -8,6 +8,9 @@ var is_a_host = false;
 var lat;
 var lng;
 
+var testSong = {"url":"https://copy.com/Kq6G9UxUFy4R","length":3.5,"artist":"TO TEST","title":"testing....","_id":"535079f060a6485810fd6c0b","__v":0};
+var listOfSongs = [testSong,testSong,testSong,testSong];
+
 function login_user() {
     var user = {
         "email": document.forms["login_user_form"] ["email"].value,
@@ -199,7 +202,7 @@ function get_song_history_and_display() {
     function(data, status) {
 
         //to remove
-        data = [current_song, current_song, current_song];
+        data = listOfSongs;
 
         if (data !== false && data !== "") {
             history_list = data;
@@ -271,7 +274,7 @@ function get_best_songs_and_display() {
     function(data, status) {
 
         // to remove
-        best_songs = [current_song, current_song, current_song];
+        data = listOfSongs;
 
         if (data !== false && data !== "") {
             best_songs = data;
