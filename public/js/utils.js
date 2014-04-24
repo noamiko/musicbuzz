@@ -82,16 +82,16 @@ function display_best_songs(songList, divId) {
         for (var i = 0; i < songList.length; i++) {
             content += "<div data-role='controlgroup' data-type='horizontal' class='ui-corner-all ui-controlgroup ui-controlgroup-horizontal'>\n"
                     + "<div class='song-row ui-controlgroup-controls'>\n"
-                    + "<a class='like_btn' data-role='button' data-icon='check' onclick='like(" + songList[i]._id + ");'>\n"
-                    + "<span class='ui-btn-text'></span>\n"
+                    + "<a class='like_btn ui-btn-icon-notext' data-role='button' data-icon='check' onclick='like(" + songList[i]._id + ");'>\n"
+                    + "<span class='ui-btn-text'>&nbsp;</span>\n"
                     + "</a>\n"
                     + "<a class='song_btn' data-role='button'>\n"
                     + "<span class='ui-btn-text'>" + songList[i].title + "</span>\n"
                     + "</a>\n"
-                    + "<a class='dislike_btn' data-role='button' data-icon='delete' onclick='dislike(" + songList[i]._id + ");'>\n"
-                    + "<span class='ui-btn-text'></span>\n"
+                    + "<a class='dislike_btn ui-btn-icon-notext' data-role='button' data-icon='delete' onclick='dislike(" + songList[i]._id + ");'>\n"
+                    + "<span class='ui-btn-text'>&nbsp;</span>\n"
                     + "</a>\n"
-            +"<a href='index.html' data-role='button' data-icon='arrow-u' data-iconpos='notext' data-corners='true' data-shadow='true' data-iconshadow='true' data-wrapperels='span' data-theme='c' title='Up' class='ui-btn ui-btn-icon-notext ui-corner-left ui-btn-up-c'><span class='ui-btn-inner ui-corner-left'><span class='ui-btn-text'>Up</span><span class='ui-icon ui-icon-arrow-u ui-icon-shadow'>&nbsp;</span></span></a>"
+//                    +"<a href='index.html' data-role='button' data-icon='arrow-u' data-iconpos='notext' data-corners='true' data-shadow='true' data-iconshadow='true' data-wrapperels='span' data-theme='c' title='Up' class='ui-btn ui-btn-icon-notext ui-corner-left ui-btn-up-c'><span class='ui-btn-inner ui-corner-left'><span class='ui-btn-text'>Up</span><span class='ui-icon ui-icon-arrow-u ui-icon-shadow'>&nbsp;</span></span></a>"
                     + "</div>\n"
                     + "</div>\n";
         }
