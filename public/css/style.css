@@ -63,6 +63,12 @@ body,div,h1,h2,span{
 .ui-controlgroup-controls{
    margin: 0em !important;
 }
+.ui-block-a .ui-block-c{
+    width: 10%;
+}
+.ui-block-b{
+        width: 70%;
+}
 
 /*.like_btn{
         display: inline !important;
