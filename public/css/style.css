@@ -66,7 +66,7 @@ body,div,h1,h2,span{
 
 
 
-.like_btn{
+/*.like_btn{
     display: inline !important;
     width: 10%;
     left: 1em;
@@ -78,8 +78,6 @@ body,div,h1,h2,span{
 }
 
 .song_btn{
-    display: inline !important;
-    width: 10%;
     right: 1em;
 
-}
+}*/
