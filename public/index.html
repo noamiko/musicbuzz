@@ -229,7 +229,6 @@
         <!-- search page -->
         <section id="search" data-role="page">
             <article data-roll="container box">
-
                 <header data-roll="header">
                     <span id="search_bar">
                         <input type="search" name="search_text" id="search_text" value=""/>
@@ -238,12 +237,10 @@
                     <div id="search_results" ></div>
                 </header>
 
-
                 <footer data-roll="footer">
-                    <button id="back_to_feed_btn" class="button ui-btn-active" name="submit" onclick="changePage('search', 'feed')">Back to feed</button>                    
+                    <button id="back_to_feed_btn" class="button ui-btn-active" data-roll="button" name="submit" onclick="changePage('search', 'feed')">Back to feed</button>                    
                 </footer>
             </article>
-
         </section>  
 
     </body>
