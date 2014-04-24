@@ -83,9 +83,9 @@ function display_best_songs(songList, divId) {
 
         for (var i = 0; i < songList.length; i++) {
             content += "<div class='ui-grid-b'>"
-                    + "<div class='ui-block-a'><a href='#' class='like_btn ui-shadow ui-btn ui-corner-all ui-btn-icon-left ui-icon-check ui-btn-inline like_btn' onclick='like(" + songList[i]._id + ");'></a></div>"
-                    + "<div class='ui-block-b'><a href='#' class='like_btn ui-shadow ui-btn ui-btn-inline ui-corner-all'>" + songList[i].title + "</a></div>"
-                    + "<div class='ui-block-c'><a href='#' class='dislike_btn ui-shadow ui-btn-inline ui-btn ui-corner-all ui-btn-icon-left ui-icon-delete dislike_btn' onclick='dislike(" + songList[i]._id + ");'></a></div>"
+                    + "<div class='ui-block-a'><a href='#' class='like_btn ui-shadow ui-btn ui-corner-all ui-btn-icon-left ui-icon-check ui-btn-inline' onclick='like(" + songList[i]._id + ");'></a></div>"
+                    + "<div class='ui-block-b'><a href='#' class='song_btn ui-shadow ui-btn ui-btn-inline ui-corner-all'>" + songList[i].title + "</a></div>"
+                    + "<div class='ui-block-c'><a href='#' class='dislike_btn ui-shadow ui-btn-inline ui-btn ui-corner-all ui-btn-icon-left ui-icon-delete' onclick='dislike(" + songList[i]._id + ");'></a></div>"
                     + "</div>";
 
 //                    +"<a class='like_btn ui-btn ui-btn-inline ui-icon-check' onclick='like(" + songList[i]._id + ");'>\n"
