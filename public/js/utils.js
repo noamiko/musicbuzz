@@ -78,21 +78,21 @@ function display_best_songs(songList, divId) {
     $('#' + divId).html(content);
 
     if (songList !== null && songList !== "") {
-        
+
         for (var i = 0; i < songList.length; i++) {
-            content += "<div data-role='controlgroup' data-type='horizontal' class='ui-corner-all ui-controlgroup ui-controlgroup-horizontal'>";
-            +"<div class='song-row ui-controlgroup-controls'>";
-            +"<a class='like_btn button ui-btn-check' data-role='button' data-icon='check' onclick='like('" + songList[i]._id + "');'>";
-            +"<span class='ui-btn-text'></span>";
-            +"</a>";
-            +"<a class='song_btn button ui-btn' data-role='button'>";
-            +"<span class='ui-btn-text'>" + songList[i].title + "</span>";
-            +"</a>";
-            +"<a class='dislike_btn button ui-btn-delete' data-role='button' data-icon='delete' onclick='dislike('" + songList[i]._id + "');'>";
-            +"<span class='ui-btn-text'></span>";
-            +"</a>";
-            +"</div>";
-            +"</div>";
+            content += "<div data-role='controlgroup' data-type='horizontal' class='ui-corner-all ui-controlgroup ui-controlgroup-horizontal'>"
+                    + "<div class='song-row ui-controlgroup-controls'>"
+                    + "<a class='like_btn button ui-btn-check' data-role='button' data-icon='check' onclick='like('" + songList[i]._id + "');'>"
+                    + "<span class='ui-btn-text'></span>"
+                    + "</a>"
+                    + "<a class='song_btn button ui-btn' data-role='button'>"
+                    + "<span class='ui-btn-text'>" + songList[i].title + "</span>"
+                    + "</a>"
+                    + "<a class='dislike_btn button ui-btn-delete' data-role='button' data-icon='delete' onclick='dislike('" + songList[i]._id + "');'>"
+                    + "<span class='ui-btn-text'></span>"
+                    + "</a>"
+                    + "</div>"
+                    + "</div>";
         }
         $('#' + divId).html(content);
     }
