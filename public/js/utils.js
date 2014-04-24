@@ -86,7 +86,10 @@ function display_best_songs(songList, divId) {
             songList[i].dome.setAttribute("data-icon", "check");
             songList[i].dome.setAttribute("data-inline", "true");
             songList[i].dome.setAttribute("onclick", "like('" + songList[i]._id + "');");
-            songList[i].dome.innerHTML = "<h3>Like</h3>";
+            songList[i].dome.innerHTML = "<span class='ui-btn-inner ui-btn-corner-all'>"
+                    + "<span class='ui-btn-text'>Like</span>"
+                    + "</span>";
+//            songList[i].dome.innerHTML = "<h3>Like</h3>";
             container.appendChild(songList[i].dome);
 
             //The button representing the song
@@ -97,7 +100,11 @@ function display_best_songs(songList, divId) {
             songList[i].dome.setAttribute("disabled", "");
             songList[i].dome.setAttribute("color", "black");
             songList[i].dome.setAttribute("data-inline", "true");
-            songList[i].dome.innerHTML = "<h3>" + songList[i].title + "</h3>";
+            songList[i].dome.innerHTML = "<span class='ui-btn-inner ui-btn-corner-all'>"
+                    + "<span class='ui-btn-text'>" + songList[i].title + "</span>"
+                    + "</span>";
+
+//            songList[i].dome.innerHTML = "<h3>" + songList[i].title + "</h3>";
             container.appendChild(songList[i].dome);
 
             //the vote dislike button
@@ -108,7 +115,10 @@ function display_best_songs(songList, divId) {
             songList[i].dome.setAttribute("onclick", "dislike('" + songList[i]._id + "');");
             songList[i].dome.setAttribute("data-icon", "delete");
             songList[i].dome.setAttribute("data-inline", "true");
-            songList[i].dome.innerHTML = "<h3>Dislike</h3>";
+            songList[i].dome.innerHTML = "<span class='ui-btn-inner ui-btn-corner-all'>"
+                    + "<span class='ui-btn-text'>Dislike</span>"
+                    + "</span>";
+//            songList[i].dome.innerHTML = "<h3>Dislike</h3>";
             container.appendChild(songList[i].dome);
         }
     }

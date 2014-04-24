@@ -8,7 +8,7 @@ var is_a_host = false;
 var lat;
 var lng;
 
-var testSong = {"url":"https://copy.com/Kq6G9UxUFy4R","length":3.5,"artist":"TO TEST","title":"testing....","_id":"535079f060a6485810fd6c0b","__v":0};
+var testSong = {"url":"https://copy.com/Kq6G9UxUFy4R","length":3.5,"artist":"TO TEST","title":"Testing....","_id":"535079f060a6485810fd6c0b","__v":0};
 var listOfSongs = [testSong,testSong,testSong,testSong];
 
 function login_user() {
