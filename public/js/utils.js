@@ -56,9 +56,9 @@ function display_list(songList, divId) {
     var content = "";
     for (var i = 0; i < songList.length; i++) {
 //The button representing the song
-        content += "<button data-roll='button' class='lst_btn' data-icon='check' onclick='like("
+        content += "<a class='lst_btn ui-btn ui-icon-check' onclick='like("
                 + songList[i].id + ");'>" + songList[i].title
-                + "</button>\n";
+                + "</a>";
     }
     $('#' + divId).html(content);
 }
@@ -67,8 +67,8 @@ function display_song(song, divId) {
     var content = "";
     $('#' + divId).html(content);
     //The button representing the song
-    content += "<button data-roll='button' class='single_song'>" + song.title
-            + "</button>\n";
+    content += "<a class='single_song ui-btn'>" + song.title
+            + "</a>";
     $('#' + divId).html(content);
 }
 
