@@ -11,6 +11,10 @@ body,div,h1,h2,span,button{
     alignment-adjust: middle !important;;
     text-align: center !important;
     margin: 1em !important;
+    top: 1em;
+    bottom: 1em;
+    right: 1em;
+    left: 1em;
 }
 
 
