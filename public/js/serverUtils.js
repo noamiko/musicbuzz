@@ -126,7 +126,7 @@ function signup_host() {
 
 //only for users, not for hosts !!!
 function login_to_host() {
-    var bizname = {"bizname": document.forms["login_to_host_form"] ["bizname1"].value};
+    var bizname = {"bizname": document.forms["login_to_host_form"] ["bizname"].value};
     console.log("....login_to_host: " + bizname.bizname);
     $.post("/login_to_host",
             bizname,
