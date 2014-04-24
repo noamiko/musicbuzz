@@ -6,7 +6,7 @@
     margin-top: 5em !important;
 }
 
-body,div,h1,h2{
+body,div,h1,h2,input,button,span{
     alignment-adjust: middle !important;;
     text-align: center !important;
     margin: 1em !important;
@@ -30,7 +30,7 @@ body,div,h1,h2{
     margin: 1em;
     margin-right: 0em;
     border-radius: 8em;
-    width: 11em;
+    width: 9em;
 }
 
 
