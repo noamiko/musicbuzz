@@ -80,7 +80,7 @@ function display_best_songs(songList, divId) {
             container = document.getElementById(divId + "-row-" + i);
             //the vote like button
             songList[i].dome = document.createElement("a");
-            songList[i].dome.setAttribute("class", "like_btn button ui-btn");
+            songList[i].dome.setAttribute("class", "like_btn button ui-btn-inline");
             songList[i].dome.setAttribute("type", "button");
             songList[i].dome.setAttribute("data-role", "button");
             songList[i].dome.setAttribute("data-icon", "check");
@@ -94,7 +94,7 @@ function display_best_songs(songList, divId) {
 
             //The button representing the song
             songList[i].dome = document.createElement("a");
-            songList[i].dome.setAttribute("class", "song_btn button ui-btn");
+            songList[i].dome.setAttribute("class", "song_btn button ui-btn-inline");
             songList[i].dome.setAttribute("type", "button");
             songList[i].dome.setAttribute("data-role", "button");
             songList[i].dome.setAttribute("disabled", "");
@@ -109,7 +109,7 @@ function display_best_songs(songList, divId) {
 
             //the vote dislike button
             songList[i].dome = document.createElement("a");
-            songList[i].dome.setAttribute("class", "dislike_btn button ui-btn");
+            songList[i].dome.setAttribute("class", "dislike_btn button ui-btn-inline");
             songList[i].dome.setAttribute("type", "button");
             songList[i].dome.setAttribute("data-role", "button");
             songList[i].dome.setAttribute("onclick", "dislike('" + songList[i]._id + "');");
