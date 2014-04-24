@@ -81,9 +81,9 @@ function display_best_songs(songList, divId) {
         for (var i = 0; i < songList.length; i++) {
             content += "<div class='ui-grid-a'>\n\
                             <div class='ui-block-a'>\n\
-                                <button type='v' data-theme='b'>More</button>\n\
+                                <button type='v' data-theme='b' data-icon='delete'>More</button>\n\
                             </div>\n\\n\
-                                <button type='v' data-theme='b'>More</button>\n\
+                                <button type='v' data-theme='b' data-icon='check'>More</button>\n\
                             <div class='ui-block-b'>\n\
                             </div>\n\
                             </div>";
