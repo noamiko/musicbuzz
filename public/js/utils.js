@@ -89,8 +89,11 @@ function display_best_songs(songList, divId) {
             content += "<div class='row'>"
                     + "<div data-inline='true'>"
                     + "<a href='#' class='like_btn ui-btn ui-icon-check ui-btn-icon-notext ui-corner-all ui-btn-inline' onclick='like(" + songList[i]._id + ");'></a>"
-                    + "<a href='#popupBasic"+i+"' data-rel='popup' data-transition='pop' class='song_btn ui-shadow ui-btn ui-btn-inline ui-corner-all' >" + short_title(songList[i].title) + "</a>"
-                    + "<div data-role='popup' id='popupBasic"+i+"'><p>"+songList[i].title+"</p></div>"
+                    + "\
+<a href='#popupBasic" + i + "' data-rel='popup' class='ui-btn ui-corner-all ui-shadow ui-btn-inline' data-transition='pop'>Basic Popup</a>\n\
+<div data-role='popup' id='popupBasic" + i + "'>\n\
+<p>This is a completely basic popup, no options set.</p>\n\
+</div>"
                     + "<a href='#' class='dislike_btn ui-btn ui-icon-delete ui-btn-icon-notext ui-corner-all ui-btn-inline' onclick='dislike(" + songList[i]._id + ");'></a>"
                     + "</div>"
                     + "</div>";
@@ -105,8 +108,8 @@ function changePage(from, to) {
 //        reload: true
     });
     $('#' + from).hide();
-    
-    if (to === 'feed'){
+
+    if (to === 'feed') {
         $('#home_btn').hide();
     }
 
@@ -131,7 +134,7 @@ function refresh_btn() {
 
 function short_title(title) {
     if (title.length > 12) {
-        return title.substring(0, 12)+"..";
+        return title.substring(0, 12) + "..";
     } else {
         return title;
     }
