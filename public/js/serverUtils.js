@@ -247,10 +247,16 @@ function signout() {
         if (data !== false && data !== "") {
             display_song(data);
             console.log("sucsses signout:\n" + JSON.stringify(data));
-            return data;
-            $("#home_btn").click();
+
+            $("#feed").hide();
+            $("#search").hide();
+            $("#sign_up_host").hide();
+            $("#sign_up_user").hide();
+            $("#login_to_host").hide();
+            $("#login_user").show();
         } else {
             console.error("!failed signout: " + JSON.stringify(current_user));
+
         }
     });
 }
