@@ -6,7 +6,6 @@ function init() {
 //    $('#search').hide();
 //    $('#login_host').hide();
 //    $('#login_user').show();
-    hideAddressbar('#login_user');
     getGeoLocation();
 }
 
@@ -82,13 +81,11 @@ function display_best_songs(songList, divId) {
             content += "<div class='row'>"
                     + "<div data-inline='true'>"
                     + "<a href='#' class='like_btn ui-btn ui-icon-check ui-btn-icon-notext ui-corner-all ui-btn-inline' onclick='like(" + id + ");'></a>"
-                    + "<a href='#popup"+i+"' class='song_btn ui-shadow ui-btn ui-btn-inline ui-corner-all'>" + short_title(songList[i].title) + "</a>"
-                    + "<div data-role='popup' id='popup"+i+"'><p>"+title+"</p></div>"
+                    + "<a class='song_btn ui-shadow ui-btn ui-btn-inline ui-corner-all' onclick='open_popup("+title+")>" + short_title(songList[i].title) + "</a>"
                     + "<a href='#' class='dislike_btn ui-btn ui-icon-delete ui-btn-icon-notext ui-corner-all ui-btn-inline' onclick='dislike(" + id + ");'></a>"
                     + "</div>"
                     + "</div>";
         }
-        $('#' + divId).html(content);
     }
     
 }
@@ -132,6 +129,6 @@ function short_title(title) {
     }
 }
 
-function open_popup(word){
-    
+function open_popup(title){
+    $.dynamic_popup(title);
 }
