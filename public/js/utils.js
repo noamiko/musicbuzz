@@ -112,14 +112,11 @@ function changePage(from, to) {
     } else {
         $.mobile.pageContainer.pagecontainer('change', "#" + to,
                 {
-                    transition: 'flow'
-//        reload: true
+                    transition: 'flow',
+                    callback: $('#' + from).hide()
 
                 });
     }
-
-
-    $('#' + from).hide();
 
     if (from !== "search" && to === 'feed') {
         $('#home_btn').html("<a id='refresh_btn' href='#' data-icon='refresh' data-iconpos='notext' onclick='refresh_btn();'>refresh</a>");
