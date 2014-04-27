@@ -53,6 +53,6 @@ body,div,h1,h2,span,button{
     left: 1em ;
 }
 
-.row{
+.row,.row div{
     margin: 0em !important;
 }
