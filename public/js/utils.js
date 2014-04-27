@@ -8,13 +8,6 @@ function init() {
 //    $('#login_user').show();
     getGeoLocation();
 }
-window.addEventListener("load", function() {
-    // Set a timeout...
-    setTimeout(function() {
-        // Hide the address bar!
-        window.scrollTo(0, 1);
-    }, 0);
-});
 
 function clear_inputs() {
     inputs = document.getElementsByTagName('input');
@@ -89,7 +82,7 @@ function display_best_songs(songList, divId) {
             content += "<div class='row'>"
                     + "<div data-inline='true'>"
                     + "<a href='#' class='like_btn ui-btn ui-icon-check ui-btn-icon-notext ui-corner-all ui-btn-inline' onclick='like(" + songList[i]._id + ");'></a>"
-                    + "<a href='#' class='song_btn ui-shadow ui-btn ui-btn-inline ui-corner-all' onclick='alert('" + songList[i].title + "');'>" + short_title(songList[i].title) + "</a>"
+                    + "<a href='#' class='song_btn ui-shadow ui-btn ui-btn-inline ui-corner-all' onclick='alert(&quot" + songList[i].title + "&quot);'>" + short_title(songList[i].title) + "</a>"
                     + "<a href='#' class='dislike_btn ui-btn ui-icon-delete ui-btn-icon-notext ui-corner-all ui-btn-inline' onclick='dislike(" + songList[i]._id + ");'></a>"
                     + "</div>"
                     + "</div>";
