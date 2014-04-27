@@ -106,7 +106,7 @@ function changePage(from, to) {
                 {
                     transition: 'flow',
                     reload: true,
-                    callback: $('#' + from).show()
+                    callback: $('#' + to).show()
 
                 });
     } else {
