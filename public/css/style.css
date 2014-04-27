@@ -53,19 +53,6 @@ body,div,h1,h2,span,button{
     left: 1em ;
 }
 
-
-/*.like_btn{
-    display: inline !important;
-    width: 10%;
-    left: 1em;
+.row{
+    margin: 0em !important;
 }
-.dislike_btn{
-    display: inline !important;
-    width: 70%;
-
-}
-
-.song_btn{
-    right: 1em;
-
-}*/
