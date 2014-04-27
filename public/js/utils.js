@@ -80,7 +80,7 @@ function display_best_songs(songList, divId) {
     if (songList !== null && songList !== "") {
         for (var i = 0; i < songList.length; i++) {
             var id = "&quot;"+songList[i]._id+"&quot;";
-            var title = "'"+songList[i].title+"'";
+            var title = "&quot;"+songList[i].title+"&quot;";
             content += "<div class='row'>"
                     + "<div data-inline='true'>"
                     + "<a href='#' class='like_btn ui-btn ui-icon-check ui-btn-icon-notext ui-corner-all ui-btn-inline' onclick='like(" + id + ");'></a>"
