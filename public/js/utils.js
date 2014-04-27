@@ -100,7 +100,6 @@ function changePage(from, to) {
     if (to === 'feed') {
         $('#home_btn').hide();
     }
-    hideAddressbar("#" + to);
 
 }
 
