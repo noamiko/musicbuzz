@@ -188,7 +188,6 @@ function set_profile_user() {
     document.forms["signup_user_form"] ["username"].value = current_user.username;
     document.forms["signup_user_form"] ["email"].value = current_user.email;
 
-    document.forms["signup_user_form"] ["gender"].value = current_user.gender;
     document.forms["signup_user_form"] ["birthdate"].value = current_user.birthdate;
     document.forms["signup_user_form"] ["country"].value = current_user.country;
     $('#signup_user_btn').attr('onclick', "update_user();");
