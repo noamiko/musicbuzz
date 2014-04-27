@@ -8,7 +8,7 @@ var is_a_host = false;
 var lat;
 var lng;
 
-var testSong = {"url": "https://copy.com/Kq6G9UxUFy4R", "length": 3.5, "artist": "TO TEST", "title": "Test more the 11 char", "_id": "535079f060a6485810fd6c0b", "__v": 0};
+var testSong = {"url": "https://copy.com/Kq6G9UxUFy4R", "length": 3.5, "artist": "TO TEST", "title": "Test more the 11 char", "id": "535079f060a6485810fd6c0b", "__v": 0};
 var listOfSongs = [testSong, testSong, testSong, testSong];
 
 function login_user() {
@@ -164,7 +164,7 @@ function get_host(bizName) {
 
 function get_song(song_id) {
     console.log('....get_song (from youtube) id: ' + song_id);
-    $.getJSON('http://gdata.youtube.com/feeds/api/videos/' + songId + '?v=2&alt=jsonc',
+    $.getJSON('http://gdata.youtube.com/feeds/api/videos/' + song_id + '?v=2&alt=jsonc',
             function(data, status) {
                 if (data) {
                     var song = {

@@ -54,7 +54,7 @@ function display_title(title) {
 function display_list(songList, divId) {
     $('#' + divId).html('');
     var content = "";
-    var id = "&quot;" + songList[i]._id + "&quot;";
+    var id = "&quot;" + songList[i].id + "&quot;";
     var title = "&quot;" + songList[i].title + "&quot;";
     for (var i = 0; i < songList.length; i++) {
         //The button representing the song
@@ -78,7 +78,7 @@ function display_best_songs(songList, divId) {
     $('#' + divId).html(content);
     if (songList !== null && songList !== "") {
         for (var i = 0; i < songList.length; i++) {
-            var id = "&quot;" + songList[i]._id + "&quot;";
+            var id = "&quot;" + songList[i].id + "&quot;";
             var title = "&quot;" + songList[i].title + "&quot;";
             content += "<div class='row'>"
                     + "<div data-inline='true'>"
