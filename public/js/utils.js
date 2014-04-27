@@ -54,9 +54,11 @@ function display_title(title) {
 function display_list(songList, divId) {
     $('#' + divId).html('');
     var content = "";
+    var id = "&quot;" + songList[i]._id + "&quot;";
+    var title = "&quot;" + songList[i].title + "&quot;";
     for (var i = 0; i < songList.length; i++) {
-//The button representing the song
-        content += "<a href='#' class='lst_btn ui-shadow ui-btn ui-corner-all ui-btn-icon-left ui-icon-check' onclick='like(" + songList[i].id + ");'>" + songList[i].title + "</a>";
+        //The button representing the song
+        content += "<a href='#' class='lst_btn ui-shadow ui-btn ui-corner-all ui-btn-icon-left ui-icon-check' onclick='like(" + id + ");'>" + short_title(songList[i].title) + "</a>";
     }
     $('#' + divId).html(content);
 }
