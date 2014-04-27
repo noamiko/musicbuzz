@@ -1,10 +1,11 @@
 [data-role="page"]#login_user {
-    margin-top: 5em !important;
-}
+    margin-top: 1em !important;
+    margin-bottom: 6em !important;
+}/*
 
 [data-role="page"] {
     margin-top: 1em !important;
-}
+}*/
 
 //the entrance page
 #login_user{
@@ -50,7 +51,7 @@ body,div,h1,h2,span,button{
 #host_btn{
     position: fixed;
     width: 10em;
-    top: 1em ;
+    top: 8em ;
     left: 1em ;
 }
 
@@ -58,8 +59,8 @@ body,div,h1,h2,span,button{
     position: absolute;
     width: 5em;
     height: 2em;
-    top: 1em ;
-    right: 1em ;
+    top: 0em ;
+    right: 0em ;
 }
 
 .row,.row div{
