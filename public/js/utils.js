@@ -54,16 +54,21 @@ function display_title(title) {
 
 // the history list
 function display_list(songList, divId) {
-    $('#' + divId).html('');
     var content = "";
-
-    for (var i = 0; i < songList.length; i++) {
-        var id = "&quot;" + songList[i].id + "&quot;";
-        var title = "&quot;" + songList[i].title + "&quot;";
-        //The button representing the song
-        content += "<a href='#' class='lst_btn ui-shadow ui-btn ui-corner-all ui-btn-icon-left ui-icon-check' onclick='like(" + id + ");'>" + short_title(songList[i].title) + "</a>";
-    }
     $('#' + divId).html(content);
+    if (songList !== null && songList !== "") {
+        for (var i = 0; i < songList.length; i++) {
+            var id = "&quot;" + songList[i].id + "&quot;";
+            var title = "&quot;" + songList[i].title + "&quot;";
+            content += "<div class='row'>"
+                    + "<div data-inline='true'>"
+                    + "<a href='#' class='like_btn ui-btn ui-icon-check ui-btn-icon-notext ui-corner-all ui-btn-inline' onclick='like(" + id + ");'></a>"
+                    + "<a href='#' class='song_btn ui-shadow ui-btn ui-btn-inline ui-corner-all' onclick='alert(" + title + ");'>" + short_title(songList[i].title) + "</a>"
+                    + "</div>"
+                    + "</div>";
+        }
+        $('#' + divId).html(content);
+    }
 }
 
 function display_song(song, divId) {
