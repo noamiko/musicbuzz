@@ -81,13 +81,13 @@ function display_best_songs(songList, divId) {
             content += "<div class='row'>"
                     + "<div data-inline='true'>"
                     + "<a href='#' class='like_btn ui-btn ui-icon-check ui-btn-icon-notext ui-corner-all ui-btn-inline' onclick='like(" + id + ");'></a>"
-                    + "<a class='song_btn ui-shadow ui-btn ui-btn-inline ui-corner-all' onclick='open_popup("+title+");'>" + short_title(songList[i].title) + "</a>"
+                    + "<a class='song_btn ui-shadow ui-btn ui-btn-inline ui-corner-all' onclick='open_popup(" + title + ");'>" + short_title(songList[i].title) + "</a>"
                     + "<a href='#' class='dislike_btn ui-btn ui-icon-delete ui-btn-icon-notext ui-corner-all ui-btn-inline' onclick='dislike(" + id + ");'></a>"
                     + "</div>"
                     + "</div>";
         }
     }
-    
+
 }
 
 function changePage(from, to) {
@@ -128,6 +128,19 @@ function short_title(title) {
     }
 }
 
-function open_popup(title){
-    $.dynamic_popup(title);
+function open_popup(title) {
+    $('<div>').attr({'data-role': 'popup', 'id': 'popupBasic', 'data-dismissible': 'false', 'data-theme': 'a', 'data-transition': 'pop'}).appendTo('[data-role="content"]');
+    $('<div>').attr({'data-role': 'header', 'data-theme': 'b', 'id': 'popup-header'}).append('<h1>Header</h1>').appendTo('#popupBasic');
+    $('<ul>').attr({'data-role': 'listview', 'id': 'list-test', 'data-theme': 'a'}).appendTo('#popupBasic');
+    $('<li>').append(title).appendTo('#list-test');
+    $('#index').trigger('pagecreate');
+    var popup = setInterval(function() {
+        $("#popupBasic").popup("open", {
+            overlyaTheme: "a"
+        }).on("popupafterclose", function() {
+            //remove the popup when closing
+            $(this).remove();
+        });
+        clearInterval(popup);
+    }, 1);
 }
