@@ -68,7 +68,7 @@ function display_song(song, divId) {
     var content = "";
     $('#' + divId).html(content);
     //The button representing the song
-    content += "<a href='#' class='single_song ui-btn'>" + song.title
+    content += "<a href='#' class='single_song ui-btn' onclick='alert(" + song.title + ");'>" + short_title(song.title)
             + "</a>";
     $('#' + divId).html(content);
 }
@@ -101,16 +101,29 @@ function changePage(from, to) {
     $('#' + from).hide();
 
     if (from !== "search" && to === 'feed') {
-        $('#home_btn').hide();
+        $('#home_btn').html("<a id='refresh_btn' href='#' data-icon='refresh' data-iconpos='notext' onclick='refresh_btn();'>refresh</a>");
     }
+    change_title(to);
 
+}
+function change_title(to) {
+    if (to == 'feed') {
+        $('#bar_title').text("Feed");
+    }
+    if (to == 'sign_up_user') {
+        $('#bar_title').text("Sign-Up page");
+    }
+    if (to == 'sign_up_host') {
+        $('#bar_title').text("Sign-Up page");
+    }
+    if (to == 'search') {
+        $('#bar_title').text("Search page");
+    }
 }
 
 function set_host_login_attr() {
     $('#host_btn').hide();
-
-    $('#main_title').text("Host Login Page");
-    $('#sub_title').text("");
+    $('#sub_title').text("Host Login Page");
     $('#login_btn').attr('onclick', "login_host()");
     $('#signup_btn').attr('onclick', "changePage('login_user', 'sign_up_host')");
 }
@@ -129,4 +142,33 @@ function short_title(title) {
     } else {
         return title;
     }
+}
+
+function set_profile_user() {
+    document.forms["signup_user_form"] ["firstname"].value = current_user.firstname;
+    document.forms["signup_user_form"] ["lastname"].value = current_user.lastname;
+    document.forms["signup_user_form"] ["username"].value = current_user.username;
+    document.forms["signup_user_form"] ["email"].value = current_user.email;
+
+    document.forms["signup_user_form"] ["gender"].value = current_user.gender;
+    document.forms["signup_user_form"] ["birthdate"].value = current_user.birthdate;
+    document.forms["signup_user_form"] ["country"].value = current_user.country;
+    $('#signup_user_btn').attr('onclick', "update_user();");
+    $('#signup_user_btn').txt("Update");
+
+
+
+}
+
+function set_profile_host() {
+    document.forms["signup_host_form"] ["bizname"].value = current_host.bizname;
+    document.forms["signup_host_form"] ["username"].value = current_host.username;
+    document.forms["signup_host_form"] ["email"].value = current_host.email;
+
+    document.forms["signup_host_form"] ["address"].value = current_host.address;
+    document.forms["signup_host_form"] ["country"].value = current_host.country;
+    document.forms["signup_host_form"] ["url"].value = current_host.url;
+    $('#signup_user_btn').attr('onclick', "update_host();");
+    $('#signup_user_btn').txt("Update");
+
 }

@@ -3,6 +3,7 @@ html, body {
     padding: 0;
 }
 
+
 #page {
     position: absolute;
     width: 100%;
@@ -70,13 +71,6 @@ div,h1,h2,span,button{
     left: 1em ;
 }
 
-#home_btn{
-    position: absolute;
-    width: 5em;
-    height: 2em;
-    top: 0em ;
-    right: 0em ;
-}
 
 .row,.row div{
     margin: 0em !important;

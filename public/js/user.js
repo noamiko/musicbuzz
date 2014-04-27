@@ -3,6 +3,8 @@ function start_user() {
     next_song = get_and_display_song(current_host.nextSongId, "next_song");
     get_best_songs_and_display();
     get_song_history_and_display();
+    $('#host_title').txt(current_host.bizname);
+
     timer();
 }
 

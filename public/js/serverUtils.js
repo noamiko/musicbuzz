@@ -62,6 +62,8 @@ function login_host() {
 }
 
 
+
+
 function signup_user() {
     var user = {
         "firstname": document.forms["signup_user_form"] ["firstname"].value,
@@ -93,7 +95,42 @@ function signup_user() {
             });
 }
 
-function signup_host() {
+
+
+
+function update_user() {
+    var user = {
+        "firstname": document.forms["signup_user_form"] ["firstname"].value,
+        "lastname": document.forms["signup_user_form"] ["lastname"].value,
+        "username": document.forms["signup_user_form"] ["username"].value,
+        "email": document.forms["signup_user_form"] ["email"].value,
+        "pwd": document.forms["signup_user_form"] ["pwd"].value,
+        "lat": lat,
+        "lng": lng,
+        "gender": document.forms["signup_user_form"] ["gender"].value,
+        "birthdate": document.forms["signup_user_form"] ["birthdate"].value,
+        "country": document.forms["signup_user_form"] ["country"].value
+    };
+    console.log("....update_user:\n" + JSON.stringify(user));
+
+    $.post("/update_user",
+            user,
+            function(data, status) {
+                if (data !== false && data !== "") {
+                    current_user = data;
+                    changePage("sign_up_user", "login_to_host");
+                    console.log("seucsses update_user:\n" + JSON.stringify(data));
+
+                } else {
+                    console.error("!failed update_user:\n" + JSON.stringify(user) + "\nposibly a user with the same email is already registerd");
+                    alert("A user with the same email is already registerd");
+                }
+                clear_inputs();
+            });
+}
+
+
+function update_host() {
     var host = {
         "bizname": document.forms["signup_host_form"] ["bizname"].value,
         "username": document.forms["signup_host_form"] ["username"].value,
@@ -105,8 +142,8 @@ function signup_host() {
         "lat": lat,
         "lng": lng
     };
-    console.log("....signup_host: " + JSON.stringify(host));
-    $.post("/signup_host",
+    console.log("....update_host: " + JSON.stringify(host));
+    $.post("/update_host",
             host,
             function(data, status) {
                 if (data !== false && data !== "") {
@@ -115,9 +152,9 @@ function signup_host() {
                     is_a_host = true;
                     changePage("sign_up_host", "feed");
                     start_host();
-                    console.log("sucsses signup_host:\n " + JSON.stringify(data));
+                    console.log("sucsses update_host:\n " + JSON.stringify(data));
                 } else {
-                    console.error("!failed signup_host:\n " + JSON.stringify(host) + "\npossibly a user with the same email is already registerd");
+                    console.error("!failed update_host:\n " + JSON.stringify(host) + "\npossibly a user with the same email is already registerd");
                     alert("A user with the same email is already registerd");
                 }
                 clear_inputs();
@@ -183,18 +220,44 @@ function get_song(song_id) {
 }
 
 
-function get_display_and_play_song(song_id, divId) {
-    console.log("....get_display_and_play_song: " + song_id + " divId: " + divId);
-    $.post("/get_song",
-            {"song_id": song_id},
+function get_song(song_id) {
+    console.log('....get_song (from youtube) id: ' + song_id);
+    $.getJSON('http://gdata.youtube.com/feeds/api/videos/' + song_id + '?v=2&alt=jsonc',
+            function(data, status) {
+                if (data) {
+                    var song = {
+                        "id": data.data.id,
+                        "title": data.data.title,
+                        "length": data.data.duration};
+                    console.log("sucsses get_song (from youtube):\n"
+                            + JSON.stringify(song) + "\n"
+                            + "song_id: " + song_id);
+                    return song;
+                } else {
+                    console.log("!failed get_song (from youtube):\n"
+                            + "song_id: " + song_id);
+                }
+            });
+}
+
+
+
+
+function signout() {
+    console.log("....signout: " + JSON.stringify(current_user));
+    $.post("/signout",
+            {
+                "user_id": current_user._id,
+                "host_id": current_host._id
+            },
     function(data, status) {
         if (data !== false && data !== "") {
-            display_song(data, divId);
-            show_player(data);
-            console.log("sucsses get_display_and_play_song:\n" + JSON.stringify(data) + "\ndivId: " + divId);
+            display_song(data);
+            console.log("sucsses signout:\n" + JSON.stringify(data));
             return data;
+            $("#home_btn").click();
         } else {
-            console.error("!failed get_display_and_play_song: " + song_id + " divId: " + divId);
+            console.error("!failed signout: " + JSON.stringify(current_user));
         }
     });
 }
