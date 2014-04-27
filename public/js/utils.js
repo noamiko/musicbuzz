@@ -79,7 +79,7 @@ function display_best_songs(songList, divId) {
     $('#' + divId).html(content);
     if (songList !== null && songList !== "") {
         for (var i = 0; i < songList.length; i++) {
-            var id = "'"+songList[i]._id+"'";
+            var id = "&quot;"+songList[i]._id+"&quot;";
             var title = "'"+songList[i].title+"'";
             content += "<div class='row'>"
                     + "<div data-inline='true'>"
