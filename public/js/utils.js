@@ -103,7 +103,7 @@ function display_best_songs(songList, divId) {
 function changePage(from, to) {
     $.mobile.pageContainer.pagecontainer('change', "#" + to, {
         transition: 'flow',
-//        reload: true
+        reload: true
     });
     $('#' + from).hide();
 
