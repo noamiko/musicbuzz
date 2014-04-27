@@ -6,6 +6,13 @@ function init() {
 //    $('#search').hide();
 //    $('#login_host').hide();
 //    $('#login_user').show();
+    window.addEventListener("load", function() {
+        // Set a timeout...
+        setTimeout(function() {
+            // Hide the address bar!
+            window.scrollTo(0, 1);
+        }, 0);
+    });
     getGeoLocation();
 }
 
@@ -81,9 +88,9 @@ function display_best_songs(songList, divId) {
         for (var i = 0; i < songList.length; i++) {
             content += "<div class='row'>"
                     + "<div data-inline='true'>"
-                    + "<a href='#' class='like_btn ui-shadow ui-btn ui-corner-all ui-btn-icon-left ui-icon-check ui-btn-inline' onclick='like(" + songList[i]._id + ");'></a>"
-                    + "<a href='#' class='song_btn ui-shadow ui-btn ui-btn-inline ui-corner-all'>" + songList[i].title + "</a>"
-                    + "<a href='#' class='dislike_btn ui-shadow ui-btn-inline ui-btn ui-corner-all ui-btn-icon-right ui-icon-delete' onclick='dislike(" + songList[i]._id + ");'></a>"
+                    + "<a href='#' class='like_btn ui-btn ui-icon-check ui-btn-icon-notext ui-corner-all ui-btn-inline' onclick='like(" + songList[i]._id + ");'></a>"
+                    + "<a href='#' class='song_btn ui-shadow ui-btn ui-btn-inline ui-corner-all' onclick='open_song_title(" + songList[i] + ");'>" + short_title(songList[i].title) + "</a>"
+                    + "<a href='#' class='dislike_btn ui-btn ui-icon-delete ui-btn-icon-notext ui-corner-all ui-btn-inline' onclick='dislike(" + songList[i]._id + ");'></a>"
                     + "</div>"
                     + "</div>";
         }
@@ -96,7 +103,7 @@ function changePage(from, to) {
         transition: 'flow',
 //        reload: true
     });
-        $('#'+from).hide();
+    $('#' + from).hide();
 
 }
 
@@ -116,3 +123,16 @@ function refresh_btn() {
     }
 }
 
+function open_song_title(song) {
+    alert(song.title);
+}
+
+function short_title(title) {
+    if (title.length > 11) {
+        return title.substring(0, 11);
+
+    } else {
+        return title
+    }
+
+}
