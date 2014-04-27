@@ -112,6 +112,10 @@ function changePage(from, to) {
 
 
 function profile_btn() {
+        $.mobile.pageContainer.pagecontainer('change', "#sign_up_host", {
+        transition: 'flow',
+//        reload: true
+    });
     $('#search').hide();
     $('#feed').hide();
     if (is_a_host) {
@@ -172,7 +176,7 @@ function set_profile_user() {
     document.forms["signup_user_form"] ["birthdate"].value = current_user.birthdate;
     document.forms["signup_user_form"] ["country"].value = current_user.country;
     $('#signup_user_btn').attr('onclick', "update_user();");
-    $('#signup_user_btn').txt("Update");
+    $('#signup_user_btn').text("Update");
 
 
 
@@ -187,6 +191,6 @@ function set_profile_host() {
     document.forms["signup_host_form"] ["country"].value = current_host.country;
     document.forms["signup_host_form"] ["url"].value = current_host.url;
     $('#signup_user_btn').attr('onclick', "update_host();");
-    $('#signup_user_btn').txt("Update");
+    $('#signup_user_btn').text("Update");
 
 }
