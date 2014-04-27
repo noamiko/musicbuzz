@@ -99,7 +99,7 @@ function changePage(from, to) {
     });
     $('#' + from).hide();
 
-    if (to === 'feed') {
+    if (from === "search" && to === 'feed') {
         $('#home_btn').hide();
     }
 
