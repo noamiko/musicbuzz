@@ -130,8 +130,8 @@ function refresh_btn() {
 }
 
 function short_title(title) {
-    if (title.length > 13) {
-        return title.substring(0, 13)+"...";
+    if (title.length > 12) {
+        return title.substring(0, 12)+"..";
     } else {
         return title;
     }
