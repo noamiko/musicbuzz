@@ -109,6 +109,21 @@ function changePage(from, to) {
     change_title(to);
 
 }
+
+
+function profile_btn() {
+    $('#search').hide();
+    $('#feed').hide();
+    if (is_a_host) {
+        $('#sign_up_host').show();
+        set_profile_host();
+
+    } else {
+        $('#sign_up_user').show();
+        set_profile_user();
+    }
+}
+
 function change_title(to) {
     if (to == 'feed') {
         $('#bar_title').text("Feed");
