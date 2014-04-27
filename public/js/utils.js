@@ -101,12 +101,12 @@ function display_best_songs(songList, divId) {
 }
 
 function changePage(from, to) {
-    $.mobile.pageContainer.pagecontainer('change', "#" + to, function() {
-        $('#' + to).show(), {
-            transition: 'flow'
+    $.mobile.pageContainer.pagecontainer('change', "#" + to,
+            {
+                transition: 'flow'
 //        reload: true
-        };
-    });
+
+            });
 
 
 
