@@ -1,10 +1,18 @@
+[data-role="page"]#login_user {
+    margin-top: 5em !important;
+}
+
 [data-role="page"] {
     margin-top: 1em !important;
 }
 
 //the entrance page
 #login_user{
-    margin-top: 5em !important;
+     margin-top: 5em !important;
+}
+.blue_title.button{
+    height: 3em;
+    font-size: 2em;
 }
 
 body,div,h1,h2,span,button{

@@ -1,11 +1,11 @@
 function init() {
-    $('#sign_up_user').hide();
-    $('#sign_up_host').hide();
-    $('#login_to_host').hide();
-    $('#feed').hide();
-    $('#search').hide();
-    $('#login_host').hide();
-    $('#login_user').show();
+//    $('#sign_up_user').hide();
+//    $('#sign_up_host').hide();
+//    $('#login_to_host').hide();
+//    $('#feed').hide();
+//    $('#search').hide();
+//    $('#login_host').hide();
+//    $('#login_user').show();
     getGeoLocation();
 }
 
@@ -92,16 +92,11 @@ function display_best_songs(songList, divId) {
 }
 
 function changePage(from, to) {
-    $("#" + to).show();
     $.mobile.pageContainer.pagecontainer('change', "#" + to, {
         transition: 'flow',
-        reload: true
+//        reload: true
     });
-    $("#" + from).hide();
-//
-//    $('html,body').animate({scrollTop: $("#" + to).offset().top
-//        , callback: $("#" + from).hide()}, 'slow');
-//    $("html, body").animate({scrollTop: 0}, "slow");
+        $('#'+from).hide();
 
 }
 

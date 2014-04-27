@@ -27,7 +27,7 @@
         <!-- LOGIN for user page-->
         <section id="login_user" data-role="page">
             <!-- Header -->
-            <section id="header" data-roll="header">
+            <section id="login_header" data-roll="header">
                 <header data-roll="header">
                     <h2 id="main_title">MusicBuzz</h2>
                     <h1 id="sub_title">choose your music</h1>
@@ -43,9 +43,7 @@
                                 </div>
                             </div>
                         </form>
-                        <div>
-                            <button id="host_btn" class="button ui-btn-active" data-roll="button" onclick="set_host_login_attr();">are you a host?</button>
-                        </div>
+
 
                     </div>
                 </header>
@@ -57,80 +55,57 @@
                         <button id="signup_btn" class="button ui-btn-active"  data-roll="button" onclick="changePage('login_user', 'sign_up_user')">Sign up</button>
                     </div>
                 </footer>
-
+                <div>
+                    <button id="host_btn" class="button ui-btn-active" data-roll="button" onclick="set_host_login_attr();">are you a host?</button>
+                </div>
             </section>
         </section>
 
         <!-- sign up user page -->
         <section id="sign_up_user" data-role="page">
-            <!-- Banner -->
+
             <header data-roll="header">
-                <h2>Sign Up form</h2>
+                <button class="blue_title button ui-btn-active">Sign Up form</button>
             </header>
+
             <form method="post" name="signup_user_form">
-                <ul data-role="listview" data-inset="true" class="ui-listview ui-listview-inset ui-corner-all ui-shadow">
-                    <li data-role="fieldcontain" class="ui-field-contain ui-body ui-br ui-li ui-li-static ui-body-c ui-corner-top">                   
-                        <label class="ui-input-text" for="firstname">First Name:&emsp;</label>
-                        <input class="ui-input-text ui-body-c ui-corner-all ui-shadow-inset" id="firstname" type="text" name="firstname" value="" placeholder="First Name"/>
-                    </li>
-                    <li data-role="fieldcontain" class="ui-field-contain ui-body ui-br ui-li ui-li-static ui-body-c ui-corner-top">                   
-                        <label class="ui-input-text" for="lastname">Last Name:&emsp;</label>
-                        <input class="ui-input-text ui-body-c ui-corner-all ui-shadow-inset"  id="lastname" type="text" name="lastname" value="" placeholder="Last Name"/>
-                    </li>
-                    <li data-role="fieldcontain" class="ui-field-contain ui-body ui-br ui-li ui-li-static ui-body-c ui-corner-top">                   
-                        <label class="ui-input-text" for="username">Username:&emsp;</label>
-                        <input class="ui-input-text ui-body-c ui-corner-all ui-shadow-inset"  id="username" type="text" name="username" value="" placeholder="Username"/>
-                    </li>
-                    <li data-role="fieldcontain" class="ui-field-contain ui-body ui-br ui-li ui-li-static ui-body-c ui-corner-top">                   
-                        <label class="ui-input-text" for="email">Email:&emsp;&emsp;&emsp;</label>
-                        <input class="ui-input-text ui-body-c ui-corner-all ui-shadow-inset"  id="email" type="email" name="email" value="" placeholder="Email"/>            
-                    </li>
-                    <li data-role="fieldcontain" class="ui-field-contain ui-body ui-br ui-li ui-li-static ui-body-c ui-corner-top">                   
-                        <label class="ui-input-text" for="password">Password:&emsp;</label>
-                        <input class="ui-input-text ui-body-c ui-corner-all ui-shadow-inset"  id="password" type="password" name="pwd" placeholder="Password">
-                    </li>
-                    <li data-role="fieldcontain" class="ui-field-contain ui-body ui-br ui-li ui-li-static ui-body-c ui-corner-top">                   
-                        <label class="ui-input-text" for="country">Country:&emsp;&emsp;</label>
-                        <input class="ui-input-text ui-body-c ui-corner-all ui-shadow-inset"  id="country" type="text" name="country" value="" placeholder="Country"/>
-                    </li>
-                    <li data-role="fieldcontain" class="ui-field-contain ui-body ui-br ui-li ui-li-static ui-body-c ui-corner-top">                   
-                        <label class="ui-input-text" for="date" >Birth Date:</label>
-                        <input class="ui-input-text ui-body-c ui-corner-all ui-shadow-inset" id="date" type="date" name="birthdate" value="">
-                    </li>
-                    <li data-role="fieldcontain" class="ui-field-contain ui-body ui-br ui-li ui-li-static ui-body-c ui-corner-top">
-                        <fieldset data-role="controlgroup" class="ui-corner-all ui-controlgroup ui-controlgroup-vertical">
-                            <div role="heading" class="ui-controlgroup-label">Gender:</div>
-                            <div class="ui-controlgroup-controls">
-                                <div class="ui-radio">
-                                    <input type="radio" name="gender" id="radio-male" value="m" checked="checked">
-                                    <label for="radio-male" data-corners="true" data-shadow="false" data-iconshadow="true" data-wrapperels="span" data-icon="radio-off" data-theme="c" class="ui-btn ui-btn-up-c ui-btn-icon-left ui-corner-top ui-radio-off">
-                                        <span class="ui-btn-inner ui-corner-top">
-                                            <span class="ui-btn-text">male</span>
-                                            <span class="ui-icon ui-icon-shadow ui-icon-radio-off">&nbsp;</span>
+                <div class="ui-field-contain" >
+                    <label for="firstname">First Name:</label>
+                    <input id="firstname" type="text" name="firstname" value="" placeholder="First Name"/>
 
-                                        </span>
-                                    </label>
-                                </div>
+                    <label for="lastname">Last Name:</label>
+                    <input id="lastname" type="text" name="lastname" value="" placeholder="Last Name"/>
 
-                                <div class="ui-radio">
-                                    <input type="radio" name="gender" id="radio-female" value="f">
-                                    <label for="radio-female" data-corners="true" data-shadow="false" data-iconshadow="true" data-wrapperels="span" data-icon="radio-off" data-theme="c" class="ui-btn ui-btn-icon-left ui-btn-up-c ui-radio-on">
-                                        <span class="ui-btn-inner">
-                                            <span class="ui-btn-text">Female</span>
-                                            <span class="ui-icon ui-icon-shadow ui-icon-radio-on">&nbsp;</span>
+                    <label for="username">Username:</label>
+                    <input id="username" type="text" name="username" value="" placeholder="Username"/>
 
-                                        </span>
-                                    </label>
-                                </div>	
+                    <label for="email">Email:</label>
+                    <input  id="email" type="email" name="email" value="" placeholder="Email"/>            
+
+                    <label for="password">Password:</label>
+                    <input  id="password" type="password" name="pwd" placeholder="Password">
+
+                    <label for="country">Country:</label>
+                    <input  id="country" type="text" name="country" value="" placeholder="Country"/>
+
+                    <label for="date" >Birth Date:</label>
+                    <input id="date" type="date" name="birthdate" value="">
+
+                    <fieldset data-role="controlgroup" data-type="horizontal" data-mini="true" class="ui-controlgroup ui-controlgroup-horizontal ui-corner-all ui-mini">
+                        <legend>Gender:</legend>
+                        <div class="ui-controlgroup-controls ">
+                            <div class="ui-radio ui-mini">
+                                <input type="radio" name="gender" id="radio-male" value="m">
+                                <label for="radio-male">Male</label>
                             </div>
-                        </fieldset>
-                    </li>
-
-                </ul>
+                            <div class="ui-radio ui-mini">
+                                <input type="radio" name="gender" id="radio-female" value="f">
+                                <label for="radio-female">Female</label>
+                            </div>
+                        </div>
+                    </fieldset>
+                </div>
             </form>
-
-
-
             <footer data-roll="footer">
                 <button data-role="button" class="button ui-btn-active"  data-roll="button" onclick="signup_user();">Sign up</button>
             </footer>
@@ -141,41 +116,34 @@
 
         <!-- sign up host page -->
         <section id="sign_up_host" data-role="page">
-            <!-- Banner -->
+
             <header data-roll="header">
-                <h2>Host Sign Up form</h2>
+                <button class="blue_title button ui-btn-active">Host Sign Up form</button>
             </header>
             <form method="post" name="signup_host_form">
-                <ul data-role="listview" data-inset="true" class="ui-listview ui-listview-inset ui-corner-all ui-shadow">
-                    <li data-role="fieldcontain" class="ui-field-contain ui-body ui-br ui-li ui-li-static ui-body-c ui-corner-top">
-                        <label class="ui-input-text" for="bizname">Biz Name:&emsp;</label>
-                        <input class="ui-input-text ui-body-c ui-corner-all ui-shadow-inset" id="bizname" type="text" name="bizname" value="" placeholder="Biz Name"/>
-                    </li>
-                    <li data-role="fieldcontain" class="ui-field-contain ui-body ui-br ui-li ui-li-static ui-body-c ui-corner-top">
-                        <label class="ui-input-text" for="username1">Username:&emsp;</label>
-                        <input class="ui-input-text ui-body-c ui-corner-all ui-shadow-inset" id="username1" type="text" name="username" value="" placeholder="Username"/>
-                    </li>
-                    <li data-role="fieldcontain" class="ui-field-contain ui-body ui-br ui-li ui-li-static ui-body-c ui-corner-top">
-                        <label class="ui-input-text" for="email1">Email:&emsp;&emsp;&emsp;</label>
-                        <input class="ui-input-text ui-body-c ui-corner-all ui-shadow-inset" id="email1" type="email" name="email" value="" placeholder="Email"/>            
-                    </li>
-                    <li data-role="fieldcontain" class="ui-field-contain ui-body ui-br ui-li ui-li-static ui-body-c ui-corner-top">
-                        <label class="ui-input-text" for="password1">Password:&emsp;</label>
-                        <input class="ui-input-text ui-body-c ui-corner-all ui-shadow-inset" id="password1" type="password" name="pwd" placeholder="Password"> 
-                    </li>
-                    <li data-role="fieldcontain" class="ui-field-contain ui-body ui-br ui-li ui-li-static ui-body-c ui-corner-top">
-                        <label class="ui-input-text" for="address">Address&emsp;&emsp;</label>
-                        <input class="ui-input-text ui-body-c ui-corner-all ui-shadow-inset" id="address" type="text" name="address" value="" placeholder="Address"/>
-                    </li>
-                    <li data-role="fieldcontain" class="ui-field-contain ui-body ui-br ui-li ui-li-static ui-body-c ui-corner-top">
-                        <label class="ui-input-text" for="country1">Country:&emsp;&emsp;</label>
-                        <input class="ui-input-text ui-body-c ui-corner-all ui-shadow-inset" id="country1" type="text" name="country" value="" placeholder="Country"/>
-                    </li>
-                    <li data-role="fieldcontain" class="ui-field-contain ui-body ui-br ui-li ui-li-static ui-body-c ui-corner-top">
-                        <label class="ui-input-text" for="url">URL:&emsp;&emsp;&emsp;</label>
-                        <input class="ui-input-text ui-body-c ui-corner-all ui-shadow-inset" id="url" type="url" name="url" value="" placeholder="http://www."/>
-                    </li>
-                </ul>
+                <div class="ui-field-contain" >
+
+                    <label for="bizname">Biz Name:&emsp;</label>
+                    <input id="bizname" type="text" name="bizname" value="" placeholder="Biz Name"/>
+
+                    <label for="username1">Username:&emsp;</label>
+                    <input id="username1" type="text" name="username" value="" placeholder="Username"/>
+
+                    <label for="email1">Email:&emsp;&emsp;&emsp;</label>
+                    <input id="email1" type="email" name="email" value="" placeholder="Email"/>            
+
+                    <label for="password1">Password:&emsp;</label>
+                    <input id="password1" type="password" name="pwd" placeholder="Password"> 
+
+                    <label for="address">Address&emsp;&emsp;</label>
+                    <input id="address" type="text" name="address" value="" placeholder="Address"/>
+
+                    <label for="country1">Country:&emsp;&emsp;</label>
+                    <input id="country1" type="text" name="country" value="" placeholder="Country"/>
+
+                    <label for="url">URL:&emsp;&emsp;&emsp;</label>
+                    <input id="url" type="url" name="url" value="" placeholder="http://www."/>
+                </div>
             </form>
             <footer data-roll="footer">
                 <button data-role="button" class="button ui-btn-active"  data-roll="button" onclick="signup_host()">Sign Up</button>
@@ -191,7 +159,7 @@
                         <header data-roll="header">
                             <h2>Login to HOST</h2>
                         </header>
-                        <label class="ui-input-text" for="bizname">Host Name:</label>
+                        <label for="bizname">Host Name:</label>
                         <input type="text" name="bizname"  value="" placeholder="Host Name"/>   
                         <br/>
                         <br/>
