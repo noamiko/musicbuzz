@@ -6,6 +6,8 @@ function init() {
 //    $('#search').hide();
 //    $('#login_host').hide();
 //    $('#login_user').show();
+
+    $('#menu_btn').hide();
     getGeoLocation();
 }
 
@@ -102,6 +104,7 @@ function changePage(from, to) {
 
     if (from !== "search" && to === 'feed') {
         $('#home_btn').html("<a id='refresh_btn' href='#' data-icon='refresh' data-iconpos='notext' onclick='refresh_btn();'>refresh</a>");
+        $('#menu_btn').show();
     }
     change_title(to);
 
