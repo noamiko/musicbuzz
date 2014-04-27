@@ -101,10 +101,15 @@ function display_best_songs(songList, divId) {
 }
 
 function changePage(from, to) {
-    $.mobile.pageContainer.pagecontainer('change', "#" + to, $('#' + to).show(), {
-        transition: 'flow',
+    $.mobile.pageContainer.pagecontainer('change', "#" + to, function() {
+        $('#' + to).show(), {
+            transition: 'flow'
 //        reload: true
+        };
     });
+
+
+
     $('#' + from).hide();
 
     if (from !== "search" && to === 'feed') {
@@ -118,7 +123,7 @@ function changePage(from, to) {
 
 function profile_btn() {
     $.mobile.pageContainer.pagecontainer('change', "#sign_up_host", {
-        transition: 'flow',
+        transition: 'flow'
 //        reload: true
     });
     $('#search').hide();
@@ -134,16 +139,16 @@ function profile_btn() {
 }
 
 function change_title(to) {
-    if (to == 'feed') {
+    if (to === 'feed') {
         $('#bar_title').text("Feed");
     }
-    if (to == 'sign_up_user') {
+    if (to === 'sign_up_user') {
         $('#bar_title').text("Sign-Up page");
     }
-    if (to == 'sign_up_host') {
+    if (to === 'sign_up_host') {
         $('#bar_title').text("Sign-Up page");
     }
-    if (to == 'search') {
+    if (to === 'search') {
         $('#bar_title').text("Search page");
     }
 }
