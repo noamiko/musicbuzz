@@ -8,11 +8,12 @@
 
 //the entrance page
 #login_user{
-     margin-top: 5em !important;
+    margin-top: 5em !important;
 }
 .blue_title.button{
     height: 3em;
     font-size: 2em;
+    border-radius: 0em;
 }
 
 body,div,h1,h2,span,button{
@@ -51,6 +52,14 @@ body,div,h1,h2,span,button{
     width: 10em;
     top: 1em ;
     left: 1em ;
+}
+
+#home_btn{
+    position: absolute;
+    width: 5em;
+    height: 2em;
+    top: 1em ;
+    right: 1em ;
 }
 
 .row,.row div{
