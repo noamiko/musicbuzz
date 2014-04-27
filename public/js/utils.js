@@ -63,7 +63,7 @@ function display_list(songList, divId) {
             content += "<div class='row'>"
                     + "<div data-inline='true'>"
                     + "<a href='#' class='like_btn ui-btn ui-icon-check ui-btn-icon-notext ui-corner-all ui-btn-inline' onclick='like(" + id + ");'></a>"
-                    + "<a href='#' class='song_btn ui-shadow ui-btn ui-btn-inline ui-corner-all' onclick='alert(" + title + ");'>" + short_title(songList[i].title) + "</a>"
+                    + "<a href='#' class='song_btn ui-shadow ui-btn ui-btn-inline ui-corner-all' onclick='alert(" + title + ");'>" + short_title(songList[i].title, 22) + "</a>"
                     + "</div>"
                     + "</div>";
         }
@@ -75,7 +75,7 @@ function display_song(song, divId) {
     var content = "";
     $('#' + divId).html(content);
     //The button representing the song
-    content += "<a href='#' class='single_song ui-btn' onclick='alert(" + song.title + ");'>" + short_title(song.title)
+    content += "<a href='#' class='single_song ui-btn' onclick='alert(" + song.title + ");'>" + short_title(song.title, 18)
             + "</a>";
     $('#' + divId).html(content);
 }
@@ -91,7 +91,7 @@ function display_best_songs(songList, divId) {
             content += "<div class='row'>"
                     + "<div data-inline='true'>"
                     + "<a href='#' class='like_btn ui-btn ui-icon-check ui-btn-icon-notext ui-corner-all ui-btn-inline' onclick='like(" + id + ");'></a>"
-                    + "<a href='#' class='song_btn ui-shadow ui-btn ui-btn-inline ui-corner-all' onclick='alert(" + title + ");'>" + short_title(songList[i].title) + "</a>"
+                    + "<a href='#' class='song_btn ui-shadow ui-btn ui-btn-inline ui-corner-all' onclick='alert(" + title + ");'>" + short_title(songList[i].title, 18) + "</a>"
                     + "<a href='#' class='dislike_btn ui-btn ui-icon-delete ui-btn-icon-notext ui-corner-all ui-btn-inline' onclick='dislike(" + id + ");'></a>"
                     + "</div>"
                     + "</div>";
@@ -117,7 +117,7 @@ function changePage(from, to) {
 
 
 function profile_btn() {
-        $.mobile.pageContainer.pagecontainer('change', "#sign_up_host", {
+    $.mobile.pageContainer.pagecontainer('change', "#sign_up_host", {
         transition: 'flow',
 //        reload: true
     });
@@ -163,9 +163,9 @@ function refresh_btn() {
     }
 }
 
-function short_title(title) {
-    if (title.length > 18) {
-        return title.substring(0, 18) + " ..";
+function short_title(title, limit) {
+    if (title.length > limit) {
+        return title.substring(0, limit) + " ..";
     } else {
         return title;
     }
