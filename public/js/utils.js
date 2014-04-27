@@ -89,7 +89,7 @@ function display_best_songs(songList, divId) {
             content += "<div class='row'>"
                     + "<div data-inline='true'>"
                     + "<a href='#' class='like_btn ui-btn ui-icon-check ui-btn-icon-notext ui-corner-all ui-btn-inline' onclick='like(" + songList[i]._id + ");'></a>"
-                    + "<a href='#popupBasic"+i+"' data-rel='popup'  data-transition='pop' class='song_btn ui-shadow ui-btn ui-btn-inline ui-corner-all' >" + short_title(songList[i].title) + "</a>"
+                    + "<a href='#popupBasic"+i+"' data-rel='popup' data-transition='pop' class='song_btn ui-shadow ui-btn ui-btn-inline ui-corner-all' >" + short_title(songList[i].title) + "</a>"
                     + "<div data-role='popup' id='popupBasic"+i+"'><p>"+songList[i].title+"</p></div>"
                     + "<a href='#' class='dislike_btn ui-btn ui-icon-delete ui-btn-icon-notext ui-corner-all ui-btn-inline' onclick='dislike(" + songList[i]._id + ");'></a>"
                     + "</div>"
@@ -130,8 +130,8 @@ function refresh_btn() {
 }
 
 function short_title(title) {
-    if (title.length > 15) {
-        return title.substring(0, 14)+"...";
+    if (title.length > 13) {
+        return title.substring(0, 13)+"...";
     } else {
         return title;
     }
