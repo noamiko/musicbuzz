@@ -104,7 +104,7 @@ function changePage(from, to) {
     $.mobile.pageContainer.pagecontainer('change', "#" + to, {
         transition: 'flow',
 //        reload: true
-    }, $('#' + to).show());
+    });
     $('#' + from).hide();
 
     if (from !== "search" && to === 'feed') {
