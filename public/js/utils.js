@@ -101,34 +101,41 @@ function display_best_songs(songList, divId) {
 }
 
 function changePage(from, to) {
-    if (from === "search" && to === 'feed') {
-        $.mobile.pageContainer.pagecontainer('change', "#" + to,
+            $.mobile.pageContainer.pagecontainer('change', "#" + to,
                 {
                     transition: 'flow',
                     reload: true,
-                    callback: $('#' + to).show()
+//                    callback: $('#' + to).show()
 
                 });
-    } else {
-        $.mobile.pageContainer.pagecontainer('change', "#" + to,
-                {
-                    transition: 'flow',
-                    callback: $('#' + from).hide()
-
-                });
-    }
-
-    if (from !== "search" && to === 'feed') {
-        $('#home_btn').html("<a id='refresh_btn' href='#' data-icon='refresh' data-iconpos='notext' onclick='refresh_btn();'>refresh</a>");
-        $('#menu_btn').show();
-    }
+    
+//    if (from === "search" && to === 'feed') {
+//        $.mobile.pageContainer.pagecontainer('change', "#" + to,
+//                {
+//                    transition: 'flow',
+//                    reload: true,
+//                    callback: $('#' + to).show()
+//
+//                });
+//    } else {
+//        $.mobile.pageContainer.pagecontainer('change', "#" + to,
+//                {
+//                    transition: 'flow',
+//                    callback: $('#' + from).hide()
+//
+//                });
+//    }
+//
+//    if (from !== "search" && to === 'feed') {
+//        $('#home_btn').html("<a id='refresh_btn' href='#' data-icon='refresh' data-iconpos='notext' onclick='refresh_btn();'>refresh</a>");
+//        $('#menu_btn').show();
+//    }
     change_title(to);
 
 }
 
 
 function profile_btn() {
-
     $('#search').hide();
     $('#feed').hide();
     if (is_a_host) {
