@@ -18,7 +18,7 @@ function timer() {
 
 
 
-function refresh_host() {
+function refresh_user() {
     current_song = get_and_display_song(get_host(current_host.bizname).currentSongId, "current_song");
     next_song = get_and_display_song(current_host.nextSongId, "next_song");
     get_best_songs_and_display();

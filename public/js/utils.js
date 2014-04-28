@@ -105,7 +105,7 @@ function changePage(from, to) {
     $.mobile.pageContainer.pagecontainer('change', "#" + to,
             {
                 transition: 'flow',
-                reload: true,
+                reload: true
 //                    callback: $('#' + to).show()
 
             });
@@ -129,7 +129,7 @@ function changePage(from, to) {
 //
 
     if (from !== "search" && to === 'feed') {
-        $('#home_btn').hide();
+        $('#home_btn').remove();
         $('#refresh_btn').show();
         $('#menu_btn').show();
     }
