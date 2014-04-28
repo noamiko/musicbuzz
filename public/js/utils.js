@@ -6,6 +6,7 @@ function init() {
 //    $('#search').hide();
 //    $('#login_host').hide();
 //    $('#login_user').show();
+    $('#refresh_btn').hide();
 
     $('#menu_btn').hide();
     getGeoLocation();
@@ -101,14 +102,14 @@ function display_best_songs(songList, divId) {
 }
 
 function changePage(from, to) {
-            $.mobile.pageContainer.pagecontainer('change', "#" + to,
-                {
-                    transition: 'flow',
-                    reload: true,
+    $.mobile.pageContainer.pagecontainer('change', "#" + to,
+            {
+                transition: 'flow',
+                reload: true,
 //                    callback: $('#' + to).show()
 
-                });
-    
+            });
+
 //    if (from === "search" && to === 'feed') {
 //        $.mobile.pageContainer.pagecontainer('change', "#" + to,
 //                {
@@ -128,7 +129,8 @@ function changePage(from, to) {
 //
 
     if (from !== "search" && to === 'feed') {
-        $('#bar').html("<a id='refresh_btn' href='#' data-icon='refresh' data-iconpos='notext' onclick='refresh_btn();'>refresh</a>");
+        $('#home_btn').hide();
+        $('#refresh_btn').show();
         $('#menu_btn').show();
     }
     change_title(to);
