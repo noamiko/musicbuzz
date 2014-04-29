@@ -66,7 +66,7 @@ function display_list(songList, divId) {
             content += "<div class='row'>"
                     + "<div data-inline='true'>"
                     + "<a href='#' class='like_btn ui-btn ui-icon-check ui-btn-icon-notext ui-corner-all ui-btn-inline' onclick='like(" + id + ");'></a>"
-                    + "<a href='#' class='song_btn ui-shadow ui-btn ui-btn-inline ui-corner-all' onclick='popup(" + song_title + "," + title + ");'>" + short_title(songList[i].title, 24) + "</a>"
+                    + "<a href='#' class='song_btn ui-shadow ui-btn ui-btn-inline ui-corner-all' onclick='popup_search(" + song_title + "," + title + ");'>" + short_title(songList[i].title, 24) + "</a>"
                     + "</div>"
                     + "</div>";
         }
@@ -236,6 +236,15 @@ function popup(title, text) {
     $('#popup_text').text(text);
 
     $('#popup').popup('open', {
+        transition: 'pop'
+    });
+}
+
+function popup_search(title, text) {
+    $('#popup_title_search').text(title);
+    $('#popup_text_search').text(text);
+
+    $('#popup_search').popup('open', {
         transition: 'pop'
     });
 }

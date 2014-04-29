@@ -193,19 +193,19 @@
                     </footer>
                 </div>
             </article>
-            
+
             <!--        the popup div-->
-        <div data-role="popup" id="popup" data-theme="c">
-            <div data-role="header" data-theme="c">
-                <h1 id='popup_title'>title</h1>
-                <a href="#" data-icon="delete" data-iconpos="notext" data-rel="back">Close</a>
+            <div data-role="popup" id="popup" data-theme="c">
+                <div data-role="header" data-theme="c">
+                    <h1 id='popup_title'>title</h1>
+                    <a href="#" data-icon="delete" data-iconpos="notext" data-rel="back">Close</a>
+                </div>
+
+                <div data-role="content" data-theme="c" class="ui-corner-bottom ui-content">
+                    <p id='popup_text'>content</p>
+                </div>
             </div>
 
-            <div data-role="content" data-theme="c" class="ui-corner-bottom ui-content">
-                <p id='popup_text'>content</p>
-            </div>
-        </div>
-            
         </section>
 
         <!-- search page -->
@@ -223,6 +223,17 @@
                     <button id="back_to_feed_btn" class="button ui-btn-active" data-roll="button" name="submit" onclick="changePage('search', 'feed')">Back to feed</button>                    
                 </footer>
             </article>
+            <!--        the popup div-->
+            <div data-role="popup" id="popup_search" data-theme="c">
+                <div data-role="header" data-theme="c">
+                    <h1 id='popup_title_search'>title</h1>
+                    <a href="#" data-icon="delete" data-iconpos="notext" data-rel="back">Close</a>
+                </div>
+
+                <div data-role="content" data-theme="c" class="ui-corner-bottom ui-content">
+                    <p id='popup_text_search'>content</p>
+                </div>
+            </div>
         </section>  
 
         <!--        The external panel-->
@@ -234,7 +245,7 @@
                 <li data-icon="power"><a href="#" onclick="signout();">Sign out</a></li>
             </ul>
         </div>
-        
+
 
 
     </body>
