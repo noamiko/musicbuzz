@@ -213,13 +213,25 @@
         </section>  
 
         <!--        The external panel-->
-        <div data-role="panel" id="outside" data-theme="a">
+        <div data-role="panel" id="outside" data-theme="c">
             <ul data-role="listview">
                 <li data-icon="back"><a href="#" data-rel="close">Close</a></li>
-                <li data-icon="info"><a href="#" data-rel="close">About</a></li>
-                <li data-icon="user"><a href="#" data-rel="close" onclick="profile_btn();">Profile</a></li>
-                <li data-icon="power"><a href="#" data-rel="close" onclick="signout();">Sign out</a></li>
+                <li data-icon="info"><a href="#">About</a></li>
+                <li data-icon="user"><a href="#" onclick="profile_btn();">Profile</a></li>
+                <li data-icon="power"><a href="#" onclick="signout();">Sign out</a></li>
             </ul>
+        </div>
+        
+<!--        the popup div-->
+        <div data-role="popup" id="popup" data-theme="c">
+            <div data-role="header" data-theme="c">
+                <h1 id='popup_title'>title</h1>
+                <a href="#" data-icon="delete" data-iconpos="notext" data-rel="back">Close</a>
+            </div>
+
+            <div data-role="content" data-theme="c" class="ui-corner-bottom ui-content">
+                <p id='popup_text'>content</p>
+            </div>
         </div>
 
 
