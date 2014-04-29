@@ -66,7 +66,7 @@ function display_list(songList, divId) {
             content += "<div class='row'>"
                     + "<div data-inline='true'>"
                     + "<a href='#' class='like_btn ui-btn ui-icon-check ui-btn-icon-notext ui-corner-all ui-btn-inline' onclick='like(" + id + ");'></a>"
-                    + "<a href='#' class='song_btn ui-shadow ui-btn ui-btn-inline ui-corner-all' onclick='popup(" + song_title + "," + title + ");'>" + short_title(songList[i].title, 22) + "</a>"
+                    + "<a href='#' class='song_btn ui-shadow ui-btn ui-btn-inline ui-corner-all' onclick='popup(" + song_title + "," + title + ");'>" + short_title(songList[i].title, 24) + "</a>"
                     + "</div>"
                     + "</div>";
         }
@@ -80,7 +80,7 @@ function display_song(song, divId) {
 
     $('#' + divId).html(content);
     //The button representing the song
-    content += "<a href='#' class='single_song ui-btn' onclick='popup(" + song_title + "," + title + ");'>" + short_title(song.title, 18)
+    content += "<a href='#' class='single_song ui-btn' onclick='popup(" + song_title + "," + song.title + ");'>" + short_title(song.title, 26)
             + "</a>";
     $('#' + divId).html(content);
 }
