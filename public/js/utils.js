@@ -77,10 +77,11 @@ function display_list(songList, divId) {
 function display_song(song, divId) {
     var content = "";
     var song_title = "&quot;Song Title&quot;";
+    var title = "&quot;" + song.title + "&quot;";
 
     $('#' + divId).html(content);
     //The button representing the song
-    content += "<a href='#' class='single_song ui-btn' onclick='popup(" + song_title + "," + song.title + ");'>" + short_title(song.title, 26)
+    content += "<a href='#' class='single_song ui-btn' onclick='popup(" + song_title + "," + title + ");'>" + short_title(song.title, 26)
             + "</a>";
     $('#' + divId).html(content);
 }
