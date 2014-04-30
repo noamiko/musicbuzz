@@ -94,3 +94,7 @@ div,h1,h2,span,button{
 #popup_title_search{
     overflow: visible;
 }
+
+#popup_title{
+    overflow: visible;
+}
