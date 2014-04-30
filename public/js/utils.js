@@ -68,8 +68,8 @@ function display_list(songList, divId) {
 
             content += "<div class='row'>"
                     + "<div data-inline='true'>"
-                    + "<a href='#' class='like_btn ui-btn ui-icon-check ui-btn-icon-notext ui-corner-all ui-btn-inline' onclick='like(" + id + ");'></a>"
-                    + "<a href='#' class='song_btn ui-shadow ui-btn ui-btn-inline ui-corner-all' onclick='popup_search(" + song_title + "," + title + ");'>" + short_title(songList[i].title, 24) + "</a>"
+                    + "<a href='#' class='like_btn ui-btn ui-btn-b ui-icon-check ui-btn-icon-notext ui-corner-all ui-btn-inline' onclick='like(" + id + ");'></a>"
+                    + "<a href='#' class='song_btn ui-shadow ui-btn ui-btn-b ui-btn-inline ui-corner-all' onclick='popup_search(" + song_title + "," + title + ");'>" + short_title(songList[i].title, 24) + "</a>"
                     + "</div>"
                     + "</div>";
         }
@@ -84,7 +84,7 @@ function display_song(song, divId) {
 
     $('#' + divId).html(content);
     //The button representing the song
-    content += "<a href='#' class='single_song ui-btn' onclick='popup(" + song_title + "," + title + ");'>" + short_title(song.title, 26)
+    content += "<a href='#' class='single_song ui-btn ui-btn-b' onclick='popup(" + song_title + "," + title + ");'>" + short_title(song.title, 26)
             + "</a>";
     $('#' + divId).html(content);
 }
@@ -100,9 +100,9 @@ function display_best_songs(songList, divId) {
             var song_title = "&quot;Song Title&quot;";
             content += "<div class='row'>"
                     + "<div data-inline='true'>"
-                    + "<a href='#' class='like_btn ui-btn ui-icon-check ui-btn-icon-notext ui-corner-all ui-btn-inline' onclick='like(" + id + ");'></a>"
-                    + "<a href='#' class='song_btn ui-shadow ui-btn ui-btn-inline ui-corner-all' onclick='popup(" + song_title + "," + title + ");'>" + short_title(songList[i].title, 18) + "</a>"
-                    + "<a href='#' class='dislike_btn ui-btn ui-icon-delete ui-btn-icon-notext ui-corner-all ui-btn-inline' onclick='dislike(" + id + ");'></a>"
+                    + "<a href='#' class='like_btn ui-btn ui-btn-b ui-icon-check ui-btn-icon-notext ui-corner-all ui-btn-inline' onclick='like(" + id + ");'></a>"
+                    + "<a href='#' class='song_btn ui-shadow ui-btn ui-btn-b ui-btn-inline ui-corner-all' onclick='popup(" + song_title + "," + title + ");'>" + short_title(songList[i].title, 18) + "</a>"
+                    + "<a href='#' class='dislike_btn ui-btn ui-btn-b ui-icon-delete ui-btn-icon-notext ui-corner-all ui-btn-inline' onclick='dislike(" + id + ");'></a>"
                     + "</div>"
                     + "</div>";
         }

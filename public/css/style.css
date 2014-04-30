@@ -98,3 +98,9 @@ div,h1,h2,span,button{
 #popup_title{
     overflow: visible;
 }
+
+.single_song{
+    border-radius: 8em;
+    background: transparent !important;
+    color: black !important;
+}
