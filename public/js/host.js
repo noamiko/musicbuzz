@@ -10,7 +10,7 @@ function start_host() {
 }
 
 function timer_host() {
-    alert(current_song.length);
+    alert(JSON.stringify(current_song));
     var time_to_refresh = current_song.length * 1000;
     setTimeout(function() {
         choose_next_song();
