@@ -12,12 +12,7 @@ function init() {
     getGeoLocation();
 }
 
-$(document).ready(function() {
-    $('#refresh_btn').hide();
-    $('#menu_btn').hide();
 
-    getGeoLocation();
-});
 
 
 function clear_inputs() {
