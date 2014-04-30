@@ -5,10 +5,10 @@ function start_user() {
     get_song_history_and_display();
     $('#host_title').text(current_host.bizname);
 
-    timer();
+    timer_user();
 }
 
-function timer() {
+function timer_user() {
     var time_to_refresh = current_song.length * 1000;
     setTimeout(function() {
         current_host = get_host(current_host.bizname);
