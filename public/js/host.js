@@ -11,7 +11,7 @@ function timer_host(song) {
     setTimeout(function() {
         console.log("Timer is set to: " + time_to_refresh)
         choose_next_song();
-        current_host = get_host(song.bizname);
+        current_host = get_host(current_host.bizname);
         start_host();
     }, time_to_refresh);
 }
