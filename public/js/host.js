@@ -6,12 +6,12 @@ function start_host() {
     $('#host_title').text(current_host.bizName);
 }
 
-function timer_host() {
-    var time_to_refresh = current_song.length * 1000;
+function timer_host(song) {
+    var time_to_refresh = song.length * 1000;
     setTimeout(function() {
         console.log("Timer is set to: " + time_to_refresh)
         choose_next_song();
-        current_host = get_host(current_host.bizname);
+        current_host = get_host(song.bizname);
         start_host();
     }, time_to_refresh);
 }

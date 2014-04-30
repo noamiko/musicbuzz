@@ -229,7 +229,7 @@ function get_display_and_play_song(song_id, divId) {
             display_song(data, divId);
             show_player(data);
             console.log("sucsses get_display_and_play_song:\n" + JSON.stringify(data) + "\ndivId: " + divId);
-            timer_host();
+            timer_host(data);
             return data;
         } else {
             console.error("!failed get_display_and_play_song: " + song_id + " divId: " + divId);
