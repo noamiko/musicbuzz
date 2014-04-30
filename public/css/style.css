@@ -1,17 +1,26 @@
-html {
+body,html {
     margin: 0;
     padding: 0;
-    background-image:url("../img/img2.png");
-    background-repeat:no-repeat;
+
+}
+
+html{
+    background: url(../img/img2.png) no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
     background-size: cover;
 }
 
-body{
-    background: inherit;
+body,#bar,[data-role="page"],[data-role="footer"]{
+    background-color: transparent !important;
 }
 
-label{
-    text-align: left;
+
+label,legend{
+    color: black !important;
+    text-align: left !important;
+    font-weight:900 !important;
 }
 
 #bar h1{
@@ -20,12 +29,7 @@ label{
 }
 
 
-[data-role="page"]{
-    background: inherit;
-
-}
-
-[data-role="page"]#login_user {
+#login_user {
     margin-top: 1em !important;
     margin-bottom: 6em !important;
 }/*
