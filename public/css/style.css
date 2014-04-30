@@ -99,12 +99,21 @@ div,h1,h2,span,button{
     overflow: visible;
 }
 
-.single_song,.song_btn{
+.single_song{
     background-color: rgba(0, 0, 0, 0.6) !important;
     border-radius: 8em;
     color: white !important;
-    width: 65% !important;
 }
+
+.song_btn{
+    background-color: rgba(0, 0, 0, 0.6) !important;
+    border-radius: 8em;
+    color: white !important;
+    width: 60% !important;
+}
+
+
+
 
 .search_song_btn{
     background-color: rgba(0, 0, 0, 0.6) !important;
