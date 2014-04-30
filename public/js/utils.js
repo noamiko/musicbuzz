@@ -69,7 +69,7 @@ function display_list(songList, divId) {
             content += "<div class='row'>"
                     + "<div data-inline='true'>"
                     + "<a href='#' class='like_btn ui-btn ui-btn-b ui-icon-check ui-btn-icon-notext ui-corner-all ui-btn-inline' onclick='like(" + id + ");'></a>"
-                    + "<a href='#' class='song_btn ui-shadow ui-btn ui-btn-b ui-btn-inline ui-corner-all' onclick='popup_search(" + song_title + "," + title + ");'>" + short_title(songList[i].title, 24) + "</a>"
+                    + "<a href='#' class='search_song_btn ui-shadow ui-btn ui-btn-b ui-btn-inline ui-corner-all' onclick='popup_search(" + song_title + "," + title + ");'>" + short_title(songList[i].title, 24) + "</a>"
                     + "</div>"
                     + "</div>";
         }
