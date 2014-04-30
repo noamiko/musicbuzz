@@ -90,3 +90,7 @@ div,h1,h2,span,button{
 .row,.row div{
     margin: 0em !important;
 }
+
+#popup_title_search{
+    width: auto;
+}
