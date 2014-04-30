@@ -103,7 +103,7 @@ div,h1,h2,span,button{
     background-color: rgba(0, 0, 0, 0.6) !important;
     border-radius: 8em;
     color: white !important;
-    width: 60% !important;
+    width: 65% !important;
 }
 
 .search_song_btn{
@@ -117,4 +117,8 @@ div,h1,h2,span,button{
 
 #bar_title{
     padding: 0em;
+}
+
+#best_songs{
+    margin: oem;
 }
