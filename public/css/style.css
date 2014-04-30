@@ -99,10 +99,15 @@ div,h1,h2,span,button{
     overflow: visible;
 }
 
-.single_song{
+div.backround{
+        opacity: 0.8;
+
+}
+
+.single_song,.song_btn{
+    background-color: rgba(0, 0, 0, 0.6);
     border-radius: 8em;
-    background: transparent !important;
-    color: black !important;
+    color: white !important;
 }
 
 #bar_title{
