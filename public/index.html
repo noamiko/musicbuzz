@@ -201,11 +201,11 @@
             <!--        the popup div-->
             <div data-role="popup" id="popup" data-theme="a">
                 <div data-role="header" data-theme="a">
-                    <h1 id='popup_title'>title</h1>
+                    <h1 id='popup_title' data-theme="a">title</h1>
                     <a href="#" data-icon="delete" data-iconpos="notext" data-rel="back">Close</a>
                 </div>
 
-                <div data-role="content" data-theme="c" class="ui-corner-bottom ui-content">
+                <div data-role="content" data-theme="a" class="ui-corner-bottom ui-content">
                     <p id='popup_text'>content</p>
                 </div>
             </div>
@@ -231,7 +231,7 @@
             <!--        the popup div-->
             <div data-role="popup" id="popup_search" data-theme="a">
                 <div data-role="header" data-theme="a">
-                    <h1 id='popup_title_search'>title</h1>
+                    <h1 data-theme="a" id='popup_title_search'>title</h1>
                     <a href="#" data-icon="delete" data-iconpos="notext" data-rel="back">Close</a>
                 </div>
 
@@ -242,7 +242,7 @@
         </section>  
 
         <!--        The external panel-->
-        <div data-role="panel" id="outside" data-theme="b">
+        <div data-role="panel" id="outside" data-theme="s">
             <ul data-role="listview">
                 <li data-icon="back"><a href="#" data-rel="close">Close</a></li>
                 <li data-icon="info"><a href="#">About</a></li>

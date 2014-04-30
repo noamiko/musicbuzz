@@ -92,5 +92,5 @@ div,h1,h2,span,button{
 }
 
 #popup_title_search{
-    overflow: auto !important;
+    overflow: visible;
 }
