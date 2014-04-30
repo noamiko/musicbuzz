@@ -7,10 +7,18 @@ function init() {
 //    $('#login_host').hide();
 //    $('#login_user').show();
     $('#refresh_btn').hide();
-
     $('#menu_btn').hide();
+
     getGeoLocation();
 }
+
+$(document).ready(function() {
+    $('#refresh_btn').hide();
+    $('#menu_btn').hide();
+
+    getGeoLocation();
+});
+
 
 function clear_inputs() {
     inputs = document.getElementsByTagName('input');

@@ -22,9 +22,14 @@
                 $("body > [data-role='header']").toolbar();
                 $("body > [data-role='header'] [data-role='navbar']").navbar();
             });
+            $(document).ready(function() {
+                $('#refresh_btn').hide();
+                $('#menu_btn').hide();
+                getGeoLocation();
+            });
         </script>
     </head>
-    <body onload="init();">
+    <body>
 
         <div id="bar" data-role="header" data-theme="c">
             <h1 id="bar_title">MusicBuzz</h1>
