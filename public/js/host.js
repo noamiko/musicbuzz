@@ -3,16 +3,13 @@ function start_host() {
     next_song = get_and_display_song(current_host.nextSongId, "next_song");
     get_best_songs_and_display();
     get_song_history_and_display();
-
     $('#host_title').text(current_host.bizName);
-
-    timer_host();
 }
 
 function timer_host() {
-    alert(JSON.stringify(current_song));
     var time_to_refresh = current_song.length * 1000;
     setTimeout(function() {
+        console.log("Timer is set to: " + time_to_refresh)
         choose_next_song();
         current_host = get_host(current_host.bizname);
         start_host();
