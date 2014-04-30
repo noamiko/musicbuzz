@@ -104,3 +104,7 @@ div,h1,h2,span,button{
     background: transparent !important;
     color: black !important;
 }
+
+#bar_title{
+    padding: 0em;
+}
