@@ -99,13 +99,8 @@ div,h1,h2,span,button{
     overflow: visible;
 }
 
-div.backround{
-        opacity: 0.8;
-
-}
-
 .single_song,.song_btn{
-    background-color: rgba(0, 0, 0, 0.6);
+    background-color: rgba(0, 0, 0, 0.6) !important;
     border-radius: 8em;
     color: white !important;
 }
