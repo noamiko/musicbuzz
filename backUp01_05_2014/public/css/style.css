@@ -1,0 +1,133 @@
+body,html {
+    margin: 0;
+    padding: 0;
+
+}
+
+html{
+    background: url(../img/img2.png) no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+
+body,#bar,[data-role="page"],[data-role="footer"]{
+    background-color: transparent !important;
+}
+
+
+label,legend{
+    color: black !important;
+    text-align: left !important;
+    font-weight:900 !important;
+}
+
+#bar h1{
+    margin: 0em;
+    font-size: 2em;
+}
+
+
+#login_user {
+    margin-top: 1em !important;
+    margin-bottom: 6em !important;
+}/*
+
+[data-role="page"] {
+    margin-top: 1em !important;
+}*/
+
+//the entrance page
+#login_user{
+    margin-top: 5em !important;
+}
+.blue_title.button{
+    height: 3em;
+    font-size: 2em;
+    border-radius: 0em;
+}
+
+div,h1,h2,span,button{
+    alignment-adjust: middle;;
+    text-align: center;
+    margin-bottom: 1em;
+    margin-left: 1em;
+    margin-right: 1em;
+    margin-top: 1em;
+}
+
+
+#playbar{
+    text-align: left;
+    margin: 0em;    
+}
+
+
+#search_btn{
+    margin: 1em;
+    margin-left: 0.5em;
+    width: 6.5em;
+    height: 2.5em;
+}
+
+#search_text{
+    margin: 0.5em !important;
+    margin-right: 0em;
+    border-radius: 8em;
+    width: 8em;
+}
+
+
+#host_btn{
+    position: fixed;
+    width: 10em;
+    bottom: 2em ;
+    left: 1em ;
+}
+
+
+.row,.row div{
+    margin: 0em !important;
+}
+
+#popup_title_search{
+    overflow: visible;
+}
+
+#popup_title{
+    overflow: visible;
+}
+
+.single_song{
+    background-color: rgba(0, 0, 0, 0.6) !important;
+    border-radius: 8em;
+    color: white !important;
+}
+
+.song_btn{
+    background-color: rgba(0, 0, 0, 0.6) !important;
+    border-radius: 8em;
+    color: white !important;
+    width: 60% !important;
+}
+
+
+
+
+.search_song_btn{
+    background-color: rgba(0, 0, 0, 0.6) !important;
+    border-radius: 8em;
+    color: white !important;
+    width: 70% !important;
+}
+
+
+
+#bar_title{
+    padding: 0em;
+}
+
+#best_songs{
+    margin: 0px !important;
+}

@@ -10,8 +10,8 @@ var hostSchemma = new Schema({
     address: String,
     country: String,
     url: String,
-    currentSongId: String,
-    nextSongId: String,
+    currentSongId: {type: Schema.Types.ObjectId, ref: 'song'},
+    nextSongId: {type: Schema.Types.ObjectId, ref: 'song'},
     geoLocation: {lng: Number, lat: Number}
 });
 

@@ -4,7 +4,7 @@ var Schema = mongoose.Schema;
 // Song schemma 
 var songVoteSchemma = new Schema({
     host_id: {type: Schema.Types.ObjectId, ref: 'host'},
-    songId: String,
+    songId: {type: Schema.Types.ObjectId, ref: 'song'},
     like: Number,
     disLike: Number,
     totalScore: Number,

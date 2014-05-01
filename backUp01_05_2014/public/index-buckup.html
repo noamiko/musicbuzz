@@ -1,0 +1,229 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <title>MusicBuzz</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <!--        <link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.2/jquery.mobile-1.4.2.min.css" />
+                <script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>-->
+        <!--        <script src="http://code.jquery.com/mobile/1.4.2/jquery.mobile-1.4.2.min.js"></script>-->
+        <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+        <meta name="description" content="" />
+
+        <script src="js/jquery.min.js"></script>
+        <script src="js/jquery.poptrox.min.js"></script>
+        <script src="js/skel.min.js"></script>
+        <script src="js/init.js"></script>
+        <script src="js/utils.js"></script>
+        <script src="js/serverUtils.js"></script>
+        <script src="js/objects.js"></script>
+        <link rel="stylesheet" href="css/skel-noscript.css" />
+        <link rel="stylesheet" href="css/style.css" />
+    </head>
+    <body onload="init();">
+
+        <!-- LOGIN for user page-->
+        <section id="login_user" data-role="page">
+
+            <!-- Header -->
+            <section id="header">
+                <header>
+                    <h1 id="main_title">MusicBuzz</h1>
+                    <p>By IDC Hack</p>
+                    <br/>
+                    <div data-role="fieldcontain">
+                        <form method="post" name="login_user_form">
+                            <div class="row half">
+                                <div class="6u">
+                                    <input type="email" name="email" value="" placeholder="email"/>    
+                                </div>
+                                <div class="6u">
+                                    <input type="password" name="pwd" placeholder="Password">
+                                </div>
+                            </div>
+                        </form>
+                        <div>
+                            <a class="button style2 scrolly scrolly-centered" id="host_btn" onclick="set_host_login_attr()">are you a host?</a>
+                        </div>
+                        <!--  TO REMOVE !!!!!!!                      -->
+                        <div>
+                            <a href="/deploy.html" class="button style2" id="deploy_btn" onclick="">upload file</a>
+                        </div>
+                        <!--                      -->
+                        <div>
+                            <a id="login_btn" class="button style1 scrolly scrolly-centered" onclick="login_user()">Login</a>
+                        </div>
+                    </div>
+                </header>
+                <footer>
+
+                    <div>
+                        <a id="signup_btn" href="#sign_up_user" class="button style2 scrolly scrolly-centered" onclick="changePage('login_user', 'sign_up_user')">Sign up</a>
+                    </div>
+                </footer>
+            </section>
+        </section>
+
+        <!-- sign up user page -->
+        <section id="sign_up_user" data-role="page">
+            <!-- Banner -->
+            <section id="banner">
+                <header>
+                    <h2>Sign Up form</h2>
+                </header>
+                <form method="post" name="signup_user_form">
+                    <div class="row half">
+                        <div class="6u">
+
+                            <label for="username">First Name:&emsp;</label>
+                            <input type="text" name="firstname" value="" placeholder="First Name"/>
+                        </div>
+                        <div class="6u">                
+                            <label for="username">Last Name:&emsp;</label>
+                            <input type="text" name="lastname" value="" placeholder="Last Name"/>
+                        </div>
+                        <div class="6u">                      
+                            <label for="username">Username:&emsp;</label>
+                            <input type="text" name="username" value="" placeholder="Username"/>
+                        </div>
+                        <div class="6u">                      
+                            <label for="email">Email:&emsp;&emsp;&emsp;</label>
+                            <input type="email" name="email" value="" placeholder="Email"/>            
+                        </div>
+                        <div class="6u">                      
+                            <label for="password">Password:&emsp;</label>
+                            <input type="password" name="pwd" placeholder="Password">
+                        </div>
+                        <div class="6u">                      
+                            <label for="username">Country:&emsp;&emsp;</label>
+                            <input type="text" name="country" value="" placeholder="Country"/>
+                        </div>
+                        <div class="6u">                      
+                            <label for="radio-female">Female</label>
+                            <input type="radio" name="gender" value="f"  />
+
+                            <label for="radio-male">Male</label>
+                            <input type="radio" name="gender" value="m"   />
+                        </div>
+                        <div class="6u">                      
+                            <label for="date" >Birth Date:</label>
+                            <input type="date" name="birthdate" value="">
+                        </div>
+                    </div>
+                </form>
+                <footer>
+                    <a data-role="button" class="button style2 scrolly" name="submit" onclick="signup_user()">Sign up</a>
+                </footer>
+            </section>
+        </section>
+
+
+
+
+
+        <!-- sign up host page -->
+        <section id="sign_up_host" data-role="page">
+            <!-- Banner -->
+            <section id="banner">
+                <header>
+                    <h2>Host Sign Up form</h2>
+                </header>
+                <form method="post" name="signup_host_form">
+                    <div class="row half">
+                        <div class="6u">
+
+                            <label for="username">Biz Name:&emsp;</label>
+                            <input type="text" name="bizname" value="" placeholder="Biz Name"/>
+                        </div>
+                        <div class="6u">
+                            <label for="username">Username:&emsp;</label>
+                            <input type="text" name="username" value="" placeholder="Username"/>
+                        </div>
+                        <div class="6u">                     
+                            <label for="email">Email:&emsp;&emsp;&emsp;</label>
+                            <input type="email" name="email" value="" placeholder="Email"/>            
+                        </div>
+                        <div class="6u">                       
+                            <label for="password">Password:&emsp;</label>
+                            <input type="password" name="pwd" placeholder="Password"> 
+                        </div>
+                        <div class="6u">                     
+                            <label for="username">Address&emsp;&emsp;</label>
+                            <input type="text" name="address" value="" placeholder="Address"/>
+                        </div>
+                        <div class="6u">                      
+                            <label for="username">Country:&emsp;&emsp;</label>
+                            <input type="text" name="country" value="" placeholder="Country"/>
+                        </div>
+                        <div class="6u">
+                            <label for="username">URL:&emsp;&emsp;&emsp;</label>
+                            <input type="url" name="url" value="" placeholder="http://www."/>
+                        </div>
+                    </div>
+                </form>
+                <footer>
+                    <a data-role="button" class="button style2" name="submit" onclick="signup_host()">Sign Up</a>
+                </footer>
+            </section>
+        </section>
+
+        <!-- login to host page -->
+        <section id="login_to_host" data-role="page">
+            <!-- Feature 1 -->
+            <article id="first" class="container box style1" style="text-align: center">
+                <form method="post" name="login_to_host_form">
+                    <div class="inner">
+                        <header>
+                            <h2>Login to HOST</h2>
+                        </header>
+                        <label for="bizname">Host Name:</label>
+                        <input type="text" name="bizname"  value="" placeholder="Host Name"/>   
+                        <br/>
+                        <br/>
+                        <a class="button form" name="submit" onclick="login_to_host()">Enter</a>
+
+                    </div>
+                </form>
+            </article>
+        </section>
+
+        <!-- feed page -->
+        <section id="feed" data-role="page" class="container">
+            <article id="first" class="container box style1" style="text-align: center">
+                <div class="inner">
+                    <header>
+                        <h1 id="host_title"></h1>
+                    </header>
+                    <h1>Current song is:</h1>
+                    <div id="current_song"></div>
+                    <div id="player"></div>
+                    <h1>Next song is:</h1>
+                    <div id="next_song"></div>
+                    <h1>Best voted so far:</h1>
+                    <div id="best_songs"></div>
+                    <br/>
+
+                    <a class="button form" name="submit" onclick="changePage('feed', 'search')">Search songs</a>
+                    <a class="button form" name="submit" onclick="refresh_data_and_display()">Refresh</a>
+
+                </div>
+            </article>
+        </section>
+
+        <!-- search page -->
+        <section id="search" data-role="page" class="container">
+            <article id="first" class="container box style1" style="text-align: center">
+                <form method="post" name="search_form">
+                    <div style="display: inline-block">
+                        <input type="search" name="search_text" id="search_text" value="" style="border-radius: 8em;" />
+                        <a class="button" id="search_btn" onclick="search_song()" style="border-radius: 8em; padding: 0.2em 1em;">Search</a>
+                    </div>
+                </form>
+
+                <div id="search_results"></div>
+
+                <a class="button form" name="submit" onclick="changePage('search', 'feed')" style="margin: 1em; bottom:2em; ">Back to feed</a>
+            </article>
+        </section>  
+
+    </body>
+</html>

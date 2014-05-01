@@ -1,0 +1,257 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <title>MusicBuzz</title>
+        <script src="js/serverUtils.js"></script>
+
+        <script src="js/utils.js"></script>
+        <script src="js/host.js"></script>
+        <script src="js/user.js"></script>
+        <link rel="stylesheet" href="css/style.css" />
+        <meta name="viewport" content="width=device-width, initialscale=1.0">
+        <meta name="mobile-web-app-capable" content="yes">
+        <link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.2/jquery.mobile-1.4.2.min.css" />
+        <script src="http://code.jquery.com/jquery-1.10.2.min.js"></script>
+        <script src="http://code.jquery.com/mobile/1.4.2/jquery.mobile-1.4.2.min.js"></script>
+        <script>
+            $(document).on("pagecreate", function() {
+                $("body > [data-role='panel']").panel();
+                $("body > [data-role='panel'] [data-role='listview']").listview();
+            });
+            $(document).one("pageshow", function() {
+                $("body > [data-role='header']").toolbar();
+                $("body > [data-role='header'] [data-role='navbar']").navbar();
+            });
+            $(document).ready(function() {
+                $('#refresh_btn').hide();
+                $('#menu_btn').hide();
+                getGeoLocation();
+            });
+        </script>
+    </head>
+    <body>
+
+        <div id="bar" data-role="header" data-theme="c">
+            <h1 id="bar_title">MusicBuzz</h1>
+            <a id="menu_btn" href="#outside" data-icon="bars" data-iconpos="notext">Menu</a>
+            <a id="home_btn" href="http://musicbuzz.azurewebsites.net/" data-icon="home" data-iconpos="notext">home</a>
+            <a id='refresh_btn' href='#' data-icon='refresh' data-iconpos='notext' onclick='refresh_btn();'>refresh</a>
+        </div>
+
+
+        <!-- LOGIN for user page-->
+        <section id="login_user" data-role="page">
+            <!-- Header -->
+            <header data-roll="header">
+                <h1 id="sub_title">Login Page</h1>
+            </header>
+
+            <div data-role="fieldcontain">
+                <form method="post" name="login_user_form">
+                    <div>
+                        <div>
+                            <input class="input" type="email" name="email" value="" placeholder="email"/>  
+                        </div>
+                        <div>
+                            <input class="input" type="password" name="pwd" placeholder="Password">
+                        </div>
+                    </div>
+                </form>
+
+
+            </div>
+            <footer data-roll="footer">
+                <div>
+                    <button id="login_btn" class="button ui-btn-active"  data-roll="button" onclick="login_user();">Login</button>
+                </div>
+                <div>                            
+                    <button id="signup_btn" class="button ui-btn-active"  data-roll="button" onclick="changePage('login_user', 'sign_up_user')">Sign up</button>
+                </div>
+            </footer>
+            <div>
+                <button id="host_btn" class="button ui-btn-active" data-roll="button" onclick="set_host_login_attr();">are you a host?</button>
+            </div>
+        </section>
+
+        <!-- sign up user page -->
+        <section id="sign_up_user" data-role="page">
+
+            <form method="post" name="signup_user_form">
+                <div class="ui-field-contain" >
+                    <label for="firstname">First Name:</label>
+                    <input id="firstname" type="text" name="firstname" value="" placeholder="First Name"/>
+
+                    <label for="lastname">Last Name:</label>
+                    <input id="lastname" type="text" name="lastname" value="" placeholder="Last Name"/>
+
+                    <label for="username">Username:</label>
+                    <input id="username" type="text" name="username" value="" placeholder="Username"/>
+
+                    <label for="email">Email:</label>
+                    <input  id="email" type="email" name="email" value="" placeholder="Email"/>            
+
+                    <label for="password">Password:</label>
+                    <input  id="password" type="password" name="pwd" placeholder="Password">
+
+                    <label for="country">Country:</label>
+                    <input  id="country" type="text" name="country" value="" placeholder="Country"/>
+
+                    <label for="date" >Birth Date:</label>
+                    <input id="date" type="date" name="birthdate" value="">
+
+                    <fieldset data-role="controlgroup" data-type="horizontal" data-mini="true" class="ui-controlgroup ui-controlgroup-horizontal ui-corner-all ui-mini">
+                        <legend>Gender:</legend>
+                        <div class="ui-controlgroup-controls ">
+                            <div class="ui-radio ui-mini">
+                                <input type="radio" name="gender" id="radio-male" value="m">
+                                <label for="radio-male">Male</label>
+                            </div>
+                            <div class="ui-radio ui-mini">
+                                <input type="radio" name="gender" id="radio-female" value="f">
+                                <label for="radio-female">Female</label>
+                            </div>
+                        </div>
+                    </fieldset>
+                </div>
+            </form>
+            <footer data-roll="footer">
+                <button data-role="button" class="button ui-btn-active"  data-roll="button" id="signup_user_btn" onclick="signup_user();">Sign up</button>
+            </footer>
+        </section>
+
+
+
+
+        <!-- sign up host page -->
+        <section id="sign_up_host" data-role="page">
+
+            <form method="post" name="signup_host_form">
+                <div class="ui-field-contain" >
+
+                    <label for="bizname">Biz Name:&emsp;</label>
+                    <input id="bizname" type="text" name="bizname" value="" placeholder="Biz Name"/>
+
+                    <label for="username1">Username:&emsp;</label>
+                    <input id="username1" type="text" name="username" value="" placeholder="Username"/>
+
+                    <label for="email1">Email:&emsp;&emsp;&emsp;</label>
+                    <input id="email1" type="email" name="email" value="" placeholder="Email"/>            
+
+                    <label for="password1">Password:&emsp;</label>
+                    <input id="password1" type="password" name="pwd" placeholder="Password"> 
+
+                    <label for="address">Address&emsp;&emsp;</label>
+                    <input id="address" type="text" name="address" value="" placeholder="Address"/>
+
+                    <label for="country1">Country:&emsp;&emsp;</label>
+                    <input id="country1" type="text" name="country" value="" placeholder="Country"/>
+
+                    <label for="url">URL:&emsp;&emsp;&emsp;</label>
+                    <input id="url" type="url" name="url" value="" placeholder="http://www."/>
+                </div>
+            </form>
+            <footer data-roll="footer">
+                <button data-role="button" class="button ui-btn-active"  data-roll="button" id="signup_host_btn" onclick="signup_host()">Sign Up</button>
+
+            </footer>
+        </section>
+
+        <!-- login to host page -->
+        <section id="login_to_host" data-role="page">
+            <!-- Feature 1 -->
+            <article data-roll="container box" style="text-align: center">
+                <form method="post" name="login_to_host_form">
+                    <div>
+                        <header data-roll="header">
+                            <h2>Login to HOST</h2>
+                        </header>
+                        <label for="bizname">Host Name:</label>
+                        <input type="text" name="bizname"  value="" placeholder="Host Name"/>   
+                        <br/>
+                        <br/>
+                        <button class="button ui-btn-active"  data-roll="button" onclick="login_to_host()">Enter</button>
+
+                    </div>
+                </form>
+            </article>
+        </section>
+
+        <!-- feed page -->
+        <section id="feed" data-role="page">
+            <article data-roll="container box">
+                <div>
+                    <header>
+                        <h1 id="host_title"></h1>
+                        <h2>Playing:</h2>
+                        <div id="current_song"></div>
+                        <div id="player"></div>
+                        <h2>Next song is:</h2>
+                        <div id="next_song"></div>
+                        <h2>Best voted so far:</h2>
+                        <div id="best_songs"></div>
+                        <br/>
+                    </header>
+
+                    <footer data-roll="footer">
+                        <button class="button ui-btn-active"  data-roll="button" name="submit" onclick="changePage('feed', 'search')">Search songs</button>
+                    </footer>
+                </div>
+            </article>
+
+            <!--        the popup div-->
+            <div data-role="popup" id="popup" data-theme="b">
+                <div data-role="header" data-theme="b">
+                    <h1 id='popup_title' data-theme="b">title</h1>
+                    <a href="#" data-icon="delete" data-iconpos="notext" data-rel="back">Close</a>
+                </div>
+
+                <div data-role="content" data-theme="b" class="ui-corner-bottom ui-content">
+                    <p id='popup_text'>content</p>
+                </div>
+            </div>
+
+        </section>
+
+        <!-- search page -->
+        <section id="search" data-role="page">
+            <article data-roll="container box">
+                <header data-roll="header">
+                    <span id="search_bar">
+                        <input type="search" name="search_text" id="search_text" value=""/>
+                        <button class="button ui-btn-active"  data-roll="button" id="search_btn" onclick="search_song();">Search</button>
+                    </span>
+                    <div id="search_results" ></div>
+                </header>
+
+                <footer data-roll="footer">
+                    <button id="back_to_feed_btn" class="button ui-btn-active" data-roll="button" name="submit" onclick="changePage('search', 'feed')">Back to feed</button>                    
+                </footer>
+            </article>
+
+            <!--        the popup div-->
+            <div data-role="popup" id="popup_search" data-theme="b">
+                <div data-role="header" data-theme="b">
+                    <h1 data-theme="b" id='popup_title_search'>title</h1>
+                    <a href="#" data-icon="delete" data-iconpos="notext" data-rel="back">Close</a>
+                </div>
+
+                <div data-role="content" data-theme="b" class="ui-corner-bottom ui-content">
+                    <p id='popup_text_search'>content</p>
+                </div>
+            </div>
+        </section>  
+
+        <!--        The external panel-->
+        <div data-role="panel" id="outside" data-theme="b">
+            <ul data-role="listview">
+                <li data-icon="back"><a href="#" data-rel="close">Close</a></li>
+                <li data-icon="info"><a href="#">About</a></li>
+                <li data-icon="user"><a href="#" onclick="profile_btn();">Profile</a></li>
+                <li data-icon="power"><a href="#" onclick="signout();">Sign out</a></li>
+            </ul>
+        </div>
+
+
+
+    </body>
+</html>
