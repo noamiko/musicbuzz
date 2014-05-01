@@ -130,6 +130,37 @@ function update_user() {
 }
 
 
+function signup_host() {
+    var host = {
+        "bizname": document.forms["signup_host_form"] ["bizname"].value,
+        "username": document.forms["signup_host_form"] ["username"].value,
+        "email": document.forms["signup_host_form"] ["email"].value,
+        "pwd": document.forms["signup_host_form"] ["pwd"].value,
+        "address": document.forms["signup_host_form"] ["address"].value,
+        "country": document.forms["signup_host_form"] ["country"].value,
+        "url": document.forms["signup_host_form"] ["url"].value,
+        "lat": lat,
+        "lng": lng
+    };
+    console.log("....signup_host: " + JSON.stringify(host));
+    $.post("/signup_host",
+            host,
+            function(data, status) {
+                if (data !== false && data !== "") {
+                    current_host = data;
+                    current_user = data;
+                    is_a_host = true;
+                    changePage("sign_up_host", "feed");
+                    start_host();
+                    console.log("sucsses signup_host:\n " + JSON.stringify(data));
+                } else {
+                    console.error("!failed signup_host:\n " + JSON.stringify(host) + "\npossibly a host with the same bizname is already registerd");
+                    alert("A user with the same bizname is already registerd");
+                }
+                clear_inputs();
+            });
+}
+
 function update_host() {
     var host = {
         "bizname": document.forms["signup_host_form"] ["bizname"].value,
@@ -154,8 +185,8 @@ function update_host() {
                     start_host();
                     console.log("sucsses update_host:\n " + JSON.stringify(data));
                 } else {
-                    console.error("!failed update_host:\n " + JSON.stringify(host) + "\npossibly a user with the same email is already registerd");
-                    alert("A user with the same email is already registerd");
+                    console.error("!failed update_host:\n " + JSON.stringify(host) + "\npossibly a host with the same bizname is already registerd");
+                    alert("A host with the same bizname is already registerd");
                 }
                 clear_inputs();
             });
