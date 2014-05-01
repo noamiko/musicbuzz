@@ -131,3 +131,8 @@ div,h1,h2,span,button{
 #best_songs{
     margin: 0px !important;
 }
+
+iframe{
+    width: auto;
+    height: auto;
+}
