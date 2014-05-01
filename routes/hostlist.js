@@ -40,8 +40,8 @@ HostList.prototype = {
             newHost.address = req.body.address;
             newHost.country = req.body.country;
             newHost.url = req.body.url;
-            newHost.currentSongId = req.body.currentsongid;
-            newHost.nextSongId = req.body.nextsongid;
+            newHost.currentSongId = '';
+            newHost.nextSongId = '';
 //            newHost.geoLocation = {lng: req.body.lng, lat: req.body.lat};
 
             newHost.save(function savedHost(err) {
