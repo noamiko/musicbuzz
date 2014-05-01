@@ -230,7 +230,7 @@ function get_host(bizName) {
             });
 }
 
-function get_song(song_id) {
+function get_display_and_play_song(song_id, divId) {
     console.log('....get_song (from youtube) id: ' + song_id);
     $.getJSON('http://gdata.youtube.com/feeds/api/videos/' + song_id + '?v=2&alt=jsonc',
             function(data, status) {
@@ -238,10 +238,14 @@ function get_song(song_id) {
                     var song = {
                         "id": data.data.id,
                         "title": data.data.title,
-                        "length": data.data.duration};
+                        "length": data.data.duration
+                    };
                     console.log("sucsses get_song (from youtube):\n"
                             + JSON.stringify(song) + "\n"
                             + "song_id: " + song_id);
+                    display_song(song, divId);
+                    show_youtube_player(song);
+                    timer_host(song);
                     return song;
                 } else {
                     console.log("!failed get_song (from youtube):\n"
@@ -251,22 +255,22 @@ function get_song(song_id) {
 }
 
 
-function get_display_and_play_song(song_id, divId) {
-    console.log("....get_display_and_play_song: " + song_id + " divId: " + divId);
-    $.post("/get_song",
-            {"song_id": song_id},
-    function(data, status) {
-        if (data !== false && data !== "") {
-            display_song(data, divId);
-            show_player(data);
-            console.log("sucsses get_display_and_play_song:\n" + JSON.stringify(data) + "\ndivId: " + divId);
-            timer_host(data);
-            return data;
-        } else {
-            console.error("!failed get_display_and_play_song: " + song_id + " divId: " + divId);
-        }
-    });
-}
+//function get_display_and_play_song(song_id, divId) {
+//    console.log("....get_display_and_play_song: " + song_id + " divId: " + divId);
+//    $.post("/get_song",
+//            {"song_id": song_id},
+//    function(data, status) {
+//        if (data !== false && data !== "") {
+//            display_song(data, divId);
+//            show_player(data);
+//            console.log("sucsses get_display_and_play_song:\n" + JSON.stringify(data) + "\ndivId: " + divId);
+//            timer_host(data);
+//            return data;
+//        } else {
+//            console.error("!failed get_display_and_play_song: " + song_id + " divId: " + divId);
+//        }
+//    });
+//}
 
 function signout() {
     console.log("....signout: " + JSON.stringify(current_user));
@@ -294,19 +298,42 @@ function signout() {
 }
 
 function get_and_display_song(song_id, divId) {
-    console.log("....get_and_display_song: " + song_id + " divId: " + divId);
-    $.post("/get_song",
-            {"song_id": song_id},
-    function(data, status) {
-        if (data !== false && data !== "") {
-            display_song(data, divId);
-            console.log("sucsses get_and_display_song:\n" + JSON.stringify(data) + "\ndivId: " + divId);
-            return data;
-        } else {
-            console.error("!failed get_and_display_song: " + song_id + " divId: " + divId);
-        }
-    });
+    console.log('....get_song (from youtube) id: ' + song_id);
+    $.getJSON('http://gdata.youtube.com/feeds/api/videos/' + song_id + '?v=2&alt=jsonc',
+            function(data, status) {
+                if (data) {
+                    var song = {
+                        "id": data.data.id,
+                        "title": data.data.title,
+                        "length": data.data.duration
+                    };
+                    console.log("sucsses get_song (from youtube):\n"
+                            + JSON.stringify(song) + "\n"
+                            + "song_id: " + song_id);
+                    display_song(song, divId);
+                    return song;
+                } else {
+                    console.log("!failed get_song (from youtube):\n"
+                            + "song_id: " + song_id);
+                }
+            });
 }
+
+
+//function get_and_display_song(song_id, divId) {
+//    console.log("....get_and_display_song: " + song_id + " divId: " + divId);
+//    $.post("/get_song",
+//            {"song_id": song_id},
+//    function(data, status) {
+//        if (data !== false && data !== "") {
+//            display_song(data, divId);
+//            console.log("sucsses get_and_display_song:\n" + JSON.stringify(data) + "\ndivId: " + divId);
+//            return data;
+//        } else {
+//            console.error("!failed get_and_display_song: " + song_id + " divId: " + divId);
+//        }
+//    });
+//}
 
 function get_song_history_and_display() {
     console.log("....get_song_history_and_display: " + current_user._id);
