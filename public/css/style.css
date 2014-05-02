@@ -133,6 +133,6 @@ div,h1,h2,span,button{
 }
 
 iframe{
-    width: inherit;
-    height: inherit;
+    width: 15em;
+    height: 10em;
 }
