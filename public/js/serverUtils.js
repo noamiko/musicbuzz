@@ -342,8 +342,8 @@ function get_song_history_and_display() {
             {"user_id": current_user._id},
     function(data, status) {
 
-        //to remove
-        data = listOfSongs;
+//        //to remove
+//        data = listOfSongs;
 
         if (data !== false && data !== "") {
             history_list = data;
@@ -414,8 +414,8 @@ function get_best_songs_and_display() {
             {"host_id": current_host._id},
     function(data, status) {
 
-        // to remove
-        data = listOfSongs;
+//        // to remove
+//        data = listOfSongs;
 
         if (data !== false && data !== "") {
             best_songs = data;
