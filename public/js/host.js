@@ -25,7 +25,7 @@ function show_player(song) {
 function show_youtube_player(song) {
     $('#' + 'player').html("");
     var video_frame = "<iframe src='http://www.youtube.com/embed/" + song.id + "&amp;autoplay=1></iframe>";
-    var final = "<div id='result'><div>" + video_frame + "</div><div id=&amp;title&amp;></div></div>";
+    var final = "<div id='result'><div>" + video_frame + "</div><div id='title' ></div></div>";
     $('#' + 'player').html(final);
 }
 
