@@ -1,15 +1,14 @@
 function start_user() {
-    current_song = get_and_display_song(current_host.currentSongId, "current_song");
+    timer_user(current_song = get_and_display_song(current_host.currentSongId, "current_song"));
     next_song = get_and_display_song(current_host.nextSongId, "next_song");
     get_best_songs_and_display();
     get_song_history_and_display();
     $('#host_title').text(current_host.bizName);
 
-    timer_user();
 }
 
-function timer_user() {
-    var time_to_refresh = current_song.length * 1000;
+function timer_user(song) {
+    var time_to_refresh = song.length * 60 * 1000;
     setTimeout(function() {
         current_host = get_host(current_host.bizName);
         start_host();
