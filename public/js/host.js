@@ -1,5 +1,8 @@
 function start_host() {
-    timer_host(current_song = get_display_and_play_song(current_host.currentSongId, "current_song"));
+    timer_host(function() {
+        current_song = get_display_and_play_song(current_host.currentSongId, "current_song");
+        return current_song;
+    });
     next_song = get_and_display_song(current_host.nextSongId, "next_song");
     get_best_songs_and_display();
     get_song_history_and_display();
@@ -7,7 +10,7 @@ function start_host() {
 }
 
 function timer_host(song) {
-    var time_to_refresh = song.length * 100;
+    var time_to_refresh = song.length * 60 * 1000;
     setTimeout(function() {
         console.log("Timer is set to: " + time_to_refresh)
         choose_next_song();
