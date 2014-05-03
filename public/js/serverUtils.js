@@ -51,7 +51,8 @@ function login_host() {
                     is_a_host = true;
                     changePage("login_user", "feed");
                     console.log("sucsses login_host:\n" + JSON.stringify(data));
-                    start_host();
+                    start_host(data);
+                    return data;
 
                 } else {
                     console.error("!failed login_host:\n" + JSON.stringify(host) + "\nWrong email or password");
