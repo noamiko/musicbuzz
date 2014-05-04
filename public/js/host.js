@@ -1,11 +1,10 @@
 function start_host(host) {
-    timer_host(function() {
-        return (current_song = get_display_and_play_song(host.currentSongId, "current_song"));
-    });
+    current_song = get_display_and_play_song(host.currentSongId, "current_song");
     next_song = get_and_display_song(host.nextSongId, "next_song");
     get_best_songs_and_display();
     get_song_history_and_display();
     $('#host_title').text(host.bizName);
+    start_host(current_song);
 }
 
 function timer_host(song) {
