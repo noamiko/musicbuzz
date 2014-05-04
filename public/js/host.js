@@ -13,11 +13,14 @@ function start_host() {
 
 function timer_host() {
     var time_to_refresh = current_song.length * 60 * 1000;
+    alert(time_to_refresh);
+
     setTimeout(function() {
         console.log("Timer is set to: " + time_to_refresh);
         choose_next_song();
         current_host = get_host(current_host.bizName);
         start_host();
+        c
     }, time_to_refresh);
 }
 
