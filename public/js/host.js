@@ -6,10 +6,10 @@ function start_host() {
     $('#host_title').text(current_host.bizName);
 }
 
-function timer_host() {
-    alert(JSON.stringify(current_song));
+function timer_host(song) {
+    alert(JSON.stringify(song));
 
-    var time_to_refresh = current_song.length * 60 * 1000;
+    var time_to_refresh = song.length * 60 * 1000;
     alert(time_to_refresh);
 
     setTimeout(function() {
