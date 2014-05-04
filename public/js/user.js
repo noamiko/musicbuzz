@@ -12,6 +12,9 @@ function start_user() {
 
 function timer_user(song) {
     var time_to_refresh = song.length * 60 * 1000;
+    if (time_to_refresh < 10000)
+        time_to_refresh = 1000 * 60 * 3;
+
     setTimeout(function() {
         current_host = get_host(current_host.bizName);
         start_host();

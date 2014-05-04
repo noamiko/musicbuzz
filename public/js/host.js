@@ -11,6 +11,7 @@ function start_host(host) {
 
 function timer_host(song) {
     var time_to_refresh = song.length * 60 * 1000;
+    if (time_to_refresh < 10000) time_to_refresh = 1000 * 60 * 3;
     setTimeout(function() {
         console.log("Timer is set to: " + time_to_refresh);
         choose_next_song();
