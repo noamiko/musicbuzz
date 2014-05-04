@@ -1,7 +1,6 @@
 function start_user() {
     timer_user(function() {
-        current_song = get_and_display_song(current_host.currentSongId, "current_song")
-        return current_song;
+        return (current_song = get_and_display_song(current_host.currentSongId, "current_song"));
     });
     next_song = get_and_display_song(current_host.nextSongId, "next_song");
     get_best_songs_and_display();
@@ -10,9 +9,10 @@ function start_user() {
 
 }
 
-function timer_user(song) {
-    var time_to_refresh = song.length * 60 * 1000;
+function timer_user() {
+    var time_to_refresh = current_song.length * 60 * 1000;
     setTimeout(function() {
+        console.log("Timer is set to: " + time_to_refresh);
         current_host = get_host(current_host.bizName);
         start_user();
     }, time_to_refresh);

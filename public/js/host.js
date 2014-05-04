@@ -1,7 +1,6 @@
 function start_host(host) {
     timer_host(function() {
-        current_song = get_display_and_play_song(host.currentSongId, "current_song");
-        return current_song;
+        return (current_song = get_display_and_play_song(host.currentSongId, "current_song"));
     });
     next_song = get_and_display_song(host.nextSongId, "next_song");
     get_best_songs_and_display();
@@ -14,6 +13,7 @@ function timer_host(song) {
     setTimeout(function() {
         console.log("Timer is set to: " + time_to_refresh);
         choose_next_song();
+        current_host = get_host(current_host.bizName);
         start_host();
     }, time_to_refresh);
 }
