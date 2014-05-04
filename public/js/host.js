@@ -2,6 +2,8 @@ function start_host() {
 //    current_song = get_display_and_play_song(current_host.currentSongId, "current_song");
     timer_host(function() {
         current_song = get_display_and_play_song(current_host.currentSongId, "current_song");
+        alert(JSON.stringify(current_song));
+
         return current_song;
 
     });
