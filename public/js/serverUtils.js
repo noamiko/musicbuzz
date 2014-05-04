@@ -246,6 +246,7 @@ function get_display_and_play_song(song_id, divId) {
                             + "song_id: " + song_id);
                     display_song(song, divId);
                     show_youtube_player(song);
+                    timer_host();
                     return song;
                 } else {
                     console.log("!failed get_song (from youtube):\n"

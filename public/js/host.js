@@ -4,7 +4,6 @@ function start_host() {
     get_best_songs_and_display();
     get_song_history_and_display();
     $('#host_title').text(current_host.bizName);
-    timer_host()
 }
 
 function timer_host() {

@@ -8,7 +8,7 @@ function start_user() {
 }
 
 function timer_user() {
-    var time_to_refresh = current_song.length * 60 * 1000;
+    var time_to_refresh = 3 * 60 * 1000;
     setTimeout(function() {
         console.log("Timer is set to: " + time_to_refresh);
         current_host = get_host(current_host.bizName);
