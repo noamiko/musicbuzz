@@ -1,18 +1,17 @@
 function start_host() {
 //    current_song = get_display_and_play_song(current_host.currentSongId, "current_song");
     timer_host(function() {
-        current_song = get_display_and_play_song(current_host.currentSongId, "current_song");
+        return (current_song = get_display_and_play_song(current_host.currentSongId, "current_song"));
+
     });
     next_song = get_and_display_song(current_host.nextSongId, "next_song");
     get_best_songs_and_display();
     get_song_history_and_display();
     $('#host_title').text(current_host.bizName);
-
-
 }
 
-function timer_host() {
-    var time_to_refresh = current_song.length * 60 * 1000;
+function timer_host(song) {
+    var time_to_refresh = song.length * 60 * 1000;
     alert(time_to_refresh);
 
     setTimeout(function() {
@@ -20,7 +19,6 @@ function timer_host() {
         choose_next_song();
         current_host = get_host(current_host.bizName);
         start_host();
-        c
     }, time_to_refresh);
 }
 
