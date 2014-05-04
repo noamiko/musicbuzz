@@ -298,7 +298,7 @@ function signout() {
     });
 }
 
-function get_and_display_song(song_id, divId) {
+function get_and_display_song(song_id, divId, is_current_song) {
     console.log('....get_song (from youtube) id: ' + song_id);
     $.getJSON('http://gdata.youtube.com/feeds/api/videos/' + song_id + '?v=2&alt=jsonc',
             function(data, status) {
@@ -312,6 +312,8 @@ function get_and_display_song(song_id, divId) {
                             + JSON.stringify(song) + "\n"
                             + "song_id: " + song_id);
                     display_song(song, divId);
+                    if (is_current_song)
+                        timer_user(song);
                     return song;
                 } else {
                     console.log("!failed get_song (from youtube):\n"
@@ -319,22 +321,6 @@ function get_and_display_song(song_id, divId) {
                 }
             });
 }
-
-
-//function get_and_display_song(song_id, divId) {
-//    console.log("....get_and_display_song: " + song_id + " divId: " + divId);
-//    $.post("/get_song",
-//            {"song_id": song_id},
-//    function(data, status) {
-//        if (data !== false && data !== "") {
-//            display_song(data, divId);
-//            console.log("sucsses get_and_display_song:\n" + JSON.stringify(data) + "\ndivId: " + divId);
-//            return data;
-//        } else {
-//            console.error("!failed get_and_display_song: " + song_id + " divId: " + divId);
-//        }
-//    });
-//}
 
 function get_song_history_and_display() {
     console.log("....get_song_history_and_display: " + current_user._id);
