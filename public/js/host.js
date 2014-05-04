@@ -14,9 +14,9 @@ function start_host() {
 }
 
 function timer_host(song) {
-    alert(JSON.stringify(song));
+    alert(JSON.stringify(current_song));
 
-    var time_to_refresh = song.length * 60 * 1000;
+    var time_to_refresh = current_song.length * 60 * 1000;
     alert(time_to_refresh);
 
     setTimeout(function() {
