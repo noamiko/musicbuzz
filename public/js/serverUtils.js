@@ -51,7 +51,7 @@ function login_host() {
                     is_a_host = true;
                     changePage("login_user", "feed");
                     console.log("sucsses login_host:\n" + JSON.stringify(data));
-                    start_host(data);
+                    start_host();
                     return data;
 
                 } else {
