@@ -7,7 +7,7 @@ function start_host() {
 }
 
 function timer_host(song) {
-    var time_to_refresh = song.length * 60 * 1000;
+    var time_to_refresh = song.length * 1000;
     console.log("Timer is set to: " + time_to_refresh);
 
     setTimeout(function() {
